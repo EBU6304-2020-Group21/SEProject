@@ -21,3 +21,4 @@ public class GUITemplate extends JFrame implements ActionListener{
         GUITemplate guiTemplate = new GUITemplate();
     }
 }
+//Kai Yan test for update
