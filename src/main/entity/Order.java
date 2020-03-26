@@ -86,8 +86,7 @@ public class Order {
         return fixedPrice;
     }
 
-    public void setFixedPrice() {
-        double fixedPrice=9.9;           //the price of fixed dishes, default 9.99 pounds
+    public void setFixedPrice(double fixedPrice) {
         this.fixedPrice = fixedPrice;
     }
 
