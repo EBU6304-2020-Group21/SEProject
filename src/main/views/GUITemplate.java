@@ -10,6 +10,7 @@ public class GUITemplate extends JFrame implements ActionListener{
         basicFrame.add(basicPanel);
         basicFrame.setSize(800, 600);
         basicFrame.setVisible(true);
+        System.out.println("I love ZhangYinan!");
     }
 
     @Override
