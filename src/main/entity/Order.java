@@ -15,7 +15,7 @@ public class Order {
     private Boolean chashu;
     private Boolean boiledEgg;
     private int spicyIndex;
-    private double fixedPrice;
+    private double fixedPrice = 9.99; //default price of fixed dishes is 9.99
     private int extraNoriNum;
     private int extraBoilEggNum;
     private int extraBamshootNum;
@@ -86,8 +86,7 @@ public class Order {
         return fixedPrice;
     }
 
-    public void setFixedPrice() {
-        double fixedPrice=9.9;           //the price of fixed dishes, default 9.99 pounds
+    public void setFixedPrice(double fixedPrice) {
         this.fixedPrice = fixedPrice;
     }
 
