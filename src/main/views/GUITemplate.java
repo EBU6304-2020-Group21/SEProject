@@ -2,7 +2,7 @@ package main.views;
 import javax.swing.*;
 import java.awt.event.*;
 public class GUITemplate extends JFrame implements ActionListener{
-    JFrame basicFrame = new JFrame(" se");
+    JFrame basicFrame = new JFrame(" s");
     JPanel basicPanel;
 
     public GUITemplate(){
