@@ -2,15 +2,12 @@ package main.views;
 import javax.swing.*;
 import java.awt.event.*;
 public class GUITemplate extends JFrame implements ActionListener{
-    JFrame basicFrame = new JFrame(" ");
-    JPanel basicPanel;
-
     public GUITemplate(){
-        basicPanel = new JPanel();
-        basicFrame.add(basicPanel);
-        basicFrame.setSize(800, 600);
-        basicFrame.setVisible(true);
-
+        this.setSize(800, 600);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        this.setTitle("GUITemplate");
+        this.add(new ExamplePanel()); //Here add your panel to test ******************
+        this.setVisible(true);
     }
 
     @Override
@@ -22,4 +19,3 @@ public class GUITemplate extends JFrame implements ActionListener{
         GUITemplate guiTemplate = new GUITemplate();
     }
 }
-//Kai Yan test for update.
