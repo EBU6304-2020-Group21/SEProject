@@ -2,7 +2,7 @@ package main.views;
 import javax.swing.*;
 import java.awt.event.*;
 public class GUITemplate extends JFrame implements ActionListener{
-    JFrame basicFrame = new JFrame(" s");
+    JFrame basicFrame = new JFrame(" ");
     JPanel basicPanel;
 
     public GUITemplate(){
@@ -10,7 +10,7 @@ public class GUITemplate extends JFrame implements ActionListener{
         basicFrame.add(basicPanel);
         basicFrame.setSize(800, 600);
         basicFrame.setVisible(true);
-        System.out.println("I love ZhangYinan!");
+
     }
 
     @Override
