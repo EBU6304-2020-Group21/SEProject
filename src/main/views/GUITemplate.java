@@ -1,6 +1,5 @@
-package GUI;
+package main.views;
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.*;
 public class GUITemplate extends JFrame implements ActionListener{
     JFrame basicFrame = new JFrame(" ");
