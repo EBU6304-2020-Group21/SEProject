@@ -15,7 +15,7 @@ public class Order {
     private Boolean chashu;
     private Boolean boiledEgg;
     private int spicyIndex;
-    private double fixedPrice;
+    private double fixedPrice = 9.99; //default price of fixed dishes is 9.99
     private int extraNoriNum;
     private int extraBoilEggNum;
     private int extraBamshootNum;
