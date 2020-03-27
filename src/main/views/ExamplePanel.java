@@ -1,6 +1,7 @@
 package main.views;
 
 import javax.swing.*;
+import javax.swing.border.TitledBorder;
 import java.awt.*;
 
 public class ExamplePanel extends JPanel {
@@ -30,10 +31,12 @@ public class ExamplePanel extends JPanel {
         topPanel.setLayout(new FlowLayout());
         bottomPanel.setLayout(new FlowLayout());
         //topPanel
+        topPanel.setBorder(new TitledBorder(null, "top ", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, Color.BLACK));
         topPanel.add(button1);
         topPanel.add(button2);
         topPanel.add(button3);
         //bottomPanel
+        bottomPanel.setBorder(new TitledBorder(null, "bottom ", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, Color.BLACK));
         bottomPanel.add(button4);
         //MenuPanel
         constraints = new GridBagConstraints();
