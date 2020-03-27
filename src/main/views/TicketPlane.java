@@ -8,6 +8,9 @@ public class TicketPlane extends JFrame implements ActionListener {
      JFrame TicketJFrame = new JFrame("Ticket for your order" );
      GridBagLayout gridBag = new GridBagLayout();     //Layout manager
      GridBagConstraints c = null;                     //Constraint
+     GridBagConstraints gbc = new GridBagConstraints();
+     JPanel panel01 = new JPanel();
+
 
 
      @Override
