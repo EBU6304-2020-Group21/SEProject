@@ -20,13 +20,11 @@ public class PayPanel extends JPanel {
         botPanel = new JPanel();
         //Set the topPanel
         topPanel.setBorder(new TitledBorder(null, "top ", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, Color.BLACK));
-        /**
-         * code here is the design of topPanel
-         private float totalPrice=0;//Here we set a initial value for our totalPrice
+          totalPrice=0;//Here we set a initial value for our totalPrice
 
          JPanel pan1=new JPanel();//This is the panel for "Payment"
-         Jpanel pan2=new Jpanel();//This is the panel for "Your total bill is: "
-         Jpanel pan3=new JPanel();//This panel is used to display the total price.
+         JPanel pan2=new JPanel();//This is the panel for "Your total bill is: "
+         JPanel pan3=new JPanel();//This panel is used to display the total price.
          JPanel pan4=new JPanel();//This is the panel fot "Please select the way of payment:"
          JPanel pan5=new JPanel();//This is the panel for selecting "Cash"
          JPanel pan6=new JPanel();//This is the panel for printing "Cash"
@@ -34,51 +32,38 @@ public class PayPanel extends JPanel {
          JPanel pan8=new JPanel();//This is the panel for selecting "Cards"
 
          JPanel panOne=new JPanel();//This is a panel for locating easilier.
-         JPnael panTwo=new JPanel();//This is a panel for locating easilier.
-         JPnael panThree=new JPanel();//This is a panel for locating easilier.
-         JPnael panFour=new JPanel();//This is a panel for locating easilier.
-         JPnael panFive=new JPanel();//This is a panel for locating easilier.
+         JPanel panTwo=new JPanel();//This is a panel for locating easilier.
+         JPanel panThree=new JPanel();//This is a panel for locating easilier.
+         JPanel panFour=new JPanel();//This is a panel for locating easilier.
+         JPanel panFive=new JPanel();//This is a panel for locating easilier.
 
          JLabel lab1=new JLabel("Payment");
          JLabel lab2=new JLabel("Your total bill is: ");
-         JLabel lab3=new JLabel(totalPrice);
+         JLabel lab3=new JLabel(String.valueOf(totalPrice));
          JLabel lab4=new JLabel("Please select the way of payment");
          JLabel lab5=new JLabel("Cash");
          JLabel lab6=new JLabel("Cards");
 
          JButton button1=new JButton();//This is the button for selecting "Cash"
-         button1.addActionListener(new ActionListener(){
-         public void actionPerformed(ActionEvent e){
-         goNextCash();//This is the function for going to the serface for paying by cash.
-         }
-         }
-         );
-
          JButton button2=new JButton();//This is the button for selecting "Cards"
-         button2.addActionListener(new ActionListener(){
-         public void actionPerformed(ActionEvent e){
-         goNextCards();//This is the function for going to the serface for paying by cards.
-         }
-         }
-         );
 
          topPanel.setLayout(new BoxLayout(topPanel,BoxLayout.Y_AXIS));//set the total topPanel in Y-axis
 
-         topPanel.getContentPane().add(BorderLayout.NORTH,panOne);
-         topPanel.getContentPane().add(BorderLayout.SOUTH,panTwo);
+         topPanel.add(BorderLayout.NORTH,panOne);
+         topPanel.add(BorderLayout.SOUTH,panTwo);
 
-         panOne.getContentPane().add(BorderLayout.NORTH,pan1);
-         panOne.getContentPane().add(BorderLayout.SOUTH,panThree);
-         panThree.getContentPane().add(BorderLayout.WEST,pan2);
-         panThree.getContentPane().add(BorderLayout.EAST,pan3);
+         panOne.add(BorderLayout.NORTH,pan1);
+         panOne.add(BorderLayout.SOUTH,panThree);
+         panThree.add(BorderLayout.WEST,pan2);
+         panThree.add(BorderLayout.EAST,pan3);
 
-         panTwo.getContentPane().add(BorderLayout.NORTH,pan4);
-         panTwo.getContentPane().add(BorderLayout.CENTER,panFour);
-         panThree.getContentPane().add(BorderLayout.WEST,pan5);
-         panThree.getContentPane().add(BorderLayout.EAST,pan6);
-         panTwo.getContentPane().add(BorderLayout.SOUTH,panFive);
-         panThree.getContentPane().add(BorderLayout.WEST,pan7);
-         panThree.getContentPane().add(BorderLayout.EAST,pan8);
+         panTwo.add(BorderLayout.NORTH,pan4);
+         panTwo.add(BorderLayout.CENTER,panFour);
+         panThree.add(BorderLayout.WEST,pan5);
+         panThree.add(BorderLayout.EAST,pan6);
+         panTwo.add(BorderLayout.SOUTH,panFive);
+         panThree.add(BorderLayout.WEST,pan7);
+         panThree.add(BorderLayout.EAST,pan8);
 
          pan5.add(button1);
          pan7.add(button2);
@@ -91,13 +76,16 @@ public class PayPanel extends JPanel {
          pan8.add(lab6);
 
          topPanel.setSize(800,540);
-         topPanel.setVisible(true);
-         */
+
         //set the bottom Panel
         botPanel.setBorder(new TitledBorder(null, "bottom ", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, Color.BLACK));
-        /**
-         * code here is the design of bottompanel
-         */
+        JButton back = new JButton("Back");
+        JButton confirm = new JButton("Confirm");
+        botPanel.setLayout(new BorderLayout());
+        back.setPreferredSize(new Dimension(150,0));
+        confirm.setPreferredSize(new Dimension(150,0));
+        botPanel.add(back,BorderLayout.WEST);
+        botPanel.add(confirm,BorderLayout.EAST);
         //Set the layout and initialize this panel
         //Set layout of this panel
         this.setLayout(new GridBagLayout());
