@@ -27,6 +27,9 @@ public class TicketPanel extends JPanel {
     private JPanel topPanel;
     private JPanel midPanel;
     private JPanel botPanel;
+    //back and confirm
+    public JButton back = new JButton("Back");
+    public JButton confirm = new JButton("Confirm");
 
     public TicketPanel() {
         init();
@@ -48,10 +51,12 @@ public class TicketPanel extends JPanel {
          * code here is the design of midpanel
          */
         //set the bottom Panel
-        botPanel.setBorder(new TitledBorder(null, "bottom ", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, Color.BLACK));
-        /**
-         * code here is the design of bottompanel
-         */
+        botPanel.setBorder(BorderFactory.createTitledBorder(""));
+        botPanel.setLayout(new BorderLayout());
+        back.setPreferredSize(new Dimension(150, 0));
+        confirm.setPreferredSize(new Dimension(150, 0));
+        botPanel.add(back, BorderLayout.WEST);
+        botPanel.add(confirm, BorderLayout.EAST);
         //Set the layout and initialize this panel
         //Set layout of this panel
         this.setLayout(new GridBagLayout());

@@ -31,7 +31,7 @@ public class ExamplePanel extends JPanel {
         topPanel.setLayout(new FlowLayout());
         bottomPanel.setLayout(new FlowLayout());
         //topPanel
-        topPanel.setBorder(new TitledBorder(null, "top ", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, Color.BLACK));
+        topPanel.setBorder(BorderFactory.createTitledBorder(""));
         topPanel.add(button1);
         topPanel.add(button2);
         topPanel.add(button3);

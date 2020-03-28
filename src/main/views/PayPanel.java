@@ -11,63 +11,73 @@ public class PayPanel extends JPanel {
     //sub-panel of TicketPanel
     private JPanel topPanel;
     private JPanel botPanel;
+
+    //back and confirm
+    public JButton back = new JButton("Back");
+    public JButton confirm = new JButton("Confirm");
     public PayPanel() {
         init();
     }
 
     public void init() {
+         totalPrice=0.00;//Here we set a initial value for our totalPrice
          topPanel = new JPanel();
          botPanel = new JPanel();
          //Set the topPanel
-         topPanel.setBorder(new TitledBorder(null, "top ", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, Color.BLACK));
+         topPanel.setBorder(BorderFactory.createTitledBorder(""));
+         Font font1 = new Font("Times new Roman",Font.BOLD,24);
+         Font font2 = new Font("Times new Roman",Font.PLAIN,20);
 
-         totalPrice=0;//Here we set a initial value for our totalPrice
-
-         JPanel panOne=new JPanel();//This is a panel for locating easilier.
-         JPanel panTwo=new JPanel();//This is a panel for locating easilier.
-         JPanel panThree=new JPanel();//This is a panel for locating easilier.
-         JPanel pan1=new JPanel();//This is a panel for locating the select for "Cash"
-         JPanel pan2=new JPanel();
+         JPanel pan1=new JPanel();//This is a panel for locating easilier.
+         JPanel pan2=new JPanel();//This is a panel for locating easilier.
+         JPanel pan3=new JPanel();//This is a panel for locating easilier.
+         JPanel pan4=new JPanel();//This is a panel for locating the select for "Cash"
+         JPanel pan5=new JPanel();
 
          JLabel lab1 = new JLabel();//This is a label for the "Payment"
          lab1.setText("Payment");
+         lab1.setFont(font1);
          JLabel lab2 = new JLabel();//This is a label for the "Your total bill is: " and the number of total price
-         lab2.setText("Your total bill is: "+totalPrice);
+         lab2.setText("Your total bill is: "+totalPrice+"￡");
+         lab2.setFont(font1);
          JLabel lab3 = new JLabel();//This is a label for the selection of the way of payment
-         lab3.setText("                                                                              Please select the way of payment: ");
-         JLabel lab4 = new JLabel();//This is a label for the selection "Cash"
-         lab4.setText("Cash");
-         JLabel lab5 = new JLabel();//This is a label for the selection "Cards"
-         lab5.setText("Cards");
+         lab3.setFont(font1);
+         lab3.setText("Please select the way of payment: ");
+         JRadioButton but1 = new JRadioButton("Cash");//This is a radiobutton for our customer to choose "Cash"
+         JRadioButton but2 = new JRadioButton("Cards");//This is a radiobutton for our customer to choose "Cards"
+         but1.setFont(font2);
+         but2.setFont(font2);
 
-         JRadioButton but1 = new JRadioButton();//This is a radiobutton for our customer to choose "Cash"
-         JRadioButton but2 = new JRadioButton();//This is a radiobutton for our customer to choose "Cards"
-
-         topPanel.add(panOne, BorderLayout.NORTH);//We divide the top panel vertically into three major parts
-         topPanel.add(panTwo, BorderLayout.CENTER);
-         topPanel.add(panThree, BorderLayout.SOUTH);
-         topPanel.setLayout(new BoxLayout(topPanel,BoxLayout.Y_AXIS));
-         panThree.add(lab3, BorderLayout.NORTH);//We divide the panel-three vertically into three major parts
-         panThree.add(pan1, BorderLayout.CENTER);
-         panThree.add(pan2, BorderLayout.SOUTH);
-         panThree.setLayout(new BoxLayout(panThree,BoxLayout.Y_AXIS));
-         pan1.add(but1, BorderLayout.WEST);//We are designing the distribution of tick buttons and the options they represent
-         pan1.add(lab4, BorderLayout.EAST);
-         pan2.add(but2, BorderLayout.WEST);
-         pan2.add(lab5, BorderLayout.EAST);
-
-         topPanel.setSize(800,540);
-         panOne.setSize(800,80);
-         panTwo.setSize(800,60);
-         panThree.setSize(800,400);
-
-         panOne.add(lab1);
-         panTwo.add(lab2);
+        topPanel.setLayout(new GridBagLayout());
+        GridBagConstraints c1 = new GridBagConstraints();
+        c1.fill = GridBagConstraints.BOTH;
+        c1.gridx = 0;
+        c1.gridy = 0;
+        c1.weightx = 0;
+        c1.weighty = 0.2;
+        pan1.add(lab1);
+        topPanel.add(pan1,c1);
+        c1.gridy = 1;
+        c1.weighty = 0.2;
+        pan2.add(lab2);
+        topPanel.add(pan2,c1);
+        c1.gridy = 2;
+        c1.weighty = 0.2;
+        pan3.add(lab3);
+        topPanel.add(pan3,c1);
+        c1.gridy = 3;
+        c1.weighty = 0.2;
+        pan4.add(but1);
+        topPanel.add(pan4,c1);
+        c1.gridy = 4;
+        c1.weighty = 0.2;
+        pan5.add(but2);
+        topPanel.add(pan5,c1);
 
          //set the bottom Panel
-        botPanel.setBorder(new TitledBorder(null, "bottom ", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, Color.BLACK));
-        JButton back = new JButton("Back");
-        JButton confirm = new JButton("Confirm");
+        botPanel.setBorder(BorderFactory.createTitledBorder(""));
+        back = new JButton("Back");
+        confirm = new JButton("Confirm");
         botPanel.setLayout(new BorderLayout());
         back.setPreferredSize(new Dimension(150,0));
         confirm.setPreferredSize(new Dimension(150,0));

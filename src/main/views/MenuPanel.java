@@ -32,19 +32,33 @@ public class MenuPanel extends JPanel {
     public JButton confirm = new JButton("Confirm");
 
     public JRadioButton tonkotsu, shoyu, shio, soft, medium, firm, no, just, lot, yes1, no1, yes2, no2, yes3, no3, s1, s2, s3, s4, s5, s6;
-    public JRadioButton enori, eegg, eshoot, echashu;
+    public JTextField extraNori,extraBoilEgg,extraBamShoot,extraChashu;
 
     public MenuPanel() {
         init();
     }
 
     public void init() {
-        //初始化传递参数，用于测试
+        //初始化传递参数，用于测试(后端组的同学把这里删了）
         fixedPrice = 9.99;
+        extraNoriPrice = 1;     //the price of extra Nori, default 1 pounds
+        extraBoilEggPrice = 1;  //the price of extra boiled eggs, default 1 pounds
+        extraBamShootPrice = 1; //the price of extra banboo shoot, default 1 pounds
+        extraChashuPrice = 2;   //the price of extra Chashu, default 2 pounds
+
+        //Set the font
+        Font ramenFont = new Font("Times New Roman", Font.BOLD + Font.ITALIC, 20);
+        Font titleFont = new Font("Times New Roman", Font.BOLD + Font.ITALIC, 25);
+        Font foodTypeFont = new Font("Times New Roman",Font.BOLD,18);
+        Font addonFont = new Font("Times New Roman",Font.BOLD,22);
+
         //Initialize the RadioButton
         tonkotsu = new JRadioButton("Tonkotsu");
         shoyu = new JRadioButton("Shoyu");
         shio = new JRadioButton("shio");
+//        tonkotsu.setFont(foodTypeFont);
+////        shoyu.setFont(foodTypeFont);
+////        shio.setFont(foodTypeFont);
         ButtonGroup btnGroup1 = new ButtonGroup();
         btnGroup1.add(tonkotsu);
         btnGroup1.add(shoyu);
@@ -98,7 +112,6 @@ public class MenuPanel extends JPanel {
         btnGroup7.add(s5);
         btnGroup7.add(s6);
 
-
         //Initialize the sub-panel of this panel
         topPanel = new JPanel();
         midPanel = new JPanel();
@@ -106,13 +119,11 @@ public class MenuPanel extends JPanel {
         //Set the topPanel
         GridBagConstraints c1 = new GridBagConstraints();
         topPanel.setLayout(new GridBagLayout());
-        topPanel.setBorder(new TitledBorder(null, "top ", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, Color.BLACK));
+//        topPanel.setBorder(BorderFactory.createLoweredBevelBorder());
         JCheckBox ramen = new JCheckBox("Ramen ￡" + fixedPrice, true);
-        Font ramenFont = new Font("Times New Roman", Font.BOLD + Font.ITALIC, 20);
         ramen.setFont(ramenFont);
         ramen.setEnabled(false);
         JLabel title = new JLabel("<html><body>Totoro Ramen<br>Designed by Mr.Miyazaki<body></html>");
-        Font titleFont = new Font("Times New Roman", Font.BOLD + Font.ITALIC, 25);
         title.setFont(titleFont);
         c1.anchor = GridBagConstraints.WEST;
         c1.gridx = 0;
@@ -128,7 +139,7 @@ public class MenuPanel extends JPanel {
 
 
         //set the midPanel
-        midPanel.setBorder(new TitledBorder(null, "mid ", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, Color.BLACK));
+        midPanel.setBorder(BorderFactory.createTitledBorder("Choose what you like!"));
         midPanel.setLayout(new GridBagLayout());
         GridBagConstraints c2 = new GridBagConstraints();
         JPanel defaultP = new JPanel();
@@ -166,7 +177,23 @@ public class MenuPanel extends JPanel {
         JLabel chashu = new JLabel("Chashu");
         JLabel egg = new JLabel("<html><body>Boiled<br>egg<body></html>");
         JLabel spi = new JLabel("Spiciness");
-
+        JLabel addon = new JLabel("Add-ons");
+        JLabel enori = new JLabel("￡"+extraNoriPrice+" Extra Nori");
+        JLabel eegg = new JLabel("￡"+extraBoilEggPrice+"Extra boiled egg");
+        JLabel ebamboo = new JLabel("￡"+extraBamShootPrice+" Bamboo shoots");
+        JLabel echashu = new JLabel("￡"+extraChashuPrice+" Extra chashu");
+        soup.setFont(foodTypeFont);
+        noodles.setFont(foodTypeFont);
+        SO.setFont(foodTypeFont);
+        nori.setFont(foodTypeFont);
+        chashu.setFont(foodTypeFont);
+        egg.setFont(foodTypeFont);
+        spi.setFont(foodTypeFont);
+        addon.setFont(addonFont);
+        enori.setFont(foodTypeFont);
+        eegg.setFont(foodTypeFont);
+        ebamboo.setFont(foodTypeFont);
+        echashu.setFont(foodTypeFont);
         //Set the defaultP layout
         defaultP.setLayout(new GridBagLayout());
         GridBagConstraints c3 = new GridBagConstraints();
@@ -199,24 +226,28 @@ public class MenuPanel extends JPanel {
         c3.weighty = 0.15;
         defaultP.add(soP,c3);
 
+        noriP.add(nori);
         noriP.add(yes1);
         noriP.add(no1);
         c3.gridy = 3;
         c3.weighty = 0.15;
         defaultP.add(noriP,c3);
 
+        chashuP.add(chashu);
         chashuP.add(yes2);
         chashuP.add(no2);
         c3.gridy = 4;
         c3.weighty = 0.15;
         defaultP.add(chashuP,c3);
 
+        eggP.add(egg);
         eggP.add(yes3);
         eggP.add(no3);
         c3.gridy = 5;
         c3.weighty = 0.15;
         defaultP.add(eggP,c3);
 
+        spiP.add(spi);
         spiP.add(s1);
         spiP.add(s2);
         spiP.add(s3);
@@ -225,11 +256,51 @@ public class MenuPanel extends JPanel {
         spiP.add(s6);
         c3.gridy = 6;
         c3.weighty = 0.1;
+        defaultP.add(spiP,c3);
+
+        //Set addon Panel
+        extraNori = new JTextField(1);
+        extraBoilEgg = new JTextField(1);
+        extraBamShoot = new JTextField(1);
+        extraChashu = new JTextField(1);
+        addonP.setLayout(new GridBagLayout());
+        GridBagConstraints c4 = new GridBagConstraints();
+        c4.fill = GridBagConstraints.BOTH;
+        c4.gridx = 0;
+        c4.gridy = 0;
+        c4.weightx = 1;
+        c4.weighty = 0.2;
+        addP.add(addon);
+        addonP.add(addP,c4);
+
+        exnoriP.add(enori);
+        exnoriP.add(extraNori);
+        c4.gridy = 1;
+        c4.weighty = 0.2;
+        addonP.add(exnoriP,c4);
+
+        exeggP.add(eegg);
+        exeggP.add(extraBoilEgg);
+        c4.gridy = 2;
+        c4.weighty=0.2;
+        addonP.add(exeggP,c4);
+
+        exbambooP.add(ebamboo);
+        exbambooP.add(extraBamShoot);
+        c4.gridy = 3 ;
+        c4.weighty = 0.2;
+        addonP.add(exbambooP,c4);
+
+        exchaP.add(echashu);
+        exchaP.add(extraChashu);
+        c4.gridy = 4;
+        c4.weighty = 0.2;
+        addonP.add(exchaP,c4);
 
 
 
         //set the bottom Panel
-        botPanel.setBorder(new TitledBorder(null, "bottom ", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, Color.BLACK));
+        botPanel.setBorder(BorderFactory.createTitledBorder(""));
         botPanel.setLayout(new BorderLayout());
         back.setPreferredSize(new Dimension(150, 0));
         confirm.setPreferredSize(new Dimension(150, 0));
@@ -248,10 +319,10 @@ public class MenuPanel extends JPanel {
         c.weighty = 0.03;
         this.add(topPanel, c);
         c.gridy = 1;
-        c.weighty = 0.87;
+        c.weighty = 0.8;
         this.add(midPanel, c);
         c.gridy = 2;
-        c.weighty = 0.1;
+        c.weighty = 0.17;
         this.add(botPanel, c);
 
     }
