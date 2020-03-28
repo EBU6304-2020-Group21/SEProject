@@ -6,7 +6,6 @@ import java.awt.*;
 
 public class PayPanel extends JPanel {
     private double totalPrice;
-
     //sub-panel of this panel
     //sub-panel of TicketPanel
     private JPanel topPanel;
@@ -45,6 +44,9 @@ public class PayPanel extends JPanel {
          lab3.setText("Please select the way of payment: ");
          JRadioButton but1 = new JRadioButton("Cash");//This is a radiobutton for our customer to choose "Cash"
          JRadioButton but2 = new JRadioButton("Cards");//This is a radiobutton for our customer to choose "Cards"
+         ButtonGroup btg = new ButtonGroup();
+         btg.add(but1);
+         btg.add(but2);
          but1.setFont(font2);
          but2.setFont(font2);
 

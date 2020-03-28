@@ -76,9 +76,9 @@ public class MenuPanel extends JPanel {
         just = new JRadioButton("Just a little");
         lot = new JRadioButton("A lot!");
         ButtonGroup btnGroup3 = new ButtonGroup();
-        btnGroup3.add(tonkotsu);
-        btnGroup3.add(shoyu);
-        btnGroup3.add(shio);
+        btnGroup3.add(no);
+        btnGroup3.add(just);
+        btnGroup3.add(lot);
 
         yes1 = new JRadioButton("Yes");
         no1 = new JRadioButton("No");
