@@ -27,7 +27,7 @@ public class PayPanel extends JPanel {
          JPanel panTwo=new JPanel();//This is a panel for locating easilier.
          JPanel panThree=new JPanel();//This is a panel for locating easilier.
          JPanel pan1=new JPanel();//This is a panel for locating the select for "Cash"
-         JPanel pan2=new JPanel();//This is a panel for locating the select for "Cards"
+         JPanel pan2=new JPanel();
 
          JLabel lab1 = new JLabel();//This is a label for the "Payment"
          lab1.setText("Payment");
