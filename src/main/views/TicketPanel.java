@@ -42,14 +42,19 @@ public class TicketPanel extends JPanel {
         botPanel = new JPanel();
         //Set the topPanel
         topPanel.setBorder(new TitledBorder(null, "top ", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, Color.BLACK));
-        /**
-         * code here is the design of topPanel
-         */
+        Font font1 = new Font("Times new Roman",Font.BOLD,22);
+        JLabel lab1 = new JLabel();
+        lab1.setText("Ticket");
+        lab1.setFont(font1);
+
+
+
         //set the midPanel
         midPanel.setBorder(new TitledBorder(null, "mid ", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, Color.BLACK));
         /**
          * code here is the design of midpanel
          */
+
         //set the bottom Panel
         botPanel.setBorder(BorderFactory.createTitledBorder(""));
         botPanel.setLayout(new BorderLayout());
