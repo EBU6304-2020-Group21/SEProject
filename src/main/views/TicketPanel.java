@@ -30,6 +30,7 @@ public class TicketPanel extends JPanel {
     //back and confirm
     public JButton back = new JButton("Back");
     public JButton confirm = new JButton("Confirm");
+    private Object JTextField;
 
     public TicketPanel() {
         init();
@@ -42,10 +43,20 @@ public class TicketPanel extends JPanel {
         botPanel = new JPanel();
         //Set the topPanel
         topPanel.setBorder(new TitledBorder(null, "top ", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, Color.BLACK));
-        Font font1 = new Font("Times new Roman",Font.BOLD,22);
-        JLabel lab1 = new JLabel();
-        lab1.setText("Ticket");
+        Font font1 = new Font("Times new Roman",Font.BOLD,25);
+        Font font2 = new Font("Times new Roman",Font.BOLD,20);
+        JLabel lab1 = new JLabel("TICKET");
+        JLabel lab2 = new JLabel("Order Name");
+        JLabel lab3 = new JLabel("Date&Time");
+        JLabel lab4 = new JLabel("Membership Number");
+        JLabel lab5 = new JLabel("Dining Way");
         lab1.setFont(font1);
+        lab2.setFont(font2);
+        lab3.setFont(font2);
+        lab4.setFont(font2);
+        lab5.setFont(font2);
+        JTextField  = new JTextField(30);
+
 
 
 
