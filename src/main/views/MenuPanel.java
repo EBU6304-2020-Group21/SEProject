@@ -27,7 +27,7 @@ public class MenuPanel extends JPanel {
     private JPanel topPanel;
     private JPanel midPanel;
     private JPanel botPanel;
-    private JCheckBox ramen;
+
 
     public MenuPanel() {
         init();
@@ -73,10 +73,13 @@ public class MenuPanel extends JPanel {
 
         //set the bottom Panel
         botPanel.setBorder(new TitledBorder(null, "bottom ", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, Color.BLACK));
-        /**
-         * code here is the design of bottompanel
-         */
-
+        JButton back = new JButton("Back");
+        JButton confirm = new JButton("Confirm");
+        botPanel.setLayout(new BorderLayout());
+        back.setPreferredSize(new Dimension(300,0));
+        confirm.setPreferredSize(new );
+        botPanel.add(back,BorderLayout.WEST);
+        botPanel.add(confirm,BorderLayout.EAST);
 
         //Set the layout and initialize this panel
 
