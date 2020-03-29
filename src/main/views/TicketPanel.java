@@ -54,6 +54,10 @@ public class TicketPanel extends JPanel {
         JLabel lab3 = new JLabel("Date&Time", JLabel.LEFT);
         JLabel lab4 = new JLabel("Membership Number", JLabel.LEFT);
         JLabel lab5 = new JLabel("Dining Way", JLabel.LEFT);
+        JTextField tf2 = new JTextField();
+        JTextField tf3 = new JTextField();
+        JTextField tf4 = new JTextField();
+        JTextField tf5 = new JTextField();
         lab1.setFont(font0);
         lab2.setFont(font2);
         lab3.setFont(font2);
@@ -64,6 +68,7 @@ public class TicketPanel extends JPanel {
         topPanel.add(lab3);
         topPanel.add(lab4);
         topPanel.add(lab5);
+        topPanel.add(tf2);
 
         topPanel.setLayout(new GridBagLayout());
         GridBagConstraints top = new GridBagConstraints();
