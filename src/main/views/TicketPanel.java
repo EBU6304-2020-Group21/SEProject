@@ -69,17 +69,42 @@ public class TicketPanel extends JPanel {
         top.gridy = 0;
         top.gridwidth = 3;
         top.gridheight = 1;
-        top.weightx = 0.4;
-        top.weighty = 1;
+        top.weightx = 1;
+        top.weighty = 0.4;
         topPanel.add(lab1, top);
 
         top.gridx = 0;
         top.gridy = 1;
         top.gridwidth = 1;
         top.gridheight = 1;
-        top.weightx = 0.3;
-        top.weighty = 0.4;
+        top.weightx = 0.4;
+        top.weighty = 0.3;
         topPanel.add(lab2, top);
+
+        top.gridx = 0;
+        top.gridy = 2;
+        top.gridwidth = 1;
+        top.gridheight = 1;
+        top.weightx = 0.4;
+        top.weighty = 0.3;
+        topPanel.add(lab3, top);
+
+        top.gridx = 2;
+        top.gridy = 1;
+        top.gridwidth = 1;
+        top.gridheight = 1;
+        top.weightx = 0.4;
+        top.weighty = 0.3;
+        topPanel.add(lab4, top);
+
+        top.gridx = 2;
+        top.gridy = 2;
+        top.gridwidth = 1;
+        top.gridheight = 1;
+        top.weightx = 0.4;
+        top.weighty = 0.3;
+        topPanel.add(lab5, top);
+
 
 
 
