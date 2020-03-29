@@ -299,21 +299,7 @@ public class TicketPanel extends JPanel {
         mid.weighty = 0.1;
         midPanel.add(lab21, mid);
 
-        mid.gridx = 1;
-        mid.gridy = 5;
-        mid.gridwidth = 3;
-        mid.gridheight = 1;
-        mid.weightx = 0.6;
-        mid.weighty = 0.2;
-        midPanel.add(lab22, mid);
 
-        mid.gridx = 1;
-        mid.gridy = 6;
-        mid.gridwidth = 3;
-        mid.gridheight = 1;
-        mid.weightx = 0.6;
-        mid.weighty = 0.2;
-        midPanel.add(lab23, mid);
 
         //set the bottom Panel
         botPanel.setBorder(BorderFactory.createTitledBorder(""));
