@@ -23,7 +23,7 @@ public class TicketPanel extends JPanel {
     private double chashuPrice;
     private double addOnPrice;
     private String diningOption;
-    private String totalPrice;
+    private double totalPrice;
     private String orderNum;
     private String memberNum;
     private String DateTime;
