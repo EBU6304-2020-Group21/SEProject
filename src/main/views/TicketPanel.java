@@ -130,7 +130,7 @@ public class TicketPanel extends JPanel {
         JLabel lab21 = new JLabel("Extra chashu", JLabel.LEFT);
         JLabel lab22 = new JLabel("ADD-ONS Price", JLabel.LEFT);
         JLabel lab23 = new JLabel("TOTAL Price", JLabel.LEFT);
-        lab6.setFont(font2);
+        lab6.setFont(font1);
         lab7.setFont(font3);
         lab8.setFont(font3);
         lab9.setFont(font3);
@@ -298,6 +298,22 @@ public class TicketPanel extends JPanel {
         mid.weightx = 0.6;
         mid.weighty = 0.1;
         midPanel.add(lab21, mid);
+
+        mid.gridx = 1;
+        mid.gridy = 5;
+        mid.gridwidth = 3;
+        mid.gridheight = 2;
+        mid.weightx = 0.6;
+        mid.weighty = 0.2;
+        midPanel.add(lab22, mid);
+
+        mid.gridx = 1;
+        mid.gridy = 6;
+        mid.gridwidth = 3;
+        mid.gridheight = 2;
+        mid.weightx = 0.6;
+        mid.weighty = 0.2;
+        midPanel.add(lab23, mid);
 
 
 
