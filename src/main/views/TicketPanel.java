@@ -61,10 +61,34 @@ public class TicketPanel extends JPanel {
         topPanel.add(lab4);
         topPanel.add(lab5);
 
+        topPanel.setLayout(new GridBagLayout());
+        GridBagConstraints top = new GridBagConstraints();
+        top.fill = GridBagConstraints.BOTH;
+
+        top.gridx = 0;
+        top.gridy = 0;
+        top.gridwidth = 3;
+        top.gridheight = 1;
+        top.weightx = 0.4;
+        top.weighty = 1;
+        topPanel.add(lab1, top);
+
+        top.gridx = 0;
+        top.gridy = 1;
+        top.gridwidth = 1;
+        top.gridheight = 1;
+        top.weightx = 0.3;
+        top.weighty = 0.4;
+        topPanel.add(lab2, top);
 
 
 
-        //set the midPanel
+
+
+
+
+
+                //set the midPanel
         midPanel.setBorder(new TitledBorder(null, "mid ", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, Color.BLACK));
         /**
          * code here is the design of midpanel
