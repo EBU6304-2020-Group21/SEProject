@@ -42,7 +42,7 @@ public class TicketPanel extends JPanel {
         midPanel = new JPanel();
         botPanel = new JPanel();
 
-        Font font0 = new Font("Times new Roman",Font.BOLD,28);
+        Font font0 = new Font("Times new Roman",Font.BOLD,32);
         Font font1 = new Font("Times new Roman",Font.BOLD,25);
         Font font2 = new Font("Times new Roman",Font.BOLD,20);
         Font font3 = new Font("Times new Roman",Font.BOLD,18);
