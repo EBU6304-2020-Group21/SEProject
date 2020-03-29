@@ -42,6 +42,7 @@ public class TicketPanel extends JPanel {
         midPanel = new JPanel();
         botPanel = new JPanel();
 
+        Font font0 = new Font("Times new Roman",Font.BOLD,28);
         Font font1 = new Font("Times new Roman",Font.BOLD,25);
         Font font2 = new Font("Times new Roman",Font.BOLD,20);
         Font font3 = new Font("Times new Roman",Font.BOLD,18);
@@ -53,7 +54,7 @@ public class TicketPanel extends JPanel {
         JLabel lab3 = new JLabel("Date&Time", JLabel.LEFT);
         JLabel lab4 = new JLabel("Membership Number", JLabel.LEFT);
         JLabel lab5 = new JLabel("Dining Way", JLabel.LEFT);
-        lab1.setFont(font1);
+        lab1.setFont(font0);
         lab2.setFont(font2);
         lab3.setFont(font2);
         lab4.setFont(font2);
