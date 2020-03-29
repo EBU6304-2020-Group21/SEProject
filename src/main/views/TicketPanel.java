@@ -44,6 +44,7 @@ public class TicketPanel extends JPanel {
 
     public void init() {
         //Initialize the sub-panel of this panel
+
         topPanel = new JPanel();
         midPanel = new JPanel();
         botPanel = new JPanel();
