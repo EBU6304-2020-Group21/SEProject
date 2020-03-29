@@ -152,6 +152,16 @@ public class TicketPanel extends JPanel {
         midPanel.add(lab11);
         midPanel.add(lab12);
         midPanel.add(lab13);
+        midPanel.add(lab14);
+        midPanel.add(lab15);
+        midPanel.add(lab16);
+        midPanel.add(lab17);
+        midPanel.add(lab18);
+        midPanel.add(lab19);
+        midPanel.add(lab20);
+        midPanel.add(lab21);
+        midPanel.add(lab22);
+
 
 
 
