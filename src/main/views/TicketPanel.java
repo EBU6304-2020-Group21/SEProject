@@ -22,6 +22,7 @@ public class TicketPanel extends JPanel {
     private String totalPrice;
     private String orderNum;
     private String memberNum;
+    private String DateTime;
 
     //sub-panel of TicketPanel
     private JPanel topPanel;
@@ -54,10 +55,11 @@ public class TicketPanel extends JPanel {
         JLabel lab3 = new JLabel("Date&Time", JLabel.LEFT);
         JLabel lab4 = new JLabel("Membership Number", JLabel.LEFT);
         JLabel lab5 = new JLabel("Dining Way", JLabel.LEFT);
-        JTextField tf2 = new JTextField();
-        JTextField tf3 = new JTextField();
-        JTextField tf4 = new JTextField();
-        JTextField tf5 = new JTextField();
+        JLabel show2 = new JLabel(orderNum);
+        JLabel show3 = new JLabel(DateTime);
+        JLabel show4 = new JLabel(memberNum);
+        JLabel show5 = new JLabel(diningOption);
+
         lab1.setFont(font0);
         lab2.setFont(font2);
         lab3.setFont(font2);
@@ -68,7 +70,10 @@ public class TicketPanel extends JPanel {
         topPanel.add(lab3);
         topPanel.add(lab4);
         topPanel.add(lab5);
-        topPanel.add(tf2);
+        topPanel.add(show2);
+        topPanel.add(show3);
+        topPanel.add(show4);
+        topPanel.add(show5);
 
         topPanel.setLayout(new GridBagLayout());
         GridBagConstraints top = new GridBagConstraints();
@@ -86,9 +91,17 @@ public class TicketPanel extends JPanel {
         top.gridy = 1;
         top.gridwidth = 1;
         top.gridheight = 1;
-        top.weightx = 0.5;
+        top.weightx = 0.25;
         top.weighty = 0.3;
         topPanel.add(lab2, top);
+
+        top.gridx = 0;
+        top.gridy = 1;
+        top.gridwidth = 1;
+        top.gridheight = 1;
+        top.weightx = 0.25;
+        top.weighty = 0.3;
+        topPanel.add(show2, top);
 
         top.gridx = 0;
         top.gridy = 2;
