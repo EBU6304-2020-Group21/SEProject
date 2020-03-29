@@ -55,6 +55,7 @@ public class TicketPanel extends JPanel {
         JLabel lab3 = new JLabel("Date&Time", JLabel.LEFT);
         JLabel lab4 = new JLabel("Membership Number", JLabel.LEFT);
         JLabel lab5 = new JLabel("Dining Way", JLabel.LEFT);
+        orderNum = order;
         JLabel show2 = new JLabel(orderNum);
         JLabel show3 = new JLabel(DateTime);
         JLabel show4 = new JLabel(memberNum);
