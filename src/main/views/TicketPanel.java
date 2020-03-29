@@ -30,7 +30,7 @@ public class TicketPanel extends JPanel {
     //back and confirm
     public JButton back = new JButton("Back");
     public JButton confirm = new JButton("Confirm");
-    private Object JTextField;
+
 
     public TicketPanel() {
         init();
@@ -55,7 +55,11 @@ public class TicketPanel extends JPanel {
         lab3.setFont(font2);
         lab4.setFont(font2);
         lab5.setFont(font2);
-        JTextField  = new JTextField(30);
+        topPanel.add(lab1);
+        topPanel.add(lab2);
+        topPanel.add(lab3);
+        topPanel.add(lab4);
+        topPanel.add(lab5);
 
 
 
