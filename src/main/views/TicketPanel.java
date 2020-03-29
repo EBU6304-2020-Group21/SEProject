@@ -179,64 +179,64 @@ public class TicketPanel extends JPanel {
         mid.weighty = 0.15;
         midPanel.add(lab6, mid);
 
-        mid.gridx = 0;
-        mid.gridy = 1;
+        mid.gridx = 1;
+        mid.gridy = 0;
         mid.gridwidth = 1;
         mid.gridheight = 1;
         mid.weightx = 0.4;
         mid.weighty = 0.1;
         midPanel.add(lab7, mid);
 
-        mid.gridx = 0;
-        mid.gridy = 2;
+        mid.gridx = 2;
+        mid.gridy = 0;
         mid.gridwidth = 1;
         mid.gridheight = 1;
         mid.weightx = 0.4;
         mid.weighty = 0.1;
         midPanel.add(lab8, mid);
 
-        mid.gridx = 0;
-        mid.gridy = 3;
+        mid.gridx = 3;
+        mid.gridy = 0;
         mid.gridwidth = 1;
         mid.gridheight = 1;
         mid.weightx = 0.4;
         mid.weighty = 0.1;
         midPanel.add(lab9, mid);
 
-        mid.gridx = 0;
-        mid.gridy = 4;
+        mid.gridx = 4;
+        mid.gridy = 0;
         mid.gridwidth = 1;
         mid.gridheight = 1;
         mid.weightx = 0.4;
         mid.weighty = 0.1;
         midPanel.add(lab10, mid);
 
-        mid.gridx = 0;
-        mid.gridy = 5;
+        mid.gridx = 5;
+        mid.gridy = 0;
         mid.gridwidth = 1;
         mid.gridheight = 1;
         mid.weightx = 0.4;
         mid.weighty = 0.1;
         midPanel.add(lab11, mid);
 
-        mid.gridx = 0;
-        mid.gridy = 6;
+        mid.gridx = 6;
+        mid.gridy = 0;
         mid.gridwidth = 1;
         mid.gridheight = 1;
         mid.weightx = 0.4;
         mid.weighty = 0.1;
         midPanel.add(lab12, mid);
 
-        mid.gridx = 0;
-        mid.gridy = 7;
+        mid.gridx = 7;
+        mid.gridy = 0;
         mid.gridwidth = 1;
         mid.gridheight = 1;
         mid.weightx = 0.4;
         mid.weighty = 0.1;
         midPanel.add(lab13, mid);
 
-        mid.gridx = 0;
-        mid.gridy = 8;
+        mid.gridx = 8;
+        mid.gridy = 0;
         mid.gridwidth = 1;
         mid.gridheight = 1;
         mid.weightx = 0.4;
