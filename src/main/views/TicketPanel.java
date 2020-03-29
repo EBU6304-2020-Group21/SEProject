@@ -300,9 +300,9 @@ public class TicketPanel extends JPanel {
         midPanel.add(lab21, mid);
 
         mid.gridx = 1;
-        mid.gridy = 6;
+        mid.gridy = 5;
         mid.gridwidth = 3;
-        mid.gridheight = 1;
+        mid.gridheight = 2;
         mid.weightx = 0.6;
         mid.weighty = 0.2;
         midPanel.add(lab22, mid);
