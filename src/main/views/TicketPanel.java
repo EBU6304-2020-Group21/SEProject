@@ -108,6 +108,8 @@ public class TicketPanel extends JPanel {
         top.weighty = 0.3;
         topPanel.add(lab5, top);
 
+
+
         //set the midPanel
         midPanel.setBorder(new TitledBorder(null, "mid ", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, Color.BLACK));
         JLabel lab6 = new JLabel("SINGLE DISH", JLabel.LEFT);
@@ -117,16 +119,17 @@ public class TicketPanel extends JPanel {
         JLabel lab10 = new JLabel("Nori", JLabel.LEFT);
         JLabel lab11 = new JLabel("Chashu", JLabel.LEFT);
         JLabel lab12 = new JLabel("Boiled egg", JLabel.LEFT);
-        JLabel lab13 = new JLabel("SINGLE DISH PRICE", JLabel.LEFT);
-        JLabel lab14 = new JLabel("Add-ons", JLabel.LEFT);
-        JLabel lab15 = new JLabel("Amount", JLabel.LEFT);
-        JLabel lab16 = new JLabel("Price", JLabel.LEFT);
-        JLabel lab17 = new JLabel("Extra Nori", JLabel.LEFT);
-        JLabel lab18 = new JLabel("Extra boiled egg", JLabel.LEFT);
-        JLabel lab19 = new JLabel("Bamboo shoots", JLabel.LEFT);
-        JLabel lab20 = new JLabel("Extra chashu", JLabel.LEFT);
-        JLabel lab21 = new JLabel("ADD-ONS Price", JLabel.LEFT);
-        JLabel lab22 = new JLabel("TOTAL Price", JLabel.LEFT);
+        JLabel lab13 = new JLabel("Spiciness", JLabel.LEFT);
+        JLabel lab14 = new JLabel("SINGLE DISH PRICE", JLabel.LEFT);
+        JLabel lab15 = new JLabel("Add-ons", JLabel.LEFT);
+        JLabel lab16 = new JLabel("Amount", JLabel.LEFT);
+        JLabel lab17 = new JLabel("Price", JLabel.LEFT);
+        JLabel lab18 = new JLabel("Extra Nori", JLabel.LEFT);
+        JLabel lab19 = new JLabel("Extra boiled egg", JLabel.LEFT);
+        JLabel lab20 = new JLabel("Bamboo shoots", JLabel.LEFT);
+        JLabel lab21 = new JLabel("Extra chashu", JLabel.LEFT);
+        JLabel lab22 = new JLabel("ADD-ONS Price", JLabel.LEFT);
+        JLabel lab23 = new JLabel("TOTAL Price", JLabel.LEFT);
         lab6.setFont(font2);
         lab7.setFont(font3);
         lab8.setFont(font3);
@@ -134,16 +137,17 @@ public class TicketPanel extends JPanel {
         lab10.setFont(font3);
         lab11.setFont(font3);
         lab12.setFont(font3);
-        lab13.setFont(font1);
-        lab14.setFont(font2);
+        lab13.setFont(font3);
+        lab14.setFont(font1);
         lab15.setFont(font2);
         lab16.setFont(font2);
-        lab17.setFont(font3);
+        lab17.setFont(font2);
         lab18.setFont(font3);
         lab19.setFont(font3);
         lab20.setFont(font3);
-        lab21.setFont(font1);
+        lab21.setFont(font3);
         lab22.setFont(font1);
+        lab23.setFont(font1);
         midPanel.add(lab6);
         midPanel.add(lab7);
         midPanel.add(lab8);
@@ -161,7 +165,83 @@ public class TicketPanel extends JPanel {
         midPanel.add(lab20);
         midPanel.add(lab21);
         midPanel.add(lab22);
+        midPanel.add(lab23);
 
+        midPanel.setLayout(new GridBagLayout());
+        GridBagConstraints mid = new GridBagConstraints();
+        mid.fill = GridBagConstraints.BOTH;
+
+        mid.gridx = 0;
+        mid.gridy = 0;
+        mid.gridwidth = 1;
+        mid.gridheight = 1;
+        mid.weightx = 0.4;
+        mid.weighty = 0.15;
+        midPanel.add(lab6, mid);
+
+        mid.gridx = 0;
+        mid.gridy = 1;
+        mid.gridwidth = 1;
+        mid.gridheight = 1;
+        mid.weightx = 0.4;
+        mid.weighty = 0.1;
+        midPanel.add(lab7, mid);
+
+        mid.gridx = 0;
+        mid.gridy = 2;
+        mid.gridwidth = 1;
+        mid.gridheight = 1;
+        mid.weightx = 0.4;
+        mid.weighty = 0.1;
+        midPanel.add(lab8, mid);
+
+        mid.gridx = 0;
+        mid.gridy = 3;
+        mid.gridwidth = 1;
+        mid.gridheight = 1;
+        mid.weightx = 0.4;
+        mid.weighty = 0.1;
+        midPanel.add(lab9, mid);
+
+        mid.gridx = 0;
+        mid.gridy = 4;
+        mid.gridwidth = 1;
+        mid.gridheight = 1;
+        mid.weightx = 0.4;
+        mid.weighty = 0.1;
+        midPanel.add(lab10, mid);
+
+        mid.gridx = 0;
+        mid.gridy = 5;
+        mid.gridwidth = 1;
+        mid.gridheight = 1;
+        mid.weightx = 0.4;
+        mid.weighty = 0.1;
+        midPanel.add(lab11, mid);
+
+        mid.gridx = 0;
+        mid.gridy = 6;
+        mid.gridwidth = 1;
+        mid.gridheight = 1;
+        mid.weightx = 0.4;
+        mid.weighty = 0.1;
+        midPanel.add(lab12, mid);
+
+        mid.gridx = 0;
+        mid.gridy = 7;
+        mid.gridwidth = 1;
+        mid.gridheight = 1;
+        mid.weightx = 0.4;
+        mid.weighty = 0.1;
+        midPanel.add(lab13, mid);
+
+        mid.gridx = 0;
+        mid.gridy = 8;
+        mid.gridwidth = 1;
+        mid.gridheight = 1;
+        mid.weightx = 0.4;
+        mid.weighty = 0.15;
+        midPanel.add(lab14, mid);
 
 
 
