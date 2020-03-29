@@ -55,7 +55,6 @@ public class TicketPanel extends JPanel {
         JLabel lab3 = new JLabel("Date&Time", JLabel.LEFT);
         JLabel lab4 = new JLabel("Membership Number", JLabel.LEFT);
         JLabel lab5 = new JLabel("Dining Way", JLabel.LEFT);
-        orderNum = order;
         JLabel show2 = new JLabel(orderNum);
         JLabel show3 = new JLabel(DateTime);
         JLabel show4 = new JLabel(memberNum);
@@ -82,7 +81,7 @@ public class TicketPanel extends JPanel {
 
         top.gridx = 0;
         top.gridy = 0;
-        top.gridwidth = 3;
+        top.gridwidth = 4;
         top.gridheight = 1;
         top.weightx = 1;
         top.weighty = 0.4;
@@ -96,7 +95,7 @@ public class TicketPanel extends JPanel {
         top.weighty = 0.3;
         topPanel.add(lab2, top);
 
-        top.gridx = 0;
+        top.gridx = 1;
         top.gridy = 1;
         top.gridwidth = 1;
         top.gridheight = 1;
@@ -104,29 +103,53 @@ public class TicketPanel extends JPanel {
         top.weighty = 0.3;
         topPanel.add(show2, top);
 
-        top.gridx = 0;
-        top.gridy = 2;
-        top.gridwidth = 1;
-        top.gridheight = 1;
-        top.weightx = 0.5;
-        top.weighty = 0.3;
-        topPanel.add(lab3, top);
-
         top.gridx = 2;
         top.gridy = 1;
         top.gridwidth = 1;
         top.gridheight = 1;
-        top.weightx = 0.5;
+        top.weightx = 0.25;
+        top.weighty = 0.3;
+        topPanel.add(lab3, top);
+
+        top.gridx = 3;
+        top.gridy = 1;
+        top.gridwidth = 1;
+        top.gridheight = 1;
+        top.weightx = 0.25;
+        top.weighty = 0.3;
+        topPanel.add(show3, top);
+
+        top.gridx = 0;
+        top.gridy = 2;
+        top.gridwidth = 1;
+        top.gridheight = 1;
+        top.weightx = 0.25;
         top.weighty = 0.3;
         topPanel.add(lab4, top);
+
+        top.gridx = 1;
+        top.gridy = 2;
+        top.gridwidth = 1;
+        top.gridheight = 1;
+        top.weightx = 0.25;
+        top.weighty = 0.3;
+        topPanel.add(show4, top);
 
         top.gridx = 2;
         top.gridy = 2;
         top.gridwidth = 1;
         top.gridheight = 1;
-        top.weightx = 0.5;
+        top.weightx = 0.25;
         top.weighty = 0.3;
         topPanel.add(lab5, top);
+
+        top.gridx = 3;
+        top.gridy = 2;
+        top.gridwidth = 1;
+        top.gridheight = 1;
+        top.weightx = 0.25;
+        top.weighty = 0.3;
+        topPanel.add(show5, top);
 
 
 
