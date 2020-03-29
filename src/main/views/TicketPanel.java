@@ -41,10 +41,13 @@ public class TicketPanel extends JPanel {
         topPanel = new JPanel();
         midPanel = new JPanel();
         botPanel = new JPanel();
-        //Set the topPanel
-        topPanel.setBorder(new TitledBorder(null, "top ", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, Color.BLACK));
+
         Font font1 = new Font("Times new Roman",Font.BOLD,25);
         Font font2 = new Font("Times new Roman",Font.BOLD,20);
+        Font font3 = new Font("Times new Roman",Font.BOLD,18);
+
+        //Set the topPanel
+        topPanel.setBorder(new TitledBorder(null, "top ", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, Color.BLACK));
         JLabel lab1 = new JLabel("TICKET", JLabel.CENTER);
         JLabel lab2 = new JLabel("Order Name", JLabel.LEFT);
         JLabel lab3 = new JLabel("Date&Time", JLabel.LEFT);
@@ -105,19 +108,52 @@ public class TicketPanel extends JPanel {
         top.weighty = 0.3;
         topPanel.add(lab5, top);
 
-
-
-
-
-
-
-
-
-                //set the midPanel
+        //set the midPanel
         midPanel.setBorder(new TitledBorder(null, "mid ", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, Color.BLACK));
-        /**
-         * code here is the design of midpanel
-         */
+        JLabel lab6 = new JLabel("SINGLE DISH", JLabel.LEFT);
+        JLabel lab7 = new JLabel("Soup", JLabel.LEFT);
+        JLabel lab8 = new JLabel("Noodles", JLabel.LEFT);
+        JLabel lab9 = new JLabel("Spring onion", JLabel.LEFT);
+        JLabel lab10 = new JLabel("Nori", JLabel.LEFT);
+        JLabel lab11 = new JLabel("Chashu", JLabel.LEFT);
+        JLabel lab12 = new JLabel("Boiled egg", JLabel.LEFT);
+        JLabel lab13 = new JLabel("SINGLE DISH PRICE", JLabel.LEFT);
+        JLabel lab14 = new JLabel("Add-ons", JLabel.LEFT);
+        JLabel lab15 = new JLabel("Amount", JLabel.LEFT);
+        JLabel lab16 = new JLabel("Price", JLabel.LEFT);
+        JLabel lab17 = new JLabel("Extra Nori", JLabel.LEFT);
+        JLabel lab18 = new JLabel("Extra boiled egg", JLabel.LEFT);
+        JLabel lab19 = new JLabel("Bamboo shoots", JLabel.LEFT);
+        JLabel lab20 = new JLabel("Extra chashu", JLabel.LEFT);
+        JLabel lab21 = new JLabel("ADD-ONS Price", JLabel.LEFT);
+        JLabel lab22 = new JLabel("TOTAL Price", JLabel.LEFT);
+        lab6.setFont(font2);
+        lab7.setFont(font3);
+        lab8.setFont(font3);
+        lab9.setFont(font3);
+        lab10.setFont(font3);
+        lab11.setFont(font3);
+        lab12.setFont(font3);
+        lab13.setFont(font1);
+        lab14.setFont(font2);
+        lab15.setFont(font2);
+        lab16.setFont(font2);
+        lab17.setFont(font3);
+        lab18.setFont(font3);
+        lab19.setFont(font3);
+        lab20.setFont(font3);
+        lab21.setFont(font1);
+        lab22.setFont(font1);
+        midPanel.add(lab6);
+        midPanel.add(lab7);
+        midPanel.add(lab8);
+        midPanel.add(lab9);
+        midPanel.add(lab10);
+        midPanel.add(lab11);
+        midPanel.add(lab12);
+        midPanel.add(lab13);
+
+
 
         //set the bottom Panel
         botPanel.setBorder(BorderFactory.createTitledBorder(""));
