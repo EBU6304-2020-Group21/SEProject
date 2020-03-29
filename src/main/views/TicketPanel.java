@@ -24,6 +24,7 @@ public class TicketPanel extends JPanel {
     private String memberNum;
     private String DateTime;
 
+
     //sub-panel of TicketPanel
     private JPanel topPanel;
     private JPanel midPanel;
@@ -48,6 +49,11 @@ public class TicketPanel extends JPanel {
         Font font2 = new Font("Times new Roman",Font.BOLD,20);
         Font font3 = new Font("Times new Roman",Font.BOLD,18);
 
+        orderNum = "1";
+        DateTime = "1";
+        memberNum = "1";
+        diningOption = "1";
+
         //Set the topPanel
         topPanel.setBorder(new TitledBorder(null, "top ", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, Color.BLACK));
         JLabel lab1 = new JLabel("TICKET", JLabel.CENTER);
@@ -59,14 +65,11 @@ public class TicketPanel extends JPanel {
         JLabel show3 = new JLabel();
         JLabel show4 = new JLabel();
         JLabel show5 = new JLabel();
-        show2.setText(orderNum);
+        show2.setText(""+orderNum);
         show3.setText(String.valueOf(DateTime));
         show4.setText(String.valueOf(memberNum));
         show5.setText(String.valueOf(diningOption));
-        orderNum = "1";
-        DateTime = "1";
-        memberNum = "1";
-        diningOption = "1";
+
 
         lab1.setFont(font0);
         lab2.setFont(font2);
