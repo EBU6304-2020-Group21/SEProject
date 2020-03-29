@@ -45,7 +45,7 @@ public class TicketPanel extends JPanel {
         topPanel.setBorder(new TitledBorder(null, "top ", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, Color.BLACK));
         Font font1 = new Font("Times new Roman",Font.BOLD,25);
         Font font2 = new Font("Times new Roman",Font.BOLD,20);
-        JLabel lab1 = new JLabel("TICKET");
+        JLabel lab1 = new JLabel("TICKET", JLabel.CENTER);
         JLabel lab2 = new JLabel("Order Name");
         JLabel lab3 = new JLabel("Date&Time");
         JLabel lab4 = new JLabel("Membership Number");
@@ -65,7 +65,7 @@ public class TicketPanel extends JPanel {
         GridBagConstraints top = new GridBagConstraints();
         top.fill = GridBagConstraints.BOTH;
 
-        top.gridx = 1;
+        top.gridx = 0;
         top.gridy = 0;
         top.gridwidth = 3;
         top.gridheight = 1;
