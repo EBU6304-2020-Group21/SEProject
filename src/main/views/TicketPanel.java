@@ -59,7 +59,7 @@ public class TicketPanel extends JPanel {
         JLabel show3 = new JLabel();
         JLabel show4 = new JLabel();
         JLabel show5 = new JLabel();
-        show2.setText(String.valueOf(orderNum));
+        show2.setText(orderNum);
         show3.setText(String.valueOf(DateTime));
         show4.setText(String.valueOf(memberNum));
         show5.setText(String.valueOf(diningOption));
