@@ -52,7 +52,7 @@ public class TicketPanel extends JPanel {
         orderNum = "1";
         DateTime = "1";
         memberNum = "1";
-        diningOption = "1";
+        diningOption = "0";
 
         //Set the topPanel
         topPanel.setBorder(new TitledBorder(null, "top ", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, Color.BLACK));
@@ -66,9 +66,9 @@ public class TicketPanel extends JPanel {
         JLabel show4 = new JLabel();
         JLabel show5 = new JLabel();
         show2.setText(""+orderNum);
-        show3.setText(String.valueOf(DateTime));
-        show4.setText(String.valueOf(memberNum));
-        show5.setText(String.valueOf(diningOption));
+        show3.setText(""+DateTime);
+        show4.setText(""+memberNum);
+        show5.setText(""+diningOption);
 
 
         lab1.setFont(font0);
