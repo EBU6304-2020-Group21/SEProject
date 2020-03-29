@@ -121,9 +121,9 @@ public class TicketPanel extends JPanel {
         JLabel lab12 = new JLabel("Boiled egg", JLabel.LEFT);
         JLabel lab13 = new JLabel("Spiciness", JLabel.LEFT);
         JLabel lab14 = new JLabel("SINGLE DISH PRICE", JLabel.LEFT);
-        JLabel lab15 = new JLabel("Add-ons", JLabel.LEFT);
-        JLabel lab16 = new JLabel("Amount", JLabel.LEFT);
-        JLabel lab17 = new JLabel("Price", JLabel.LEFT);
+        JLabel lab15 = new JLabel("Add-ons");
+        JLabel lab16 = new JLabel("Amount");
+        JLabel lab17 = new JLabel("Price");
         JLabel lab18 = new JLabel("Extra Nori", JLabel.LEFT);
         JLabel lab19 = new JLabel("Extra boiled egg", JLabel.LEFT);
         JLabel lab20 = new JLabel("Bamboo shoots", JLabel.LEFT);
@@ -139,9 +139,9 @@ public class TicketPanel extends JPanel {
         lab12.setFont(font3);
         lab13.setFont(font3);
         lab14.setFont(font1);
-        lab15.setFont(font2);
-        lab16.setFont(font2);
-        lab17.setFont(font2);
+        lab15.setFont(font1);
+        lab16.setFont(font1);
+        lab17.setFont(font1);
         lab18.setFont(font3);
         lab19.setFont(font3);
         lab20.setFont(font3);
