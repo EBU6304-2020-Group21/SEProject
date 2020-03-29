@@ -46,10 +46,10 @@ public class TicketPanel extends JPanel {
         Font font1 = new Font("Times new Roman",Font.BOLD,25);
         Font font2 = new Font("Times new Roman",Font.BOLD,20);
         JLabel lab1 = new JLabel("TICKET", JLabel.CENTER);
-        JLabel lab2 = new JLabel("Order Name");
-        JLabel lab3 = new JLabel("Date&Time");
-        JLabel lab4 = new JLabel("Membership Number");
-        JLabel lab5 = new JLabel("Dining Way");
+        JLabel lab2 = new JLabel("Order Name", JLabel.LEFT);
+        JLabel lab3 = new JLabel("Date&Time", JLabel.LEFT);
+        JLabel lab4 = new JLabel("Membership Number", JLabel.LEFT);
+        JLabel lab5 = new JLabel("Dining Way", JLabel.LEFT);
         lab1.setFont(font1);
         lab2.setFont(font2);
         lab3.setFont(font2);
@@ -65,7 +65,7 @@ public class TicketPanel extends JPanel {
         GridBagConstraints top = new GridBagConstraints();
         top.fill = GridBagConstraints.BOTH;
 
-        top.gridx = 1;
+        top.gridx = 0;
         top.gridy = 0;
         top.gridwidth = 3;
         top.gridheight = 1;
@@ -75,7 +75,7 @@ public class TicketPanel extends JPanel {
 
         top.gridx = 0;
         top.gridy = 1;
-        top.gridwidth = 1;
+        top.gridwidth = 2;
         top.gridheight = 1;
         top.weightx = 0.4;
         top.weighty = 0.3;
@@ -83,7 +83,7 @@ public class TicketPanel extends JPanel {
 
         top.gridx = 0;
         top.gridy = 2;
-        top.gridwidth = 1;
+        top.gridwidth = 2;
         top.gridheight = 1;
         top.weightx = 0.4;
         top.weighty = 0.3;
@@ -91,7 +91,7 @@ public class TicketPanel extends JPanel {
 
         top.gridx = 2;
         top.gridy = 1;
-        top.gridwidth = 1;
+        top.gridwidth = 2;
         top.gridheight = 1;
         top.weightx = 0.4;
         top.weighty = 0.3;
@@ -99,7 +99,7 @@ public class TicketPanel extends JPanel {
 
         top.gridx = 2;
         top.gridy = 2;
-        top.gridwidth = 1;
+        top.gridwidth = 2;
         top.gridheight = 1;
         top.weightx = 0.4;
         top.weighty = 0.3;
