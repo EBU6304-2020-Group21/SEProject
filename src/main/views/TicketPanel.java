@@ -243,7 +243,77 @@ public class TicketPanel extends JPanel {
         mid.weighty = 0.15;
         midPanel.add(lab14, mid);
 
+        mid.gridx = 1;
+        mid.gridy = 0;
+        mid.gridwidth = 1;
+        mid.gridheight = 1;
+        mid.weightx = 0.2;
+        mid.weighty = 0.2;
+        midPanel.add(lab15, mid);
 
+        mid.gridx = 2;
+        mid.gridy = 0;
+        mid.gridwidth = 1;
+        mid.gridheight = 1;
+        mid.weightx = 0.2;
+        mid.weighty = 0.2;
+        midPanel.add(lab16, mid);
+
+        mid.gridx = 3;
+        mid.gridy = 0;
+        mid.gridwidth = 1;
+        mid.gridheight = 1;
+        mid.weightx = 0.2;
+        mid.weighty = 0.2;
+        midPanel.add(lab17, mid);
+
+        mid.gridx = 1;
+        mid.gridy = 1;
+        mid.gridwidth = 3;
+        mid.gridheight = 1;
+        mid.weightx = 0.6;
+        mid.weighty = 0.1;
+        midPanel.add(lab18, mid);
+
+        mid.gridx = 1;
+        mid.gridy = 2;
+        mid.gridwidth = 3;
+        mid.gridheight = 1;
+        mid.weightx = 0.6;
+        mid.weighty = 0.1;
+        midPanel.add(lab19, mid);
+
+        mid.gridx = 1;
+        mid.gridy = 3;
+        mid.gridwidth = 3;
+        mid.gridheight = 1;
+        mid.weightx = 0.6;
+        mid.weighty = 0.1;
+        midPanel.add(lab20, mid);
+
+        mid.gridx = 1;
+        mid.gridy = 4;
+        mid.gridwidth = 3;
+        mid.gridheight = 1;
+        mid.weightx = 0.6;
+        mid.weighty = 0.1;
+        midPanel.add(lab21, mid);
+
+        mid.gridx = 1;
+        mid.gridy = 5;
+        mid.gridwidth = 3;
+        mid.gridheight = 1;
+        mid.weightx = 0.6;
+        mid.weighty = 0.2;
+        midPanel.add(lab22, mid);
+
+        mid.gridx = 1;
+        mid.gridy = 6;
+        mid.gridwidth = 3;
+        mid.gridheight = 1;
+        mid.weightx = 0.6;
+        mid.weighty = 0.2;
+        midPanel.add(lab23, mid);
 
         //set the bottom Panel
         botPanel.setBorder(BorderFactory.createTitledBorder(""));
