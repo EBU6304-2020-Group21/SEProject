@@ -65,7 +65,7 @@ public class TicketPanel extends JPanel {
         GridBagConstraints top = new GridBagConstraints();
         top.fill = GridBagConstraints.BOTH;
 
-        top.gridx = 0;
+        top.gridx = 1;
         top.gridy = 0;
         top.gridwidth = 3;
         top.gridheight = 1;
