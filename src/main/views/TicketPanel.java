@@ -93,7 +93,7 @@ public class TicketPanel extends JPanel {
         top.gridy = 1;
         top.gridwidth = 2;
         top.gridheight = 1;
-        top.weightx = 0.4;
+        top.weightx = 0.3;
         top.weighty = 0.3;
         topPanel.add(lab4, top);
 
@@ -101,7 +101,7 @@ public class TicketPanel extends JPanel {
         top.gridy = 2;
         top.gridwidth = 2;
         top.gridheight = 1;
-        top.weightx = 0.4;
+        top.weightx = 0.3;
         top.weighty = 0.3;
         topPanel.add(lab5, top);
 
