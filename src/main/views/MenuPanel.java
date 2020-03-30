@@ -497,13 +497,13 @@ public class MenuPanel extends JPanel {
         c.gridwidth = 1;
         c.gridheight = 1;
         c.weightx = 1;
-        c.weighty = 0.03;
+        c.weighty = 0.15;
         this.add(topPanel, c);
         c.gridy = 1;
-        c.weighty = 0.8;
+        c.weighty = 0.7;
         this.add(midPanel, c);
         c.gridy = 2;
-        c.weighty = 0.17;
+        c.weighty = 0.15;
         this.add(botPanel, c);
 
     }

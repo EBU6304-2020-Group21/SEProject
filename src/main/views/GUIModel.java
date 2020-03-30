@@ -47,7 +47,15 @@ public class GUIModel extends JFrame implements ActionListener{
     public class MenuConfirmListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            layout.show(mainPanel,"pay");
+            if(menuPanel.tonkotsu.isSelected()==false&&menuPanel.shoyu.isSelected()==false&&menuPanel.shio.isSelected()==false){
+                JOptionPane.showMessageDialog(null,"Please select the soup type!","Warning",JOptionPane.WARNING_MESSAGE);
+            }
+            else if(menuPanel.soft.isSelected()==false&&menuPanel.medium.isSelected()==false&&menuPanel.firm.isSelected()==(false)){
+                JOptionPane.showMessageDialog(null,"Please select the noodle type!","Warning",JOptionPane.WARNING_MESSAGE);
+            }
+            else{
+                layout.show(mainPanel,"pay");
+            }
         }
     }
 
