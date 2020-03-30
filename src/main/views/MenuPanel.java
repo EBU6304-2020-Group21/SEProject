@@ -32,7 +32,7 @@ public class MenuPanel extends JPanel {
     public JButton confirm = new JButton("Confirm");
 
     public JRadioButton tonkotsu, shoyu, shio, soft, medium, firm, no, just, lot, yes1, no1, yes2, no2, yes3, no3, s1, s2, s3, s4, s5, s6;
-    public JTextField extraNori,extraBoilEgg,extraBamShoot,extraChashu;
+    public JTextField extraNori, extraBoilEgg, extraBamShoot, extraChashu;
 
     public MenuPanel() {
         init();
@@ -49,8 +49,8 @@ public class MenuPanel extends JPanel {
         //Set the font
         Font ramenFont = new Font("Times New Roman", Font.BOLD + Font.ITALIC, 20);
         Font titleFont = new Font("Times New Roman", Font.BOLD + Font.ITALIC, 25);
-        Font foodTypeFont = new Font("Times New Roman",Font.BOLD,18);
-        Font addonFont = new Font("Times New Roman",Font.BOLD,22);
+        Font foodTypeFont = new Font("Times New Roman", Font.BOLD, 18);
+        Font addonFont = new Font("Times New Roman", Font.BOLD, 22);
 
         //Initialize the RadioButton
         tonkotsu = new JRadioButton("Tonkotsu");
@@ -158,30 +158,31 @@ public class MenuPanel extends JPanel {
         midPanel.add(addonP, c2);
 
 
-        JPanel soupP = new JPanel();
-        JPanel noodleP = new JPanel();
-        JPanel soP = new JPanel();
-        JPanel noriP = new JPanel();
-        JPanel chashuP = new JPanel();
-        JPanel eggP = new JPanel();
-        JPanel spiP = new JPanel();
-        JPanel addP = new JPanel();
-        JPanel exnoriP = new JPanel();
-        JPanel exeggP = new JPanel();
-        JPanel exbambooP = new JPanel();
-        JPanel exchaP = new JPanel();
-        JLabel soup = new JLabel("Soup");
-        JLabel noodles = new JLabel("Noodles");
-        JLabel SO = new JLabel("<html><body>Spring<br>onion<body></html>");
-        JLabel nori = new JLabel("nori");
-        JLabel chashu = new JLabel("Chashu");
-        JLabel egg = new JLabel("<html><body>Boiled<br>egg<body></html>");
-        JLabel spi = new JLabel("Spiciness");
-        JLabel addon = new JLabel("Add-ons");
-        JLabel enori = new JLabel("￡"+extraNoriPrice+" Extra Nori");
-        JLabel eegg = new JLabel("￡"+extraBoilEggPrice+"Extra boiled egg");
-        JLabel ebamboo = new JLabel("￡"+extraBamShootPrice+" Bamboo shoots");
-        JLabel echashu = new JLabel("￡"+extraChashuPrice+" Extra chashu");
+//        JPanel soupP = new JPanel();
+//        JPanel noodleP = new JPanel();
+//        JPanel soP = new JPanel();
+//        JPanel noriP = new JPanel();
+//        JPanel chashuP = new JPanel();
+//        JPanel eggP = new JPanel();
+        JPanel spiPanel = new JPanel(new GridBagLayout());
+//        JPanel addP = new JPanel();
+//        JPanel exnoriP = new JPanel();
+//        JPanel exeggP = new JPanel();
+//        JPanel exbambooP = new JPanel();
+//        JPanel exchaP = new JPanel();
+        JLabel soup = new JLabel("Soup", JLabel.LEFT);
+        JLabel noodles = new JLabel("Noodles", JLabel.LEFT);
+        JLabel SO = new JLabel("<html><body>Spring<br>onion<body></html>", JLabel.LEFT);
+        JLabel nori = new JLabel("Nori", JLabel.LEFT);
+        JLabel chashu = new JLabel("Chashu", JLabel.LEFT);
+        JLabel egg = new JLabel("<html><body>Boiled<br>egg<body></html>", JLabel.LEFT);
+        JLabel spi = new JLabel("Spiciness", JLabel.LEFT);
+        JLabel addon = new JLabel("Add-ons",JLabel.CENTER);
+        JLabel enori = new JLabel("￡" + extraNoriPrice + "   Extra Nori", JLabel.LEFT);
+        JLabel eegg = new JLabel("￡" + extraBoilEggPrice + "   Extra boiled egg", JLabel.LEFT);
+        JLabel ebamboo = new JLabel("￡" + extraBamShootPrice + "   Bamboo shoots", JLabel.LEFT);
+        JLabel echashu = new JLabel("￡" + extraChashuPrice + "   Extra chashu", JLabel.LEFT);
+        s6.setForeground(Color.RED);
         soup.setFont(foodTypeFont);
         noodles.setFont(foodTypeFont);
         SO.setFont(foodTypeFont);
@@ -200,63 +201,184 @@ public class MenuPanel extends JPanel {
         c3.fill = GridBagConstraints.BOTH;
         c3.gridx = 0;
         c3.gridy = 0;
-        c3.weightx = 1;
+        c3.gridwidth = 1;
+        c3.gridheight = 1;
+        c3.weightx = 0.25;
         c3.weighty = 0.15;
-        soupP.add(soup);
-        soupP.add(tonkotsu);
-        soupP.add(shoyu);
-        soupP.add(shio);
-        defaultP.add(soupP,c3);
+        defaultP.add(soup, c3);
 
-        noodleP.add(noodles);
-        noodleP.add(soft);
-        noodleP.add(medium);
-        noodleP.add(firm);
+        c3.gridx = 1;
+        defaultP.add(tonkotsu, c3);
+
+        c3.gridx = 2;
+        defaultP.add(shoyu, c3);
+
+        c3.gridx = 3;
+        defaultP.add(shio, c3);
+
         c3.gridx = 0;
         c3.gridy = 1;
-        c3.weightx = 1;
-        c3.weighty = 0.15;
-        defaultP.add(noodleP,c3);
+        defaultP.add(noodles, c3);
 
-        soP.add(SO);
-        soP.add(no);
-        soP.add(just);
-        soP.add(lot);
+        c3.gridx = 1;
+        defaultP.add(soft, c3);
+
+        c3.gridx = 2;
+        defaultP.add(medium, c3);
+
+        c3.gridx = 3;
+        defaultP.add(firm, c3);
+
+        c3.gridx = 0;
         c3.gridy = 2;
-        c3.weighty = 0.15;
-        defaultP.add(soP,c3);
+        defaultP.add(SO, c3);
 
-        noriP.add(nori);
-        noriP.add(yes1);
-        noriP.add(no1);
+        c3.gridx = 1;
+        defaultP.add(no, c3);
+
+        c3.gridx = 2;
+        defaultP.add(just, c3);
+
+        c3.gridx = 3;
+        defaultP.add(lot, c3);
+
+        c3.gridx = 0;
         c3.gridy = 3;
-        c3.weighty = 0.15;
-        defaultP.add(noriP,c3);
+        defaultP.add(nori, c3);
 
-        chashuP.add(chashu);
-        chashuP.add(yes2);
-        chashuP.add(no2);
+        c3.gridx = 1;
+        c3.weightx = 0.5;
+        c3.gridwidth = 2;
+        defaultP.add(yes1, c3);
+
+        c3.gridx = 3;
+        c3.weightx = 0.25;
+        c3.gridwidth = 1;
+        defaultP.add(no1, c3);
+
+        c3.gridx = 0;
         c3.gridy = 4;
-        c3.weighty = 0.15;
-        defaultP.add(chashuP,c3);
+        defaultP.add(chashu, c3);
 
-        eggP.add(egg);
-        eggP.add(yes3);
-        eggP.add(no3);
+        c3.gridx = 1;
+        c3.weightx = 0.5;
+        c3.gridwidth = 2;
+        defaultP.add(yes2, c3);
+
+        c3.gridx = 3;
+        c3.weightx = 0.25;
+        c3.gridwidth = 1;
+        defaultP.add(no2, c3);
+
+        c3.gridx = 0;
         c3.gridy = 5;
-        c3.weighty = 0.15;
-        defaultP.add(eggP,c3);
+        defaultP.add(egg, c3);
 
-        spiP.add(spi);
-        spiP.add(s1);
-        spiP.add(s2);
-        spiP.add(s3);
-        spiP.add(s4);
-        spiP.add(s5);
-        spiP.add(s6);
+        c3.gridx = 1;
+        c3.weightx = 0.5;
+        c3.gridwidth = 2;
+        defaultP.add(yes3, c3);
+
+        c3.gridx = 3;
+        c3.weightx = 0.25;
+        c3.gridwidth = 1;
+        defaultP.add(no3, c3);
+
+
+
+        c3.gridx = 0;
+        c3.gridy = 0;
+        c3.weightx = 0.05;
+        c3.weightx = 1;
+        c3.gridwidth = 1;
+        c3.gridheight= 1;
+        spiPanel.add(spi,c3);
+
+        c3.gridx = 1;
+        c3.weightx = 0.5;
+        spiPanel.add(s1, c3);
+
+        c3.gridx = 2;
+        spiPanel.add(s2, c3);
+
+        c3.gridx = 3;
+        spiPanel.add(s3, c3);
+
+        c3.gridx = 4;
+        spiPanel.add(s4, c3);
+
+        c3.gridx = 5;
+        spiPanel.add(s5, c3);
+
+        c3.gridx = 6;
+        spiPanel.add(s6, c3);
+
+        c3.gridx = 0;
         c3.gridy = 6;
+        c3.weightx = 1;
         c3.weighty = 0.1;
-        defaultP.add(spiP,c3);
+        c3.gridwidth = 4;
+        defaultP.add(spiPanel,c3);
+
+//        c3.gridx = 0;
+//        c3.gridy = 0;
+//        c3.weightx = 1;
+//        c3.weighty = 0.15;
+//        soupP.add(soup);
+//        soupP.add(tonkotsu);
+//        soupP.add(shoyu);
+//        soupP.add(shio);
+//        defaultP.add(soupP,c3);
+//
+//        noodleP.add(noodles);
+//        noodleP.add(soft);
+//        noodleP.add(medium);
+//        noodleP.add(firm);
+//        c3.gridx = 0;
+//        c3.gridy = 1;
+//        c3.weightx = 1;
+//        c3.weighty = 0.15;
+//        defaultP.add(noodleP,c3);
+//
+//        soP.add(SO);
+//        soP.add(no);
+//        soP.add(just);
+//        soP.add(lot);
+//        c3.gridy = 2;
+//        c3.weighty = 0.15;
+//        defaultP.add(soP,c3);
+//
+//        noriP.add(nori);
+//        noriP.add(yes1);
+//        noriP.add(no1);
+//        c3.gridy = 3;
+//        c3.weighty = 0.15;
+//        defaultP.add(noriP,c3);
+//
+//        chashuP.add(chashu);
+//        chashuP.add(yes2);
+//        chashuP.add(no2);
+//        c3.gridy = 4;
+//        c3.weighty = 0.15;
+//        defaultP.add(chashuP,c3);
+//
+//        eggP.add(egg);
+//        eggP.add(yes3);
+//        eggP.add(no3);
+//        c3.gridy = 5;
+//        c3.weighty = 0.15;
+//        defaultP.add(eggP,c3);
+//
+//        spiP.add(spi);
+//        spiP.add(s1);
+//        spiP.add(s2);
+//        spiP.add(s3);
+//        spiP.add(s4);
+//        spiP.add(s5);
+//        spiP.add(s6);
+//        c3.gridy = 6;
+//        c3.weighty = 0.1;
+//        defaultP.add(spiP,c3);
 
         //Set addon Panel
         extraNori = new JTextField(1);
@@ -268,35 +390,94 @@ public class MenuPanel extends JPanel {
         c4.fill = GridBagConstraints.BOTH;
         c4.gridx = 0;
         c4.gridy = 0;
+        c4.gridheight = 1;
+        c4.gridwidth = 2;
         c4.weightx = 1;
         c4.weighty = 0.2;
-        addP.add(addon);
-        addonP.add(addP,c4);
+        addonP.add(addon,c4);
 
-        exnoriP.add(enori);
-        exnoriP.add(extraNori);
         c4.gridy = 1;
+        c4.gridx = 0;
+        c4.gridheight = 1;
+        c4.gridwidth = 1;
+        c4.weightx = 0.8;
         c4.weighty = 0.2;
-        addonP.add(exnoriP,c4);
+        addonP.add(enori,c4);
 
-        exeggP.add(eegg);
-        exeggP.add(extraBoilEgg);
+        c4.fill = GridBagConstraints.CENTER;
+        c4.gridx = 1;
+        c4.weightx = 0.2;
+        addonP.add(extraNori,c4);
+
+        c4.fill = GridBagConstraints.BOTH;
         c4.gridy = 2;
-        c4.weighty=0.2;
-        addonP.add(exeggP,c4);
-
-        exbambooP.add(ebamboo);
-        exbambooP.add(extraBamShoot);
-        c4.gridy = 3 ;
+        c4.gridx = 0;
+        c4.gridheight = 1;
+        c4.gridwidth = 1;
+        c4.weightx = 0.8;
         c4.weighty = 0.2;
-        addonP.add(exbambooP,c4);
+        addonP.add(eegg,c4);
 
-        exchaP.add(echashu);
-        exchaP.add(extraChashu);
+        c4.fill = GridBagConstraints.CENTER;
+        c4.gridx = 1;
+        c4.weightx = 0.2;
+        addonP.add(extraBoilEgg,c4);
+
+        c4.fill = GridBagConstraints.BOTH;
+        c4.gridy = 3;
+        c4.gridx = 0;
+        c4.gridheight = 1;
+        c4.gridwidth = 1;
+        c4.weightx = 0.8;
+        c4.weighty = 0.2;
+        addonP.add(ebamboo,c4);
+
+        c4.fill = GridBagConstraints.CENTER;
+        c4.gridx = 1;
+        c4.weightx = 0.2;
+        addonP.add(extraBamShoot,c4);
+
+        c4.fill = GridBagConstraints.BOTH;
         c4.gridy = 4;
+        c4.gridx = 0;
+        c4.gridheight = 1;
+        c4.gridwidth = 1;
+        c4.weightx = 0.8;
         c4.weighty = 0.2;
-        addonP.add(exchaP,c4);
+        addonP.add(echashu,c4);
 
+        c4.fill = GridBagConstraints.CENTER;
+        c4.gridx = 1;
+        c4.weightx = 0.2;
+        addonP.add(extraChashu,c4);
+
+
+//        addP.add(addon);
+//        addonP.add(addP, c4);
+//
+//        exnoriP.add(enori);
+//        exnoriP.add(extraNori);
+//        c4.gridy = 1;
+//        c4.weighty = 0.2;
+//        addonP.add(exnoriP, c4);
+//
+//        exeggP.add(eegg);
+//        exeggP.add(extraBoilEgg);
+//        c4.gridy = 2;
+//        c4.weighty = 0.2;
+//        addonP.add(exeggP, c4);
+//
+//        exbambooP.add(ebamboo);
+//        exbambooP.add(extraBamShoot);
+//        c4.gridy = 3;
+//        c4.weighty = 0.2;
+//        addonP.add(exbambooP, c4);
+//
+//        exchaP.add(echashu);
+//        exchaP.add(extraChashu);
+//        c4.gridy = 4;
+//        c4.weighty = 0.2;
+//        addonP.add(exchaP, c4);
 
 
         //set the bottom Panel

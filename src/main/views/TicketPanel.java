@@ -81,15 +81,15 @@ public class TicketPanel extends JPanel {
         lab3.setFont(font2);
         lab4.setFont(font2);
         lab5.setFont(font2);
-        topPanel.add(lab1);
-        topPanel.add(lab2);
-        topPanel.add(lab3);
-        topPanel.add(lab4);
-        topPanel.add(lab5);
-        topPanel.add(show2);
-        topPanel.add(show3);
-        topPanel.add(show4);
-        topPanel.add(show5);
+//        topPanel.add(lab1);
+//        topPanel.add(lab2);
+//        topPanel.add(lab3);
+//        topPanel.add(lab4);
+//        topPanel.add(lab5);
+//        topPanel.add(show2);
+//        topPanel.add(show3);
+//        topPanel.add(show4);
+//        topPanel.add(show5);
 
         topPanel.setLayout(new GridBagLayout());
         GridBagConstraints top = new GridBagConstraints();
