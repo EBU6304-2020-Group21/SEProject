@@ -11,6 +11,7 @@ public class PayPanel extends JPanel {
     private JPanel topPanel;
     private JPanel botPanel;
 
+    public JRadioButton but1,but2;
     //back and confirm
     public JButton back = new JButton("Back");
     public JButton confirm = new JButton("Confirm");
@@ -27,23 +28,15 @@ public class PayPanel extends JPanel {
          Font font1 = new Font("Times new Roman",Font.BOLD,24);
          Font font2 = new Font("Times new Roman",Font.PLAIN,20);
 
-         JPanel pan1=new JPanel();//This is a panel for locating easilier.
-         JPanel pan2=new JPanel();//This is a panel for locating easilier.
-         JPanel pan3=new JPanel();//This is a panel for locating easilier.
-         JPanel pan4=new JPanel();//This is a panel for locating the select for "Cash"
-         JPanel pan5=new JPanel();
 
-         JLabel lab1 = new JLabel();//This is a label for the "Payment"
-         lab1.setText("Payment");
+         JLabel lab1 = new JLabel("Payment",JLabel.CENTER);//This is a label for the "Payment"
          lab1.setFont(font1);
-         JLabel lab2 = new JLabel();//This is a label for the "Your total bill is: " and the number of total price
-         lab2.setText("Your total bill is: "+totalPrice+"￡");
+         JLabel lab2 = new JLabel("Your total bill is: "+totalPrice+"￡",JLabel.CENTER);//This is a label for the "Your total bill is: " and the number of total price
          lab2.setFont(font1);
-         JLabel lab3 = new JLabel();//This is a label for the selection of the way of payment
+         JLabel lab3 = new JLabel("Please select the way of payment: ",JLabel.CENTER);//This is a label for the selection of the way of payment
          lab3.setFont(font1);
-         lab3.setText("Please select the way of payment: ");
-         JRadioButton but1 = new JRadioButton("Cash");//This is a radiobutton for our customer to choose "Cash"
-         JRadioButton but2 = new JRadioButton("Cards");//This is a radiobutton for our customer to choose "Cards"
+         but1 = new JRadioButton("Cash");//This is a radiobutton for our customer to choose "Cash"
+         but2 = new JRadioButton("Cards");//This is a radiobutton for our customer to choose "Cards"
          ButtonGroup btg = new ButtonGroup();
          btg.add(but1);
          btg.add(but2);
@@ -55,26 +48,24 @@ public class PayPanel extends JPanel {
         c1.fill = GridBagConstraints.BOTH;
         c1.gridx = 0;
         c1.gridy = 0;
-        c1.weightx = 0;
-        c1.weighty = 0.2;
-        pan1.add(lab1);
-        topPanel.add(pan1,c1);
+        c1.gridwidth = 1;
+        c1.gridheight = 1;
+        c1.weightx = 1;
+        c1.weighty = 0.1;
+        topPanel.add(lab1,c1);
         c1.gridy = 1;
-        c1.weighty = 0.2;
-        pan2.add(lab2);
-        topPanel.add(pan2,c1);
+        c1.weighty = 0.1;
+        topPanel.add(lab2,c1);
         c1.gridy = 2;
-        c1.weighty = 0.2;
-        pan3.add(lab3);
-        topPanel.add(pan3,c1);
+        c1.weighty = 0.1;
+        topPanel.add(lab3,c1);
+        c1.fill = GridBagConstraints.CENTER;
         c1.gridy = 3;
-        c1.weighty = 0.2;
-        pan4.add(but1);
-        topPanel.add(pan4,c1);
+        c1.weighty = 0.35;
+        topPanel.add(but1,c1);
         c1.gridy = 4;
-        c1.weighty = 0.2;
-        pan5.add(but2);
-        topPanel.add(pan5,c1);
+        c1.weighty = 0.35;
+        topPanel.add(but2,c1);
 
          //set the bottom Panel
         botPanel.setBorder(BorderFactory.createTitledBorder(""));
@@ -95,10 +86,10 @@ public class PayPanel extends JPanel {
         c.gridwidth = 1;
         c.gridheight = 1;
         c.weightx = 1;
-        c.weighty = 0.9;
+        c.weighty = 0.85;
         this.add(topPanel,c);
         c.gridy = 1;
-        c.weighty = 0.1;
+        c.weighty = 0.15;
         this.add(botPanel,c);
 
     }

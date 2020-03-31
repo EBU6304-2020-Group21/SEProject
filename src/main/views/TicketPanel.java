@@ -60,7 +60,7 @@ public class TicketPanel extends JPanel {
         diningOption = "0";
 
         //Set the topPanel
-        topPanel.setBorder(new TitledBorder(null, "top ", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, Color.BLACK));
+        topPanel.setBorder(new TitledBorder(null, "", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, Color.BLACK));
         JLabel lab1 = new JLabel("TICKET", JLabel.CENTER);
         JLabel lab2 = new JLabel("Order Name", JLabel.LEFT);
         JLabel lab3 = new JLabel("Date&Time", JLabel.LEFT);
@@ -170,7 +170,7 @@ public class TicketPanel extends JPanel {
 
 
         //set the midPanel
-        midPanel.setBorder(new TitledBorder(null, "mid ", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, Color.BLACK));
+        midPanel.setBorder(new TitledBorder(null, "", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, Color.BLACK));
         JLabel lab6 = new JLabel("SINGLE DISH", JLabel.LEFT);
         JLabel lab7 = new JLabel("Soup", JLabel.LEFT);
         JLabel lab8 = new JLabel("Noodles", JLabel.LEFT);
@@ -597,13 +597,13 @@ public class TicketPanel extends JPanel {
         c.gridwidth = 1;
         c.gridheight = 1;
         c.weightx = 1;
-        c.weighty = 0.2;
+        c.weighty = 0.15;
         this.add(topPanel,c);
         c.gridy = 1;
         c.weighty = 0.7;
         this.add(midPanel,c);
         c.gridy = 2;
-        c.weighty = 0.1;
+        c.weighty = 0.15;
         this.add(botPanel,c);
 
     }
