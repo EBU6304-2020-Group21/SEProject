@@ -27,7 +27,7 @@ public class Order {
     private String memberNum;
 
     public String getSoupType() {
-        return soupType;
+            return soupType;
     }
 
     public void setSoupType(String soupType) {
