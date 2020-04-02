@@ -13,7 +13,8 @@ public class PayPanel extends JPanel {
     private JPanel topPanel;
     private JPanel botPanel;
 
-    public JRadioButton but1,but2;
+    public static JRadioButton but1;
+    public static JRadioButton but2;
     //back and confirm
     public JButton back = new JButton("Back");
     public JButton confirm = new JButton("Confirm");

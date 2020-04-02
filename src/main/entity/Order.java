@@ -23,7 +23,7 @@ public class Order {
     private double addOnPrice;
     private String diningOption;
     private String totalPrice;
-    private String orderNum;
+    private String dateTime;
     private String memberNum;
 
     public String getSoupType() {
@@ -146,15 +146,15 @@ public class Order {
         this.totalPrice = totalPrice;
     }
 
-    public String getOrderNum() {
-        return orderNum;
+    public String getDateTime() {
+        return dateTime;
     }
 
-    public void setOrderNum() {    //use the date to produce the order number
+    public void setDateTime() {    //use the date to produce the order number
         Date d = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
         String dateNowStr = sdf.format(d);
-        this.orderNum = dateNowStr;
+        this.dateTime = dateNowStr;
     }
 
     public String getMemberNum() {

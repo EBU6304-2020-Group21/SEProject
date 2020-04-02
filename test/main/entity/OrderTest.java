@@ -159,13 +159,13 @@ class OrderTest {
     }
 
     @Test
-     void getOrderNum() {assertEquals("yyyyMMddHHmmss",o.getOrderNum());
+     void getOrderNum() {assertEquals("yyyyMMddHHmmss",o.getDateTime());
     }
 
     @Test
      void setOrderNum(String dateNowStr) {
-        o.setOrderNum();
-        assertEquals(dateNowStr,o.getOrderNum());
+        o.setDateTime();
+        assertEquals(dateNowStr,o.getDateTime());
     }
 
     @Test

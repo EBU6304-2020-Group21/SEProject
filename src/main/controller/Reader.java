@@ -1,6 +1,7 @@
 package main.controller;
 
 import main.views.MenuPanel;
+import main.views.PayPanel;
 
 /**
  * @author Jianning Qu
@@ -106,5 +107,12 @@ public class Reader {
     }
 
 
-    //
+    //dinningWay
+    public String getDiningOption(){
+        if(PayPanel.but1.isSelected() == true){
+            return "Cash";
+        }else{
+            return "Cards";
+        }
+    }
 }

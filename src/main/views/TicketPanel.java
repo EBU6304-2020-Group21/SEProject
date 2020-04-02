@@ -72,10 +72,10 @@ public class TicketPanel extends JPanel {
         JLabel show3 = new JLabel();
         JLabel show4 = new JLabel();
         JLabel show5 = new JLabel();
-        show2.setText(""+orderNum);
-        show3.setText(""+DateTime);
+        show2.setText(""+currentOrder.getDateTime());
+        show3.setText(""+currentOrder.getDateTime());
         show4.setText(""+memberNum);
-        show5.setText(""+diningOption);
+        show5.setText(""+currentOrder.getDiningOption());
 
 
         lab1.setFont(font0);
@@ -220,13 +220,14 @@ public class TicketPanel extends JPanel {
         show13.setText(""+ currentOrder.getSpicyIndex());
         show14.setText(""+ currentOrder.getFixedPrice());
         show18a.setText(""+ currentOrder.getExtraNoriNum());
-        show18b.setText(""+NoriPrice);
-        show19a.setText(""+ currentOrder.getExtraChashuNum());
-        show19b.setText(""+chashuPrice);
-        show20a.setText(""+ currentOrder.getExtraBoilEggNum());
-        show20b.setText(""+BoilEggPrice);
-        show21a.setText(""+ currentOrder.getExtraBamshootNum());
-        show21b.setText(""+BamshootPrice);
+        show18b.setText(""+currentOrder.getExtraNoriNum()*MenuPanel.extraNoriPrice);
+        show19a.setText(""+ currentOrder.getExtraBoilEggNum());
+        show19b.setText(""+currentOrder.getExtraBoilEggNum()*MenuPanel.extraBoilEggPrice);
+        show20a.setText(""+ currentOrder.getExtraBamshootNum());
+        show20b.setText(""+currentOrder.getExtraBamshootNum()*MenuPanel.extraBamShootPrice);
+        show21a.setText(""+ currentOrder.getExtraChashuNum());
+        show21b.setText(""+currentOrder.getExtraChashuNum()*MenuPanel.extraChashuPrice);
+        currentOrder.setAddOnPrice((currentOrder.getExtraNoriNum()+currentOrder.getExtraBoilEggNum()+currentOrder.getExtraBamshootNum()+currentOrder.getExtraChashuNum()*2));
         show22.setText(""+ currentOrder.getAddOnPrice());
         show23.setText(""+ currentOrder.getTotalPrice());
 

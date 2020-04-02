@@ -6,11 +6,11 @@ import java.awt.*;
 public class MenuPanel extends JPanel {
 
     //variables
-    private double fixedPrice;      //the price of fixed dishes, default 9.99 pounds
-    private double extraNoriPrice;     //the price of extra Nori, default 1 pounds
-    private double extraBoilEggPrice;  //the price of extra boiled eggs, default 1 pounds
-    private double extraBamShootPrice; //the price of extra banboo shoot, default 1 pounds
-    private double extraChashuPrice;   //the price of extra Chashu, default 2 pounds
+    static double fixedPrice;      //the price of fixed dishes, default 9.99 pounds
+    static double extraNoriPrice;     //the price of extra Nori, default 1 pounds
+    static double extraBoilEggPrice;  //the price of extra boiled eggs, default 1 pounds
+    static double extraBamShootPrice; //the price of extra banboo shoot, default 1 pounds
+    static double extraChashuPrice;   //the price of extra Chashu, default 2 pounds
     private String soupType;
     private String noodleType;
     private String sprOnionType;

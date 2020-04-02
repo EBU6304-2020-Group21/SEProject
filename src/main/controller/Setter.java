@@ -1,5 +1,7 @@
 package main.controller;
 
+import java.text.DecimalFormat;
+
 import static main.views.GUIModel.currentOrder;
 
 /**
@@ -14,8 +16,6 @@ public class Setter {
     public static void set(){
         //set necessary type
         currentOrder.setSoupType(reader.getSoupType());
-        System.out.println(reader.getSoupType());
-        System.out.println(currentOrder.getSoupType());
         currentOrder.setNoodleType(reader.getNoodleType());
         currentOrder.setSprOnionType(reader.getSprOnionType());
         currentOrder.setNori(reader.getNori());
@@ -26,9 +26,11 @@ public class Setter {
         currentOrder.setExtraBoilEggNum(reader.getExtraBoilEggNum());
         currentOrder.setExtraBamshootNum(reader.getExtraBamshootNum());
         currentOrder.setExtraChashuNum(reader.getExtraChashuNum());
+        currentOrder.setDateTime();
 
-        double ttPrice = (currentOrder.getExtraNoriNum()+currentOrder.getExtraBoilEggNum()+currentOrder.getExtraBamshootNum()+currentOrder.getExtraChashuNum()+9.99);
-        String s = String.valueOf(ttPrice);
+        DecimalFormat df = new DecimalFormat("#.00");
+        double ttPrice = (currentOrder.getExtraNoriNum()+currentOrder.getExtraBoilEggNum()+currentOrder.getExtraBamshootNum()+currentOrder.getExtraChashuNum()*2+9.99);
+        String s = String.valueOf(df.format(ttPrice));
         currentOrder.setTotalPrice(s);
 
     }
