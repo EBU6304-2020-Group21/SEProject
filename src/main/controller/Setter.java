@@ -14,6 +14,8 @@ public class Setter {
     public static void set(){
         //set necessary type
         currentOrder.setSoupType(reader.getSoupType());
+        System.out.println(reader.getSoupType());
+        System.out.println(currentOrder.getSoupType());
         currentOrder.setNoodleType(reader.getNoodleType());
         currentOrder.setSprOnionType(reader.getSprOnionType());
         currentOrder.setNori(reader.getNori());
@@ -28,5 +30,6 @@ public class Setter {
         double ttPrice = (currentOrder.getExtraNoriNum()+currentOrder.getExtraBoilEggNum()+currentOrder.getExtraBamshootNum()+currentOrder.getExtraChashuNum()+9.99);
         String s = String.valueOf(ttPrice);
         currentOrder.setTotalPrice(s);
+
     }
 }

@@ -210,7 +210,8 @@ public class TicketPanel extends JPanel {
         JLabel show21b = new JLabel();
         JLabel show22 = new JLabel();
         JLabel show23 = new JLabel();
-        show7.setText(""+ currentOrder.getSoupType());
+        System.out.println(currentOrder.getSoupType());
+        show7.setText(currentOrder.getSoupType());
         show8.setText(""+ currentOrder.getNoodleType());
         show9.setText(""+ currentOrder.getSprOnionType());
         show10.setText(""+ currentOrder.getNori());

@@ -22,19 +22,18 @@ public class GUIModel extends JFrame implements ActionListener {
         //Initialize all the panel
         mainPanel = new JPanel();
         menuPanel = new MenuPanel();
-        payPanel = new PayPanel();
-        ticketPanel = new TicketPanel();
+
+
         //Set the listener
         menuPanel.confirm.addActionListener(new MenuConfirmListener());
-        payPanel.back.addActionListener(new PayBackListener());
-        payPanel.confirm.addActionListener(new PayConfirmListener());
-        ticketPanel.back.addActionListener(new TicketBackListener());
+
+
         //Set the main frame
         layout = new CardLayout();
         mainPanel.setLayout(layout);
         mainPanel.add(menuPanel, "menu");
-        mainPanel.add(payPanel, "pay");
-        mainPanel.add(ticketPanel, "ticket");
+
+
         setContentPane(mainPanel);
         layout.show(mainPanel, "menu");
 
@@ -74,6 +73,11 @@ public class GUIModel extends JFrame implements ActionListener {
                 JOptionPane.showMessageDialog(null, "Please select the spiciness!", "Warning", JOptionPane.WARNING_MESSAGE);
             } else {
                 setter.set();
+                //吴宇轩修改的部分，颜恺核实一下
+                payPanel = new PayPanel();
+                payPanel.back.addActionListener(new PayBackListener());
+                payPanel.confirm.addActionListener(new PayConfirmListener());
+                mainPanel.add(payPanel, "pay");
                 layout.show(mainPanel, "pay");
             }
         }
@@ -85,6 +89,10 @@ public class GUIModel extends JFrame implements ActionListener {
             if (payPanel.but1.isSelected() == false && payPanel.but2.isSelected() == false) {
                 JOptionPane.showMessageDialog(null, "Please select the way of payment!", "Warning", JOptionPane.WARNING_MESSAGE);
             } else {
+                //吴宇轩修改的部分，颜恺核实一下
+                ticketPanel = new TicketPanel();
+                ticketPanel.back.addActionListener(new TicketBackListener());
+                mainPanel.add(ticketPanel, "ticket");
                 layout.show(mainPanel, "ticket");
             }
         }
@@ -93,6 +101,7 @@ public class GUIModel extends JFrame implements ActionListener {
     public class PayBackListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            //颜恺思考：如果回退的话，是不是还要实例化一下
             layout.show(mainPanel, "menu");
         }
     }
