@@ -1,7 +1,6 @@
 package main.views;
 
 import javax.swing.*;
-import javax.swing.border.TitledBorder;
 import java.awt.*;
 
 public class MenuPanel extends JPanel {
@@ -31,8 +30,28 @@ public class MenuPanel extends JPanel {
     public JButton back = new JButton("Back");
     public JButton confirm = new JButton("Confirm");
 
-    public JRadioButton tonkotsu, shoyu, shio, soft, medium, firm, no, just, lot, yes1, no1, yes2, no2, yes3, no3, s1, s2, s3, s4, s5, s6;
-    public JTextField extraNori, extraBoilEgg, extraBamShoot, extraChashu;
+    public static JRadioButton tonkotsu;
+    public static JRadioButton shoyu;
+    public static JRadioButton shio;
+    public static JRadioButton soft;
+    public static JRadioButton medium;
+    public static JRadioButton firm;
+    public static JRadioButton no;
+    public static JRadioButton just;
+    public static JRadioButton lot;
+    public static JRadioButton yes1;
+    public static JRadioButton no1;
+    public static JRadioButton yes2;
+    public static JRadioButton no2;
+    public static JRadioButton yes3;
+    public static JRadioButton no3;
+    public static JRadioButton s1;
+    public static JRadioButton s2;
+    public static JRadioButton s3;
+    public static JRadioButton s4;
+    public static JRadioButton s5;
+    public static JRadioButton s6;
+    public static JTextField extraNori, extraBoilEgg, extraBamShoot, extraChashu;
 
     public MenuPanel() {
         init();

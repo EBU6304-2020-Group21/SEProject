@@ -11,9 +11,9 @@ public class Order {
     private String soupType;
     private String noodleType;
     private String sprOnionType;
-    private Boolean nori;
-    private Boolean chashu;
-    private Boolean boiledEgg;
+    private String nori;
+    private String chashu;
+    private String boiledEgg;
     private int spicyIndex;
     private double fixedPrice = 9.99; //default price of fixed dishes is 9.99
     private int extraNoriNum;
@@ -50,27 +50,27 @@ public class Order {
         this.sprOnionType = sprOnionType;
     }
 
-    public Boolean getNori() {
+    public String getNori() {
         return nori;
     }
 
-    public void setNori(Boolean nori) {
+    public void setNori(String nori) {
         this.nori = nori;
     }
 
-    public Boolean getChashu() {
+    public String getChashu() {
         return chashu;
     }
 
-    public void setChashu(Boolean chashu) {
+    public void setChashu(String chashu) {
         this.chashu = chashu;
     }
 
-    public Boolean getBoiledEgg() {
+    public String getBoiledEgg() {
         return boiledEgg;
     }
 
-    public void setBoiledEgg(Boolean boiledEgg) {
+    public void setBoiledEgg(String boiledEgg) {
         this.boiledEgg = boiledEgg;
     }
 
