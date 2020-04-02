@@ -73,9 +73,9 @@ public class GUIModel extends JFrame implements ActionListener {
                     menuPanel.s5.isSelected() == false && menuPanel.s6.isSelected() == false) {
                 JOptionPane.showMessageDialog(null, "Please select the spiciness!", "Warning", JOptionPane.WARNING_MESSAGE);
             } else {
+                setter.set();
                 layout.show(mainPanel, "pay");
             }
-            setter.set();
         }
     }
 
