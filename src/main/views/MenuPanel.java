@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MenuPanel extends JPanel {
+
     //variables
     private double fixedPrice;      //the price of fixed dishes, default 9.99 pounds
     private double extraNoriPrice;     //the price of extra Nori, default 1 pounds
@@ -400,10 +401,10 @@ public class MenuPanel extends JPanel {
 //        defaultP.add(spiP,c3);
 
         //Set addon Panel
-        extraNori = new JTextField(1);
-        extraBoilEgg = new JTextField(1);
-        extraBamShoot = new JTextField(1);
-        extraChashu = new JTextField(1);
+        extraNori = new JTextField("0",1);
+        extraBoilEgg = new JTextField("0",1);
+        extraBamShoot = new JTextField("0",1);
+        extraChashu = new JTextField("0",1);
         addonP.setLayout(new GridBagLayout());
         GridBagConstraints c4 = new GridBagConstraints();
         c4.fill = GridBagConstraints.BOTH;

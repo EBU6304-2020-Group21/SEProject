@@ -7,13 +7,12 @@ import main.entity.Order;
  */
 
 public class Setter {
-    public static void main(String[] args){
-        //Obtain getter and setter in Order
-        Order order = new Order();
+    //Obtain getter and setter in Order
+    Order order = new Order();
+    //write to the Order object
+    Reader reader = new Reader();
 
-        //write to the Order object
-        Reader reader = new Reader();
-
+    public void set(){
         //set necessary type
         order.setSoupType(reader.getSoupType());
         order.setNoodleType(reader.getNoodleType());
@@ -27,6 +26,12 @@ public class Setter {
         order.setExtraBamshootNum(reader.getExtraBamshootNum());
         order.setExtraChashuNum(reader.getExtraChashuNum());
 
-        order.setTotalPrice(String.valueOf(order.getExtraNoriNum()*1+order.getExtraBoilEggNum()*1+order.getExtraBamshootNum()*1+order.getExtraChashuNum()*2+9.99));
+        double ttPrice = (order.getExtraNoriNum()+order.getExtraBoilEggNum()+order.getExtraBamshootNum()+order.getExtraChashuNum()+9.99);
+        String s = String.valueOf(ttPrice);
+        order.setTotalPrice(s);
+    }
+
+    public String get(){
+        return order.getTotalPrice();
     }
 }

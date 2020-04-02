@@ -1,10 +1,10 @@
 package main.views;
 
 import javax.swing.*;
-import javax.swing.border.TitledBorder;
 import java.awt.*;
 
 public class PayPanel extends JPanel {
+
     private double totalPrice;
     //sub-panel of this panel
     //sub-panel of TicketPanel
@@ -20,7 +20,7 @@ public class PayPanel extends JPanel {
     }
 
     public void init() {
-         totalPrice=0.00;//Here we set a initial value for our totalPrice
+        totalPrice=0.00;
          topPanel = new JPanel();
          botPanel = new JPanel();
          //Set the topPanel
