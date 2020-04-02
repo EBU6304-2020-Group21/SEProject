@@ -1,5 +1,6 @@
 package main.views;
 
+import main.controller.GenTicketController;
 import main.controller.Setter;
 import main.entity.Order;
 
@@ -93,6 +94,8 @@ public class GUIModel extends JFrame implements ActionListener {
                 }else{
                     currentOrder.setDiningOption("Cards");
                 }
+                GenTicketController gtc = new GenTicketController();
+                gtc.genTicket(currentOrder);
                 ticketPanel = new TicketPanel();
                 ticketPanel.back.addActionListener(new TicketBackListener());
                 mainPanel.add(ticketPanel, "ticket");

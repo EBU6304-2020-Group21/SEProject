@@ -13,8 +13,8 @@ import java.util.Date;
 public class GenTicketController {
 
     public static void genTicket(Order order){
-        FileWriter fileWriter = null;
-        File file = new File("/Files/tickets/" + order.getDateTime()+".txt");
+        FileWriter fileWriter;
+        File file = new File(""+order.getDateTime()+".txt");
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         try{
             if(file.exists()){
@@ -40,6 +40,7 @@ public class GenTicketController {
             fileWriter.write("Extra Boiled Egg   Amount: "+order.getExtraBoilEggNum() +"\n");
             fileWriter.write("Bamboo Shoots   Amount: "+order.getExtraBamshootNum() +"\n");
             fileWriter.write("Extra Chashu   Amount: "+order.getExtraChashuNum() +"\n");
+            order.setAddOnPrice((order.getExtraNoriNum()+order.getExtraBoilEggNum()+order.getExtraBamshootNum()+order.getExtraChashuNum()*2));
             fileWriter.write("ADD-ONS PRICE: "+ order.getAddOnPrice()+"\n");
             fileWriter.write("-------------------\n");
             fileWriter.write("TOTAL PRICE: "+ order.getTotalPrice()+"\n");
