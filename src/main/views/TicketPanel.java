@@ -4,6 +4,8 @@ import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
 
+import static main.views.GUIModel.currentOrder;
+
 public class TicketPanel extends JPanel {
     private String soupType;
     private String noodleType;
@@ -208,24 +210,24 @@ public class TicketPanel extends JPanel {
         JLabel show21b = new JLabel();
         JLabel show22 = new JLabel();
         JLabel show23 = new JLabel();
-        show7.setText(""+soupType);
-        show8.setText(""+noodleType);
-        show9.setText(""+sprOnionType);
-        show10.setText(""+nori);
-        show11.setText(""+chashu);
-        show12.setText(""+boiledEgg);
-        show13.setText(""+spicyIndex);
-        show14.setText(""+fixedPrice);
-        show18a.setText(""+extraNoriNum);
+        show7.setText(""+ currentOrder.getSoupType());
+        show8.setText(""+ currentOrder.getNoodleType());
+        show9.setText(""+ currentOrder.getSprOnionType());
+        show10.setText(""+ currentOrder.getNori());
+        show11.setText(""+ currentOrder.getChashu());
+        show12.setText(""+ currentOrder.getBoiledEgg());
+        show13.setText(""+ currentOrder.getSpicyIndex());
+        show14.setText(""+ currentOrder.getFixedPrice());
+        show18a.setText(""+ currentOrder.getExtraNoriNum());
         show18b.setText(""+NoriPrice);
-        show19a.setText(""+extraChashuNum);
+        show19a.setText(""+ currentOrder.getExtraChashuNum());
         show19b.setText(""+chashuPrice);
-        show20a.setText(""+extraBoilEggNum);
+        show20a.setText(""+ currentOrder.getExtraBoilEggNum());
         show20b.setText(""+BoilEggPrice);
-        show21a.setText(""+extraBamshootNum);
+        show21a.setText(""+ currentOrder.getExtraBamshootNum());
         show21b.setText(""+BamshootPrice);
-        show22.setText(""+addOnPrice);
-        show23.setText(""+totalPrice);
+        show22.setText(""+ currentOrder.getAddOnPrice());
+        show23.setText(""+ currentOrder.getTotalPrice());
 
 
 

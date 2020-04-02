@@ -1,11 +1,17 @@
 package main.views;
 
+import main.controller.Setter;
+import main.entity.Order;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class GUIModel extends JFrame implements ActionListener {
+    public static Order currentOrder = new Order();
+    Setter setter = new Setter();
+
     private MenuPanel menuPanel;
     private PayPanel payPanel;
     private TicketPanel ticketPanel;
@@ -69,6 +75,7 @@ public class GUIModel extends JFrame implements ActionListener {
             } else {
                 layout.show(mainPanel, "pay");
             }
+            setter.set();
         }
     }
 
