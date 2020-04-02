@@ -14,10 +14,10 @@ public class GenTicketController {
 
     public static void genTicket(Order order){
         FileWriter fileWriter;
-        File file = new File(""+order.getDateTime()+".txt");
+        File file = new File("Files/Tickets/"+order.getDateTime()+".txt");
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         try{
-            if(file.exists()){
+            if(!file.exists()){
                 file.createNewFile();
             }
             fileWriter = new FileWriter(file);
