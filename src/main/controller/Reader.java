@@ -2,6 +2,10 @@ package main.controller;
 
 import main.views.MenuPanel;
 
+/**
+ * @author Jianning Qu
+ */
+
 public class Reader {
     //Obtain the choice in each ButtonGroup in MenuPanel
     //soupType

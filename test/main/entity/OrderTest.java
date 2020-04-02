@@ -44,7 +44,7 @@ class OrderTest {
 
     @Test
     void setNori() {
-        o.setNori(true);
+        o.setNori(String.valueOf(true));
         assertEquals(true,o.getNori());
     }
 
@@ -54,7 +54,7 @@ class OrderTest {
 
     @Test
      void setChashu() {
-        o.setChashu(true);
+        o.setChashu(String.valueOf(true));
         assertEquals(true,o.getChashu());
     }
 
@@ -64,7 +64,7 @@ class OrderTest {
 
     @Test
      void setBoiledEgg() {
-        o.setBoiledEgg(true);
+        o.setBoiledEgg(String.valueOf(true));
         assertEquals(true,o.getBoiledEgg());
     }
 

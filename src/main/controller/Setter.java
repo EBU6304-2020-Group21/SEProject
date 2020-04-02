@@ -2,6 +2,10 @@ package main.controller;
 
 import main.entity.Order;
 
+/**
+ * @author Jianning Qu
+ */
+
 public class Setter {
     public static void main(String[] args){
         //Obtain getter and setter in Order
