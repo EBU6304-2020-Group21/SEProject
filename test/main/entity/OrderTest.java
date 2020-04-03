@@ -2,14 +2,21 @@ package main.entity;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class OrderTest {
 
     Order o=new Order();
 
     @Test
-    void getSoupType() {assertEquals("Tonkotsu",o.getSoupType());
+    void getSoupType() {
+        o.setSoupType("Tonkotsu");
+        assertEquals("Tonkotsu",o.getSoupType());
     }
 
     @Test
@@ -19,7 +26,9 @@ class OrderTest {
     }
 
     @Test
-    void getNoodleType() {assertEquals("Soft",o.getNoodleType());
+    void getNoodleType() {
+        o.setNoodleType("Soft");
+        assertEquals("Soft",o.getNoodleType());
     }
 
     @Test
@@ -29,7 +38,9 @@ class OrderTest {
     }
 
     @Test
-     void getSprOnionType() {assertEquals("Just a little",o.getSprOnionType());
+     void getSprOnionType() {
+        o.setSprOnionType("Just a little");
+        assertEquals("Just a little",o.getSprOnionType());
     }
 
     @Test
@@ -39,37 +50,43 @@ class OrderTest {
     }
 
     @Test
-     void getNori() { assertEquals(true,o.getNori());
+     void getNori() {
+        o.setNori("ssa");
+        assertEquals("ssa",o.getNori());
     }
 
     @Test
     void setNori() {
-        o.setNori(String.valueOf(true));
-        assertEquals(true,o.getNori());
+        o.setNori("ss");
+        assertEquals("ss",o.getNori());
     }
 
     @Test
-     void getChashu() {assertEquals(true,o.getChashu());
+     void getChashu() {
+        o.setChashu("sss");assertEquals("sss",o.getChashu());
     }
 
     @Test
      void setChashu() {
-        o.setChashu(String.valueOf(true));
-        assertEquals(true,o.getChashu());
+        o.setChashu("ss");
+        assertEquals("ss",o.getChashu());
     }
 
     @Test
-    void getBoiledEgg() {assertEquals(true,o.getBoiledEgg());
+    void getBoiledEgg() {
+        o.setBoiledEgg("ssa");
+        assertEquals("ssa",o.getBoiledEgg());
     }
 
     @Test
      void setBoiledEgg() {
-        o.setBoiledEgg(String.valueOf(true));
-        assertEquals(true,o.getBoiledEgg());
+        o.setBoiledEgg("ss");
+        assertEquals("ss",o.getBoiledEgg());
     }
 
     @Test
-     void getSpicyIndex() {assertEquals(5,o.getSpicyIndex() );
+     void getSpicyIndex() {
+        o.setSpicyIndex(5);assertEquals(5,o.getSpicyIndex() );
     }
 
     @Test
@@ -79,7 +96,7 @@ class OrderTest {
     }
 
     @Test
-     void getFixedPrice() {assertEquals(9.99,o.getFixedPrice());
+     void getFixedPrice() {o.setFixedPrice(9.99);assertEquals(9.99,o.getFixedPrice());
     }
 
     @Test
@@ -89,7 +106,7 @@ class OrderTest {
     }
 
     @Test
-     void getExtraNoriNum() {assertEquals(3,o.getExtraNoriNum());
+     void getExtraNoriNum() { o.setExtraNoriNum(3);assertEquals(3,o.getExtraNoriNum());
     }
 
     @Test
@@ -99,7 +116,7 @@ class OrderTest {
     }
 
     @Test
-     void getExtraBoilEggNum() {assertEquals(6,o.getExtraBoilEggNum());
+     void getExtraBoilEggNum() {o.setExtraBoilEggNum(6);assertEquals(6,o.getExtraBoilEggNum());
     }
 
     @Test
@@ -109,7 +126,7 @@ class OrderTest {
     }
 
     @Test
-     void getExtraBamshootNum() {assertEquals(4,o.getExtraBamshootNum());
+     void getExtraBamshootNum() {o.setExtraBamshootNum(4);assertEquals(4,o.getExtraBamshootNum());
     }
 
     @Test
@@ -119,7 +136,7 @@ class OrderTest {
     }
 
     @Test
-     void getExtraChashuNum() { assertEquals(2,o.getExtraChashuNum());
+     void getExtraChashuNum() { o.setExtraChashuNum(2); assertEquals(2,o.getExtraChashuNum());
     }
 
     @Test
@@ -129,7 +146,7 @@ class OrderTest {
     }
 
     @Test
-    void getAddOnPrice() { assertEquals(66.6,o.getAddOnPrice());
+    void getAddOnPrice() { o.setAddOnPrice(66.6);assertEquals(66.6,o.getAddOnPrice());
     }
 
     @Test
@@ -139,7 +156,7 @@ class OrderTest {
     }
 
     @Test
-    void getDiningOption() {assertEquals("Eat in",o.getDiningOption());
+    void getDiningOption() {o.setDiningOption("Eat in");assertEquals("Eat in",o.getDiningOption());
     }
 
     @Test
@@ -149,7 +166,7 @@ class OrderTest {
     }
 
     @Test
-     void getTotalPrice() {assertEquals("131.4",o.getTotalPrice());
+     void getTotalPrice() {o.setTotalPrice("131.4");assertEquals("131.4",o.getTotalPrice());
     }
 
     @Test
@@ -159,17 +176,25 @@ class OrderTest {
     }
 
     @Test
-     void getOrderNum() {assertEquals("yyyyMMddHHmmss",o.getDateTime());
-    }
+     void getOrderNum() {
 
-    @Test
-     void setOrderNum(String dateNowStr) {
         o.setDateTime();
+        Date d = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
+        String dateNowStr = sdf.format(d);
         assertEquals(dateNowStr,o.getDateTime());
     }
 
     @Test
-   void getMemberNum() {assertEquals("7",o.getMemberNum());
+     void setOrderNum() {
+        o.setDateTime();
+        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");//设置日期格式
+        String newsNo = LocalDateTime.now().format(fmt);
+        assertEquals(newsNo,o.getDateTime());
+    }
+
+    @Test
+   void getMemberNum() {o.setMemberNum("7");assertEquals("7",o.getMemberNum());
     }
 
     @Test
