@@ -6,6 +6,7 @@ import java.awt.*;
 public class InputPanel extends JPanel{
     private JPanel topPanel;
     private JPanel botPanel;
+    public JTextField membershipNumField;
 
     private String membershipNum;
     private int stamps;
@@ -20,6 +21,31 @@ public class InputPanel extends JPanel{
         botPanel = new JPanel();
         //set the top panel
         topPanel.setBorder(BorderFactory.createTitledBorder(""));
+        topPanel.setLayout(new GridBagLayout());
+        JLabel lab1 = new JLabel("Please input your membership number",JLabel.CENTER);
+        membershipNumField = new JTextField();
+        membershipNumField.setPreferredSize(new Dimension(300,40));
+        Font font1 = new Font("Times new Roman",Font.BOLD,25);
+        lab1.setFont(font1);
+        GridBagConstraints top = new GridBagConstraints();
+        top.fill = GridBagConstraints.BOTH;
+        top.gridx = 0;
+        top.gridy = 0;
+        top.gridheight = 1;
+        top.gridwidth = 2;
+        top.weightx = 1;
+        top.weighty = 0.2;
+        topPanel.add(lab1,top);
+
+        top.fill = GridBagConstraints.CENTER;
+        top.gridy = 1;
+        top.gridx = 0;
+        top.weightx = 0.32;
+        top.anchor = GridBagConstraints.NORTH;
+        top.gridwidth = 1;
+        top.weightx = 0.8;
+        topPanel.add(membershipNumField,top);
+
         //set the bottom Panel
         botPanel.setBorder(BorderFactory.createTitledBorder(""));
         botPanel.setLayout(new BorderLayout());
@@ -42,5 +68,4 @@ public class InputPanel extends JPanel{
         c.weighty = 0.15;
         this.add(botPanel, c);
     }
-
 }

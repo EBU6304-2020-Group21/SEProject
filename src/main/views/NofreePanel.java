@@ -18,6 +18,51 @@ public class NofreePanel extends JPanel{
         botPanel = new JPanel();
         //set the top panel
         topPanel.setBorder(BorderFactory.createTitledBorder(""));
+        topPanel.setLayout(new GridBagLayout());
+        JLabel lab1 = new JLabel("Your virtual stamps amount is: ",JLabel.CENTER);
+        JLabel lab3 = new JLabel("You should pay for the order",JLabel.CENTER);
+        JLabel lab2 = new JLabel("0",JLabel.CENTER);
+        lab2.setText(""+stamps);
+        Font font1 = new Font("Times new Roman",Font.BOLD,25);
+        lab1.setFont(font1);
+        lab3.setFont(font1);
+        lab2.setFont(font1);
+
+        GridBagConstraints top = new GridBagConstraints();
+        top.fill = GridBagConstraints.CENTER;
+        top.gridx = 0;
+        top.gridy = 0;
+        top.gridheight = 1;
+        top.gridwidth = 1;
+        top.weightx = 1;
+        top.weighty = 0.3;
+        top.anchor = GridBagConstraints.SOUTH;
+        topPanel.add(lab1,top);
+
+
+        top.gridx = 0;
+        top.gridy = 1;
+        top.gridheight = 1;
+        top.gridwidth = 1;
+        top.weightx = 1;
+        top.weighty = 0.4;
+        top.fill = GridBagConstraints.CENTER;
+        top.anchor = GridBagConstraints.CENTER;
+        topPanel.add(lab2,top);
+
+        top.gridx = 0;
+        top.gridy = 2;
+        top.gridheight = 1;
+        top.gridwidth = 1;
+        top.weightx = 1;
+        top.weighty = 0.3;
+        top.fill = GridBagConstraints.CENTER;
+        top.anchor = GridBagConstraints.NORTH;
+        topPanel.add(lab3,top);
+
+
+
+
         //set the bottom Panel
         botPanel.setBorder(BorderFactory.createTitledBorder(""));
         botPanel.setLayout(new BorderLayout());

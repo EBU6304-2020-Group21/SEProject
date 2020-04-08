@@ -20,6 +20,32 @@ public class FinishPanel extends JPanel{
         botPanel = new JPanel();
         //set the top panel
         topPanel.setBorder(BorderFactory.createTitledBorder(""));
+        topPanel.setLayout(new GridBagLayout());
+        JLabel lab1 = new JLabel("We thank you for your patronage",JLabel.CENTER);
+        JLabel lab2 = new JLabel("The virtual stamps you have now are:",JLabel.CENTER);
+        lab2.setText("The virtual stamps you have now are:  "+stamps);
+        Font font1 = new Font("Times new Roman",Font.BOLD,25);
+        lab1.setFont(font1);
+        lab2.setFont(font1);
+
+
+        GridBagConstraints top = new GridBagConstraints();
+        top.gridx = 0;
+        top.gridy = 0;
+        top.weightx = 1;
+        top.weighty = 0.25;
+        top.fill = GridBagConstraints.CENTER;
+        topPanel.add(lab1,top);
+
+
+        top.fill = GridBagConstraints.CENTER;
+        top.gridx = 0;
+        top.gridy = 1;
+        top.weightx = 0.3;
+        top.anchor = GridBagConstraints.NORTH;
+        topPanel.add(lab2,top);
+
+
         //set the bottom Panel
         botPanel.setBorder(BorderFactory.createTitledBorder(""));
         botPanel.setLayout(new BorderLayout());
