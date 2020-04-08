@@ -9,7 +9,7 @@ public class GUITemplate extends JFrame implements ActionListener{
         this.setSize(800, 600);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setTitle("GUITemplate");
-        this.add(new FinishPanel()); //Here add your panel to test ******************
+        this.add(new RegisterPanel()); //Here add your panel to test ******************
         this.setVisible(true);
     }
 

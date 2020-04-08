@@ -7,6 +7,12 @@ public class CongratulationPanel extends JPanel{
     private JPanel topPanel;
     private JPanel botPanel;
 
+    private String membershipNum;
+    private String firstName;
+    private String surname;
+    private String email;
+    private String mobileNum;
+
     public JButton back = new JButton("Back");
     public JButton confirm = new JButton("Confirm");
     public CongratulationPanel(){

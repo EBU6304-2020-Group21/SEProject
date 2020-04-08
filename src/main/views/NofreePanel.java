@@ -7,6 +7,7 @@ public class NofreePanel extends JPanel{
     private JPanel topPanel;
     private JPanel botPanel;
 
+    private int stamps;
     public JButton back = new JButton("Back");
     public JButton confirm = new JButton("Confirm");
     public NofreePanel(){

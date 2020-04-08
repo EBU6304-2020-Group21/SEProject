@@ -7,6 +7,9 @@ public class InputPanel extends JPanel{
     private JPanel topPanel;
     private JPanel botPanel;
 
+    private String membershipNum;
+    private int stamps;
+
     public JButton back = new JButton("Back");
     public JButton confirm = new JButton("Confirm");
     public InputPanel(){
