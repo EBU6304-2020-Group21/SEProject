@@ -21,8 +21,50 @@ public class CongratulationPanel extends JPanel{
     public void init(){
         topPanel = new JPanel();
         botPanel = new JPanel();
+        JLabel lab1 = new JLabel("Congratulations!",JLabel.CENTER);
+        JLabel lab2 = new JLabel("<html><body>You have successfully registered in loyalty service<br>" +
+                "The membership information is as following: ",JLabel.CENTER);
+        JLabel lab3 = new JLabel("Membership Number: " + membershipNum,JLabel.CENTER);
+        JLabel lab4 = new JLabel("Name: " + firstName+" "+surname,JLabel.CENTER);
+        JLabel lab5 = new JLabel("Email: "+ email,JLabel.CENTER);
+        JLabel lab6 = new JLabel("Phone number: "+mobileNum,JLabel.CENTER);
+        Font font1 = new Font("Times New Roman",Font.BOLD,30);
+        Font font2 = new Font("Times New Roman",Font.BOLD,25);
+        Font font3 = new Font("Times New Roman",Font.PLAIN,18);
+        lab1.setFont(font1);
+        lab2.setFont(font2);
+        lab3.setFont(font3);
+        lab4.setFont(font3);
+        lab5.setFont(font3);
+        lab6.setFont(font3);
         //set the top panel
+        topPanel.setLayout(new GridBagLayout());
         topPanel.setBorder(BorderFactory.createTitledBorder(""));
+        GridBagConstraints top = new GridBagConstraints();
+        top.fill = GridBagConstraints.BOTH;
+        top.weightx = 1;
+        top.weighty = 0.2;
+        top.gridx = 0;
+        top.gridy = 0;
+        top.gridwidth = 1;
+        top.gridheight = 1;
+        topPanel.add(lab1,top);
+
+        top.gridy = 1;
+        topPanel.add(lab2,top);
+
+        top.weighty = 0.15;
+        top.gridy = 2;
+        topPanel.add(lab3,top);
+
+        top.gridy = 3;
+        topPanel.add(lab4,top);
+
+        top.gridy = 4;
+        topPanel.add(lab5,top);
+
+        top.gridy = 5;
+        topPanel.add(lab6,top);
         //set the bottom Panel
         botPanel.setBorder(BorderFactory.createTitledBorder(""));
         botPanel.setLayout(new BorderLayout());
