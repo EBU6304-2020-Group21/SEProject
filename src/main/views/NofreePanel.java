@@ -21,8 +21,7 @@ public class NofreePanel extends JPanel{
         topPanel.setLayout(new GridBagLayout());
         JLabel lab1 = new JLabel("Your virtual stamps amount is: ",JLabel.CENTER);
         JLabel lab3 = new JLabel("You should pay for the order",JLabel.CENTER);
-        JLabel lab2 = new JLabel("0",JLabel.CENTER);
-        lab2.setText(""+stamps);
+        JLabel lab2 = new JLabel(String.valueOf(stamps),JLabel.CENTER);
         Font font1 = new Font("Times new Roman",Font.BOLD,25);
         lab1.setFont(font1);
         lab3.setFont(font1);

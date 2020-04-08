@@ -7,7 +7,6 @@ public class FinishPanel extends JPanel{
     private JPanel topPanel;
     private JPanel botPanel;
 
-    private String membershipNum;
     private int stamps;
 
     public JButton back = new JButton("Back");
@@ -22,8 +21,7 @@ public class FinishPanel extends JPanel{
         topPanel.setBorder(BorderFactory.createTitledBorder(""));
         topPanel.setLayout(new GridBagLayout());
         JLabel lab1 = new JLabel("We thank you for your patronage",JLabel.CENTER);
-        JLabel lab2 = new JLabel("The virtual stamps you have now are:",JLabel.CENTER);
-        lab2.setText("The virtual stamps you have now are:  "+stamps);
+        JLabel lab2 = new JLabel("The virtual stamps you have now are:"+stamps,JLabel.CENTER);
         Font font1 = new Font("Times new Roman",Font.BOLD,25);
         lab1.setFont(font1);
         lab2.setFont(font1);
