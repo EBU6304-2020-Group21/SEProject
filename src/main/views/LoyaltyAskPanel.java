@@ -16,6 +16,48 @@ public class LoyaltyAskPanel extends JPanel{
         topPanel = new JPanel();
         botPanel = new JPanel();
         //set the top panel
+        JLabel lab1 = new JLabel("Loyalty Scheme", JLabel.CENTER);
+        JLabel lab2 = new JLabel("Do you have a membership number?", JLabel.CENTER);
+        JRadioButton but1 = new JRadioButton("Yes, sign in");
+        JRadioButton but2 = new JRadioButton("No, sign up");
+        JRadioButton but3 = new JRadioButton("Skip");
+        Font font1 = new Font("Times new Roman",Font.BOLD,30);
+        Font font2 = new Font("Times new Roman",Font.BOLD,25);
+        ButtonGroup bg = new ButtonGroup();
+        bg.add(but1);
+        bg.add(but2);
+        bg.add(but3);
+        lab1.setFont(font1);
+        lab2.setFont(font1);
+        but1.setFont(font2);
+        but2.setFont(font2);
+        but3.setFont(font2);
+
+        topPanel.setLayout(new GridBagLayout());
+        GridBagConstraints top = new GridBagConstraints();
+        top.fill = GridBagConstraints.BOTH;
+        top.gridx = 0;
+        top.gridy = 0;
+        top.gridheight = 1;
+        top.gridwidth = 1;
+        top.weightx = 1;
+        top.weighty = 0.2;
+        topPanel.add(lab1,top);
+        top.gridy = 1;
+        top.weighty = 0.2;
+        topPanel.add(lab2,top);
+        top.fill = GridBagConstraints.CENTER;
+        top.gridy = 2;
+        top.weighty = 0.2;
+        topPanel.add(but1,top);
+        top.gridy = 3;
+        top.weighty = 0.2;
+        topPanel.add(but2,top);
+        top.gridy = 4;
+        top.weighty = 0.2;
+        topPanel.add(but3,top);
+
+
         topPanel.setBorder(BorderFactory.createTitledBorder(""));
         //set the bottom Panel
         botPanel.setBorder(BorderFactory.createTitledBorder(""));

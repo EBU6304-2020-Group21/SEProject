@@ -16,6 +16,35 @@ public class EatAskPanel extends JPanel{
         topPanel = new JPanel();
         botPanel = new JPanel();
         //set the top panel
+        JLabel lab1 = new JLabel("Eat in OR Take away", JLabel.CENTER);
+        JRadioButton but1 = new JRadioButton("Eat in");
+        JRadioButton but2 = new JRadioButton("Take away");
+        Font font1 = new Font("Times new Roman",Font.BOLD,30);
+        Font font2 = new Font("Times new Roman",Font.BOLD,25);
+        ButtonGroup bg = new ButtonGroup();
+        bg.add(but1);
+        bg.add(but2);
+        lab1.setFont(font1);
+        but1.setFont(font2);
+        but2.setFont(font2);
+
+        topPanel.setLayout(new GridBagLayout());
+        GridBagConstraints top = new GridBagConstraints();
+        top.fill = GridBagConstraints.BOTH;
+        top.gridx = 0;
+        top.gridy = 0;
+        top.gridheight = 1;
+        top.gridwidth = 1;
+        top.weightx = 1;
+        top.weighty = 0.4;
+        topPanel.add(lab1,top);
+        top.fill = GridBagConstraints.CENTER;
+        top.gridy = 1;
+        top.weighty = 0.3;
+        topPanel.add(but1,top);
+        top.gridy = 2;
+        top.weighty = 0.3;
+        topPanel.add(but2,top);
         topPanel.setBorder(BorderFactory.createTitledBorder(""));
         //set the bottom Panel
         botPanel.setBorder(BorderFactory.createTitledBorder(""));
