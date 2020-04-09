@@ -8,9 +8,10 @@ import javax.swing.JRadioButton.*;
 public class WelcomePanel extends JPanel{
     private JPanel topPanel;
     private JPanel botPanel;
-
     public JButton back = new JButton("Back");
     public JButton confirm = new JButton("Confirm");
+    public JRadioButton but1 = new JRadioButton("Dining");
+    public JRadioButton but2 = new JRadioButton("Loyalty Service");
     public WelcomePanel(){
         init();
     }
@@ -21,8 +22,6 @@ public class WelcomePanel extends JPanel{
         JLabel lab1 = new JLabel("Toroto Ramen designed by Mr.Miyazaki", JLabel.CENTER);
         JLabel lab2 = new JLabel("Hello, Dear Customer", JLabel.CENTER);
         JLabel lab3 = new JLabel("Welcome to Toronto Ramen!", JLabel.CENTER);
-        JRadioButton but1 = new JRadioButton("Dining");
-        JRadioButton but2 = new JRadioButton("Loyalty Service");
         Font font1 = new Font("Times new Roman",Font.BOLD,30);
         Font font2 = new Font("Times new Roman",Font.BOLD,25);
         ButtonGroup bg = new ButtonGroup();

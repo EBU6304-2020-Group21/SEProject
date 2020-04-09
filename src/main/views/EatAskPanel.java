@@ -9,6 +9,8 @@ public class EatAskPanel extends JPanel{
 
     public JButton back = new JButton("Back");
     public JButton confirm = new JButton("Confirm");
+    public JRadioButton but1 = new JRadioButton("Eat in");
+    public JRadioButton but2 = new JRadioButton("Take away");
     public EatAskPanel(){
         init();
     }
@@ -17,8 +19,6 @@ public class EatAskPanel extends JPanel{
         botPanel = new JPanel();
         //set the top panel
         JLabel lab1 = new JLabel("Eat in OR Take away", JLabel.CENTER);
-        JRadioButton but1 = new JRadioButton("Eat in");
-        JRadioButton but2 = new JRadioButton("Take away");
         Font font1 = new Font("Times new Roman",Font.BOLD,30);
         Font font2 = new Font("Times new Roman",Font.BOLD,25);
         ButtonGroup bg = new ButtonGroup();

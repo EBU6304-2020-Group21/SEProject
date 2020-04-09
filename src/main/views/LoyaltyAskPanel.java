@@ -9,6 +9,9 @@ public class LoyaltyAskPanel extends JPanel{
 
     public JButton back = new JButton("Back");
     public JButton confirm = new JButton("Confirm");
+    public JRadioButton but1 = new JRadioButton("Yes, sign in");
+    public JRadioButton but2 = new JRadioButton("No, sign up");
+    public JRadioButton but3 = new JRadioButton("Skip");
     public LoyaltyAskPanel(){
         init();
     }
@@ -18,9 +21,6 @@ public class LoyaltyAskPanel extends JPanel{
         //set the top panel
         JLabel lab1 = new JLabel("Loyalty Scheme", JLabel.CENTER);
         JLabel lab2 = new JLabel("Do you have a membership number?", JLabel.CENTER);
-        JRadioButton but1 = new JRadioButton("Yes, sign in");
-        JRadioButton but2 = new JRadioButton("No, sign up");
-        JRadioButton but3 = new JRadioButton("Skip");
         Font font1 = new Font("Times new Roman",Font.BOLD,30);
         Font font2 = new Font("Times new Roman",Font.BOLD,25);
         ButtonGroup bg = new ButtonGroup();

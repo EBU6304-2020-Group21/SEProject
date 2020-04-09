@@ -9,6 +9,8 @@ public class LoyaltyPanel extends JPanel{
 
     public JButton back = new JButton("Back");
     public JButton confirm = new JButton("Confirm");
+    public JRadioButton but1 = new JRadioButton("Sign in");
+    public JRadioButton but2 = new JRadioButton("Sign up");
     public LoyaltyPanel(){
         init();
     }
@@ -19,8 +21,6 @@ public class LoyaltyPanel extends JPanel{
         Font font1 = new Font("Times new Roman",Font.BOLD,30);
         Font font2 = new Font("Times new Roman",Font.BOLD,25);
         JLabel lab1 = new JLabel("Welcome to loyalty service", JLabel.CENTER);
-        JRadioButton but1 = new JRadioButton("Sign in");
-        JRadioButton but2 = new JRadioButton("Sign up");
         lab1.setFont(font1);
         but1.setFont(font2);
         but2.setFont(font2);
