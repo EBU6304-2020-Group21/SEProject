@@ -1,0 +1,23 @@
+============TICKET BEGIN==========
+Order Number: 20200403174825
+Membership Number: null
+Date & Time: 2020-04-03 17:48:31
+Dining Way: Cash
+----Single Dish----
+Soup: Tonkotsu
+Noodles: Medium
+Spring Onion: Just a little
+Nori: Yes
+ChashuYes
+Boiled Egg Yes
+Spiciness: 0
+SINGLE DISH PRICE: 9.99
+------Add-ons------
+Extra Nori   Amount: 0
+Extra Boiled Egg   Amount: 0
+Bamboo Shoots   Amount: 0
+Extra Chashu   Amount: 0
+ADD-ONS PRICE: 0.0
+-------------------
+TOTAL PRICE: 9.99
+=============TICKET END===========

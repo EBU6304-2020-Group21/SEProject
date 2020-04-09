@@ -1,0 +1,23 @@
+============TICKET BEGIN==========
+Order Number: 20200403175117
+Membership Number: null
+Date & Time: 2020-04-03 17:51:21
+Dining Way: Cards
+----Single Dish----
+Soup: Shoyu
+Noodles: Soft
+Spring Onion: Just a little
+Nori: Yes
+ChashuYes
+Boiled Egg Yes
+Spiciness: 0
+SINGLE DISH PRICE: 9.99
+------Add-ons------
+Extra Nori   Amount: 0
+Extra Boiled Egg   Amount: 0
+Bamboo Shoots   Amount: 0
+Extra Chashu   Amount: 0
+ADD-ONS PRICE: 0.0
+-------------------
+TOTAL PRICE: 9.99
+=============TICKET END===========
