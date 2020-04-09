@@ -12,31 +12,56 @@ import java.awt.event.ActionListener;
 public class GUIModel extends JFrame implements ActionListener {
     public static Order currentOrder = new Order();
     Setter setter = new Setter();
-
+    private WelcomePanel welcomePanel;
     private MenuPanel menuPanel;
+    private EatAskPanel eatAskPanel;
+    private LoyaltyAskPanel loyaltyAskPanel;
+    private RegisterPanel registerPanel;
+    private RegisterPanel registerPanel2;
+    private CongratulationPanel congratulationPanel;
+    private CongratulationPanel congratulationPanel2;
+    private InputPanel inputPanel;
+    private InputPanel inputPanel2;
+    private InputPanel inputPanel3;
+    private FreePanel freePanel;
+    private FreePanel freePanel2;
+    private FreePanel freePanel3;
+    private NofreePanel nofreePanel;
+    private NofreePanel nofreePanel2;
+    private NofreePanel nofreePanel3;
     private PayPanel payPanel;
+    private PayPanel payPanel2;
+    private PayPanel payPanel3;
     private TicketPanel ticketPanel;
+    private TicketPanel ticketPanel2;
+    private TicketPanel ticketPanel3;
+    private TicketPanel ticketPanel4;
+    private TicketPanel ticketPanel5;
+    private FinishPanel finishPanel;
+    private FinishPanel finishPanel2;
+    private FinishPanel finishPanel3;
+    private LoyaltyPanel loyaltyPanel;
     private JPanel mainPanel;
     private CardLayout layout;
 
     public GUIModel() {
         //Initialize all the panel
         mainPanel = new JPanel();
-        menuPanel = new MenuPanel();
+        welcomePanel = new WelcomePanel();
 
 
         //Set the listener
-        menuPanel.confirm.addActionListener(new MenuConfirmListener());
+        welcomePanel.confirm.addActionListener(new WelcomeConfirmListener());
 
 
         //Set the main frame
         layout = new CardLayout();
         mainPanel.setLayout(layout);
-        mainPanel.add(menuPanel, "menu");
+        mainPanel.add(welcomePanel, "welcome");
 
 
         setContentPane(mainPanel);
-        layout.show(mainPanel, "menu");
+        layout.show(mainPanel, "welcome");
 
         this.setSize(800, 600);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -51,6 +76,31 @@ public class GUIModel extends JFrame implements ActionListener {
 
     public static void main(String[] args) {
         GUIModel guiModel = new GUIModel();
+    }
+
+
+    public class WelcomeConfirmListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (!welcomePanel.but1.isSelected() && !welcomePanel.but2.isSelected()) {
+                JOptionPane.showMessageDialog(null, "Please select the function!", "Warning", JOptionPane.WARNING_MESSAGE);
+            } else if (welcomePanel.but1.isSelected()) {
+                menuPanel = new MenuPanel();
+                menuPanel.confirm.addActionListener(new MenuConfirmListener());
+                menuPanel.back.addActionListener(new MenuBackListener());
+                mainPanel.add(menuPanel, "menu");
+                layout.show(mainPanel, "menu");
+            } else if (welcomePanel.but2.isSelected()) {
+                //下部分待补充
+            }
+        }
+    }
+
+    public class MenuBackListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            layout.show(mainPanel, "welcome");
+        }
     }
 
     public class MenuConfirmListener implements ActionListener {
@@ -74,24 +124,109 @@ public class GUIModel extends JFrame implements ActionListener {
                 JOptionPane.showMessageDialog(null, "Please select the spiciness!", "Warning", JOptionPane.WARNING_MESSAGE);
             } else {
                 setter.set();
-                payPanel = new PayPanel();
-                payPanel.back.addActionListener(new PayBackListener());
-                payPanel.confirm.addActionListener(new PayConfirmListener());
-                mainPanel.add(payPanel, "pay");
-                layout.show(mainPanel, "pay");
+                eatAskPanel = new EatAskPanel();
+                eatAskPanel.confirm.addActionListener(new EatAskConfirmListener());
+                eatAskPanel.back.addActionListener(new EatAskBackListener());
+                mainPanel.add(eatAskPanel, "eatask");
+                layout.show(mainPanel, "eatask");
+//                payPanel = new PayPanel();
+//                payPanel.back.addActionListener(new PayBackListener());
+//                payPanel.confirm.addActionListener(new PayConfirmListener());
+//                mainPanel.add(payPanel, "pay");
+//                layout.show(mainPanel, "pay");
             }
         }
     }
 
+    public class EatAskBackListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            layout.show(mainPanel, "menu");
+        }
+    }
+
+    public class EatAskConfirmListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (!eatAskPanel.but1.isSelected() && !eatAskPanel.but2.isSelected()) {
+                JOptionPane.showMessageDialog(null, "Please select one of the button!", "Warning", JOptionPane.WARNING_MESSAGE);
+            } else {
+                loyaltyAskPanel = new LoyaltyAskPanel();
+                loyaltyAskPanel.confirm.addActionListener(new LoyaltyAskConfirmListener());
+                loyaltyAskPanel.back.addActionListener(new LoyaltyAskBackListener());
+                mainPanel.add(loyaltyAskPanel, "loyaltyask");
+                layout.show(mainPanel, "loyaltyask");
+            }
+        }
+    }
+
+    public class LoyaltyAskBackListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            layout.show(mainPanel, "eatask");
+        }
+    }
+
+    public class LoyaltyAskConfirmListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (!loyaltyAskPanel.but1.isSelected()&&!loyaltyAskPanel.but2.isSelected()&&!loyaltyAskPanel.but3.isSelected()){
+                JOptionPane.showMessageDialog(null, "Please select one of the button!", "Warning", JOptionPane.WARNING_MESSAGE);
+            }
+            else if(loyaltyAskPanel.but1.isSelected()){
+                inputPanel = new InputPanel();
+            }
+            else if(loyaltyAskPanel.but2.isSelected()){
+                registerPanel = new RegisterPanel();
+            }
+            else if(loyaltyAskPanel.but3.isSelected()){
+                payPanel = new PayPanel();
+            }
+        }
+    }
+
+    public class InputBackListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            layout.show(mainPanel,"loyaltyask");
+        }
+    }
+
+    public class InputConfirmListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            //待补充
+        }
+    }
+
+    public class RegisterBackListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            layout.show(mainPanel,"loyaltyask");
+        }
+    }
+    public class RegisterConfirmListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            //待补充
+        }
+    }
+
+    public class PayBackListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            layout.show(mainPanel, "menu");
+        }
+    }
     public class PayConfirmListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (payPanel.but1.isSelected() == false && payPanel.but2.isSelected() == false) {
                 JOptionPane.showMessageDialog(null, "Please select the way of payment!", "Warning", JOptionPane.WARNING_MESSAGE);
             } else {
-                if(payPanel.but1.isSelected() == true){
+                if (payPanel.but1.isSelected() == true) {
                     currentOrder.setDiningOption("Cash");
-                }else{
+                } else {
                     currentOrder.setDiningOption("Cards");
                 }
                 GenTicketController gtc = new GenTicketController();
@@ -104,12 +239,6 @@ public class GUIModel extends JFrame implements ActionListener {
         }
     }
 
-    public class PayBackListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            layout.show(mainPanel, "menu");
-        }
-    }
 
     public class TicketBackListener implements ActionListener {
         @Override

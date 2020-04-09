@@ -22,7 +22,7 @@ public class LoyaltyAskPanel extends JPanel{
         JLabel lab1 = new JLabel("Loyalty Scheme", JLabel.CENTER);
         JLabel lab2 = new JLabel("Do you have a membership number?", JLabel.CENTER);
         Font font1 = new Font("Times new Roman",Font.BOLD,30);
-        Font font2 = new Font("Times new Roman",Font.BOLD,25);
+        Font font2 = new Font("Times new Roman",Font.PLAIN,25);
         ButtonGroup bg = new ButtonGroup();
         bg.add(but1);
         bg.add(but2);

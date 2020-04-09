@@ -20,7 +20,7 @@ public class EatAskPanel extends JPanel{
         //set the top panel
         JLabel lab1 = new JLabel("Eat in OR Take away", JLabel.CENTER);
         Font font1 = new Font("Times new Roman",Font.BOLD,30);
-        Font font2 = new Font("Times new Roman",Font.BOLD,25);
+        Font font2 = new Font("Times new Roman",Font.PLAIN,25);
         ButtonGroup bg = new ButtonGroup();
         bg.add(but1);
         bg.add(but2);

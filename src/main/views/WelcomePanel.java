@@ -23,7 +23,7 @@ public class WelcomePanel extends JPanel{
         JLabel lab2 = new JLabel("Hello, Dear Customer", JLabel.CENTER);
         JLabel lab3 = new JLabel("Welcome to Toronto Ramen!", JLabel.CENTER);
         Font font1 = new Font("Times new Roman",Font.BOLD,30);
-        Font font2 = new Font("Times new Roman",Font.BOLD,25);
+        Font font2 = new Font("Times new Roman",Font.PLAIN,25);
         ButtonGroup bg = new ButtonGroup();
         bg.add(but1);
         bg.add(but2);

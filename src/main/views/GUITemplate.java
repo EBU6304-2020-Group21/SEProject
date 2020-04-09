@@ -15,7 +15,8 @@ public class GUITemplate extends JFrame implements ActionListener{
         this.setTitle("GUITemplate");
         registerPanel = new RegisterPanel();
         registerPanel.confirm.addActionListener(new RegisterConfirmListener());
-        this.add(registerPanel); //Here add your panel to test ******************
+//        this.add(registerPanel); //Here add your panel to test ******************
+        this.add(new LoyaltyPanel());
         this.setVisible(true);
     }
 

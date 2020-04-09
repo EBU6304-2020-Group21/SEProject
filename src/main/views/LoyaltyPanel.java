@@ -19,7 +19,7 @@ public class LoyaltyPanel extends JPanel{
         botPanel = new JPanel();
         //set the top panel
         Font font1 = new Font("Times new Roman",Font.BOLD,30);
-        Font font2 = new Font("Times new Roman",Font.BOLD,25);
+        Font font2 = new Font("Times new Roman",Font.PLAIN,25);
         JLabel lab1 = new JLabel("Welcome to loyalty service", JLabel.CENTER);
         lab1.setFont(font1);
         but1.setFont(font2);
