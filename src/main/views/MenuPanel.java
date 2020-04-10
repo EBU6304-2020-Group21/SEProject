@@ -2,6 +2,8 @@ package main.views;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class MenuPanel extends JPanel {
 
@@ -22,6 +24,8 @@ public class MenuPanel extends JPanel {
     private int extraBoilEggNum;
     private int extraBamshootNum;
     private int extraChashuNum;
+    private int maxnum = 10;
+    private int minnum = 0;
 
     //MenuPanel
     private JPanel topPanel;
@@ -30,7 +34,14 @@ public class MenuPanel extends JPanel {
 
     public JButton back = new JButton("Back");
     public JButton confirm = new JButton("Confirm");
-
+    public JButton add1 = new JButton("+");
+    public JButton subtract1 = new JButton("-");
+    public JButton add2 = new JButton("+");
+    public JButton subtract2 = new JButton("-");
+    public JButton add3 = new JButton("+");
+    public JButton subtract3 = new JButton("-");
+    public JButton add4 = new JButton("+");
+    public JButton subtract4 = new JButton("-");
     public static JRadioButton tonkotsu;
     public static JRadioButton shoyu;
     public static JRadioButton shio;
@@ -52,11 +63,94 @@ public class MenuPanel extends JPanel {
     public static JRadioButton s4;
     public static JRadioButton s5;
     public static JRadioButton s6;
-    public static JTextField extraNori, extraBoilEgg, extraBamShoot, extraChashu;
+    public static JLabel extraNori, extraBoilEgg, extraBamShoot, extraChashu;
+
+
 
     public MenuPanel() {
         init();
     }
+
+    class add1Listener implements ActionListener {
+        public void actionPerformed(ActionEvent event) {
+            int currentnum1 = Integer.parseInt(extraNori.getText());
+            if (currentnum1 >= minnum&&currentnum1 < maxnum){
+               currentnum1++;
+            }
+            extraNori.setText(String.valueOf(currentnum1));
+        }
+    }
+
+    class subtract1Listener implements ActionListener {
+        public void actionPerformed(ActionEvent event) {
+            int currentnum1 = Integer.parseInt(extraNori.getText());
+            if (currentnum1 > minnum && currentnum1 <= maxnum){
+                currentnum1--;
+            }
+            extraNori.setText(String.valueOf(currentnum1));
+        }
+    }
+
+    class add2Listener implements ActionListener {
+        public void actionPerformed(ActionEvent event) {
+            int currentnum2 = Integer.parseInt(extraBoilEgg.getText());
+            if (currentnum2 >= minnum&&currentnum2 < maxnum){
+                currentnum2++;
+            }
+            extraBoilEgg.setText(String.valueOf(currentnum2));
+        }
+    }
+
+    class subtract2Listener implements ActionListener {
+        public void actionPerformed(ActionEvent event) {
+            int currentnum2 = Integer.parseInt(extraBoilEgg.getText());
+            if (currentnum2 > minnum && currentnum2 <= maxnum){
+                currentnum2--;
+            }
+            extraBoilEgg.setText(String.valueOf(currentnum2));
+        }
+    }
+
+    class add3Listener implements ActionListener {
+        public void actionPerformed(ActionEvent event) {
+            int currentnum3 = Integer.parseInt(extraBamShoot.getText());
+            if (currentnum3 >= minnum&&currentnum3 < maxnum){
+                currentnum3++;
+            }
+            extraBamShoot.setText(String.valueOf(currentnum3));
+        }
+    }
+
+    class subtract3Listener implements ActionListener {
+        public void actionPerformed(ActionEvent event) {
+            int currentnum3 = Integer.parseInt(extraBamShoot.getText());
+            if (currentnum3 > minnum&& currentnum3 <= maxnum){
+                currentnum3--;
+            }
+            extraBamShoot.setText(String.valueOf(currentnum3));
+        }
+    }
+
+    class add4Listener implements ActionListener {
+        public void actionPerformed(ActionEvent event) {
+            int currentnum4 = Integer.parseInt(extraChashu.getText());
+            if (currentnum4 >= minnum&&currentnum4 < maxnum){
+                currentnum4++;
+            }
+            extraChashu.setText(String.valueOf(currentnum4));
+        }
+    }
+
+    class subtract4Listener implements ActionListener {
+        public void actionPerformed(ActionEvent event) {
+            int currentnum4 = Integer.parseInt(extraChashu.getText());
+            if (currentnum4 > minnum+1 && currentnum4 <= maxnum){
+                currentnum4--;
+            }
+            extraChashu.setText(String.valueOf(currentnum4));
+        }
+    }
+
 
     public void init() {
         //初始化传递参数，用于测试(后端组的同学把这里删了）
@@ -131,6 +225,33 @@ public class MenuPanel extends JPanel {
         btnGroup7.add(s4);
         btnGroup7.add(s5);
         btnGroup7.add(s6);
+
+        ButtonGroup bthGroup8 = new ButtonGroup();
+        bthGroup8.add(add1);
+        bthGroup8.add(subtract1);
+
+        ButtonGroup bthGroup9 = new ButtonGroup();
+        bthGroup9.add(add2);
+        bthGroup9.add(subtract2);
+
+        ButtonGroup bthGroup10 = new ButtonGroup();
+        bthGroup10.add(add3);
+        bthGroup10.add(subtract3);
+
+        ButtonGroup bthGroup11 = new ButtonGroup();
+        bthGroup11.add(add4);
+        bthGroup11.add(subtract4);
+
+        add1.addActionListener(new add1Listener());
+        subtract1.addActionListener(new subtract1Listener());
+        add2.addActionListener(new add2Listener());
+        subtract2.addActionListener(new subtract2Listener());
+        add3.addActionListener(new add3Listener());
+        subtract3.addActionListener(new subtract3Listener());
+        add4.addActionListener(new add4Listener());
+        subtract4.addActionListener(new subtract4Listener());
+
+
 
         //Initialize the sub-panel of this panel
         topPanel = new JPanel();
@@ -401,17 +522,17 @@ public class MenuPanel extends JPanel {
 //        defaultP.add(spiP,c3);
 
         //Set addon Panel
-        extraNori = new JTextField("0",1);
-        extraBoilEgg = new JTextField("0",1);
-        extraBamShoot = new JTextField("0",1);
-        extraChashu = new JTextField("0",1);
+        extraNori = new JLabel("0");
+        extraBoilEgg = new JLabel("0");
+        extraBamShoot = new JLabel("0");
+        extraChashu = new JLabel("0");
         addonP.setLayout(new GridBagLayout());
         GridBagConstraints c4 = new GridBagConstraints();
         c4.fill = GridBagConstraints.BOTH;
         c4.gridx = 0;
         c4.gridy = 0;
         c4.gridheight = 1;
-        c4.gridwidth = 2;
+        c4.gridwidth = 4;
         c4.weightx = 1;
         c4.weighty = 0.2;
         addonP.add(addon,c4);
@@ -420,56 +541,89 @@ public class MenuPanel extends JPanel {
         c4.gridx = 0;
         c4.gridheight = 1;
         c4.gridwidth = 1;
-        c4.weightx = 0.8;
+        c4.weightx = 0.7;
         c4.weighty = 0.2;
         addonP.add(enori,c4);
 
-        c4.fill = GridBagConstraints.CENTER;
+        c4.fill = GridBagConstraints.EAST;
         c4.gridx = 1;
-        c4.weightx = 0.2;
+        c4.weightx = 0.1;
+        addonP.add(subtract1,c4);
+
+        c4.gridx = 2;
+        c4.weightx = 0.1;
         addonP.add(extraNori,c4);
+
+        c4.gridx = 3;
+        c4.weightx = 0.1;
+        addonP.add(add1,c4);
+
 
         c4.fill = GridBagConstraints.BOTH;
         c4.gridy = 2;
         c4.gridx = 0;
         c4.gridheight = 1;
         c4.gridwidth = 1;
-        c4.weightx = 0.8;
+        c4.weightx = 0.7;
         c4.weighty = 0.2;
         addonP.add(eegg,c4);
 
-        c4.fill = GridBagConstraints.CENTER;
+        c4.fill = GridBagConstraints.EAST;
         c4.gridx = 1;
-        c4.weightx = 0.2;
+        c4.weightx = 0.1;
+        addonP.add(subtract2,c4);
+
+        c4.gridx = 2;
+        c4.weightx = 0.1;
         addonP.add(extraBoilEgg,c4);
+
+        c4.gridx = 3;
+        c4.weightx = 0.1;
+        addonP.add(add2,c4);
 
         c4.fill = GridBagConstraints.BOTH;
         c4.gridy = 3;
         c4.gridx = 0;
         c4.gridheight = 1;
         c4.gridwidth = 1;
-        c4.weightx = 0.8;
+        c4.weightx = 0.7;
         c4.weighty = 0.2;
         addonP.add(ebamboo,c4);
 
-        c4.fill = GridBagConstraints.CENTER;
+        c4.fill = GridBagConstraints.EAST;
         c4.gridx = 1;
-        c4.weightx = 0.2;
+        c4.weightx = 0.1;
+        addonP.add(subtract3,c4);
+
+        c4.gridx = 2;
+        c4.weightx = 0.1;
         addonP.add(extraBamShoot,c4);
+
+        c4.gridx = 3;
+        c4.weightx = 0.1;
+        addonP.add(add3,c4);
 
         c4.fill = GridBagConstraints.BOTH;
         c4.gridy = 4;
         c4.gridx = 0;
         c4.gridheight = 1;
         c4.gridwidth = 1;
-        c4.weightx = 0.8;
+        c4.weightx = 0.7;
         c4.weighty = 0.2;
         addonP.add(echashu,c4);
 
-        c4.fill = GridBagConstraints.CENTER;
+        c4.fill = GridBagConstraints.EAST;
         c4.gridx = 1;
-        c4.weightx = 0.2;
+        c4.weightx = 0.1;
+        addonP.add(subtract4,c4);
+
+        c4.gridx = 2;
+        c4.weightx = 0.1;
         addonP.add(extraChashu,c4);
+
+        c4.gridx = 3;
+        c4.weightx = 0.1;
+        addonP.add(add4,c4);
 
 
 //        addP.add(addon);
@@ -527,4 +681,6 @@ public class MenuPanel extends JPanel {
         this.add(botPanel, c);
 
     }
+
+
 }
