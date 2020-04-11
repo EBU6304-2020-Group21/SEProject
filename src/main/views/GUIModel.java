@@ -486,7 +486,7 @@ public class GUIModel extends JFrame implements ActionListener {
     public class RegisterBackListener2 implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            layout.show(mainPanel, "loyaltyask");
+            layout.show(mainPanel, "loyalty");
         }
     }
 
@@ -545,7 +545,7 @@ public class GUIModel extends JFrame implements ActionListener {
     public class InputBackListener3 implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            layout.show(mainPanel,"loyaltyask");
+            layout.show(mainPanel,"loyalty");
         }
     }
 
