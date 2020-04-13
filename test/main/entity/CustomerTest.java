@@ -6,8 +6,6 @@ package main.entity;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Date;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class CustomerTest {
@@ -15,11 +13,8 @@ class CustomerTest {
 
     @Test
     void getMembershipNum() {
-        c.setMembershipNum();
-        long currentTime=new Date().getTime();
-        String time = Long.toString(currentTime);
-        String tt = time.substring(3,11);
-        assertEquals(tt,c.getMembershipNum());
+        c.setMembershipNum("123");
+        assertEquals("123",c.getMembershipNum());
     }
 
 

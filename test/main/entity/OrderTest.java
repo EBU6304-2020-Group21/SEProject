@@ -2,11 +2,6 @@ package main.entity;
 
 import org.junit.jupiter.api.Test;
 
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class OrderTest {
@@ -178,21 +173,9 @@ class OrderTest {
     @Test
      void getOrderNum() {
 
-        o.setDateTime();
-        Date d = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
-        String dateNowStr = sdf.format(d);
-        assertEquals(dateNowStr,o.getDateTime());
+        o.setDateTime("123");
+        assertEquals("123",o.getDateTime());
     }
-
-    @Test
-     void setOrderNum() {
-        o.setDateTime();
-        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");//设置日期格式
-        String newsNo = LocalDateTime.now().format(fmt);
-        assertEquals(newsNo,o.getDateTime());
-    }
-
     @Test
    void getMemberNum() {o.setMemberNum("7");assertEquals("7",o.getMemberNum());
     }
