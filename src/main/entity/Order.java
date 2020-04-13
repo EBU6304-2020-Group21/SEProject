@@ -150,11 +150,9 @@ public class Order {
         return dateTime;
     }
 
-    public void setDateTime() {    //use the date to produce the order number
-        Date d = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
-        String dateNowStr = sdf.format(d);
-        this.dateTime = dateNowStr;
+    public void setDateTime(String dateTime) {    //use the date to produce the order number
+
+        this.dateTime = dateTime;
     }
 
     public String getMemberNum() {

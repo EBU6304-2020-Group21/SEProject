@@ -14,10 +14,8 @@ public class Customer {
         return membershipNum;
     }
 
-    public void setMembershipNum() {
-
-        String time = Long.toString(System.currentTimeMillis());
-        this.membershipNum = time.substring(3, 11);
+    public void setMembershipNum(String membershipNum) {
+        this.membershipNum = membershipNum;
     }
 
     public String getFirstName() {

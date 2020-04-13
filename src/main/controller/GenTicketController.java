@@ -31,8 +31,8 @@ public class GenTicketController {
             fileWriter.write("Noodles: "+order.getNoodleType()+"\n");
             fileWriter.write("Spring Onion: "+ order.getSprOnionType()+"\n");
             fileWriter.write("Nori: "+ order.getNori()+"\n");
-            fileWriter.write("Chashu"+ order.getNori()+ "\n");
-            fileWriter.write("Boiled Egg "+ order.getBoiledEgg()+"\n");
+            fileWriter.write("Chashu: "+ order.getNori()+ "\n");
+            fileWriter.write("Boiled Egg: "+ order.getBoiledEgg()+"\n");
             fileWriter.write("Spiciness: "+ order.getSpicyIndex()+"\n");
             fileWriter.write("SINGLE DISH PRICE: "+ order.getFixedPrice()+"\n");
             fileWriter.write("------Add-ons------\n");

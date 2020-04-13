@@ -26,7 +26,7 @@ public class Setter {
         currentOrder.setExtraBoilEggNum(reader.getExtraBoilEggNum());
         currentOrder.setExtraBamshootNum(reader.getExtraBamshootNum());
         currentOrder.setExtraChashuNum(reader.getExtraChashuNum());
-        currentOrder.setDateTime();
+        currentOrder.setDateTime(GenNumbersController.genDateTime());
 
         DecimalFormat df = new DecimalFormat("#.00");
         double ttPrice = (currentOrder.getExtraNoriNum()+currentOrder.getExtraBoilEggNum()+currentOrder.getExtraBamshootNum()+currentOrder.getExtraChashuNum()*2+9.99);

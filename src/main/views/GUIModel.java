@@ -1,6 +1,7 @@
 package main.views;
 
 import main.controller.GenTicketController;
+import main.controller.OrderInfoController;
 import main.controller.Setter;
 import main.entity.Order;
 
@@ -370,6 +371,7 @@ public class GUIModel extends JFrame implements ActionListener {
                 GenTicketController gtc = new GenTicketController();
                 gtc.genTicket(currentOrder);
                 ticketPanel = new TicketPanel();
+                OrderInfoController.genOrderTotalInfos(currentOrder);
                 ticketPanel.back.addActionListener(new TicketBackListener1());
                 ticketPanel.confirm.addActionListener(new TicketConfirmListener1());
                 mainPanel.add(ticketPanel, "ticket");
@@ -392,6 +394,7 @@ public class GUIModel extends JFrame implements ActionListener {
                 GenTicketController gtc = new GenTicketController();
                 gtc.genTicket(currentOrder);
                 ticketPanel = new TicketPanel();
+                OrderInfoController.genOrderTotalInfos(currentOrder);
                 ticketPanel.back.addActionListener(new TicketBackListener3());
                 ticketPanel.confirm.addActionListener(new TicketConfirmListener2());
                 mainPanel.add(ticketPanel, "ticket");
