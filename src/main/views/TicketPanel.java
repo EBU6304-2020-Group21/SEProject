@@ -4,6 +4,7 @@ import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
 
+import static main.views.GUIModel.currentCustomer;
 import static main.views.GUIModel.currentOrder;
 
 public class TicketPanel extends JPanel {
@@ -74,7 +75,7 @@ public class TicketPanel extends JPanel {
         JLabel show5 = new JLabel();
         show2.setText(""+currentOrder.getDateTime());
         show3.setText(""+currentOrder.getDateTime());
-        show4.setText(""+memberNum);
+        show4.setText(""+currentCustomer.getMembershipNum());
         show5.setText(""+currentOrder.getDiningOption());
 
 

@@ -9,10 +9,10 @@ public class RegisterPanel extends JPanel{
 
     public JButton back = new JButton("Back");
     public JButton confirm = new JButton("Confirm");
-    public JTextField firstNameField;
-    public JTextField surnameField;
-    public JTextField emailField;
-    public JTextField phoneNumberField;
+    public static JTextField firstNameField;
+    public static JTextField surnameField;
+    public static JTextField emailField;
+    public static JTextField phoneNumberField;
     public RegisterPanel(){
         init();
     }

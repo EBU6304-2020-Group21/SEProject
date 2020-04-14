@@ -3,6 +3,8 @@ package main.views;
 import javax.swing.*;
 import java.awt.*;
 
+import static main.views.GUIModel.currentCustomer;
+
 public class CongratulationPanel extends JPanel{
     private JPanel topPanel;
     private JPanel botPanel;
@@ -24,10 +26,10 @@ public class CongratulationPanel extends JPanel{
         JLabel lab1 = new JLabel("Congratulations!",JLabel.CENTER);
         JLabel lab2 = new JLabel("<html><body>You have successfully registered in loyalty service<br>" +
                 "The membership information is as following: ",JLabel.CENTER);
-        JLabel lab3 = new JLabel("Membership Number: " + membershipNum,JLabel.CENTER);
-        JLabel lab4 = new JLabel("Name: " + firstName+" "+surname,JLabel.CENTER);
-        JLabel lab5 = new JLabel("Email: "+ email,JLabel.CENTER);
-        JLabel lab6 = new JLabel("Phone number: "+mobileNum,JLabel.CENTER);
+        JLabel lab3 = new JLabel("Membership Number: " + currentCustomer.getMembershipNum(),JLabel.CENTER);
+        JLabel lab4 = new JLabel("Name: " + currentCustomer.getFirstName()+" "+currentCustomer.getSurname(),JLabel.CENTER);
+        JLabel lab5 = new JLabel("Email: "+ currentCustomer.getEmail(),JLabel.CENTER);
+        JLabel lab6 = new JLabel("Phone number: "+ currentCustomer.getMobileNum(),JLabel.CENTER);
         Font font1 = new Font("Times New Roman",Font.BOLD,30);
         Font font2 = new Font("Times New Roman",Font.BOLD,25);
         Font font3 = new Font("Times New Roman",Font.PLAIN,18);

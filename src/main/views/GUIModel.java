@@ -1,8 +1,7 @@
 package main.views;
 
-import main.controller.GenTicketController;
-import main.controller.OrderInfoController;
-import main.controller.Setter;
+import main.controller.*;
+import main.entity.Customer;
 import main.entity.Order;
 
 import javax.swing.*;
@@ -14,6 +13,7 @@ import java.util.regex.Pattern;
 
 public class GUIModel extends JFrame implements ActionListener {
     public static Order currentOrder = new Order();
+    public static Customer currentCustomer = new Customer();
     Setter setter = new Setter();
     private WelcomePanel welcomePanel;
     private MenuPanel menuPanel;
@@ -237,6 +237,8 @@ public class GUIModel extends JFrame implements ActionListener {
             } else if (!phoneMatcher.find()) {
                 JOptionPane.showMessageDialog(null, "Please fill in your phone number all in number!", "Warning", JOptionPane.WARNING_MESSAGE);
             } else {
+                LoyaltySetterController.set();
+                CustomerInfosController.genCustomerTotalInfos(currentCustomer);
                 congratulationPanel = new CongratulationPanel();
                 congratulationPanel.back.addActionListener(new CongratulationBackListener1());
                 congratulationPanel.confirm.addActionListener(new CongratulationConfirmListener1());
@@ -286,16 +288,20 @@ public class GUIModel extends JFrame implements ActionListener {
 
             if (inputPanel.membershipNumField.getText().equals("")) {
                 JOptionPane.showMessageDialog(null, "Please fill in your membership number!", "Warning", JOptionPane.WARNING_MESSAGE);
-            } else {
+            }
+            if(CustomerQueryController.findByMemberShipNum(inputPanel.membershipNumField.getText(),CustomerInfosController.json2List(CustomerInfosController.readCustomerTotalInfos())) == null){
+                JOptionPane.showMessageDialog(null, "Please check your membership number!", "Warning", JOptionPane.WARNING_MESSAGE);
+            }else {
                 //后端验证，这个判断条件需要后端同学修改
                 //virtual stamps个数为10
-                if (virtualStamps == 10) {
+                if (CustomerQueryController.findByMemberShipNum(inputPanel.membershipNumField.getText(),CustomerInfosController.json2List(CustomerInfosController.readCustomerTotalInfos())).getStamps() == 10) {
                     freePanel = new FreePanel();
                     freePanel.back.addActionListener(new FreeBackListener1());
                     freePanel.confirm.addActionListener(new FreeConfirmListener1());
                     mainPanel.add(freePanel, "free");
                     layout.show(mainPanel, "free");
                 } else {
+                    currentCustomer.setMembershipNum(CustomerQueryController.findByMemberShipNum(inputPanel.membershipNumField.getText(),CustomerInfosController.json2List(CustomerInfosController.readCustomerTotalInfos())).getMembershipNum());
                     nofreePanel = new NofreePanel();
                     nofreePanel.back.addActionListener(new NofreeBackListener1());
                     nofreePanel.confirm.addActionListener(new NofreeConfirmListener1());
@@ -521,6 +527,8 @@ public class GUIModel extends JFrame implements ActionListener {
             } else if (!phoneMatcher.find()) {
                 JOptionPane.showMessageDialog(null, "Please fill in your phone number all in number!", "Warning", JOptionPane.WARNING_MESSAGE);
             } else {
+                LoyaltySetterController.set();
+                CustomerInfosController.genCustomerTotalInfos(currentCustomer);
                 congratulationPanel = new CongratulationPanel();
                 congratulationPanel.back.addActionListener(new CongratulationBackListener2());
                 congratulationPanel.confirm.addActionListener(new CongratulationConfirmListener2());
