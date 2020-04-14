@@ -4,6 +4,10 @@ import main.entity.Customer;
 import main.controller.LoyaltySetterController;
 import static main.views.GUIModel.currentCustomer;
 
+/**
+ * @author Jianning Qu
+ */
+
 public class LoyaltySetterController {
     static LoyaltyGetterController getter = new LoyaltyGetterController();
 
