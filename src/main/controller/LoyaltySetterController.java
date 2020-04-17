@@ -12,10 +12,11 @@ public class LoyaltySetterController {
     static LoyaltyGetterController getter = new LoyaltyGetterController();
 
     public static void set(){
-        currentCustomer.setMembershipNum(getter.getMembershipNum());
+
         currentCustomer.setFirstName(getter.getFirstName());
         currentCustomer.setSurname(getter.getSurName());
         currentCustomer.setEmail(getter.getEmail());
         currentCustomer.setMobileNum(getter.getMobileNum());
+        currentCustomer.setMembershipNum(getter.getMembershipNum());
     }
 }
