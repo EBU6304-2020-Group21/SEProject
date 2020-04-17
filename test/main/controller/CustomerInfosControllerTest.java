@@ -3,6 +3,12 @@ package main.controller;
 import main.entity.Customer;
 import org.junit.jupiter.api.Test;
 
+
+/**
+ * @author Jianning Qu
+ */
+
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class CustomerInfosControllerTest {
