@@ -112,6 +112,7 @@ public class Modifyavaliable extends JPanel{
         top.weighty = 0.3;
         topPanel.add(lab0,top);
 
+
         top.gridy = 1;
         top.weighty = 0.1;
         topPanel.add(lab10,top);

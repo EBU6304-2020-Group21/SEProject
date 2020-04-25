@@ -53,6 +53,7 @@ public class ModifyPrice extends JPanel {
         lab11.setFont(font2);
         lab12.setFont(font2);
 
+
         topPanel.setLayout(new GridBagLayout());
         GridBagConstraints top = new GridBagConstraints();
         top.fill = GridBagConstraints.CENTER;

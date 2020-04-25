@@ -14,6 +14,7 @@ public class ManageStartPanel extends JPanel{
     public JRadioButton but2 = new JRadioButton("See the sales");
     public ManageStartPanel() {init();}
     public void init() {
+
         topPanel = new JPanel();
         botPanel = new JPanel();
         //set the top Panel
