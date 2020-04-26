@@ -1,5 +1,7 @@
 package main.views;
 
+import sun.util.locale.provider.AvailableLanguageTags;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -10,8 +12,8 @@ public class ModifyPanel extends JPanel{
     private JPanel botPanel;
     public JButton back = new JButton("Back");
     public JButton confirm = new JButton("Confirm");
-    public JRadioButton but1 = new JRadioButton("Modify the price");
-    public JRadioButton but2 = new JRadioButton("avaliable/unavaliable");
+    public JRadioButton ModifyPrice = new JRadioButton("Modify the price");
+    public JRadioButton AvaUnava = new JRadioButton("avaliable/unavaliable");
     public ModifyPanel() {init();}
     public void init() {
 
@@ -22,10 +24,10 @@ public class ModifyPanel extends JPanel{
         Font font1 = new Font("Times new Roman",Font.BOLD,30);
         Font font2 = new Font("Times new Roman",Font.PLAIN,25);
         ButtonGroup bg = new ButtonGroup();
-        bg.add(but1);
-        bg.add(but2);
-        but1.setFont(font2);
-        but2.setFont(font2);
+        bg.add(ModifyPrice);
+        bg.add(AvaUnava);
+        ModifyPrice.setFont(font2);
+        AvaUnava.setFont(font2);
         lab1.setFont(font1);
 
         topPanel.setLayout(new GridBagLayout());
@@ -41,11 +43,11 @@ public class ModifyPanel extends JPanel{
 
         top.gridy = 1;
         top.weighty = 0.3;
-        topPanel.add(but1,top);
+        topPanel.add(ModifyPrice,top);
 
         top.gridy = 2;
         top.weighty = 0.3;
-        topPanel.add(but2,top);
+        topPanel.add(AvaUnava,top);
         topPanel.setBorder(BorderFactory.createTitledBorder(""));
         //set the bottom Panel
         botPanel.setBorder(BorderFactory.createTitledBorder(""));

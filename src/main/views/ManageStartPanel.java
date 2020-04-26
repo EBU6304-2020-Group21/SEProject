@@ -10,8 +10,8 @@ public class ManageStartPanel extends JPanel{
     private JPanel botPanel;
     public JButton back = new JButton("Back");
     public JButton confirm = new JButton("Confirm");
-    public JRadioButton but1 = new JRadioButton("Modify the menu");
-    public JRadioButton but2 = new JRadioButton("See the sales");
+    public JRadioButton ModifyMenu = new JRadioButton("Modify the menu");
+    public JRadioButton SeeSales = new JRadioButton("See the sales");
     public ManageStartPanel() {init();}
     public void init() {
 
@@ -22,10 +22,10 @@ public class ManageStartPanel extends JPanel{
         Font font1 = new Font("Times new Roman",Font.BOLD,30);
         Font font2 = new Font("Times new Roman",Font.PLAIN,25);
         ButtonGroup bg = new ButtonGroup();
-        bg.add(but1);
-        bg.add(but2);
-        but1.setFont(font2);
-        but2.setFont(font2);
+        bg.add(ModifyMenu);
+        bg.add(SeeSales);
+        ModifyMenu.setFont(font2);
+        SeeSales.setFont(font2);
         lab1.setFont(font1);
 
         topPanel.setLayout(new GridBagLayout());
@@ -41,11 +41,11 @@ public class ManageStartPanel extends JPanel{
 
         top.gridy = 1;
         top.weighty = 0.3;
-        topPanel.add(but1,top);
+        topPanel.add(ModifyMenu,top);
 
         top.gridy = 2;
         top.weighty = 0.3;
-        topPanel.add(but2,top);
+        topPanel.add(SeeSales,top);
         topPanel.setBorder(BorderFactory.createTitledBorder(""));
         //set the bottom Panel
         botPanel.setBorder(BorderFactory.createTitledBorder(""));
