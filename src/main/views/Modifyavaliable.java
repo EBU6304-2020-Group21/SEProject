@@ -162,6 +162,7 @@ public class Modifyavaliable extends JPanel{
         top.weighty = 0.1;
         topPanel.add(TonkostuAvaliable,top);
 
+
         top.gridy =3;
         top.weighty = 0.1;
         topPanel.add(ShoyuAvaliable,top);

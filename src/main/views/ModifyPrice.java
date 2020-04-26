@@ -21,6 +21,7 @@ public class ModifyPrice extends JPanel {
     public JTextField BambooshootsNowPrice = new JTextField(6);
     public JTextField ChashuNowPrice = new JTextField(6);
 
+
     public ModifyPrice() {
         init();
     }

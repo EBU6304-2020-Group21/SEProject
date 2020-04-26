@@ -17,6 +17,7 @@ public class ModifyPanel extends JPanel{
     public ModifyPanel() {init();}
     public void init() {
 
+
         topPanel = new JPanel();
         botPanel = new JPanel();
         //set the top Panel
