@@ -1,5 +1,7 @@
 package main.controller;
 
+import main.entity.Customer;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -14,5 +16,10 @@ public class GenNumbersController {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
         String dateNowStr = sdf.format(d);
         return dateNowStr;
+    }
+
+    public static void main(String[] args) {
+        Customer customer = new Customer();
+        customer.setMembershipNum(GenNumbersController.genMembershipNums());
     }
 }
