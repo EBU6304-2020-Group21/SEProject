@@ -13,10 +13,10 @@ public class GUITemplate extends JFrame implements ActionListener{
         this.setSize(800, 600);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setTitle("GUITemplate");
-        registerPanel = new RegisterPanel();
-        registerPanel.confirm.addActionListener(new RegisterConfirmListener());
+//        registerPanel = new RegisterPanel();
+//        registerPanel.confirm.addActionListener(new RegisterConfirmListener());
 //        this.add(registerPanel); //Here add your panel to test ******************
-        this.add(new LoyaltyPanel());
+        this.add(new SendPanel());
         this.setVisible(true);
     }
 
