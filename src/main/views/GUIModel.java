@@ -20,51 +20,41 @@ public class GUIModel extends JFrame implements ActionListener {
     private EatAskPanel eatAskPanel;
     private LoyaltyAskPanel loyaltyAskPanel;
     private RegisterPanel registerPanel;
-    private RegisterPanel registerPanel2;
     private CongratulationPanel congratulationPanel;
-    private CongratulationPanel congratulationPanel2;
     private InputPanel inputPanel;
-    private InputPanel inputPanel2;
-    private InputPanel inputPanel3;
     private FreePanel freePanel;
-    private FreePanel freePanel2;
-    private FreePanel freePanel3;
     private NofreePanel nofreePanel;
-    private NofreePanel nofreePanel2;
-    private NofreePanel nofreePanel3;
     private PayPanel payPanel;
-    private PayPanel payPanel2;
-    private PayPanel payPanel3;
     private TicketPanel ticketPanel;
-    private TicketPanel ticketPanel2;
-    private TicketPanel ticketPanel3;
-    private TicketPanel ticketPanel4;
-    private TicketPanel ticketPanel5;
     private FinishPanel finishPanel;
-    private FinishPanel finishPanel2;
-    private FinishPanel finishPanel3;
     private LoyaltyPanel loyaltyPanel;
+    private StartPanel startPanel;
+    private StatPanel statPanel;
+    private SendPanel sendPanel;
+    private ManageStartPanel manageStartPanel;
+    private ModifyPanel modifyPanel;
+    private Modifyavaliable modifyavaliable;
+    private ModifyPrice modifyPrice;
     private JPanel mainPanel;
     private CardLayout layout;
 
     public GUIModel() {
         //Initialize all the panel
         mainPanel = new JPanel();
-        welcomePanel = new WelcomePanel();
+        startPanel = new StartPanel();
 
 
         //Set the listener
-        welcomePanel.confirm.addActionListener(new WelcomeConfirmListener());
-
+        startPanel.confirm.addActionListener(new StartConfirmListener());
 
         //Set the main frame
         layout = new CardLayout();
         mainPanel.setLayout(layout);
-        mainPanel.add(welcomePanel, "welcome");
+        mainPanel.add(startPanel, "start");
 
 
         setContentPane(mainPanel);
-        layout.show(mainPanel, "welcome");
+        layout.show(mainPanel, "start");
 
         this.setSize(800, 600);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -81,6 +71,148 @@ public class GUIModel extends JFrame implements ActionListener {
         GUIModel guiModel = new GUIModel();
     }
 
+
+    public class StartConfirmListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if(!startPanel.enterManager.isSelected()&&!startPanel.enterWelcome.isSelected()){
+                JOptionPane.showMessageDialog(null, "Please select the function!", "Warning", JOptionPane.WARNING_MESSAGE);
+            }
+            if(startPanel.enterWelcome.isSelected()){
+                welcomePanel = new WelcomePanel();
+                welcomePanel.back.addActionListener(new WelcomeBackListener());
+                welcomePanel.confirm.addActionListener(new WelcomeConfirmListener());
+                mainPanel.add(welcomePanel,"welcome");
+                layout.show(mainPanel,"welcome");
+            }
+            else if(startPanel.enterManager.isSelected()){
+                manageStartPanel = new ManageStartPanel();
+                manageStartPanel.back.addActionListener(new ManagerStartBackListener());
+                manageStartPanel.confirm.addActionListener(new ManagerStartConfirmListener());
+                mainPanel.add(manageStartPanel,"managestart");
+                layout.show(mainPanel,"managestart");
+            }
+        }
+    }
+    public class ManagerStartBackListener implements  ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            layout.show(mainPanel,"start");
+        }
+    }
+
+    public class ManagerStartConfirmListener implements  ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if(!manageStartPanel.ModifyMenu.isSelected()&&!manageStartPanel.SeeSales.isSelected()){
+                JOptionPane.showMessageDialog(null, "Please select the function!", "Warning", JOptionPane.WARNING_MESSAGE);
+            }
+            else if(manageStartPanel.ModifyMenu.isSelected()){
+                modifyPanel = new ModifyPanel();
+                modifyPanel.back.addActionListener(new ModifyBackListener());
+                modifyPanel.confirm.addActionListener(new ModifyConfirmListener());
+                mainPanel.add(modifyPanel,"modify");
+                layout.show(mainPanel,"modify");
+            }
+            else if(manageStartPanel.SeeSales.isSelected()){
+                statPanel = new StatPanel();
+                statPanel.back.addActionListener(new StatBackListener());
+                statPanel.confirm.addActionListener(new StatConfirmListener());
+                mainPanel.add(statPanel,"stat");
+                layout.show(mainPanel,"stat");
+            }
+        }
+    }
+    public class ModifyBackListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            layout.show(mainPanel,"managestart");
+        }
+    }
+
+    public class ModifyConfirmListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if(!modifyPanel.ModifyPrice.isSelected()&&!modifyPanel.AvaUnava.isSelected()){
+                JOptionPane.showMessageDialog(null, "Please select the function!", "Warning", JOptionPane.WARNING_MESSAGE);
+            }
+            else if(modifyPanel.ModifyPrice.isSelected()){
+                modifyPrice = new ModifyPrice();
+                modifyPrice.back.addActionListener(new ModifyPriceBackListener());
+                modifyPrice.confirm.addActionListener(new ModifyPriceConfirmListener());
+                mainPanel.add(modifyPrice,"modifyprice");
+                layout.show(mainPanel,"modifyprice");
+            }
+            else if(modifyPanel.AvaUnava.isSelected()){
+                modifyavaliable = new Modifyavaliable();
+                modifyavaliable.back.addActionListener(new ModifyAvailableBackListener());
+                modifyavaliable.confirm.addActionListener(new ModifyAvailableConfirmListener());
+                mainPanel.add(modifyavaliable,"modifyavailable");
+                layout.show(mainPanel,"modifyavaikable");
+            }
+        }
+    }
+    public class ModifyAvailableBackListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            layout.show(mainPanel,"modify");
+        }
+    }
+    public class ModifyAvailableConfirmListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(null, "Success!", "Warning", JOptionPane.WARNING_MESSAGE);
+            layout.show(mainPanel,"managestart");
+        }
+    }
+    public class ModifyPriceBackListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            layout.show(mainPanel,"modify");
+        }
+    }
+    public class ModifyPriceConfirmListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(null, "Success!", "Warning", JOptionPane.WARNING_MESSAGE);
+            layout.show(mainPanel,"managestart");
+        }
+    }
+    public class StatBackListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            layout.show(mainPanel,"managestart");
+        }
+    }
+    public class StatConfirmListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            sendPanel = new SendPanel();
+            sendPanel.back.addActionListener(new SendBackListener());
+            sendPanel.confirm.addActionListener(new SendConfirmListener());
+            mainPanel.add(sendPanel,"send");
+            layout.show(mainPanel,"send");
+        }
+    }
+    public class SendBackListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            layout.show(mainPanel,"stat");
+        }
+    }
+    public class SendConfirmListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(null, "Success!", "Warning", JOptionPane.WARNING_MESSAGE);
+            layout.show(mainPanel,"managestart");
+        }
+    }
+    public class WelcomeBackListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            layout.show(mainPanel,"start");
+        }
+    }
 
     public class WelcomeConfirmListener implements ActionListener {
         @Override

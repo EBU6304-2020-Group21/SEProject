@@ -22,6 +22,9 @@ public class StartPanel extends JPanel{
         JLabel label = new JLabel("Please select the system you want to enter:");
         enterWelcome = new JRadioButton("Self-service Kiosk");
         enterManager = new JRadioButton("Management System");
+        ButtonGroup btp = new ButtonGroup();
+        btp.add(enterManager);
+        btp.add(enterWelcome);
         label.setFont(font1);
         enterManager.setFont(font2);
         enterWelcome.setFont(font2);

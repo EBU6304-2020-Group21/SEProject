@@ -46,6 +46,7 @@ public class StatPanel extends JPanel{
     public int chashunoNum;
     public int eggyesNum;
     public int eggnoNum;
+    public int spi0;
     public int spi1;
     public int spi2;
     public int spi3;
@@ -109,7 +110,7 @@ public class StatPanel extends JPanel{
         chashunoLabel = new JLabel("No: "+chashunoNum);
         eggyesLabel = new JLabel("Yes: "+ eggyesNum);
         eggnoLabel = new JLabel("No: "+eggnoNum);
-        mostSpiLabel = new JLabel(String.valueOf(getMostSpi(spi1,spi2,spi3,spi4,spi5)));
+        mostSpiLabel = new JLabel(String.valueOf(getMostSpi(spi0,spi1,spi2,spi3,spi4,spi5)));
         extraNoriLabel = new JLabel("Extra Nori: "+extraNoriNum);
         extraEggLabel = new JLabel("Extra boiled egg: "+extraEggNum);
         extraBambooLabel = new JLabel("Bamboo shoots: "+extraBambooNum);
@@ -274,22 +275,25 @@ public class StatPanel extends JPanel{
         this.add(botPanel, c);
     }
 
-    public int getMostSpi(int a,int b,int c,int d,int e){
+    public int getMostSpi(int a,int b,int c,int d,int e,int f){
         int result;
-        result = Math.max(Math.max(Math.max(Math.max(a,b),c),d),e);
+        result = Math.max(Math.max(Math.max(Math.max(Math.max(a,b),c),d),e),f);
         if(result==a){
-            return 1;
+            return 0;
         }
         else if(result==b){
-            return 2;
+            return 1;
         }
         else if(result==c){
-            return 3;
+            return 2;
         }
         else if(result==d){
+            return 3;
+        }
+        else if(result==e){
             return 4;
         }
-        else{
+        else {
             return 5;
         }
     }
