@@ -10,6 +10,17 @@ public class ModifyPrice extends JPanel {
     private JPanel botPanel;
     public JButton back = new JButton("Back");
     public JButton confirm = new JButton("Confirm");
+    public JLabel RamenOriginalPrice = new JLabel("£9.99");
+    public JLabel NoriOriginalPrice = new JLabel("£1");
+    public JLabel BoiledeggOriginalPrice = new JLabel("£1");
+    public JLabel BambooshootsOriginalPrice = new JLabel("£1");
+    public JLabel ChashuOriginalPrice = new JLabel("£2");
+    public JTextField RamenNowPrice = new JTextField(6);
+    public JTextField NoriNowPrice = new JTextField(6);
+    public JTextField BoiledeggNowPrice = new JTextField(6);
+    public JTextField BambooshootsNowPrice = new JTextField(6);
+    public JTextField ChashuNowPrice = new JTextField(6);
+
 
     public ModifyPrice() {
         init();
@@ -27,16 +38,8 @@ public class ModifyPrice extends JPanel {
         JLabel lab5 = new JLabel("Chashu");
         JLabel lab6 = new JLabel("Previous price");
         JLabel lab7 = new JLabel("Now price");
-        JLabel lab8 = new JLabel("£9.99");
-        JLabel lab9 = new JLabel("£1");
-        JLabel lab10 = new JLabel("£1");
-        JLabel lab11 = new JLabel("£1");
-        JLabel lab12 = new JLabel("£2");
-        JTextField tf1 = new JTextField(6);
-        JTextField tf2 = new JTextField(6);
-        JTextField tf3 = new JTextField(6);
-        JTextField tf4 = new JTextField(6);
-        JTextField tf5 = new JTextField(6);
+
+
         Font font1 = new Font("Times new Roman", Font.BOLD, 30);
         Font font2 = new Font("Times new Roman", Font.PLAIN, 25);
         lab0.setFont(font1);
@@ -47,11 +50,11 @@ public class ModifyPrice extends JPanel {
         lab3.setFont(font2);
         lab4.setFont(font2);
         lab5.setFont(font2);
-        lab8.setFont(font2);
-        lab9.setFont(font2);
-        lab10.setFont(font2);
-        lab11.setFont(font2);
-        lab12.setFont(font2);
+        RamenOriginalPrice.setFont(font2);
+        NoriOriginalPrice.setFont(font2);
+        BoiledeggOriginalPrice.setFont(font2);
+        BambooshootsOriginalPrice.setFont(font2);
+        ChashuOriginalPrice.setFont(font2);
 
 
         topPanel.setLayout(new GridBagLayout());
@@ -95,23 +98,23 @@ public class ModifyPrice extends JPanel {
 
         top.gridy = 1;
         top.weighty = 0.15;
-        topPanel.add(lab8,top);
+        topPanel.add(RamenOriginalPrice,top);
 
         top.gridy = 2;
         top.weighty = 0.15;
-        topPanel.add(lab9,top);
+        topPanel.add(NoriOriginalPrice,top);
 
         top.gridy = 3;
         top.weighty = 0.15;
-        topPanel.add(lab10,top);
+        topPanel.add(BoiledeggOriginalPrice,top);
 
         top.gridy = 4;
         top.weighty = 0.15;
-        topPanel.add(lab11,top);
+        topPanel.add(BambooshootsOriginalPrice,top);
 
         top.gridy = 5;
         top.weighty = 0.15;
-        topPanel.add(lab12,top);
+        topPanel.add(ChashuOriginalPrice,top);
 
         top.gridx = 2;
         top.gridy = 0;
@@ -123,23 +126,23 @@ public class ModifyPrice extends JPanel {
 
         top.gridy = 1;
         top.weighty = 0.15;
-        topPanel.add(tf1,top);
+        topPanel.add(RamenNowPrice,top);
 
         top.gridy = 2;
         top.weighty = 0.15;
-        topPanel.add(tf2,top);
+        topPanel.add(NoriNowPrice,top);
 
         top.gridy = 3;
         top.weighty = 0.15;
-        topPanel.add(tf3,top);
+        topPanel.add(BoiledeggNowPrice,top);
 
         top.gridy = 4;
         top.weighty = 0.15;
-        topPanel.add(tf4,top);
+        topPanel.add(BambooshootsNowPrice,top);
 
         top.gridy = 5;
         top.weighty = 0.15;
-        topPanel.add(tf5,top);
+        topPanel.add(ChashuNowPrice,top);
 
         topPanel.setBorder(BorderFactory.createTitledBorder(""));
         //set the bottom Panel

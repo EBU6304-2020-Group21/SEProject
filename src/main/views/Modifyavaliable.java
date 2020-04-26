@@ -10,6 +10,22 @@ public class Modifyavaliable extends JPanel{
     private JPanel botPanel;
     public JButton back = new JButton("Back");
     public JButton confirm = new JButton("Confirm");
+    public JRadioButton RamenAvaliable = new JRadioButton("√");
+    public JRadioButton RamenUnavaliable = new JRadioButton("×");
+    public JRadioButton TonkostuAvaliable = new JRadioButton("√");
+    public JRadioButton TonkostuUnavaliable = new JRadioButton("×");
+    public JRadioButton ShoyuAvaliable = new JRadioButton("√");
+    public JRadioButton ShoyuUnavaliable = new JRadioButton("×");
+    public JRadioButton ShioAvaliable = new JRadioButton("√");
+    public JRadioButton ShioUnavaliable = new JRadioButton("×");
+    public JRadioButton NoriAvaliable = new JRadioButton("√");
+    public JRadioButton NoriUnavaliable = new JRadioButton("×");
+    public JRadioButton ChashuAvaliable = new JRadioButton("√");
+    public JRadioButton ChashuUnavaliable = new JRadioButton("×");
+    public JRadioButton BoiledeggAvaliable = new JRadioButton("√");
+    public JRadioButton BoiledeggUnavaliable = new JRadioButton("×");
+    public JRadioButton BambooshootsAvaliable = new JRadioButton("√");
+    public JRadioButton BambooshootsUnavaliable = new JRadioButton("×");
 
     public Modifyavaliable() {
         init();
@@ -26,29 +42,14 @@ public class Modifyavaliable extends JPanel{
         JLabel lab4 = new JLabel("Nori");
         JLabel lab5 = new JLabel("Chashu");
         JLabel lab6 = new JLabel("Boiled egg");
-        JLabel lab7 = new JLabel("avaliable");
-        JLabel lab8 = new JLabel("unavaliable");
+        JLabel lab7 = new JLabel("Avaliable");
+        JLabel lab8 = new JLabel("Unavaliable");
         JLabel lab9 = new JLabel("Bamboo shoots");
         JLabel lab10 = new JLabel("Ramen");
 
         Font font1 = new Font("Times new Roman",Font.BOLD,30);
         Font font2 = new Font("Times new Roman",Font.PLAIN,25);
-        JRadioButton but1 = new JRadioButton("√");
-        JRadioButton but2 = new JRadioButton("×");
-        JRadioButton but3 = new JRadioButton("√");
-        JRadioButton but4 = new JRadioButton("×");
-        JRadioButton but5 = new JRadioButton("√");
-        JRadioButton but6 = new JRadioButton("×");
-        JRadioButton but7 = new JRadioButton("√");
-        JRadioButton but8 = new JRadioButton("×");
-        JRadioButton but9 = new JRadioButton("√");
-        JRadioButton but10 = new JRadioButton("×");
-        JRadioButton but11 = new JRadioButton("√");
-        JRadioButton but12 = new JRadioButton("×");
-        JRadioButton but13 = new JRadioButton("√");
-        JRadioButton but14 = new JRadioButton("×");
-        JRadioButton but15 = new JRadioButton("√");
-        JRadioButton but16 = new JRadioButton("×");
+
         lab0.setFont(font1);
         lab10.setFont(font2);
         lab7.setFont(font1);
@@ -60,46 +61,46 @@ public class Modifyavaliable extends JPanel{
         lab4.setFont(font2);
         lab5.setFont(font2);
         lab6.setFont(font2);
-        but1.setFont(font2);
-        but2.setFont(font2);
-        but3.setFont(font2);
-        but4.setFont(font2);
-        but5.setFont(font2);
-        but6.setFont(font2);
-        but7.setFont(font2);
-        but8.setFont(font2);
-        but9.setFont(font2);
-        but10.setFont(font2);
-        but11.setFont(font2);
-        but12.setFont(font2);
-        but13.setFont(font2);
-        but14.setFont(font2);
-        but15.setFont(font2);
-        but16.setFont(font2);
+        RamenAvaliable.setFont(font2);
+        RamenUnavaliable.setFont(font2);
+        TonkostuAvaliable.setFont(font2);
+        TonkostuUnavaliable.setFont(font2);
+        ShoyuAvaliable.setFont(font2);
+        ShoyuUnavaliable.setFont(font2);
+        ShioAvaliable.setFont(font2);
+        ShioUnavaliable.setFont(font2);
+        NoriAvaliable.setFont(font2);
+        NoriUnavaliable.setFont(font2);
+        ChashuAvaliable.setFont(font2);
+        ChashuUnavaliable.setFont(font2);
+        BoiledeggAvaliable.setFont(font2);
+        BoiledeggUnavaliable.setFont(font2);
+        BambooshootsAvaliable.setFont(font2);
+        BambooshootsUnavaliable.setFont(font2);
         ButtonGroup bg1 = new ButtonGroup();
-        bg1.add(but1);
-        bg1.add(but2);
+        bg1.add(RamenAvaliable);
+        bg1.add(RamenUnavaliable);
         ButtonGroup bg2 = new ButtonGroup();
-        bg2.add(but3);
-        bg2.add(but4);
+        bg2.add(TonkostuAvaliable);
+        bg2.add(TonkostuUnavaliable);
         ButtonGroup bg3 = new ButtonGroup();
-        bg3.add(but5);
-        bg3.add(but6);
+        bg3.add(ShoyuAvaliable);
+        bg3.add(ShoyuUnavaliable);
         ButtonGroup bg4 = new ButtonGroup();
-        bg4.add(but7);
-        bg4.add(but8);
+        bg4.add(ShioAvaliable);
+        bg4.add(ShioUnavaliable);
         ButtonGroup bg5 = new ButtonGroup();
-        bg5.add(but9);
-        bg5.add(but10);
+        bg5.add(NoriAvaliable);
+        bg5.add(NoriUnavaliable);
         ButtonGroup bg6 = new ButtonGroup();
-        bg6.add(but11);
-        bg6.add(but12);
+        bg6.add(ChashuAvaliable);
+        bg6.add(ChashuUnavaliable);
         ButtonGroup bg7 = new ButtonGroup();
-        bg7.add(but13);
-        bg7.add(but14);
+        bg7.add(BoiledeggAvaliable);
+        bg7.add(BoiledeggUnavaliable);
         ButtonGroup bg8 = new ButtonGroup();
-        bg8.add(but15);
-        bg8.add(but16);
+        bg8.add(BambooshootsAvaliable);
+        bg8.add(BambooshootsUnavaliable);
 
         topPanel.setLayout(new GridBagLayout());
         GridBagConstraints top = new GridBagConstraints();
@@ -155,35 +156,36 @@ public class Modifyavaliable extends JPanel{
 
         top.gridy =1;
         top.weighty = 0.1;
-        topPanel.add(but1,top);
+        topPanel.add(RamenAvaliable,top);
 
         top.gridy =2;
         top.weighty = 0.1;
-        topPanel.add(but3,top);
+        topPanel.add(TonkostuAvaliable,top);
+
 
         top.gridy =3;
         top.weighty = 0.1;
-        topPanel.add(but5,top);
+        topPanel.add(ShoyuAvaliable,top);
 
         top.gridy =4;
         top.weighty = 0.1;
-        topPanel.add(but7,top);
+        topPanel.add(ShioAvaliable,top);
 
         top.gridy =5;
         top.weighty = 0.1;
-        topPanel.add(but9,top);
+        topPanel.add(NoriAvaliable,top);
 
         top.gridy =6;
         top.weighty = 0.1;
-        topPanel.add(but11,top);
+        topPanel.add(ChashuAvaliable,top);
 
         top.gridy =7;
         top.weighty = 0.1;
-        topPanel.add(but13,top);
+        topPanel.add(BoiledeggAvaliable,top);
 
         top.gridy =8;
         top.weighty = 0.1;
-        topPanel.add(but15,top);
+        topPanel.add(BambooshootsAvaliable,top);
 
 
         top.gridx = 2;
@@ -196,35 +198,35 @@ public class Modifyavaliable extends JPanel{
 
         top.gridy =1;
         top.weighty = 0.1;
-        topPanel.add(but2,top);
+        topPanel.add(RamenUnavaliable,top);
 
         top.gridy =2;
         top.weighty = 0.1;
-        topPanel.add(but4,top);
+        topPanel.add(TonkostuUnavaliable,top);
 
         top.gridy =3;
         top.weighty = 0.1;
-        topPanel.add(but6,top);
+        topPanel.add(ShoyuUnavaliable,top);
 
         top.gridy =4;
         top.weighty = 0.1;
-        topPanel.add(but8,top);
+        topPanel.add(ShioUnavaliable,top);
 
         top.gridy =5;
         top.weighty = 0.1;
-        topPanel.add(but10,top);
+        topPanel.add(NoriUnavaliable,top);
 
         top.gridy =6;
         top.weighty = 0.1;
-        topPanel.add(but12,top);
+        topPanel.add(ChashuUnavaliable,top);
 
         top.gridy =7;
         top.weighty = 0.1;
-        topPanel.add(but14,top);
+        topPanel.add(BoiledeggUnavaliable,top);
 
         top.gridy =8;
         top.weighty = 0.1;
-        topPanel.add(but16,top);
+        topPanel.add(BambooshootsUnavaliable,top);
 
 
         topPanel.setBorder(BorderFactory.createTitledBorder(""));
