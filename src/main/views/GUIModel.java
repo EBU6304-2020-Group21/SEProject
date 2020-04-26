@@ -148,7 +148,7 @@ public class GUIModel extends JFrame implements ActionListener {
                 modifyavaliable.back.addActionListener(new ModifyAvailableBackListener());
                 modifyavaliable.confirm.addActionListener(new ModifyAvailableConfirmListener());
                 mainPanel.add(modifyavaliable,"modifyavailable");
-                layout.show(mainPanel,"modifyavaikable");
+                layout.show(mainPanel,"modifyavailable");
             }
         }
     }

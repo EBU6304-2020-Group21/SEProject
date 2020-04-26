@@ -1,11 +1,10 @@
 package main.views;
 
-import sun.util.locale.provider.AvailableLanguageTags;
+
 
 import javax.swing.*;
 import java.awt.*;
 
-import javax.swing.JRadioButton.*;
 
 public class ModifyPanel extends JPanel{
     private JPanel topPanel;
