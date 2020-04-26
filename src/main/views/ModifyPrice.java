@@ -8,18 +8,25 @@ import javax.swing.JRadioButton.*;
 public class ModifyPrice extends JPanel {
     private JPanel topPanel;
     private JPanel botPanel;
+    private JLabel RamenOriginalPrice;
+    private JLabel NoriOriginalPrice;
+    private JLabel BoiledeggOriginalPrice;
+    private JLabel BambooshootsOriginalPrice;
+    private JLabel ChashuOriginalPrice;
+    private JTextField RamenNowPrice;
+    private JTextField NoriNowPrice;
+    private JTextField BoiledeggNowPrice;
+    private JTextField BambooshootsNowPrice;
+    private JTextField ChashuNowPrice;
+
+    public float RamenOPrice;
+    public float NoriOPrice;
+    public float BoiledeggOPrice;
+    public float BambooshootsOPrice;
+    public float ChashuOPrice;
     public JButton back = new JButton("Back");
     public JButton confirm = new JButton("Confirm");
-    public JLabel RamenOriginalPrice = new JLabel("£9.99");
-    public JLabel NoriOriginalPrice = new JLabel("£1");
-    public JLabel BoiledeggOriginalPrice = new JLabel("£1");
-    public JLabel BambooshootsOriginalPrice = new JLabel("£1");
-    public JLabel ChashuOriginalPrice = new JLabel("£2");
-    public JTextField RamenNowPrice = new JTextField(6);
-    public JTextField NoriNowPrice = new JTextField(6);
-    public JTextField BoiledeggNowPrice = new JTextField(6);
-    public JTextField BambooshootsNowPrice = new JTextField(6);
-    public JTextField ChashuNowPrice = new JTextField(6);
+
 
 
     public ModifyPrice() {
@@ -38,7 +45,16 @@ public class ModifyPrice extends JPanel {
         JLabel lab5 = new JLabel("Chashu");
         JLabel lab6 = new JLabel("Previous price");
         JLabel lab7 = new JLabel("Now price");
-
+        RamenOriginalPrice = new JLabel("$"+RamenOPrice);
+        NoriOriginalPrice = new JLabel("$"+NoriOPrice);
+        BoiledeggOriginalPrice = new JLabel("$"+BoiledeggOPrice);
+        BambooshootsOriginalPrice = new JLabel("$"+BambooshootsOPrice);
+        ChashuOriginalPrice = new JLabel("$"+ChashuOPrice);
+        RamenNowPrice = new JTextField(6);
+        NoriNowPrice = new JTextField(6);
+        BoiledeggNowPrice = new JTextField(6);
+        BambooshootsNowPrice = new JTextField(6);
+        ChashuNowPrice = new JTextField(6);
 
         Font font1 = new Font("Times new Roman", Font.BOLD, 30);
         Font font2 = new Font("Times new Roman", Font.PLAIN, 25);
