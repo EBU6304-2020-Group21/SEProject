@@ -44,6 +44,30 @@ public class CustomerInfosController {
 
     }
 
+    public static void updateCustomerTotalInfos(String fileStr){
+        FileWriter fileWriter;
+        File file = new File("Files/Customer/GeneralCustomerInfo.json");
+//        List<Customer> customerList;
+//        if(readCustomerTotalInfos()!=""){
+//            customerList = json2List(readCustomerTotalInfos());
+//        }else{
+//            customerList = new ArrayList<Customer>();
+//        }
+        try{
+            if(!file.exists()){
+                file.createNewFile();
+            }
+            fileWriter = new FileWriter(file);
+            fileWriter.write(fileStr);
+            fileWriter.flush();
+            fileWriter.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
     /**
      * 从文件里读出来字符串
      * @return

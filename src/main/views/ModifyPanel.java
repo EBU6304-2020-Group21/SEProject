@@ -5,6 +5,7 @@ package main.views;
 import javax.swing.*;
 import java.awt.*;
 
+import javax.swing.JRadioButton.*;
 
 public class ModifyPanel extends JPanel{
     private JPanel topPanel;
