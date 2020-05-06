@@ -9,6 +9,16 @@ public class Menu {
     private double extraBoilEggPrice = 1;  //the price of extra boiled eggs, default 1 pounds
     private double extraBamShootPrice = 1; //the price of extra banboo shoot, default 1 pounds
     private double extraChashuPrice = 2;   //the price of extra Chashu, default 2 pounds
+    private boolean isRamenAvailable=true; //set available of the Ramen
+    private boolean isTonkotsuAvailable=true;//set available of the Tonkotsu
+    private boolean isShoyuAvailable=true;//set available of the Shoyu
+    private boolean isShioAvailable=true;//set available of the Shio
+    private boolean isNoriAvailable=true;//set available of the Nori
+    private boolean isChashuAvailable=true;//set available of the Chashu
+    private boolean isBoilEggAvailable=true;//set available of the Boiled egg
+    private boolean isBamShootAvailable=true;//set available of the Bamboo shoot
+
+
 
     public double getFixedPrice() {
         return fixedPrice;
