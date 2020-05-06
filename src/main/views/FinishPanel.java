@@ -11,7 +11,8 @@ public class FinishPanel extends JPanel{
 
     public JButton back = new JButton("Back");
     public JButton confirm = new JButton("Confirm");
-    public FinishPanel(){
+    public FinishPanel(int stamps){
+        this.stamps = stamps;
         init();
     }
     public void init(){
@@ -65,6 +66,10 @@ public class FinishPanel extends JPanel{
         c.gridy = 1;
         c.weighty = 0.15;
         this.add(botPanel, c);
+    }
+
+    public void setStamps(int stamps) {
+        this.stamps = stamps;
     }
 
 }

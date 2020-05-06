@@ -10,7 +10,8 @@ public class FreePanel extends JPanel{
     private int stamps;
     public JButton back = new JButton("Back");
     public JButton confirm = new JButton("Confirm");
-    public FreePanel(){
+    public FreePanel(int stamps){
+        this.stamps = stamps;
         init();
     }
     public void init(){

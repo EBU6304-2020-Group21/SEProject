@@ -10,7 +10,8 @@ public class NofreePanel extends JPanel{
     private int stamps;
     public JButton back = new JButton("Back");
     public JButton confirm = new JButton("Confirm");
-    public NofreePanel(){
+    public NofreePanel(int stamps){
+        this.stamps = stamps;
         init();
     }
     public void init(){
