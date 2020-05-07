@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MenuTest {
-    Menu n=new Menu();
+    MenuPrice n=new MenuPrice();
     @Test
     void getFixedPrice() {
         assertEquals(9.99,n.getFixedPrice());
