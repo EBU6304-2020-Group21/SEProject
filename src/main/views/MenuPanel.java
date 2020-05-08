@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import static main.views.GUIModel.currentMenu;
+import static main.views.GUIModel.currentAvailablity;
 
 public class MenuPanel extends JPanel {
 
@@ -153,12 +155,11 @@ public class MenuPanel extends JPanel {
 
 
     public void init() {
-        //初始化传递参数，用于测试(后端组的同学把这里删了）
-        fixedPrice = 9.99;
-        extraNoriPrice = 1;     //the price of extra Nori, default 1 pounds
-        extraBoilEggPrice = 1;  //the price of extra boiled eggs, default 1 pounds
-        extraBamShootPrice = 1; //the price of extra banboo shoot, default 1 pounds
-        extraChashuPrice = 2;   //the price of extra Chashu, default 2 pounds
+        fixedPrice = currentMenu.getFixedPrice();
+        extraNoriPrice = currentMenu.getExtraNoriPrice();
+        extraChashuPrice = currentMenu.getExtraChashuPrice();
+        extraBamShootPrice = currentMenu.getExtraBamShootPrice();
+        extraBoilEggPrice = currentMenu.getExtraBoilEggPrice();
 
         //Set the font
         Font ramenFont = new Font("Times New Roman", Font.BOLD + Font.ITALIC, 20);
@@ -251,7 +252,23 @@ public class MenuPanel extends JPanel {
         add4.addActionListener(new add4Listener());
         subtract4.addActionListener(new subtract4Listener());
 
-
+        tonkotsu.setEnabled(currentAvailablity.isTonkotsuAvailable());
+        shoyu.setEnabled(currentAvailablity.isShoyuAvailable());
+        shio.setEnabled(currentAvailablity.isShioAvailable());
+        yes1.setEnabled(currentAvailablity.isNoriAvailable());
+        no1.setEnabled(currentAvailablity.isNoriAvailable());
+        add1.setEnabled(currentAvailablity.isNoriAvailable());
+        subtract1.setEnabled(currentAvailablity.isNoriAvailable());
+        yes2.setEnabled(currentAvailablity.isChashuAvailable());
+        no2.setEnabled(currentAvailablity.isChashuAvailable());
+        add4.setEnabled(currentAvailablity.isChashuAvailable());
+        subtract4.setEnabled(currentAvailablity.isChashuAvailable());
+        yes3.setEnabled(currentAvailablity.isBoilEggAvailable());
+        no3.setEnabled(currentAvailablity.isBoilEggAvailable());
+        add2.setEnabled(currentAvailablity.isBoilEggAvailable());
+        subtract2.setEnabled(currentAvailablity.isBoilEggAvailable());
+        add3.setEnabled(currentAvailablity.isBamShootAvailable());
+        subtract3.setEnabled(currentAvailablity.isBamShootAvailable());
 
         //Initialize the sub-panel of this panel
         topPanel = new JPanel();
@@ -261,7 +278,7 @@ public class MenuPanel extends JPanel {
         GridBagConstraints c1 = new GridBagConstraints();
         topPanel.setLayout(new GridBagLayout());
 //        topPanel.setBorder(BorderFactory.createLoweredBevelBorder());
-        JCheckBox ramen = new JCheckBox("Ramen ￡" + fixedPrice, true);
+        JCheckBox ramen = new JCheckBox("Ramen ￡" + fixedPrice, currentAvailablity.isRamenAvailable());
         ramen.setFont(ramenFont);
         ramen.setEnabled(false);
         JLabel title = new JLabel("<html><body>Totoro Ramen<br>Designed by Mr.Miyazaki<body></html>");

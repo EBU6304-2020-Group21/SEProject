@@ -3,6 +3,8 @@ package main.controller;
 import com.alibaba.fastjson.JSON;
 import main.entity.MenuAvailablity;
 import main.entity.MenuPrice;
+import main.views.ModifyPrice;
+import static main.views.GUIModel.currentMenu;
 
 import java.io.*;
 
@@ -171,39 +173,12 @@ public class MenuInfoController {
         return menuAvailablity;
     }
 
-    //TODO 颜恺完成下面的6个方法，先写Price的
-    //从界面读取用户输入的值，并填充进对象中，返回对象
-//    public static MenuPrice getMenuPriceFromView(){
-//
-//    }
 
-    //将文件中的值，填充进界面中
-    public static void setMenuPrice2View(MenuPrice menuPrice){
 
-    }
-
-    //输入确认的步骤，判定是否为浮点型
-//    public static boolean inputValidation4MenuPrice(){
-//
-//    }
-
-    //下同，都是availability的内容
-//    public static MenuAvailablity getMenuAvailabilityFromView(){
-//
-//    }
-
-    public static void setMenuAvailability2View(MenuAvailablity menuAvailablity){
-
-    }
-
-    //因为是选择题，所以应该不用输入确认，可删
-    public static void inputValidation4MenuAvailability(){
-
-    }
 
 
     public static void main(String[] args) {
-        System.out.println(getMenuPriceInfo());
-        System.out.println(getMenuAvailabilityInfo());
+        genMenuPriceInfo();
+        genMenuAvailabilityInfo();
     }
 }

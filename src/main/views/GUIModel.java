@@ -2,7 +2,9 @@ package main.views;
 
 import main.controller.*;
 import main.entity.Customer;
+import main.entity.MenuAvailablity;
 import main.entity.Order;
+import main.entity.MenuPrice;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,6 +16,8 @@ import java.util.regex.Pattern;
 public class GUIModel extends JFrame implements ActionListener {
     public static Order currentOrder = new Order();
     public static Customer currentCustomer = new Customer();
+    public static MenuPrice currentMenu = new MenuPrice();
+    public static MenuAvailablity currentAvailablity = new MenuAvailablity();
     Setter setter = new Setter();
     private WelcomePanel welcomePanel;
     private MenuPanel menuPanel;
@@ -39,6 +43,9 @@ public class GUIModel extends JFrame implements ActionListener {
     private CardLayout layout;
 
     public GUIModel() {
+        //initialize the menu
+        currentMenu = MenuInfoController.getMenuPriceInfo();
+        currentAvailablity = MenuInfoController.getMenuAvailabilityInfo();
         //Initialize all the panel
         mainPanel = new JPanel();
         startPanel = new StartPanel();
@@ -145,6 +152,23 @@ public class GUIModel extends JFrame implements ActionListener {
             }
             else if(modifyPanel.AvaUnava.isSelected()){
                 modifyavaliable = new Modifyavaliable();
+                //set current availablity
+                modifyavaliable.RamenAvaliable.setSelected(currentAvailablity.isRamenAvailable());
+                modifyavaliable.RamenUnavaliable.setSelected(!currentAvailablity.isRamenAvailable());
+                modifyavaliable.TonkostuAvaliable.setSelected(currentAvailablity.isTonkotsuAvailable());
+                modifyavaliable.TonkostuUnavaliable.setSelected(!currentAvailablity.isTonkotsuAvailable());
+                modifyavaliable.ShoyuAvaliable.setSelected(currentAvailablity.isShoyuAvailable());
+                modifyavaliable.ShoyuUnavaliable.setSelected(!currentAvailablity.isShoyuAvailable());
+                modifyavaliable.ShioAvaliable.setSelected(currentAvailablity.isShioAvailable());
+                modifyavaliable.ShioUnavaliable.setSelected(!currentAvailablity.isShioAvailable());
+                modifyavaliable.NoriAvaliable.setSelected(currentAvailablity.isNoriAvailable());
+                modifyavaliable.NoriUnavaliable.setSelected(!currentAvailablity.isNoriAvailable());
+                modifyavaliable.ChashuAvaliable.setSelected(currentAvailablity.isChashuAvailable());
+                modifyavaliable.ChashuUnavaliable.setSelected(!currentAvailablity.isChashuAvailable());
+                modifyavaliable.BambooshootsAvaliable.setSelected(currentAvailablity.isBamShootAvailable());
+                modifyavaliable.BambooshootsUnavaliable.setSelected(!currentAvailablity.isBamShootAvailable());
+                modifyavaliable.BoiledeggAvaliable.setSelected(currentAvailablity.isBoilEggAvailable());
+                modifyavaliable.BoiledeggUnavaliable.setSelected(!currentAvailablity.isBoilEggAvailable());
                 modifyavaliable.back.addActionListener(new ModifyAvailableBackListener());
                 modifyavaliable.confirm.addActionListener(new ModifyAvailableConfirmListener());
                 mainPanel.add(modifyavaliable,"modifyavailable");
@@ -161,8 +185,19 @@ public class GUIModel extends JFrame implements ActionListener {
     public class ModifyAvailableConfirmListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(null, "Success!", "Warning", JOptionPane.WARNING_MESSAGE);
+            MenuAvailablity newAvailablity = new MenuAvailablity();
+            newAvailablity.setRamenAvailable(modifyavaliable.RamenAvaliable.isSelected());
+            newAvailablity.setBamShootAvailable(modifyavaliable.BambooshootsAvaliable.isSelected());
+            newAvailablity.setBoilEggAvailable(modifyavaliable.BoiledeggAvaliable.isSelected());
+            newAvailablity.setChashuAvailable(modifyavaliable.ChashuAvaliable.isSelected());
+            newAvailablity.setNoriAvailable(modifyavaliable.NoriAvaliable.isSelected());
+            newAvailablity.setShioAvailable(modifyavaliable.ShioAvaliable.isSelected());
+            newAvailablity.setShoyuAvailable(modifyavaliable.ShoyuAvaliable.isSelected());
+            newAvailablity.setTonkotsuAvailable(modifyavaliable.TonkostuAvaliable.isSelected());
+            MenuInfoController.updateMenuAvailabilityInfo(newAvailablity);
+            JOptionPane.showMessageDialog(null, "Success!", "Congratulations!", JOptionPane.INFORMATION_MESSAGE);
             layout.show(mainPanel,"managestart");
+            currentAvailablity = MenuInfoController.getMenuAvailabilityInfo();
         }
     }
     public class ModifyPriceBackListener implements ActionListener{
@@ -174,10 +209,41 @@ public class GUIModel extends JFrame implements ActionListener {
     public class ModifyPriceConfirmListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(null, "Success!", "Warning", JOptionPane.WARNING_MESSAGE);
-            layout.show(mainPanel,"managestart");
+            if (!isDouble(modifyPrice.RamenNowPrice.getText())) {
+                JOptionPane.showMessageDialog(null, "Please input number in double format in Ramen Price!", "Warning", JOptionPane.WARNING_MESSAGE);
+            } else if (!isDouble(modifyPrice.ChashuNowPrice.getText())) {
+                JOptionPane.showMessageDialog(null, "Please input number in double format in chashu Price!", "Warning", JOptionPane.WARNING_MESSAGE);
+            } else if (!isDouble(modifyPrice.BambooshootsNowPrice.getText())) {
+                JOptionPane.showMessageDialog(null, "Please input number in double format in bamboo shoot Price!", "Warning", JOptionPane.WARNING_MESSAGE);
+            } else if (!isDouble(modifyPrice.BoiledeggNowPrice.getText())) {
+                JOptionPane.showMessageDialog(null, "Please input number in double format in boiled egg Price!", "Warning", JOptionPane.WARNING_MESSAGE);
+            } else {
+                MenuPrice newMenu = new MenuPrice();
+                newMenu.setFixedPrice(Double.parseDouble(modifyPrice.RamenNowPrice.getText()));
+                newMenu.setExtraNoriPrice(Double.parseDouble(modifyPrice.ChashuNowPrice.getText()));
+                newMenu.setExtraBamShootPrice(Double.parseDouble(modifyPrice.BambooshootsNowPrice.getText()));
+                newMenu.setExtraBoilEggPrice(Double.parseDouble(modifyPrice.BoiledeggNowPrice.getText()));
+                newMenu.setExtraChashuPrice(Double.parseDouble(modifyPrice.ChashuNowPrice.getText()));
+                MenuInfoController.updateMenuPriceInfo(newMenu);
+                currentMenu = MenuInfoController.getMenuPriceInfo();
+                JOptionPane.showMessageDialog(null, "Success!", "Congratulations!", JOptionPane.INFORMATION_MESSAGE);
+                layout.show(mainPanel, "managestart");
+            }
         }
+
+
     }
+    boolean isDouble(String str)
+    {
+        try
+        {
+            Double.parseDouble(str);
+            return true;
+        }
+        catch(NumberFormatException ex){}
+        return false;
+    }
+
     public class StatBackListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -203,7 +269,7 @@ public class GUIModel extends JFrame implements ActionListener {
     public class SendConfirmListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(null, "Success!", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Success!", "Congratulations!", JOptionPane.INFORMATION_MESSAGE);
             layout.show(mainPanel,"managestart");
         }
     }
@@ -719,7 +785,7 @@ public class GUIModel extends JFrame implements ActionListener {
                     //virtual stamps个数为10
                     if(CustomerQueryController.findByMemberShipNum(inputPanel.membershipNumField.getText(),
                             CustomerInfosController.json2List(CustomerInfosController.readCustomerTotalInfos())) == null){
-                        //TODO 判定输入的号码不对，查无此人，颜恺加一个弹窗
+                        JOptionPane.showMessageDialog(null, "There is no such customer!", "Warning", JOptionPane.WARNING_MESSAGE);
                     }else{
                         virtualStamps = CustomerQueryController.findByMemberShipNum(inputPanel.membershipNumField.getText(),
                                 CustomerInfosController.json2List(CustomerInfosController.readCustomerTotalInfos())).getStamps();

@@ -2,6 +2,7 @@ package main.views;
 
 import javax.swing.*;
 import java.awt.*;
+import static main.views.GUIModel.currentMenu;
 
 import javax.swing.JRadioButton.*;
 
@@ -13,17 +14,17 @@ public class ModifyPrice extends JPanel {
     private JLabel BoiledeggOriginalPrice;
     private JLabel BambooshootsOriginalPrice;
     private JLabel ChashuOriginalPrice;
-    private JTextField RamenNowPrice;
-    private JTextField NoriNowPrice;
-    private JTextField BoiledeggNowPrice;
-    private JTextField BambooshootsNowPrice;
-    private JTextField ChashuNowPrice;
+    public JTextField RamenNowPrice;
+    public JTextField NoriNowPrice;
+    public JTextField BoiledeggNowPrice;
+    public JTextField BambooshootsNowPrice;
+    public JTextField ChashuNowPrice;
 
-    public float RamenOPrice;
-    public float NoriOPrice;
-    public float BoiledeggOPrice;
-    public float BambooshootsOPrice;
-    public float ChashuOPrice;
+    public double RamenOPrice;
+    public double NoriOPrice;
+    public double BoiledeggOPrice;
+    public double BambooshootsOPrice;
+    public double ChashuOPrice;
     public JButton back = new JButton("Back");
     public JButton confirm = new JButton("Confirm");
 
@@ -37,6 +38,11 @@ public class ModifyPrice extends JPanel {
         topPanel = new JPanel();
         botPanel = new JPanel();
         //set the top Panel
+        RamenOPrice = currentMenu.getFixedPrice();
+        NoriOPrice = currentMenu.getExtraNoriPrice();
+        BoiledeggOPrice = currentMenu.getExtraBoilEggPrice();
+        BambooshootsOPrice = currentMenu.getExtraBamShootPrice();
+        ChashuOPrice = currentMenu.getExtraChashuPrice();
         JLabel lab0 = new JLabel("Options");
         JLabel lab1 = new JLabel("Ramen");
         JLabel lab2 = new JLabel("Nori");
@@ -55,6 +61,12 @@ public class ModifyPrice extends JPanel {
         BoiledeggNowPrice = new JTextField(6);
         BambooshootsNowPrice = new JTextField(6);
         ChashuNowPrice = new JTextField(6);
+
+        RamenNowPrice.setText(String.valueOf(currentMenu.getFixedPrice()));
+        NoriNowPrice.setText(String.valueOf(currentMenu.getExtraNoriPrice()));
+        BoiledeggNowPrice.setText(String.valueOf(currentMenu.getExtraBoilEggPrice()));
+        BambooshootsNowPrice.setText(String.valueOf(currentMenu.getExtraBamShootPrice()));
+        ChashuNowPrice.setText(String.valueOf(currentMenu.getExtraChashuPrice()));
 
         Font font1 = new Font("Times new Roman", Font.BOLD, 30);
         Font font2 = new Font("Times new Roman", Font.PLAIN, 25);
