@@ -6,6 +6,7 @@ package main.entity;
 public class Report {
     private int tonkotsuNum;
     private int shoyuNum;
+    private int shioNum;
     private int softNum;
     private int mediumNum;
     private int firmNum;
@@ -43,6 +44,14 @@ public class Report {
 
     public void setShoyuNum(int shoyuNum) {
         this.shoyuNum = shoyuNum;
+    }
+
+    public int getShioNum() {
+        return shioNum;
+    }
+
+    public void setShioNum(int shioNum) {
+        this.shioNum = shioNum;
     }
 
     public int getSoftNum() {
@@ -221,4 +230,34 @@ public class Report {
         this.spi0 = spi0;
     }
 
+    @Override
+    public String toString() {
+        return "Report{" +
+                "tonkotsuNum=" + tonkotsuNum +
+                ", shoyuNum=" + shoyuNum +
+                ", shioNum=" + shioNum +
+                ", softNum=" + softNum +
+                ", mediumNum=" + mediumNum +
+                ", firmNum=" + firmNum +
+                ", noNum=" + noNum +
+                ", justNum=" + justNum +
+                ", lotNum=" + lotNum +
+                ", noriyesNum=" + noriyesNum +
+                ", chashuyesNum=" + chashuyesNum +
+                ", chashunoNum=" + chashunoNum +
+                ", eggyesNum=" + eggyesNum +
+                ", eggnoNum=" + eggnoNum +
+                ", norinoNum=" + norinoNum +
+                ", spi1=" + spi1 +
+                ", spi2=" + spi2 +
+                ", spi3=" + spi3 +
+                ", spi4=" + spi4 +
+                ", spi5=" + spi5 +
+                ", extraNoriNum=" + extraNoriNum +
+                ", extraEggNum=" + extraEggNum +
+                ", extraBambooNum=" + extraBambooNum +
+                ", extraChashuNum=" + extraChashuNum +
+                ", spi0=" + spi0 +
+                '}';
+    }
 }

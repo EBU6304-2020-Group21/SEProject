@@ -58,7 +58,19 @@ public class Customer {
         this.stamps = stamps;
     }
 
-//    public static void main(String[] args) {
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "membershipNum='" + membershipNum + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", surname='" + surname + '\'' +
+                ", email='" + email + '\'' +
+                ", mobileNum='" + mobileNum + '\'' +
+                ", stamps=" + stamps +
+                '}';
+    }
+
+    //    public static void main(String[] args) {
 //        Customer customer = new Customer();
 //        customer.setMembershipNum();
 //        System.out.println(customer.getMembershipNum());

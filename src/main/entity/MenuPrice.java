@@ -49,4 +49,15 @@ public class MenuPrice {
     public void setExtraChashuPrice(double extraChashuPrice) {
         this.extraChashuPrice = extraChashuPrice;
     }
+
+    @Override
+    public String toString() {
+        return "MenuPrice{" +
+                "fixedPrice=" + fixedPrice +
+                ", extraNoriPrice=" + extraNoriPrice +
+                ", extraBoilEggPrice=" + extraBoilEggPrice +
+                ", extraBamShootPrice=" + extraBamShootPrice +
+                ", extraChashuPrice=" + extraChashuPrice +
+                '}';
+    }
 }

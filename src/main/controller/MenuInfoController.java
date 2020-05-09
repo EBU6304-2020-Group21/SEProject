@@ -57,7 +57,7 @@ public class MenuInfoController {
     }
 
     /**
-     * @description 用于从文件中得到实体的信息，需要传到前端 //TODO
+     * @description 用于从文件中得到实体的信息，需要传到前端
      * @return
      */
     public static MenuPrice getMenuPriceInfo(){

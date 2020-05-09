@@ -161,4 +161,26 @@ public class Order {
         this.memberNum = memberNum;
     }
 
+    @Override
+    public String toString() {
+        return "Order{" +
+                "soupType='" + soupType + '\'' +
+                ", noodleType='" + noodleType + '\'' +
+                ", sprOnionType='" + sprOnionType + '\'' +
+                ", nori='" + nori + '\'' +
+                ", chashu='" + chashu + '\'' +
+                ", boiledEgg='" + boiledEgg + '\'' +
+                ", spicyIndex=" + spicyIndex +
+                ", fixedPrice=" + fixedPrice +
+                ", extraNoriNum=" + extraNoriNum +
+                ", extraBoilEggNum=" + extraBoilEggNum +
+                ", extraBamshootNum=" + extraBamshootNum +
+                ", extraChashuNum=" + extraChashuNum +
+                ", addOnPrice=" + addOnPrice +
+                ", diningOption='" + diningOption + '\'' +
+                ", totalPrice='" + totalPrice + '\'' +
+                ", dateTime='" + dateTime + '\'' +
+                ", memberNum='" + memberNum + '\'' +
+                '}';
+    }
 }

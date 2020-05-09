@@ -80,4 +80,18 @@ public class MenuAvailablity {
     public void setBamShootAvailable(boolean bamShootAvailable) {
         isBamShootAvailable = bamShootAvailable;
     }
+
+    @Override
+    public String toString() {
+        return "MenuAvailablity{" +
+                "isRamenAvailable=" + isRamenAvailable +
+                ", isTonkotsuAvailable=" + isTonkotsuAvailable +
+                ", isShoyuAvailable=" + isShoyuAvailable +
+                ", isShioAvailable=" + isShioAvailable +
+                ", isNoriAvailable=" + isNoriAvailable +
+                ", isChashuAvailable=" + isChashuAvailable +
+                ", isBoilEggAvailable=" + isBoilEggAvailable +
+                ", isBamShootAvailable=" + isBamShootAvailable +
+                '}';
+    }
 }
