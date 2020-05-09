@@ -4,8 +4,6 @@ package main.entity;
  * @author Yinan Zhang
  */
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class Order {
     private String soupType;
