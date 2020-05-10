@@ -11,10 +11,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * <h3>SEProject</h3>
@@ -25,14 +22,16 @@ import java.util.List;
  **/
 public class ReportController {
     public static Date getLastMonday(){
+        Locale.setDefault(Locale.CHINA);
         Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.DAY_OF_MONTH, -(Calendar.DAY_OF_WEEK+5));
+        calendar.add(Calendar.DAY_OF_MONTH, -(Calendar.DAY_OF_WEEK+6));
         return calendar.getTime();
     }
 
     public static Date getLastSunday(){
+        Locale.setDefault(Locale.CHINA);
         Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.DAY_OF_MONTH, -(Calendar.DAY_OF_WEEK-1));
+        calendar.add(Calendar.DAY_OF_MONTH, -(Calendar.DAY_OF_WEEK));
         return calendar.getTime();
     }
 
