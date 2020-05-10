@@ -82,7 +82,6 @@ public class ReportController {
         }
     }
 
-    //TODO 颜恺前端调用这个方法返回的report，在界面显示相关信息
     public static Report generateWeeklyReport(){
         Report weeklyReport = new Report();
         for(Order o : getLastWeekOrders()){

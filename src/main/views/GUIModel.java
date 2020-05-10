@@ -1,10 +1,7 @@
 package main.views;
 
 import main.controller.*;
-import main.entity.Customer;
-import main.entity.MenuAvailablity;
-import main.entity.Order;
-import main.entity.MenuPrice;
+import main.entity.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -122,9 +119,37 @@ public class GUIModel extends JFrame implements ActionListener {
                 layout.show(mainPanel,"modify");
             }
             else if(manageStartPanel.SeeSales.isSelected()){
-                statPanel = new StatPanel();
+                Report report = ReportController.generateWeeklyReport();
+                statPanel = new StatPanel(
+                report.getTonkotsuNum(),
+                report.getShoyuNum(),
+                report.getShioNum(),
+                report.getSoftNum(),
+                report.getMediumNum(),
+                report.getFirmNum(),
+                report.getNoNum(),
+                report.getJustNum(),
+                report.getLotNum(),
+                report.getNoriyesNum(),
+                report.getNorinoNum(),
+                report.getChashuyesNum(),
+                report.getChashunoNum(),
+                report.getEggyesNum(),
+                report.getEggnoNum(),
+                report.getSpi0(),
+                report.getSpi1(),
+                report.getSpi2(),
+                report.getSpi3(),
+                report.getSpi4(),
+                report.getSpi5(),
+                report.getExtraNoriNum(),
+                report.getExtraEggNum(),
+                report.getExtraBambooNum(),
+                report.getExtraChashuNum());
                 statPanel.back.addActionListener(new StatBackListener());
                 statPanel.confirm.addActionListener(new StatConfirmListener());
+                statPanel.tonkotsuLabel.updateUI();
+                statPanel.setVisible(true);
                 mainPanel.add(statPanel,"stat");
                 layout.show(mainPanel,"stat");
             }
@@ -605,8 +630,8 @@ public class GUIModel extends JFrame implements ActionListener {
                     currentOrder.setDiningOption("Cards");
                 }
                 //Stamps add 1
-                StampsController.addStamps(inputPanel.membershipNumField.getText(),
-                        CustomerInfosController.json2List(CustomerInfosController.readCustomerTotalInfos()));
+//                StampsController.addStamps(inputPanel.membershipNumField.getText(),
+//                        CustomerInfosController.json2List(CustomerInfosController.readCustomerTotalInfos()));
 
                 GenTicketController gtc = new GenTicketController();
                 gtc.genTicket(currentOrder);
