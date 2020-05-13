@@ -146,7 +146,7 @@ public class MenuPanel extends JPanel {
     class subtract4Listener implements ActionListener {
         public void actionPerformed(ActionEvent event) {
             int currentnum4 = Integer.parseInt(extraChashu.getText());
-            if (currentnum4 > minnum+1 && currentnum4 <= maxnum){
+            if (currentnum4 > minnum && currentnum4 <= maxnum){
                 currentnum4--;
             }
             extraChashu.setText(String.valueOf(currentnum4));
