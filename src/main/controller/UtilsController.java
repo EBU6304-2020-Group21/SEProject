@@ -2,10 +2,11 @@ package main.controller;
 
 import main.entity.Customer;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class GenNumbersController {
+public class UtilsController {
     public static String genMembershipNums(){
         String time = Long.toString(System.currentTimeMillis());
         return time.substring(3, 11);
@@ -18,8 +19,18 @@ public class GenNumbersController {
         return dateNowStr;
     }
 
+    public static Date str2Date(String str){
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
+        Date date = null;
+        try {
+            date = sdf.parse(str);
+        } catch (ParseException e) {
+        }
+        return date;
+    }
+
     public static void main(String[] args) {
         Customer customer = new Customer();
-        customer.setMembershipNum(GenNumbersController.genMembershipNums());
+        customer.setMembershipNum(UtilsController.genMembershipNums());
     }
 }

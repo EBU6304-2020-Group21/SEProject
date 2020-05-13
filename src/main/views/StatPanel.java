@@ -91,6 +91,7 @@ public class StatPanel extends JPanel {
     }
 
     public void init() {
+        //TODO 直接调用Controller的对象接口
         topPanel = new JPanel();
         midPanel = new JPanel();
         botPanel = new JPanel();

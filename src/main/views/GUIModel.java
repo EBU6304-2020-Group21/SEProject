@@ -41,8 +41,8 @@ public class GUIModel extends JFrame implements ActionListener {
 
     public GUIModel() {
         //initialize the menu
-        currentMenu = MenuInfoController.getMenuPriceInfo();
-        currentAvailablity = MenuInfoController.getMenuAvailabilityInfo();
+        currentMenu = MenuController.getMenuPriceInfo();
+        currentAvailablity = MenuController.getMenuAvailabilityInfo();
         //Initialize all the panel
         mainPanel = new JPanel();
         startPanel = new StartPanel();
@@ -219,10 +219,10 @@ public class GUIModel extends JFrame implements ActionListener {
             newAvailablity.setShioAvailable(modifyavaliable.ShioAvaliable.isSelected());
             newAvailablity.setShoyuAvailable(modifyavaliable.ShoyuAvaliable.isSelected());
             newAvailablity.setTonkotsuAvailable(modifyavaliable.TonkostuAvaliable.isSelected());
-            MenuInfoController.updateMenuAvailabilityInfo(newAvailablity);
+            MenuController.updateMenuAvailabilityInfo(newAvailablity);
             JOptionPane.showMessageDialog(null, "Success!", "Congratulations!", JOptionPane.INFORMATION_MESSAGE);
             layout.show(mainPanel,"managestart");
-            currentAvailablity = MenuInfoController.getMenuAvailabilityInfo();
+            currentAvailablity = MenuController.getMenuAvailabilityInfo();
         }
     }
     public class ModifyPriceBackListener implements ActionListener{
@@ -249,8 +249,8 @@ public class GUIModel extends JFrame implements ActionListener {
                 newMenu.setExtraBamShootPrice(Double.parseDouble(modifyPrice.BambooshootsNowPrice.getText()));
                 newMenu.setExtraBoilEggPrice(Double.parseDouble(modifyPrice.BoiledeggNowPrice.getText()));
                 newMenu.setExtraChashuPrice(Double.parseDouble(modifyPrice.ChashuNowPrice.getText()));
-                MenuInfoController.updateMenuPriceInfo(newMenu);
-                currentMenu = MenuInfoController.getMenuPriceInfo();
+                MenuController.updateMenuPriceInfo(newMenu);
+                currentMenu = MenuController.getMenuPriceInfo();
                 JOptionPane.showMessageDialog(null, "Success!", "Congratulations!", JOptionPane.INFORMATION_MESSAGE);
                 layout.show(mainPanel, "managestart");
             }
@@ -461,7 +461,7 @@ public class GUIModel extends JFrame implements ActionListener {
                 JOptionPane.showMessageDialog(null, "Please fill in your phone number all in number!", "Warning", JOptionPane.WARNING_MESSAGE);
             } else {
                 LoyaltySetterController.set();
-                CustomerInfosController.genCustomerTotalInfos(currentCustomer);
+                CustomerController.genCustomerTotalInfos(currentCustomer);
                 congratulationPanel = new CongratulationPanel();
                 congratulationPanel.back.addActionListener(new CongratulationBackListener1());
                 congratulationPanel.confirm.addActionListener(new CongratulationConfirmListener1());
@@ -512,24 +512,24 @@ public class GUIModel extends JFrame implements ActionListener {
             if (inputPanel.membershipNumField.getText().equals("")) {
                 JOptionPane.showMessageDialog(null, "Please fill in your membership number!", "Warning", JOptionPane.WARNING_MESSAGE);
             }
-            if(CustomerQueryController.findByMemberShipNum(inputPanel.membershipNumField.getText(),CustomerInfosController.json2List(CustomerInfosController.readCustomerTotalInfos())) == null){
+            if(CustomerController.findByMemberShipNum(inputPanel.membershipNumField.getText(), CustomerController.json2List(CustomerController.readCustomerTotalInfos())) == null){
                 JOptionPane.showMessageDialog(null, "Please check your membership number!", "Warning", JOptionPane.WARNING_MESSAGE);
             }else {
                 //后端验证，这个判断条件需要后端同学修改
                 //virtual stamps个数为10
-                virtualStamps = CustomerQueryController.findByMemberShipNum(inputPanel.membershipNumField.getText(),
-                        CustomerInfosController.json2List(CustomerInfosController.readCustomerTotalInfos())).getStamps();
-                if (CustomerQueryController.findByMemberShipNum(inputPanel.membershipNumField.getText(),CustomerInfosController.json2List(CustomerInfosController.readCustomerTotalInfos())).getStamps() == 9) {
+                virtualStamps = CustomerController.findByMemberShipNum(inputPanel.membershipNumField.getText(),
+                        CustomerController.json2List(CustomerController.readCustomerTotalInfos())).getStamps();
+                if (CustomerController.findByMemberShipNum(inputPanel.membershipNumField.getText(), CustomerController.json2List(CustomerController.readCustomerTotalInfos())).getStamps() == 9) {
                     //Stamps add 1
-                    StampsController.addStamps(inputPanel.membershipNumField.getText(),
-                            CustomerInfosController.json2List(CustomerInfosController.readCustomerTotalInfos()));
+                    CustomerController.addStamps(inputPanel.membershipNumField.getText(),
+                            CustomerController.json2List(CustomerController.readCustomerTotalInfos()));
                     freePanel = new FreePanel(virtualStamps);
                     freePanel.back.addActionListener(new FreeBackListener1());
                     freePanel.confirm.addActionListener(new FreeConfirmListener1());
                     mainPanel.add(freePanel, "free");
                     layout.show(mainPanel, "free");
                 } else {
-                    currentCustomer.setMembershipNum(CustomerQueryController.findByMemberShipNum(inputPanel.membershipNumField.getText(),CustomerInfosController.json2List(CustomerInfosController.readCustomerTotalInfos())).getMembershipNum());
+                    currentCustomer.setMembershipNum(CustomerController.findByMemberShipNum(inputPanel.membershipNumField.getText(), CustomerController.json2List(CustomerController.readCustomerTotalInfos())).getMembershipNum());
                     nofreePanel = new NofreePanel(virtualStamps);
                     nofreePanel.back.addActionListener(new NofreeBackListener1());
                     nofreePanel.confirm.addActionListener(new NofreeConfirmListener1());
@@ -603,13 +603,13 @@ public class GUIModel extends JFrame implements ActionListener {
                     currentOrder.setDiningOption("Cards");
                 }
                 //Stamps add 1
-                StampsController.addStamps(inputPanel.membershipNumField.getText(),
-                        CustomerInfosController.json2List(CustomerInfosController.readCustomerTotalInfos()));
+                CustomerController.addStamps(inputPanel.membershipNumField.getText(),
+                        CustomerController.json2List(CustomerController.readCustomerTotalInfos()));
 
-                GenTicketController gtc = new GenTicketController();
+                TicketController gtc = new TicketController();
                 gtc.genTicket(currentOrder);
                 ticketPanel = new TicketPanel();
-                OrderInfoController.genOrderTotalInfos(currentOrder);
+                OrderController.genOrderTotalInfos(currentOrder);
                 ticketPanel.back.addActionListener(new TicketBackListener1());
                 ticketPanel.confirm.addActionListener(new TicketConfirmListener1());
                 mainPanel.add(ticketPanel, "ticket");
@@ -630,13 +630,13 @@ public class GUIModel extends JFrame implements ActionListener {
                     currentOrder.setDiningOption("Cards");
                 }
                 //Stamps add 1
-//                StampsController.addStamps(inputPanel.membershipNumField.getText(),
+//                CustomerController.addStamps(inputPanel.membershipNumField.getText(),
 //                        CustomerInfosController.json2List(CustomerInfosController.readCustomerTotalInfos()));
 
-                GenTicketController gtc = new GenTicketController();
+                TicketController gtc = new TicketController();
                 gtc.genTicket(currentOrder);
                 ticketPanel = new TicketPanel();
-                OrderInfoController.genOrderTotalInfos(currentOrder);
+                OrderController.genOrderTotalInfos(currentOrder);
                 ticketPanel.back.addActionListener(new TicketBackListener3());
                 ticketPanel.confirm.addActionListener(new TicketConfirmListener2());
                 mainPanel.add(ticketPanel, "ticket");
@@ -670,8 +670,8 @@ public class GUIModel extends JFrame implements ActionListener {
     public class TicketConfirmListener1 implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            finishPanel = new FinishPanel(CustomerQueryController.findByMemberShipNum(inputPanel.membershipNumField.getText(),
-                    CustomerInfosController.json2List(CustomerInfosController.readCustomerTotalInfos())).getStamps());
+            finishPanel = new FinishPanel(CustomerController.findByMemberShipNum(inputPanel.membershipNumField.getText(),
+                    CustomerController.json2List(CustomerController.readCustomerTotalInfos())).getStamps());
             finishPanel.back.addActionListener(new FinishBackListener1());
             finishPanel.confirm.addActionListener(new FinishConfirmListener1());
             mainPanel.add(finishPanel, "finish");
@@ -765,7 +765,7 @@ public class GUIModel extends JFrame implements ActionListener {
                 JOptionPane.showMessageDialog(null, "Please fill in your phone number all in number!", "Warning", JOptionPane.WARNING_MESSAGE);
             } else {
                 LoyaltySetterController.set();
-                CustomerInfosController.genCustomerTotalInfos(currentCustomer);
+                CustomerController.genCustomerTotalInfos(currentCustomer);
                 congratulationPanel = new CongratulationPanel();
                 congratulationPanel.back.addActionListener(new CongratulationBackListener2());
                 congratulationPanel.confirm.addActionListener(new CongratulationConfirmListener2());
@@ -808,12 +808,12 @@ public class GUIModel extends JFrame implements ActionListener {
                 } else {
                     //后端验证，这个判断条件需要后端同学修改
                     //virtual stamps个数为10
-                    if(CustomerQueryController.findByMemberShipNum(inputPanel.membershipNumField.getText(),
-                            CustomerInfosController.json2List(CustomerInfosController.readCustomerTotalInfos())) == null){
+                    if(CustomerController.findByMemberShipNum(inputPanel.membershipNumField.getText(),
+                            CustomerController.json2List(CustomerController.readCustomerTotalInfos())) == null){
                         JOptionPane.showMessageDialog(null, "There is no such customer!", "Warning", JOptionPane.WARNING_MESSAGE);
                     }else{
-                        virtualStamps = CustomerQueryController.findByMemberShipNum(inputPanel.membershipNumField.getText(),
-                                CustomerInfosController.json2List(CustomerInfosController.readCustomerTotalInfos())).getStamps();
+                        virtualStamps = CustomerController.findByMemberShipNum(inputPanel.membershipNumField.getText(),
+                                CustomerController.json2List(CustomerController.readCustomerTotalInfos())).getStamps();
                         if (virtualStamps == 9) {
                             freePanel = new FreePanel(virtualStamps);
                             freePanel.back.addActionListener(new FreeBackListener2());

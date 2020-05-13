@@ -1,13 +1,12 @@
 package main.controller;
 
-import main.entity.Customer;
 import main.views.RegisterPanel;
 
 
 /**
  * @author Jianning Qu
  */
-
+//TODO 颜恺在使用新的数据传输方法后，可以将此类代替，随后可以删除
 public class LoyaltyGetterController {
     //This class is used to get and set for Loyalty Service
 
@@ -29,6 +28,6 @@ public class LoyaltyGetterController {
     }
 
     public String getMembershipNum(){
-        return GenNumbersController.genMembershipNums();
+        return UtilsController.genMembershipNums();
     }
 }

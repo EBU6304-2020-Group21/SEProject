@@ -3,8 +3,6 @@ package main.controller;
 import com.alibaba.fastjson.JSON;
 import main.entity.MenuAvailablity;
 import main.entity.MenuPrice;
-import main.views.ModifyPrice;
-import static main.views.GUIModel.currentMenu;
 
 import java.io.*;
 
@@ -15,7 +13,7 @@ import java.io.*;
  * @author : Yuxuan Wu
  * @date : 2020-05-07 20:19
  **/
-public class MenuInfoController {
+public class MenuController {
     /**
      * @description 用于进行第一次菜单价格文件生成的初始化操作，不用运行
      */
@@ -174,7 +172,27 @@ public class MenuInfoController {
     }
 
 
+    //Todo 方法
+    //在对应的panel里面直接调用上面的方法将后端的值写在前端
+    //修改后，将前端的值录入后端的方法
+    public static MenuPrice getMenuPriceFromView(){
+        //可调用上面的get...Info()
+        return new MenuPrice();
+    }
 
+    public static MenuAvailablity getMenuAvailablityFromView(){
+        //可调用上面的get...Info()
+        return new MenuAvailablity();
+    }
+
+    //输入确认完成后，将其写入后端，GUIModel直接调用下面这两个方法
+    public static void updateMenuPriceFiles(){
+        updateMenuPriceInfo(getMenuPriceFromView());
+    }
+
+    public static void updateMenuAvailabilityFiles(){
+        updateMenuAvailabilityInfo(getMenuAvailablityFromView());
+    }
 
 
     public static void main(String[] args) {

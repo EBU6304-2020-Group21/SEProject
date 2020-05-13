@@ -11,16 +11,15 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CustomerInfosControllerTest {
+class CustomerControllerTest {
     Customer customer = new Customer();
-    CustomerQueryController cqc = new CustomerQueryController();
-    CustomerInfosController cic = new CustomerInfosController();
+    CustomerController cic = new CustomerController();
 
     @Test
     void genCustomerTotalInfos() {
         customer.setMembershipNum("test");
         cic.genCustomerTotalInfos(customer);
-        assertEquals(false, cqc.findByMemberShipNum("test",
+        assertEquals(false, cic.findByMemberShipNum("test",
                 cic.json2List(cic.readCustomerTotalInfos()))==null);
     }
 

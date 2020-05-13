@@ -9,8 +9,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -72,8 +70,8 @@ public class ReportController {
 
             for(Order o : totalOrderList){
                 //Test whether the Date is between the last Monday and last Friday
-                if(str2Date(o.getDateTime()).after(getLastMonday()) &&
-                        str2Date(o.getDateTime()).before(getLastSunday())){
+                if(UtilsController.str2Date(o.getDateTime()).after(getLastMonday()) &&
+                        UtilsController.str2Date(o.getDateTime()).before(getLastSunday())){
                     weekOrderList.add(o);
                 }
             }
@@ -150,15 +148,8 @@ public class ReportController {
         return weeklyReport;
     }
 
-    public static Date str2Date(String str){
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
-        Date date = null;
-        try {
-            date = sdf.parse(str);
-        } catch (ParseException e) {
-        }
-        return date;
-    }
+
+
 
     public static void main(String[] args) {
         System.out.println(getLastMonday());

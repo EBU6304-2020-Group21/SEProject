@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * @author Yuxuan Wu
  */
-public class CustomerInfosController {
+public class CustomerController {
 
     /**
      * 将新的customer写入GeneralCustomerInfo.json文件
@@ -123,16 +123,75 @@ public class CustomerInfosController {
         return customerArray.toString();
     }
 
+    /**
+     *
+     * @param membershipNum
+     * @param customerList
+     * @return
+     */
+    public static Customer findByMemberShipNum(String membershipNum, List<Customer> customerList){
+        Customer resultCustomer = new Customer();
+        int j=0;
+        for(Customer customer : customerList){
+//            System.out.println(customer.getMembershipNum());
+//            System.out.println(customer.getEmail());
+            if(membershipNum.equals(customer.getMembershipNum())){
+                resultCustomer = customer;
+                break;
+            }else{
+                j++;
+            }
+        }
+        if(j==customerList.size()){
+            return null;
+        }else{
+            return resultCustomer;
+        }
+    }
+
+    /**
+     *
+     * @param membershipNum
+     * @param customerList
+     */
+    public static void addStamps(String membershipNum, List<Customer> customerList){
+        Customer resultCustomer = new Customer();
+        int i=0;
+        for(Customer customer : customerList){
+            if(customer.getMembershipNum().equals(membershipNum)){
+                resultCustomer = customer;
+            }
+        }
+        customerList.remove(resultCustomer);
+        if(resultCustomer.getStamps()!=9){
+            resultCustomer.setStamps(resultCustomer.getStamps()+1);
+        }else{
+            resultCustomer.setStamps(0);
+        }
+        customerList.add(resultCustomer);
+        CustomerController.updateCustomerTotalInfos(CustomerController.list2Json(customerList));
+    }
+
+    //TODO 从panel里面读出数据，封装为Customer，参数为Panel
+    public static Customer customerFromView(){
+        return new Customer();
+    }
+
+    //TODO GUIModel 直接调用这个方法
+    public static void addCustomer2Files(){
+        genCustomerTotalInfos(customerFromView());
+    }
+
     public static void main(String[] args) {
         Customer customer = new Customer();
-        CustomerInfosController customerInfosController = new CustomerInfosController();
+        CustomerController customerController = new CustomerController();
         customer.setEmail("wyx@soda.com");
         customer.setFirstName("Yuxuan");
         customer.setSurname("Wu");
         customer.setMobileNum("18813057698");
         customer.setStamps(5);
-        customer.setMembershipNum(GenNumbersController.genMembershipNums());
-        customerInfosController.genCustomerTotalInfos(customer);
-        System.out.println(json2List(customerInfosController.readCustomerTotalInfos()));
+        customer.setMembershipNum(UtilsController.genMembershipNums());
+        customerController.genCustomerTotalInfos(customer);
+        System.out.println(json2List(customerController.readCustomerTotalInfos()));
     }
 }

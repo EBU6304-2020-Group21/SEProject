@@ -5,19 +5,19 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static main.controller.OrderInfoController.json2List;
+import static main.controller.OrderController.json2List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author Yinan Zhang
  */
 
-class OrderInfoControllerTest {
+class OrderControllerTest {
 
     @Test
     void genOrderTotalinfos() {
         Order order = new Order();
-        OrderInfoController zyn= new OrderInfoController();
+        OrderController zyn= new OrderController();
         order.setSoupType("zz");
         order.setDiningOption("take out");
         order.setBoiledEgg("yes");

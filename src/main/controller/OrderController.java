@@ -9,7 +9,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrderInfoController {
+public class OrderController {
     
     public static void genOrderTotalInfos(Order order){
         FileWriter fileWriter;
@@ -75,6 +75,17 @@ public class OrderInfoController {
     public static String list2Json(List<Order> orderList){
         JSONArray orderArray = JSONArray.parseArray(JSON.toJSONString(orderList));
         return orderArray.toString();
+    }
+
+    //TODO 这里在输入确认后，将界面上的value在这里封装为对象
+    public static Order orderFromView(){
+        return new Order();
+    }
+
+    //TODO 在这里将新Order写入两个文件，也就是说，在GUIModel里面只需调用这个方法即可
+    public static void addOrder2Files(){
+        genOrderTotalInfos(orderFromView());
+        TicketController.genTicket(orderFromView());
     }
     
 }

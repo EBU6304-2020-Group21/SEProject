@@ -10,11 +10,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * @Author: Yinan Zhang
  * @Date: 2020/5/9 18:27
  */
-class MenuInfoControllerTest {
+class MenuControllerTest {
     @Test
     void genMenuPriceInfo(){
         MenuPrice n= new MenuPrice();
-        MenuInfoController zyn= new MenuInfoController();
+        MenuController zyn= new MenuController();
         n.setExtraBamShootPrice(60.5);
         n.setFixedPrice(8.8);
         n.setExtraBoilEggPrice(8.2);
@@ -29,7 +29,7 @@ class MenuInfoControllerTest {
     void genMenuAvailabilityInfo(){
         MenuAvailablity n= new MenuAvailablity();
         MenuAvailablity s= new MenuAvailablity();
-        MenuInfoController zyn= new MenuInfoController();
+        MenuController zyn= new MenuController();
         n.setBamShootAvailable(false);
         n.setBoilEggAvailable(true);
         n.setChashuAvailable(false);

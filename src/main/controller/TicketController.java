@@ -10,7 +10,7 @@ import java.util.Date;
  * @author Yuxuan Wu
  *
  */
-public class GenTicketController {
+public class TicketController {
 
     public static void genTicket(Order order){
         FileWriter fileWriter;

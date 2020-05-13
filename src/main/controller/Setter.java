@@ -7,7 +7,7 @@ import static main.views.GUIModel.currentOrder;
 /**
  * @author Jianning Qu
  */
-
+//TODO 颜恺在使用新的数据传输方法后，可以将此类代替，随后可以删除
 public class Setter {
     //Obtain getter and setter in Order
     //write to the Order object
@@ -26,7 +26,7 @@ public class Setter {
         currentOrder.setExtraBoilEggNum(reader.getExtraBoilEggNum());
         currentOrder.setExtraBamshootNum(reader.getExtraBamshootNum());
         currentOrder.setExtraChashuNum(reader.getExtraChashuNum());
-        currentOrder.setDateTime(GenNumbersController.genDateTime());
+        currentOrder.setDateTime(UtilsController.genDateTime());
 
         DecimalFormat df = new DecimalFormat("#.00");
         double ttPrice = (currentOrder.getExtraNoriNum()+currentOrder.getExtraBoilEggNum()+currentOrder.getExtraBamshootNum()+currentOrder.getExtraChashuNum()*2+9.99);
