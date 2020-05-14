@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * @Author: Yinan Zhang
  * @Date: 2020/5/9 18:27
  */
-class MenuControllerTest {
+class  MenuControllerTest {
     @Test
     void genMenuPriceInfo(){
         MenuPrice n= new MenuPrice();
