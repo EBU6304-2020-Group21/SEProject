@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import main.entity.Customer;
+import main.views.RegisterPanel;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -172,14 +173,21 @@ public class CustomerController {
         CustomerController.updateCustomerTotalInfos(CustomerController.list2Json(customerList));
     }
 
-    //TODO 从panel里面读出数据，封装为Customer，参数为Panel
-    public static Customer customerFromView(){
-        return new Customer();
+
+    public static Customer customerFromView(RegisterPanel registerPanel){
+        Customer newCustomer = new Customer();
+        newCustomer.setFirstName(registerPanel.firstNameField.getText());
+        newCustomer.setSurname(registerPanel.surnameField.getText());
+        newCustomer.setEmail(registerPanel.emailField.getText());
+        newCustomer.setMobileNum(registerPanel.phoneNumberField.getText());
+        newCustomer.setStamps(0);
+        newCustomer.setMembershipNum(UtilsController.genMembershipNums());
+        return newCustomer;
     }
 
-    //TODO GUIModel 直接调用这个方法
-    public static void addCustomer2Files(){
-        genCustomerTotalInfos(customerFromView());
+
+    public static void addCustomer2Files(RegisterPanel registerPanel){
+        genCustomerTotalInfos(customerFromView(registerPanel));
     }
 
     public static void main(String[] args) {

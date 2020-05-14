@@ -1,5 +1,8 @@
 package main.views;
 
+import main.controller.MenuController;
+import main.entity.MenuPrice;
+
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
@@ -47,7 +50,7 @@ public class TicketPanel extends JPanel {
 
     public void init() {
         //Initialize the sub-panel of this panel
-
+        MenuPrice menuPrice = MenuController.getMenuPriceInfo();
         topPanel = new JPanel();
         midPanel = new JPanel();
         botPanel = new JPanel();
@@ -211,7 +214,6 @@ public class TicketPanel extends JPanel {
         JLabel show21b = new JLabel();
         JLabel show22 = new JLabel();
         JLabel show23 = new JLabel();
-        System.out.println(currentOrder.getSoupType());
         show7.setText(currentOrder.getSoupType());
         show8.setText(""+ currentOrder.getNoodleType());
         show9.setText(""+ currentOrder.getSprOnionType());
@@ -221,14 +223,17 @@ public class TicketPanel extends JPanel {
         show13.setText(""+ currentOrder.getSpicyIndex());
         show14.setText(""+ currentOrder.getFixedPrice());
         show18a.setText(""+ currentOrder.getExtraNoriNum());
-        show18b.setText(""+currentOrder.getExtraNoriNum()*MenuPanel.extraNoriPrice);
+        show18b.setText(""+currentOrder.getExtraNoriNum()*menuPrice.getExtraNoriPrice());
         show19a.setText(""+ currentOrder.getExtraBoilEggNum());
-        show19b.setText(""+currentOrder.getExtraBoilEggNum()*MenuPanel.extraBoilEggPrice);
+        show19b.setText(""+currentOrder.getExtraBoilEggNum()*menuPrice.getExtraBoilEggPrice());
         show20a.setText(""+ currentOrder.getExtraBamshootNum());
-        show20b.setText(""+currentOrder.getExtraBamshootNum()*MenuPanel.extraBamShootPrice);
+        show20b.setText(""+currentOrder.getExtraBamshootNum()*menuPrice.getExtraBamShootPrice());
         show21a.setText(""+ currentOrder.getExtraChashuNum());
-        show21b.setText(""+currentOrder.getExtraChashuNum()*MenuPanel.extraChashuPrice);
-        currentOrder.setAddOnPrice((currentOrder.getExtraNoriNum()+currentOrder.getExtraBoilEggNum()+currentOrder.getExtraBamshootNum()+currentOrder.getExtraChashuNum()*2));
+        show21b.setText(""+currentOrder.getExtraChashuNum()*menuPrice.getExtraChashuPrice());
+        currentOrder.setAddOnPrice((currentOrder.getExtraNoriNum()*menuPrice.getExtraNoriPrice()
+                +currentOrder.getExtraBoilEggNum()*menuPrice.getExtraBoilEggPrice()
+                +currentOrder.getExtraBamshootNum()*menuPrice.getExtraBamShootPrice()
+                +currentOrder.getExtraChashuNum()*menuPrice.getExtraChashuPrice()));
         show22.setText(""+ currentOrder.getAddOnPrice());
         show23.setText(""+ currentOrder.getTotalPrice());
 

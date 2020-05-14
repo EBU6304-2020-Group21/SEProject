@@ -4,10 +4,14 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import main.entity.Order;
+import main.views.MenuPanel;
 
 import java.io.*;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
+
+import static main.views.GUIModel.currentOrder;
 
 public class OrderController {
     
@@ -77,15 +81,92 @@ public class OrderController {
         return orderArray.toString();
     }
 
-    //TODO 这里在输入确认后，将界面上的value在这里封装为对象
-    public static Order orderFromView(){
-        return new Order();
+
+    public static Order orderFromView(MenuPanel menuPanel){
+        Order newOrder = new Order();
+        if(menuPanel.tonkotsu.isSelected()){
+            newOrder.setSoupType("Tonkotsu");
+        }else if(menuPanel.shoyu.isSelected()){
+            newOrder.setSoupType("Shoyu");
+        }else{
+            newOrder.setSoupType("Shio");
+        }
+
+        if(menuPanel.soft.isSelected()){
+            newOrder.setNoodleType("Soft");
+        }else if(menuPanel.medium.isSelected()){
+            newOrder.setNoodleType("Medium");
+        }else{
+            newOrder.setNoodleType("Firm");
+        }
+
+        if(menuPanel.no.isSelected()){
+            newOrder.setSprOnionType("No please");
+        }else if(menuPanel.just.isSelected()){
+            newOrder.setSprOnionType("Just a little");
+        }else{
+            newOrder.setSprOnionType("A lot!");
+        }
+
+        if(menuPanel.yes1.isSelected()){
+            newOrder.setNori("Yes");
+        }else{
+            newOrder.setNori("No");
+        }
+
+        if(menuPanel.yes2.isSelected()){
+            newOrder.setChashu("Yes");
+        }else{
+            newOrder.setChashu("No");
+        }
+
+        if(menuPanel.yes3.isSelected()){
+            newOrder.setBoiledEgg("Yes");
+        }else{
+            newOrder.setBoiledEgg("No");
+        }
+
+        if(menuPanel.s1.isSelected()){
+            newOrder.setSpicyIndex(0);
+        }else if(menuPanel.s2.isSelected()){
+            newOrder.setSpicyIndex(1);
+        }else if(menuPanel.s3.isSelected()){
+            newOrder.setSpicyIndex(2);
+        }else if(menuPanel.s4.isSelected()){
+            newOrder.setSpicyIndex(3);
+        }else if(menuPanel.s5.isSelected()){
+            newOrder.setSpicyIndex(4);
+        }else{
+            newOrder.setSpicyIndex(5);
+        }
+
+        newOrder.setExtraNoriNum(Integer.parseInt(menuPanel.extraNori.getText()));
+        newOrder.setExtraBoilEggNum(Integer.parseInt(menuPanel.extraBoilEgg.getText()));
+        newOrder.setExtraChashuNum(Integer.parseInt(menuPanel.extraChashu.getText()));
+        newOrder.setExtraBamshootNum(Integer.parseInt(menuPanel.extraBamShoot.getText()));
+
+        DecimalFormat df = new DecimalFormat("#.00");
+        double ttPrice = (newOrder.getExtraNoriNum()*menuPanel.getExtraNoriPrice()
+                +newOrder.getExtraBoilEggNum()*menuPanel.getExtraBoilEggPrice()
+                +newOrder.getExtraBamshootNum()*menuPanel.getExtraBamShootPrice()
+                +newOrder.getExtraChashuNum()*menuPanel.getExtraChashuPrice()
+                +menuPanel.getFixedPrice());
+        double addPrice = (newOrder.getExtraNoriNum()*menuPanel.getExtraNoriPrice()
+                +newOrder.getExtraBoilEggNum()*menuPanel.getExtraBoilEggPrice()
+                +newOrder.getExtraBamshootNum()*menuPanel.getExtraBamShootPrice()
+                +newOrder.getExtraChashuNum()*menuPanel.getExtraChashuPrice()
+                );
+        String tt = String.valueOf(df.format(ttPrice));
+        newOrder.setTotalPrice(tt);
+        newOrder.setAddOnPrice(addPrice);
+        newOrder.setFixedPrice(menuPanel.getFixedPrice());
+        newOrder.setDateTime(UtilsController.genDateTime());
+        return newOrder;
     }
 
-    //TODO 在这里将新Order写入两个文件，也就是说，在GUIModel里面只需调用这个方法即可
-    public static void addOrder2Files(){
-        genOrderTotalInfos(orderFromView());
-        TicketController.genTicket(orderFromView());
+    public static void addOrder2Files(Order order){
+        genOrderTotalInfos(order);
+        TicketController.genTicket(order);
     }
     
 }

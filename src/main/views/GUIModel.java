@@ -13,7 +13,6 @@ import java.util.regex.Pattern;
 public class GUIModel extends JFrame implements ActionListener {
     public static Order currentOrder = new Order();
     public static Customer currentCustomer = new Customer();
-    Setter setter = new Setter();
     private WelcomePanel welcomePanel;
     private MenuPanel menuPanel;
     private EatAskPanel eatAskPanel;
@@ -281,17 +280,12 @@ public class GUIModel extends JFrame implements ActionListener {
                     menuPanel.s5.isSelected() == false && menuPanel.s6.isSelected() == false) {
                 JOptionPane.showMessageDialog(null, "Please select the spiciness!", "Warning", JOptionPane.WARNING_MESSAGE);
             } else {
-                setter.set();
+                currentOrder = OrderController.orderFromView(menuPanel);
                 eatAskPanel = new EatAskPanel();
                 eatAskPanel.confirm.addActionListener(new EatAskConfirmListener());
                 eatAskPanel.back.addActionListener(new EatAskBackListener());
                 mainPanel.add(eatAskPanel, "eatask");
                 layout.show(mainPanel, "eatask");
-//                payPanel = new PayPanel();
-//                payPanel.back.addActionListener(new PayBackListener());
-//                payPanel.confirm.addActionListener(new PayConfirmListener());
-//                mainPanel.add(payPanel, "pay");
-//                layout.show(mainPanel, "pay");
             }
         }
     }
@@ -388,8 +382,8 @@ public class GUIModel extends JFrame implements ActionListener {
             } else if (!phoneMatcher.find()) {
                 JOptionPane.showMessageDialog(null, "Please fill in your phone number all in number!", "Warning", JOptionPane.WARNING_MESSAGE);
             } else {
-                LoyaltySetterController.set();
-                CustomerController.genCustomerTotalInfos(currentCustomer);
+                CustomerController.addCustomer2Files(registerPanel);
+                currentCustomer = CustomerController.customerFromView(registerPanel);
                 congratulationPanel = new CongratulationPanel();
                 congratulationPanel.back.addActionListener(new CongratulationBackListener1());
                 congratulationPanel.confirm.addActionListener(new CongratulationConfirmListener1());
@@ -534,10 +528,8 @@ public class GUIModel extends JFrame implements ActionListener {
                 CustomerController.addStamps(inputPanel.membershipNumField.getText(),
                         CustomerController.json2List(CustomerController.readCustomerTotalInfos()));
 
-                TicketController gtc = new TicketController();
-                gtc.genTicket(currentOrder);
+                OrderController.addOrder2Files(currentOrder);
                 ticketPanel = new TicketPanel();
-                OrderController.genOrderTotalInfos(currentOrder);
                 ticketPanel.back.addActionListener(new TicketBackListener1());
                 ticketPanel.confirm.addActionListener(new TicketConfirmListener1());
                 mainPanel.add(ticketPanel, "ticket");
@@ -560,11 +552,8 @@ public class GUIModel extends JFrame implements ActionListener {
                 //Stamps add 1
 //                CustomerController.addStamps(inputPanel.membershipNumField.getText(),
 //                        CustomerInfosController.json2List(CustomerInfosController.readCustomerTotalInfos()));
-
-                TicketController gtc = new TicketController();
-                gtc.genTicket(currentOrder);
+                OrderController.addOrder2Files(currentOrder);
                 ticketPanel = new TicketPanel();
-                OrderController.genOrderTotalInfos(currentOrder);
                 ticketPanel.back.addActionListener(new TicketBackListener3());
                 ticketPanel.confirm.addActionListener(new TicketConfirmListener2());
                 mainPanel.add(ticketPanel, "ticket");
@@ -692,8 +681,8 @@ public class GUIModel extends JFrame implements ActionListener {
             } else if (!phoneMatcher.find()) {
                 JOptionPane.showMessageDialog(null, "Please fill in your phone number all in number!", "Warning", JOptionPane.WARNING_MESSAGE);
             } else {
-                LoyaltySetterController.set();
-                CustomerController.genCustomerTotalInfos(currentCustomer);
+                CustomerController.addCustomer2Files(registerPanel);
+                currentCustomer = CustomerController.customerFromView(registerPanel);
                 congratulationPanel = new CongratulationPanel();
                 congratulationPanel.back.addActionListener(new CongratulationBackListener2());
                 congratulationPanel.confirm.addActionListener(new CongratulationConfirmListener2());

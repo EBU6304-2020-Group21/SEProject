@@ -12,11 +12,11 @@ import java.awt.event.ActionListener;
 public class MenuPanel extends JPanel {
 
     //variables
-    static double fixedPrice;      //the price of fixed dishes, default 9.99 pounds
-    static double extraNoriPrice;     //the price of extra Nori, default 1 pounds
-    static double extraBoilEggPrice;  //the price of extra boiled eggs, default 1 pounds
-    static double extraBamShootPrice; //the price of extra banboo shoot, default 1 pounds
-    static double extraChashuPrice;   //the price of extra Chashu, default 2 pounds
+    double fixedPrice;      //the price of fixed dishes, default 9.99 pounds
+    double extraNoriPrice;     //the price of extra Nori, default 1 pounds
+    double extraBoilEggPrice;  //the price of extra boiled eggs, default 1 pounds
+    double extraBamShootPrice; //the price of extra banboo shoot, default 1 pounds
+    double extraChashuPrice;   //the price of extra Chashu, default 2 pounds
     private String soupType;
     private String noodleType;
     private String sprOnionType;
@@ -46,28 +46,28 @@ public class MenuPanel extends JPanel {
     public JButton subtract3 = new JButton("-");
     public JButton add4 = new JButton("+");
     public JButton subtract4 = new JButton("-");
-    public static JRadioButton tonkotsu;
-    public static JRadioButton shoyu;
-    public static JRadioButton shio;
-    public static JRadioButton soft;
-    public static JRadioButton medium;
-    public static JRadioButton firm;
-    public static JRadioButton no;
-    public static JRadioButton just;
-    public static JRadioButton lot;
-    public static JRadioButton yes1;
-    public static JRadioButton no1;
-    public static JRadioButton yes2;
-    public static JRadioButton no2;
-    public static JRadioButton yes3;
-    public static JRadioButton no3;
-    public static JRadioButton s1;
-    public static JRadioButton s2;
-    public static JRadioButton s3;
-    public static JRadioButton s4;
-    public static JRadioButton s5;
-    public static JRadioButton s6;
-    public static JLabel extraNori, extraBoilEgg, extraBamShoot, extraChashu;
+    public JRadioButton tonkotsu;
+    public JRadioButton shoyu;
+    public JRadioButton shio;
+    public JRadioButton soft;
+    public JRadioButton medium;
+    public JRadioButton firm;
+    public JRadioButton no;
+    public JRadioButton just;
+    public JRadioButton lot;
+    public JRadioButton yes1;
+    public JRadioButton no1;
+    public JRadioButton yes2;
+    public JRadioButton no2;
+    public JRadioButton yes3;
+    public JRadioButton no3;
+    public JRadioButton s1;
+    public JRadioButton s2;
+    public JRadioButton s3;
+    public JRadioButton s4;
+    public JRadioButton s5;
+    public JRadioButton s6;
+    public JLabel extraNori, extraBoilEgg, extraBamShoot, extraChashu;
     public MenuPrice currentMenu;
     public MenuAvailablity currentAvailablity;
 
@@ -706,5 +706,43 @@ public class MenuPanel extends JPanel {
 
     }
 
+    public double getFixedPrice() {
+        return fixedPrice;
+    }
 
+    public double getExtraNoriPrice() {
+        return extraNoriPrice;
+    }
+
+    public double getExtraBoilEggPrice() {
+        return extraBoilEggPrice;
+    }
+
+    public double getExtraBamShootPrice() {
+        return extraBamShootPrice;
+    }
+
+    public double getExtraChashuPrice() {
+        return extraChashuPrice;
+    }
+
+    public void setFixedPrice(double fixedPrice) {
+        this.fixedPrice = fixedPrice;
+    }
+
+    public void setExtraNoriPrice(double extraNoriPrice) {
+        this.extraNoriPrice = extraNoriPrice;
+    }
+
+    public void setExtraBoilEggPrice(double extraBoilEggPrice) {
+        this.extraBoilEggPrice = extraBoilEggPrice;
+    }
+
+    public void setExtraBamShootPrice(double extraBamShootPrice) {
+        this.extraBamShootPrice = extraBamShootPrice;
+    }
+
+    public void setExtraChashuPrice(double extraChashuPrice) {
+        this.extraChashuPrice = extraChashuPrice;
+    }
 }

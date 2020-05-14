@@ -29,6 +29,7 @@ public class UtilsController {
         return date;
     }
 
+
     public static void main(String[] args) {
         Customer customer = new Customer();
         customer.setMembershipNum(UtilsController.genMembershipNums());
