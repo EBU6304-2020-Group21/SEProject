@@ -3,7 +3,11 @@ package main.controller;
 import com.alibaba.fastjson.JSON;
 import main.entity.MenuAvailablity;
 import main.entity.MenuPrice;
+import main.views.ModifyPrice;
+import main.views.Modifyavaliable;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.io.*;
 
 /**
@@ -17,12 +21,12 @@ public class MenuController {
     /**
      * @description 用于进行第一次菜单价格文件生成的初始化操作，不用运行
      */
-    public static void genMenuPriceInfo(){
+    public static void genMenuPriceInfo() {
         MenuPrice menuPrice = new MenuPrice();
         FileWriter fileWriter;
         File file = new File("Files/Menu/MenuPrice.json");
-        try{
-            if(!file.exists()){
+        try {
+            if (!file.exists()) {
                 file.createNewFile();
             }
             fileWriter = new FileWriter(file);
@@ -35,14 +39,14 @@ public class MenuController {
     }
 
     /**
-     * @description 用于前端调用，更新菜单价格信息
      * @param newMenuPrice
+     * @description 用于前端调用，更新菜单价格信息
      */
-    public static void updateMenuPriceInfo(MenuPrice newMenuPrice){
+    public static void updateMenuPriceInfo(MenuPrice newMenuPrice) {
         FileWriter fileWriter;
         File file = new File("Files/Menu/MenuPrice.json");
-        try{
-            if(!file.exists()){
+        try {
+            if (!file.exists()) {
                 file.createNewFile();
             }
             fileWriter = new FileWriter(file);
@@ -55,31 +59,31 @@ public class MenuController {
     }
 
     /**
-     * @description 用于从文件中得到实体的信息，需要传到前端
      * @return
+     * @description 用于从文件中得到实体的信息，需要传到前端
      */
-    public static MenuPrice getMenuPriceInfo(){
+    public static MenuPrice getMenuPriceInfo() {
         FileReader fileReader;
         File file = new File("Files/Menu/MenuPrice.json");
         BufferedReader reader = null;
         String readString = "";
         MenuPrice menuPrice = new MenuPrice();
-        try{
-            if(!file.exists()){
+        try {
+            if (!file.exists()) {
                 System.out.println("The file doesn't exists!");
                 file.createNewFile();
             }
             reader = new BufferedReader(new FileReader(file));
             String tempString = null;
-            while ((tempString = reader.readLine())!=null){
+            while ((tempString = reader.readLine()) != null) {
                 readString += tempString;
             }
             menuPrice = JSON.parseObject(readString, MenuPrice.class);
             reader.close();
         } catch (IOException e) {
             e.printStackTrace();
-        }finally {
-            if(reader != null){
+        } finally {
+            if (reader != null) {
                 try {
                     reader.close();
                 } catch (IOException e) {
@@ -95,12 +99,12 @@ public class MenuController {
     /**
      * @description 用于第一次生成菜单可选项的初始化操作，现在不用运行
      */
-    public static void genMenuAvailabilityInfo(){
+    public static void genMenuAvailabilityInfo() {
         MenuAvailablity menuAvailablity = new MenuAvailablity();
         FileWriter fileWriter;
         File file = new File("Files/Menu/MenuAvailability.json");
-        try{
-            if(!file.exists()){
+        try {
+            if (!file.exists()) {
                 file.createNewFile();
             }
             fileWriter = new FileWriter(file);
@@ -113,14 +117,14 @@ public class MenuController {
     }
 
     /**
-     * @description 用于将前端修改后的信息写进文件中，传入相应实体类
      * @param newMenuAvailablity
+     * @description 用于将前端修改后的信息写进文件中，传入相应实体类
      */
-    public static void updateMenuAvailabilityInfo(MenuAvailablity newMenuAvailablity){
+    public static void updateMenuAvailabilityInfo(MenuAvailablity newMenuAvailablity) {
         FileWriter fileWriter;
         File file = new File("Files/Menu/MenuAvailability.json");
-        try{
-            if(!file.exists()){
+        try {
+            if (!file.exists()) {
                 file.createNewFile();
             }
             fileWriter = new FileWriter(file);
@@ -133,23 +137,23 @@ public class MenuController {
     }
 
     /**
-     * @description 用于从文件中读取菜单可选项信息
      * @return MenuAvailability()
+     * @description 用于从文件中读取菜单可选项信息
      */
-    public static MenuAvailablity getMenuAvailabilityInfo(){
+    public static MenuAvailablity getMenuAvailabilityInfo() {
         FileReader fileReader;
         File file = new File("Files/Menu/MenuAvailability.json");
         BufferedReader reader = null;
         String readString = "";
         MenuAvailablity menuAvailablity = new MenuAvailablity();
-        try{
-            if(!file.exists()){
+        try {
+            if (!file.exists()) {
                 System.out.println("The file doesn't exists!");
                 file.createNewFile();
             }
             reader = new BufferedReader(new FileReader(file));
             String tempString = null;
-            while ((tempString = reader.readLine())!=null){
+            while ((tempString = reader.readLine()) != null) {
                 readString += tempString;
             }
             //System.out.println(readString);
@@ -157,8 +161,8 @@ public class MenuController {
             reader.close();
         } catch (IOException e) {
             e.printStackTrace();
-        }finally {
-            if(reader != null){
+        } finally {
+            if (reader != null) {
                 try {
                     reader.close();
                 } catch (IOException e) {
@@ -172,26 +176,37 @@ public class MenuController {
     }
 
 
-    //Todo 方法
-    //在对应的panel里面直接调用上面的方法将后端的值写在前端
-    //修改后，将前端的值录入后端的方法
-    public static MenuPrice getMenuPriceFromView(){
-        //可调用上面的get...Info()
-        return new MenuPrice();
+
+    public static MenuPrice getMenuPriceFromView(ModifyPrice modifyPrice) {
+        MenuPrice newMenu = new MenuPrice();
+        newMenu.setFixedPrice(Double.parseDouble(modifyPrice.RamenNowPrice.getText()));
+        newMenu.setExtraNoriPrice(Double.parseDouble(modifyPrice.ChashuNowPrice.getText()));
+        newMenu.setExtraBamShootPrice(Double.parseDouble(modifyPrice.BambooshootsNowPrice.getText()));
+        newMenu.setExtraBoilEggPrice(Double.parseDouble(modifyPrice.BoiledeggNowPrice.getText()));
+        newMenu.setExtraChashuPrice(Double.parseDouble(modifyPrice.ChashuNowPrice.getText()));
+        return newMenu;
     }
 
-    public static MenuAvailablity getMenuAvailablityFromView(){
-        //可调用上面的get...Info()
-        return new MenuAvailablity();
+    public static MenuAvailablity getMenuAvailablityFromView(Modifyavaliable modifyavaliable) {
+        MenuAvailablity newAvailablity = new MenuAvailablity();
+        newAvailablity.setRamenAvailable(modifyavaliable.RamenAvaliable.isSelected());
+        newAvailablity.setBamShootAvailable(modifyavaliable.BambooshootsAvaliable.isSelected());
+        newAvailablity.setBoilEggAvailable(modifyavaliable.BoiledeggAvaliable.isSelected());
+        newAvailablity.setChashuAvailable(modifyavaliable.ChashuAvaliable.isSelected());
+        newAvailablity.setNoriAvailable(modifyavaliable.NoriAvaliable.isSelected());
+        newAvailablity.setShioAvailable(modifyavaliable.ShioAvaliable.isSelected());
+        newAvailablity.setShoyuAvailable(modifyavaliable.ShoyuAvaliable.isSelected());
+        newAvailablity.setTonkotsuAvailable(modifyavaliable.TonkostuAvaliable.isSelected());
+        return newAvailablity;
     }
 
     //输入确认完成后，将其写入后端，GUIModel直接调用下面这两个方法
-    public static void updateMenuPriceFiles(){
-        updateMenuPriceInfo(getMenuPriceFromView());
+    public static void updateMenuPriceFiles(ModifyPrice modifyPrice) {
+        updateMenuPriceInfo(getMenuPriceFromView(modifyPrice));
     }
 
-    public static void updateMenuAvailabilityFiles(){
-        updateMenuAvailabilityInfo(getMenuAvailablityFromView());
+    public static void updateMenuAvailabilityFiles(Modifyavaliable modifyavaliable) {
+        updateMenuAvailabilityInfo(getMenuAvailablityFromView(modifyavaliable));
     }
 
 

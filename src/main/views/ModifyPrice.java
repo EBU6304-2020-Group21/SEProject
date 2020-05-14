@@ -1,8 +1,9 @@
 package main.views;
 
+import main.controller.MenuController;
+import main.entity.MenuPrice;
 import javax.swing.*;
 import java.awt.*;
-import static main.views.GUIModel.currentMenu;
 
 import javax.swing.JRadioButton.*;
 
@@ -20,13 +21,14 @@ public class ModifyPrice extends JPanel {
     public JTextField BambooshootsNowPrice;
     public JTextField ChashuNowPrice;
 
-    public double RamenOPrice;
-    public double NoriOPrice;
-    public double BoiledeggOPrice;
-    public double BambooshootsOPrice;
-    public double ChashuOPrice;
+    private double RamenOPrice;
+    private double NoriOPrice;
+    private double BoiledeggOPrice;
+    private double BambooshootsOPrice;
+    private double ChashuOPrice;
     public JButton back = new JButton("Back");
     public JButton confirm = new JButton("Confirm");
+    public MenuPrice menuPrice;
 
 
 
@@ -37,12 +39,13 @@ public class ModifyPrice extends JPanel {
     public void init() {
         topPanel = new JPanel();
         botPanel = new JPanel();
+        menuPrice = MenuController.getMenuPriceInfo();
         //set the top Panel
-        RamenOPrice = currentMenu.getFixedPrice();
-        NoriOPrice = currentMenu.getExtraNoriPrice();
-        BoiledeggOPrice = currentMenu.getExtraBoilEggPrice();
-        BambooshootsOPrice = currentMenu.getExtraBamShootPrice();
-        ChashuOPrice = currentMenu.getExtraChashuPrice();
+        setRamenOPrice(menuPrice.getFixedPrice());
+        setNoriOPrice(menuPrice.getExtraNoriPrice());
+        setBoiledeggOPrice(menuPrice.getExtraBoilEggPrice());
+        setBambooshootsOPrice(menuPrice.getExtraBamShootPrice());
+        setChashuOPrice(menuPrice.getExtraChashuPrice());
         JLabel lab0 = new JLabel("Options");
         JLabel lab1 = new JLabel("Ramen");
         JLabel lab2 = new JLabel("Nori");
@@ -62,11 +65,11 @@ public class ModifyPrice extends JPanel {
         BambooshootsNowPrice = new JTextField(6);
         ChashuNowPrice = new JTextField(6);
 
-        RamenNowPrice.setText(String.valueOf(currentMenu.getFixedPrice()));
-        NoriNowPrice.setText(String.valueOf(currentMenu.getExtraNoriPrice()));
-        BoiledeggNowPrice.setText(String.valueOf(currentMenu.getExtraBoilEggPrice()));
-        BambooshootsNowPrice.setText(String.valueOf(currentMenu.getExtraBamShootPrice()));
-        ChashuNowPrice.setText(String.valueOf(currentMenu.getExtraChashuPrice()));
+        RamenNowPrice.setText(String.valueOf(menuPrice.getFixedPrice()));
+        NoriNowPrice.setText(String.valueOf(menuPrice.getExtraNoriPrice()));
+        BoiledeggNowPrice.setText(String.valueOf(menuPrice.getExtraBoilEggPrice()));
+        BambooshootsNowPrice.setText(String.valueOf(menuPrice.getExtraBamShootPrice()));
+        ChashuNowPrice.setText(String.valueOf(menuPrice.getExtraChashuPrice()));
 
         Font font1 = new Font("Times new Roman", Font.BOLD, 30);
         Font font2 = new Font("Times new Roman", Font.PLAIN, 25);
@@ -194,5 +197,45 @@ public class ModifyPrice extends JPanel {
         c.gridy = 1;
         c.weighty = 0.15;
         this.add(botPanel, c);
+    }
+
+    public void setRamenOPrice(double ramenOPrice) {
+        RamenOPrice = ramenOPrice;
+    }
+
+    public void setNoriOPrice(double noriOPrice) {
+        NoriOPrice = noriOPrice;
+    }
+
+    public void setBoiledeggOPrice(double boiledeggOPrice) {
+        BoiledeggOPrice = boiledeggOPrice;
+    }
+
+    public void setBambooshootsOPrice(double bambooshootsOPrice) {
+        BambooshootsOPrice = bambooshootsOPrice;
+    }
+
+    public void setChashuOPrice(double chashuOPrice) {
+        ChashuOPrice = chashuOPrice;
+    }
+
+    public double getRamenOPrice() {
+        return RamenOPrice;
+    }
+
+    public double getNoriOPrice() {
+        return NoriOPrice;
+    }
+
+    public double getBoiledeggOPrice() {
+        return BoiledeggOPrice;
+    }
+
+    public double getBambooshootsOPrice() {
+        return BambooshootsOPrice;
+    }
+
+    public double getChashuOPrice() {
+        return ChashuOPrice;
     }
 }

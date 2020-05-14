@@ -13,8 +13,6 @@ import java.util.regex.Pattern;
 public class GUIModel extends JFrame implements ActionListener {
     public static Order currentOrder = new Order();
     public static Customer currentCustomer = new Customer();
-    public static MenuPrice currentMenu = new MenuPrice();
-    public static MenuAvailablity currentAvailablity = new MenuAvailablity();
     Setter setter = new Setter();
     private WelcomePanel welcomePanel;
     private MenuPanel menuPanel;
@@ -40,9 +38,6 @@ public class GUIModel extends JFrame implements ActionListener {
     private CardLayout layout;
 
     public GUIModel() {
-        //initialize the menu
-        currentMenu = MenuController.getMenuPriceInfo();
-        currentAvailablity = MenuController.getMenuAvailabilityInfo();
         //Initialize all the panel
         mainPanel = new JPanel();
         startPanel = new StartPanel();
@@ -119,37 +114,9 @@ public class GUIModel extends JFrame implements ActionListener {
                 layout.show(mainPanel,"modify");
             }
             else if(manageStartPanel.SeeSales.isSelected()){
-                Report report = ReportController.generateWeeklyReport();
-                statPanel = new StatPanel(
-                report.getTonkotsuNum(),
-                report.getShoyuNum(),
-                report.getShioNum(),
-                report.getSoftNum(),
-                report.getMediumNum(),
-                report.getFirmNum(),
-                report.getNoNum(),
-                report.getJustNum(),
-                report.getLotNum(),
-                report.getNoriyesNum(),
-                report.getNorinoNum(),
-                report.getChashuyesNum(),
-                report.getChashunoNum(),
-                report.getEggyesNum(),
-                report.getEggnoNum(),
-                report.getSpi0(),
-                report.getSpi1(),
-                report.getSpi2(),
-                report.getSpi3(),
-                report.getSpi4(),
-                report.getSpi5(),
-                report.getExtraNoriNum(),
-                report.getExtraEggNum(),
-                report.getExtraBambooNum(),
-                report.getExtraChashuNum());
+                statPanel = new StatPanel();
                 statPanel.back.addActionListener(new StatBackListener());
                 statPanel.confirm.addActionListener(new StatConfirmListener());
-                statPanel.tonkotsuLabel.updateUI();
-                statPanel.setVisible(true);
                 mainPanel.add(statPanel,"stat");
                 layout.show(mainPanel,"stat");
             }
@@ -177,23 +144,6 @@ public class GUIModel extends JFrame implements ActionListener {
             }
             else if(modifyPanel.AvaUnava.isSelected()){
                 modifyavaliable = new Modifyavaliable();
-                //set current availablity
-                modifyavaliable.RamenAvaliable.setSelected(currentAvailablity.isRamenAvailable());
-                modifyavaliable.RamenUnavaliable.setSelected(!currentAvailablity.isRamenAvailable());
-                modifyavaliable.TonkostuAvaliable.setSelected(currentAvailablity.isTonkotsuAvailable());
-                modifyavaliable.TonkostuUnavaliable.setSelected(!currentAvailablity.isTonkotsuAvailable());
-                modifyavaliable.ShoyuAvaliable.setSelected(currentAvailablity.isShoyuAvailable());
-                modifyavaliable.ShoyuUnavaliable.setSelected(!currentAvailablity.isShoyuAvailable());
-                modifyavaliable.ShioAvaliable.setSelected(currentAvailablity.isShioAvailable());
-                modifyavaliable.ShioUnavaliable.setSelected(!currentAvailablity.isShioAvailable());
-                modifyavaliable.NoriAvaliable.setSelected(currentAvailablity.isNoriAvailable());
-                modifyavaliable.NoriUnavaliable.setSelected(!currentAvailablity.isNoriAvailable());
-                modifyavaliable.ChashuAvaliable.setSelected(currentAvailablity.isChashuAvailable());
-                modifyavaliable.ChashuUnavaliable.setSelected(!currentAvailablity.isChashuAvailable());
-                modifyavaliable.BambooshootsAvaliable.setSelected(currentAvailablity.isBamShootAvailable());
-                modifyavaliable.BambooshootsUnavaliable.setSelected(!currentAvailablity.isBamShootAvailable());
-                modifyavaliable.BoiledeggAvaliable.setSelected(currentAvailablity.isBoilEggAvailable());
-                modifyavaliable.BoiledeggUnavaliable.setSelected(!currentAvailablity.isBoilEggAvailable());
                 modifyavaliable.back.addActionListener(new ModifyAvailableBackListener());
                 modifyavaliable.confirm.addActionListener(new ModifyAvailableConfirmListener());
                 mainPanel.add(modifyavaliable,"modifyavailable");
@@ -210,19 +160,9 @@ public class GUIModel extends JFrame implements ActionListener {
     public class ModifyAvailableConfirmListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            MenuAvailablity newAvailablity = new MenuAvailablity();
-            newAvailablity.setRamenAvailable(modifyavaliable.RamenAvaliable.isSelected());
-            newAvailablity.setBamShootAvailable(modifyavaliable.BambooshootsAvaliable.isSelected());
-            newAvailablity.setBoilEggAvailable(modifyavaliable.BoiledeggAvaliable.isSelected());
-            newAvailablity.setChashuAvailable(modifyavaliable.ChashuAvaliable.isSelected());
-            newAvailablity.setNoriAvailable(modifyavaliable.NoriAvaliable.isSelected());
-            newAvailablity.setShioAvailable(modifyavaliable.ShioAvaliable.isSelected());
-            newAvailablity.setShoyuAvailable(modifyavaliable.ShoyuAvaliable.isSelected());
-            newAvailablity.setTonkotsuAvailable(modifyavaliable.TonkostuAvaliable.isSelected());
-            MenuController.updateMenuAvailabilityInfo(newAvailablity);
+            MenuController.updateMenuAvailabilityFiles(modifyavaliable);
             JOptionPane.showMessageDialog(null, "Success!", "Congratulations!", JOptionPane.INFORMATION_MESSAGE);
             layout.show(mainPanel,"managestart");
-            currentAvailablity = MenuController.getMenuAvailabilityInfo();
         }
     }
     public class ModifyPriceBackListener implements ActionListener{
@@ -243,14 +183,7 @@ public class GUIModel extends JFrame implements ActionListener {
             } else if (!isDouble(modifyPrice.BoiledeggNowPrice.getText())) {
                 JOptionPane.showMessageDialog(null, "Please input number in double format in boiled egg Price!", "Warning", JOptionPane.WARNING_MESSAGE);
             } else {
-                MenuPrice newMenu = new MenuPrice();
-                newMenu.setFixedPrice(Double.parseDouble(modifyPrice.RamenNowPrice.getText()));
-                newMenu.setExtraNoriPrice(Double.parseDouble(modifyPrice.ChashuNowPrice.getText()));
-                newMenu.setExtraBamShootPrice(Double.parseDouble(modifyPrice.BambooshootsNowPrice.getText()));
-                newMenu.setExtraBoilEggPrice(Double.parseDouble(modifyPrice.BoiledeggNowPrice.getText()));
-                newMenu.setExtraChashuPrice(Double.parseDouble(modifyPrice.ChashuNowPrice.getText()));
-                MenuController.updateMenuPriceInfo(newMenu);
-                currentMenu = MenuController.getMenuPriceInfo();
+                MenuController.updateMenuPriceFiles(modifyPrice);
                 JOptionPane.showMessageDialog(null, "Success!", "Congratulations!", JOptionPane.INFORMATION_MESSAGE);
                 layout.show(mainPanel, "managestart");
             }
@@ -258,15 +191,10 @@ public class GUIModel extends JFrame implements ActionListener {
 
 
     }
-    boolean isDouble(String str)
-    {
-        try
-        {
-            Double.parseDouble(str);
-            return true;
-        }
-        catch(NumberFormatException ex){}
-        return false;
+    public boolean isDouble(String s) {
+        Pattern pattern = Pattern.compile("^(([1-9]{1}\\d*)|([0]{1}))(\\.(\\d){0,2})?$"); // 判断小数点后2位的数字的正则表达式
+        Matcher match = pattern.matcher(s);
+        return match.matches();
     }
 
     public class StatBackListener implements ActionListener{
@@ -649,21 +577,21 @@ public class GUIModel extends JFrame implements ActionListener {
     public class TicketBackListener1 implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            layout.show(mainPanel, "pay");
+            JOptionPane.showMessageDialog(null, "Can't go back!", "Warning", JOptionPane.WARNING_MESSAGE);
         }
     }
 
     public class TicketBackListener2 implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            layout.show(mainPanel, "free");
+            JOptionPane.showMessageDialog(null, "Can't go back!", "Warning", JOptionPane.WARNING_MESSAGE);
         }
     }
 
     public class TicketBackListener3 implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            layout.show(mainPanel, "pay");
+            JOptionPane.showMessageDialog(null, "Can't go back!", "Warning", JOptionPane.WARNING_MESSAGE);
         }
     }
 

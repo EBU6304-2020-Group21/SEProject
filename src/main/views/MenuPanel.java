@@ -1,11 +1,13 @@
 package main.views;
 
+import main.controller.MenuController;
+import main.entity.MenuAvailablity;
+import main.entity.MenuPrice;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import static main.views.GUIModel.currentMenu;
-import static main.views.GUIModel.currentAvailablity;
 
 public class MenuPanel extends JPanel {
 
@@ -66,6 +68,8 @@ public class MenuPanel extends JPanel {
     public static JRadioButton s5;
     public static JRadioButton s6;
     public static JLabel extraNori, extraBoilEgg, extraBamShoot, extraChashu;
+    public MenuPrice currentMenu;
+    public MenuAvailablity currentAvailablity;
 
 
 
@@ -155,6 +159,9 @@ public class MenuPanel extends JPanel {
 
 
     public void init() {
+        //intialize
+        currentMenu = MenuController.getMenuPriceInfo();
+        currentAvailablity = MenuController.getMenuAvailabilityInfo();
         fixedPrice = currentMenu.getFixedPrice();
         extraNoriPrice = currentMenu.getExtraNoriPrice();
         extraChashuPrice = currentMenu.getExtraChashuPrice();

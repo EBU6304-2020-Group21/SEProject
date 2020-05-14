@@ -1,5 +1,8 @@
 package main.views;
 
+import main.controller.ReportController;
+import main.entity.Report;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -57,50 +60,46 @@ public class StatPanel extends JPanel {
     private int extraBambooNum;
     private int extraChashuNum;
 
-    public StatPanel(int tonkotsuNum,
-                     int shoyuNum, int shioNum, int softNum, int mediumNum, int firmNum, int noNum, int justNum, int lotNum,
-                     int noriyesNum, int norinoNum, int chashuyesNum, int chashunoNum, int eggyesNum, int eggnoNum, int spi0,
-                     int spi1, int spi2, int spi3, int spi4, int spi5, int extraNoriNum, int extraEggNum, int extraBambooNum,
-                     int extraChashuNum) {
-        this.setTonkotsuNum(tonkotsuNum);
-        this.setShoyuNum(shoyuNum);
-        this.setShioNum(shioNum);
-        this.setSoftNum(softNum);
-        this.setMediumNum(mediumNum);
-        this.setFirmNum(firmNum);
-        this.setNoNum(noNum);
-        this.setJustNum(justNum);
-        this.setLotNum(lotNum);
-        this.setNoriyesNum(noriyesNum);
-        this.setNorinoNum(norinoNum);
-        this.setChashuyesNum(chashuyesNum);
-        this.setChashunoNum(chashunoNum);
-        this.setEggyesNum(eggyesNum);
-        this.setEggnoNum(eggnoNum);
-        this.setSpi0(spi0);
-        this.setSpi1(spi1);
-        this.setSpi2(spi2);
-        this.setSpi3(spi3);
-        this.setSpi4(spi4);
-        this.setSpi5(spi5);
-        this.setExtraNoriNum(extraNoriNum);
-        this.setExtraEggNum(extraEggNum);
-        this.setExtraBambooNum(extraBambooNum);
-        this.setExtraChashuNum(extraChashuNum);
+    public StatPanel() {
         init();
     }
 
     public void init() {
-        //TODO 直接调用Controller的对象接口
+        Report report = ReportController.generateWeeklyReport();
+        setTonkotsuNum(report.getTonkotsuNum());
+        setShoyuNum(report.getShoyuNum());
+        setShioNum(report.getShioNum());
+        setSoftNum(report.getSoftNum());
+        setMediumNum(report.getMediumNum());
+        setFirmNum(report.getFirmNum());
+        setNoNum(report.getNoNum());
+        setJustNum(report.getJustNum());
+        setLotNum(report.getLotNum());
+        setNoriyesNum(report.getNoriyesNum());
+        setNorinoNum(report.getNorinoNum());
+        setChashuyesNum(report.getChashuyesNum());
+        setChashunoNum(report.getChashunoNum());
+        setEggyesNum(report.getEggyesNum());
+        setEggnoNum(report.getEggnoNum());
+        setSpi0(report.getSpi0());
+        setSpi1(report.getSpi1());
+        setSpi2(report.getSpi2());
+        setSpi3(report.getSpi3());
+        setSpi4(report.getSpi4());
+        setSpi5(report.getSpi5());
+        setExtraNoriNum(report.getExtraNoriNum());
+        setExtraEggNum(report.getExtraEggNum());
+        setExtraBambooNum(report.getExtraBambooNum());
+        setExtraChashuNum(report.getExtraChashuNum());
         topPanel = new JPanel();
         midPanel = new JPanel();
         botPanel = new JPanel();
         Font titleFont = new Font("Times New Roman", Font.BOLD, 25);
         Font foodTypeFont = new Font("Times New Roman", Font.BOLD, 18);
         //set the top panel
-        JLabel report = new JLabel("Report");
-        report.setFont(titleFont);
-        topPanel.add(report);
+        JLabel reportLabel = new JLabel("Report");
+        reportLabel.setFont(titleFont);
+        topPanel.add(reportLabel);
         //set the mid panel
         midPanel.setLayout(new GridBagLayout());
         midPanel.setBorder(BorderFactory.createTitledBorder(""));
