@@ -34,4 +34,8 @@ class CustomerControllerTest {
         System.out.println(cic.readCustomerTotalInfos() == null);
         assertEquals(false,cic.readCustomerTotalInfos() == null);
     }
+    @Test
+    void findByMemberShipNum(){
+
+    }
 }
