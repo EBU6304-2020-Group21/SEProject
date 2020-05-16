@@ -33,7 +33,7 @@ class OrderControllerTest {
         zyn.genOrderTotalInfos(order);
         List<Order> orderList=json2List(zyn.readOrderTotalInfos());
         Order order2 = orderList.get(0);
-        assertEquals("zz",order2.getSoupType());
+        assertEquals("Tonkotsu",order2.getSoupType());
     }
 
 }

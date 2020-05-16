@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 
 /**
- * @author Jianning Qu
+ * @author Jianning Qu and Yuxuan Wu
  */
 
 
@@ -34,8 +34,28 @@ class CustomerControllerTest {
         System.out.println(cic.readCustomerTotalInfos() == null);
         assertEquals(false,cic.readCustomerTotalInfos() == null);
     }
+
     @Test
     void findByMemberShipNum(){
+        assertEquals("00000000", CustomerController.findByMemberShipNum("00000000",
+                CustomerController.json2List(CustomerController.readCustomerTotalInfos())).getMembershipNum());
+    }
+
+    @Test
+    void addStampsTest(){
+        int initial = CustomerController.findByMemberShipNum("00000000",CustomerController.json2List(CustomerController.readCustomerTotalInfos())).getStamps();
+        if(CustomerController.findByMemberShipNum("00000000",CustomerController.json2List(CustomerController.readCustomerTotalInfos()))
+                .getStamps() == 9){
+            CustomerController.addStamps("00000000",
+                    CustomerController.json2List(CustomerController.readCustomerTotalInfos()));
+            assertEquals(0, CustomerController.findByMemberShipNum("00000000",CustomerController.json2List(CustomerController.readCustomerTotalInfos())).getStamps());
+        }else{
+            CustomerController.addStamps("00000000",
+                    CustomerController.json2List(CustomerController.readCustomerTotalInfos()));
+            assertEquals(initial+1,
+                    CustomerController.findByMemberShipNum("00000000",CustomerController.json2List(CustomerController.readCustomerTotalInfos())).getStamps());
+        }
+
 
     }
 }
