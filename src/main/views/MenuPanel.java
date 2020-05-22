@@ -285,7 +285,7 @@ public class MenuPanel extends JPanel {
         GridBagConstraints c1 = new GridBagConstraints();
         topPanel.setLayout(new GridBagLayout());
 //        topPanel.setBorder(BorderFactory.createLoweredBevelBorder());
-        JCheckBox ramen = new JCheckBox("Ramen ￡" + fixedPrice, currentAvailablity.isRamenAvailable());
+        JCheckBox ramen = new JCheckBox("Ramen \u00A3" + fixedPrice, currentAvailablity.isRamenAvailable());
         ramen.setFont(ramenFont);
         ramen.setEnabled(false);
         JLabel title = new JLabel("<html><body>Totoro Ramen<br>Designed by Mr.Miyazaki<body></html>");
@@ -343,10 +343,10 @@ public class MenuPanel extends JPanel {
         JLabel egg = new JLabel("<html><body>Boiled<br>egg<body></html>", JLabel.LEFT);
         JLabel spi = new JLabel("Spiciness", JLabel.LEFT);
         JLabel addon = new JLabel("Add-ons",JLabel.CENTER);
-        JLabel enori = new JLabel("￡" + extraNoriPrice + "   Extra Nori", JLabel.LEFT);
-        JLabel eegg = new JLabel("￡" + extraBoilEggPrice + "   Extra boiled egg", JLabel.LEFT);
-        JLabel ebamboo = new JLabel("￡" + extraBamShootPrice + "   Bamboo shoots", JLabel.LEFT);
-        JLabel echashu = new JLabel("￡" + extraChashuPrice + "   Extra chashu", JLabel.LEFT);
+        JLabel enori = new JLabel("\u00A3" + extraNoriPrice + "   Extra Nori", JLabel.LEFT);
+        JLabel eegg = new JLabel("\u00A3" + extraBoilEggPrice + "   Extra boiled egg", JLabel.LEFT);
+        JLabel ebamboo = new JLabel("\u00A3" + extraBamShootPrice + "   Bamboo shoots", JLabel.LEFT);
+        JLabel echashu = new JLabel("\u00A3" + extraChashuPrice + "   Extra chashu", JLabel.LEFT);
         s6.setForeground(Color.RED);
         soup.setFont(foodTypeFont);
         noodles.setFont(foodTypeFont);

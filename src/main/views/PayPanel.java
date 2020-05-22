@@ -34,7 +34,7 @@ public class PayPanel extends JPanel {
 
          JLabel lab1 = new JLabel("Payment",JLabel.CENTER);//This is a label for the "Payment"
          lab1.setFont(font1);
-         JLabel lab2 = new JLabel("Your total bill is: "+currentOrder.getTotalPrice()+"￡",JLabel.CENTER);//This is a label for the "Your total bill is: " and the number of total price
+         JLabel lab2 = new JLabel("Your total bill is: "+currentOrder.getTotalPrice()+"\u00A3",JLabel.CENTER);//This is a label for the "Your total bill is: " and the number of total price
          lab2.setFont(font1);
          JLabel lab3 = new JLabel("Please select the way of payment: ",JLabel.CENTER);//This is a label for the selection of the way of payment
          lab3.setFont(font1);

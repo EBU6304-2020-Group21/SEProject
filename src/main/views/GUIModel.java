@@ -527,7 +527,7 @@ public class GUIModel extends JFrame implements ActionListener {
                 //Stamps add 1
                 CustomerController.addStamps(inputPanel.membershipNumField.getText(),
                         CustomerController.json2List(CustomerController.readCustomerTotalInfos()));
-
+                currentOrder.setMemberNum(inputPanel.membershipNumField.getText());
                 OrderController.addOrder2Files(currentOrder);
                 ticketPanel = new TicketPanel();
                 ticketPanel.back.addActionListener(new TicketBackListener1());

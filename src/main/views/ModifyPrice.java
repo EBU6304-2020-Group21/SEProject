@@ -54,11 +54,11 @@ public class ModifyPrice extends JPanel {
         JLabel lab5 = new JLabel("Chashu");
         JLabel lab6 = new JLabel("Previous price");
         JLabel lab7 = new JLabel("Now price");
-        RamenOriginalPrice = new JLabel("￡"+RamenOPrice);
-        NoriOriginalPrice = new JLabel("￡"+NoriOPrice);
-        BoiledeggOriginalPrice = new JLabel("￡"+BoiledeggOPrice);
-        BambooshootsOriginalPrice = new JLabel("￡"+BambooshootsOPrice);
-        ChashuOriginalPrice = new JLabel("￡"+ChashuOPrice);
+        RamenOriginalPrice = new JLabel("\u00A3"+RamenOPrice);
+        NoriOriginalPrice = new JLabel("\u00A3"+NoriOPrice);
+        BoiledeggOriginalPrice = new JLabel("\u00A3"+BoiledeggOPrice);
+        BambooshootsOriginalPrice = new JLabel("\u00A3"+BambooshootsOPrice);
+        ChashuOriginalPrice = new JLabel("\u00A3"+ChashuOPrice);
         RamenNowPrice = new JTextField(6);
         NoriNowPrice = new JTextField(6);
         BoiledeggNowPrice = new JTextField(6);
