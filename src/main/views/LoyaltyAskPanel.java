@@ -9,8 +9,8 @@ public class LoyaltyAskPanel extends JPanel{
 
     public JButton back = new JButton("Back");
     public JButton confirm = new JButton("Confirm");
-    public JRadioButton but1 = new JRadioButton("Yes, sign in");
-    public JRadioButton but2 = new JRadioButton("No, sign up");
+    public JRadioButton but1 = new JRadioButton("Yes, Sign in");
+    public JRadioButton but2 = new JRadioButton("No, Sign up");
     public JRadioButton but3 = new JRadioButton("Skip");
     public LoyaltyAskPanel(){
         init();
@@ -22,7 +22,7 @@ public class LoyaltyAskPanel extends JPanel{
         JLabel lab1 = new JLabel("Loyalty Scheme", JLabel.CENTER);
         JLabel lab2 = new JLabel("Do you have a membership number?", JLabel.CENTER);
         Font font1 = new Font("Times new Roman",Font.BOLD,30);
-        Font font2 = new Font("Times new Roman",Font.PLAIN,25);
+        Font font2 = new Font("Times new Roman",Font.BOLD,30);
         ButtonGroup bg = new ButtonGroup();
         bg.add(but1);
         bg.add(but2);
@@ -50,11 +50,13 @@ public class LoyaltyAskPanel extends JPanel{
         top.gridy = 2;
         top.weighty = 0.2;
         topPanel.add(but1,top);
+        top.anchor = GridBagConstraints.NORTH;
         top.gridy = 3;
-        top.weighty = 0.2;
+        top.weighty = 0.15;
         topPanel.add(but2,top);
+        top.anchor = GridBagConstraints.NORTH;
         top.gridy = 4;
-        top.weighty = 0.2;
+        top.weighty = 0.25;
         topPanel.add(but3,top);
 
 

@@ -21,12 +21,14 @@ public class FreePanel extends JPanel{
         topPanel.setBorder(BorderFactory.createTitledBorder(""));
         topPanel.setLayout(new GridBagLayout());
         JLabel lab1 = new JLabel("Your virtual stamps amount is: ",JLabel.CENTER);
-        JLabel lab3 = new JLabel("You can get a free charge",JLabel.CENTER);
+        JLabel lab3 = new JLabel("You will get a free charge!!",JLabel.CENTER);
         JLabel lab2 = new JLabel("10",JLabel.CENTER);
-        Font font1 = new Font("Times new Roman",Font.BOLD,25);
+        Font font1 = new Font("Arial",Font.BOLD,25);
+        Font font2 = new Font("Arial",Font.BOLD,40);
         lab1.setFont(font1);
         lab3.setFont(font1);
-        lab2.setFont(font1);
+        lab2.setFont(font2);
+        lab2.setForeground(Color.RED);
 
         GridBagConstraints top = new GridBagConstraints();
         top.fill = GridBagConstraints.CENTER;

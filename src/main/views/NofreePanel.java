@@ -23,10 +23,12 @@ public class NofreePanel extends JPanel{
         JLabel lab1 = new JLabel("Your virtual stamps amount is: ",JLabel.CENTER);
         JLabel lab3 = new JLabel("You should pay for the order",JLabel.CENTER);
         JLabel lab2 = new JLabel(String.valueOf(stamps),JLabel.CENTER);
-        Font font1 = new Font("Times new Roman",Font.BOLD,25);
+        Font font1 = new Font("Arial",Font.BOLD,25);
+        Font font2 = new Font("Arial",Font.BOLD,40);
         lab1.setFont(font1);
         lab3.setFont(font1);
-        lab2.setFont(font1);
+        lab2.setFont(font2);
+        lab2.setForeground(Color.BLUE);
 
         GridBagConstraints top = new GridBagConstraints();
         top.fill = GridBagConstraints.CENTER;

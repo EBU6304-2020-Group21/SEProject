@@ -71,8 +71,8 @@ public class ModifyPrice extends JPanel {
         BambooshootsNowPrice.setText(String.valueOf(menuPrice.getExtraBamShootPrice()));
         ChashuNowPrice.setText(String.valueOf(menuPrice.getExtraChashuPrice()));
 
-        Font font1 = new Font("Times new Roman", Font.BOLD, 30);
-        Font font2 = new Font("Times new Roman", Font.PLAIN, 25);
+        Font font1 = new Font("Arial", Font.BOLD, 30);
+        Font font2 = new Font("Arial", Font.PLAIN, 25);
         lab0.setFont(font1);
         lab6.setFont(font1);
         lab7.setFont(font1);
@@ -86,6 +86,11 @@ public class ModifyPrice extends JPanel {
         BoiledeggOriginalPrice.setFont(font2);
         BambooshootsOriginalPrice.setFont(font2);
         ChashuOriginalPrice.setFont(font2);
+        RamenNowPrice.setFont(font2);
+        NoriNowPrice.setFont(font2);
+        BoiledeggNowPrice.setFont(font2);
+        BambooshootsNowPrice.setFont(font2);
+        ChashuNowPrice.setFont(font2);
 
 
         topPanel.setLayout(new GridBagLayout());

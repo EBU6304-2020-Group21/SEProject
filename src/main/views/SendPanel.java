@@ -16,7 +16,7 @@ public class SendPanel extends JPanel {
     public void init(){
         topPanel = new JPanel();
         botPanel = new JPanel();
-        Font font = new Font("Times New Roman",Font.BOLD,25);
+        Font font = new Font("Arial",Font.BOLD,25);
         //set the top panel
         topPanel.setLayout(new GridBagLayout());
         GridBagConstraints top = new GridBagConstraints();
@@ -26,6 +26,7 @@ public class SendPanel extends JPanel {
         label.setFont(font);
         JTextField jTextField = new JTextField("",20);
         jTextField.setPreferredSize(new Dimension(300,40));
+        jTextField.setFont(font);
         topPanel.add(label,top);
         top.gridy = 1;
         top.anchor = GridBagConstraints.NORTH;

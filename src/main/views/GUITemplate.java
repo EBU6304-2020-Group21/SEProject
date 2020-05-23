@@ -4,6 +4,7 @@ import java.awt.event.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+
 public class GUITemplate extends JFrame implements ActionListener{
 
     private RegisterPanel registerPanel;
@@ -16,7 +17,7 @@ public class GUITemplate extends JFrame implements ActionListener{
 //        registerPanel = new RegisterPanel();
 //        registerPanel.confirm.addActionListener(new RegisterConfirmListener());
 //        this.add(registerPanel); //Here add your panel to test ******************
-        this.add(new ModifyPanel());
+        this.add(new StatPanel());
         this.setVisible(true);
     }
 
@@ -26,6 +27,16 @@ public class GUITemplate extends JFrame implements ActionListener{
     }
 
     public static void main(String[] args) {
+        try
+        {
+            UIManager.put("RootPane.setupButtonVisible",false);
+            org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper.launchBeautyEyeLNF();
+        }
+        catch(Exception e)
+        {
+            //TODO exception
+        }
+
         GUITemplate guiTemplate = new GUITemplate();
     }
 

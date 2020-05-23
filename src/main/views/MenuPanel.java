@@ -169,18 +169,19 @@ public class MenuPanel extends JPanel {
         extraBoilEggPrice = currentMenu.getExtraBoilEggPrice();
 
         //Set the font
-        Font ramenFont = new Font("Times New Roman", Font.BOLD + Font.ITALIC, 20);
-        Font titleFont = new Font("Times New Roman", Font.BOLD + Font.ITALIC, 25);
-        Font foodTypeFont = new Font("Times New Roman", Font.BOLD, 18);
-        Font addonFont = new Font("Times New Roman", Font.BOLD, 22);
+        Font ramenFont = new Font("arial", Font.BOLD + Font.ITALIC, 20);
+        Font titleFont = new Font("arial", Font.BOLD + Font.ITALIC, 25);
+        Font foodTypeFont = new Font("arial", Font.BOLD, 18);
+        Font foodTypeFont2 = new Font("arial", Font.PLAIN, 18);
+        Font addonFont = new Font("arial", Font.BOLD, 22);
 
         //Initialize the RadioButton
         tonkotsu = new JRadioButton("Tonkotsu");
         shoyu = new JRadioButton("Shoyu");
         shio = new JRadioButton("shio");
-//        tonkotsu.setFont(foodTypeFont);
-////        shoyu.setFont(foodTypeFont);
-////        shio.setFont(foodTypeFont);
+        tonkotsu.setFont(foodTypeFont2);
+        shoyu.setFont(foodTypeFont2);
+        shio.setFont(foodTypeFont2);
         ButtonGroup btnGroup1 = new ButtonGroup();
         btnGroup1.add(tonkotsu);
         btnGroup1.add(shoyu);
@@ -193,6 +194,9 @@ public class MenuPanel extends JPanel {
         btnGroup2.add(soft);
         btnGroup2.add(medium);
         btnGroup2.add(firm);
+        soft.setFont(foodTypeFont2);
+        medium.setFont(foodTypeFont2);
+        firm.setFont(foodTypeFont2);
 
         no = new JRadioButton("No please");
         just = new JRadioButton("Just a little");
@@ -201,6 +205,9 @@ public class MenuPanel extends JPanel {
         btnGroup3.add(no);
         btnGroup3.add(just);
         btnGroup3.add(lot);
+        no.setFont(foodTypeFont2);
+        just.setFont(foodTypeFont2);
+        lot.setFont(foodTypeFont2);
 
         yes1 = new JRadioButton("Yes");
         no1 = new JRadioButton("No");
@@ -219,6 +226,12 @@ public class MenuPanel extends JPanel {
         ButtonGroup btnGroup6 = new ButtonGroup();
         btnGroup6.add(yes3);
         btnGroup6.add(no3);
+        yes1.setFont(foodTypeFont2);
+        no1.setFont(foodTypeFont2);
+        yes2.setFont(foodTypeFont2);
+        no2.setFont(foodTypeFont2);
+        yes3.setFont(foodTypeFont2);
+        no3.setFont(foodTypeFont2);
 
         s1 = new JRadioButton("0(No)");
         s2 = new JRadioButton("1");
@@ -233,6 +246,12 @@ public class MenuPanel extends JPanel {
         btnGroup7.add(s4);
         btnGroup7.add(s5);
         btnGroup7.add(s6);
+        s1.setFont(foodTypeFont2);
+        s2.setFont(foodTypeFont2);
+        s3.setFont(foodTypeFont2);
+        s4.setFont(foodTypeFont2);
+        s5.setFont(foodTypeFont2);
+        s6.setFont(foodTypeFont2);
 
         ButtonGroup bthGroup8 = new ButtonGroup();
         bthGroup8.add(add1);
@@ -288,23 +307,30 @@ public class MenuPanel extends JPanel {
         JCheckBox ramen = new JCheckBox("Ramen \u00A3" + fixedPrice, currentAvailablity.isRamenAvailable());
         ramen.setFont(ramenFont);
         ramen.setEnabled(false);
-        JLabel title = new JLabel("<html><body>Totoro Ramen<br>Designed by Mr.Miyazaki<body></html>");
+        JLabel title = new JLabel("Totoro Ramen");
+        JLabel title2 = new JLabel("Please design your ramen on the menu!");
         title.setFont(titleFont);
-        c1.anchor = GridBagConstraints.WEST;
+        title2.setFont(titleFont);
+//        c1.anchor = GridBagConstraints.WEST;
+//        c1.gridx = 0;
+//        c1.gridy = 0;
+//        c1.gridwidth = 1;
+//        c1.gridheight = 1;
+//        c1.weightx = 0.3;
+//        c1.weighty = 1;
+//        topPanel.add(ramen, c1);
         c1.gridx = 0;
-        c1.gridy = 0;
-        c1.gridwidth = 1;
-        c1.gridheight = 1;
-        c1.weightx = 0.3;
-        c1.weighty = 1;
-        topPanel.add(ramen, c1);
-        c1.gridx = 1;
-        c1.weightx = 0.7;
+        c1.weightx = 1;
+        c1.weighty = 0.5;
         topPanel.add(title, c1);
+        c1.gridy = 1;
+        c1.weighty = 0.5;
+        topPanel.add(title2,c1);
 
 
         //set the midPanel
-        midPanel.setBorder(BorderFactory.createTitledBorder("Choose what you like!"));
+
+        midPanel.setBorder(BorderFactory.createTitledBorder("Ramen \u00A3" + fixedPrice));
         midPanel.setLayout(new GridBagLayout());
         GridBagConstraints c2 = new GridBagConstraints();
         JPanel defaultP = new JPanel();
@@ -347,7 +373,19 @@ public class MenuPanel extends JPanel {
         JLabel eegg = new JLabel("\u00A3" + extraBoilEggPrice + "   Extra boiled egg", JLabel.LEFT);
         JLabel ebamboo = new JLabel("\u00A3" + extraBamShootPrice + "   Bamboo shoots", JLabel.LEFT);
         JLabel echashu = new JLabel("\u00A3" + extraChashuPrice + "   Extra chashu", JLabel.LEFT);
+        soup.setForeground(Color.BLUE);
+        noodles.setForeground(Color.BLUE);
+        SO.setForeground(Color.BLUE);
+        nori.setForeground(Color.BLUE);
+        noodles.setForeground(Color.BLUE);
+        chashu.setForeground(Color.BLUE);
+        egg.setForeground(Color.BLUE);
+        spi.setForeground(Color.BLUE);
         s6.setForeground(Color.RED);
+        enori.setForeground(Color.BLUE);
+        eegg.setForeground(Color.BLUE);
+        ebamboo.setForeground(Color.BLUE);
+        echashu.setForeground(Color.BLUE);
         soup.setFont(foodTypeFont);
         noodles.setFont(foodTypeFont);
         SO.setFont(foodTypeFont);

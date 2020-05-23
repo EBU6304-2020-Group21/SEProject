@@ -18,12 +18,11 @@ public class LoyaltyPanel extends JPanel{
         topPanel = new JPanel();
         botPanel = new JPanel();
         //set the top panel
-        Font font1 = new Font("Times new Roman",Font.BOLD,30);
-        Font font2 = new Font("Times new Roman",Font.PLAIN,25);
-        JLabel lab1 = new JLabel("Welcome to loyalty service", JLabel.CENTER);
+        Font font1 = new Font("Arial",Font.BOLD,30);
+        JLabel lab1 = new JLabel("Welcome to loyalty service!", JLabel.CENTER);
         lab1.setFont(font1);
-        but1.setFont(font2);
-        but2.setFont(font2);
+        but1.setFont(font1);
+        but2.setFont(font1);
         ButtonGroup bg = new ButtonGroup();
         bg.add(but1);
         bg.add(but2);
@@ -44,6 +43,7 @@ public class LoyaltyPanel extends JPanel{
         topPanel.add(but1,top);
         top.gridy = 2;
         top.weighty = 0.3;
+        top.anchor=GridBagConstraints.NORTH;
         topPanel.add(but2,top);
 
 

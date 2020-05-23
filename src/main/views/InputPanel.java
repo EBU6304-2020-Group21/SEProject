@@ -25,8 +25,9 @@ public class InputPanel extends JPanel{
         JLabel lab1 = new JLabel("Please input your membership number",JLabel.CENTER);
         membershipNumField = new JTextField();
         membershipNumField.setPreferredSize(new Dimension(300,40));
-        Font font1 = new Font("Times new Roman",Font.BOLD,25);
+        Font font1 = new Font("Arial",Font.BOLD,25);
         lab1.setFont(font1);
+        membershipNumField.setFont(font1);
         GridBagConstraints top = new GridBagConstraints();
         top.fill = GridBagConstraints.BOTH;
         top.gridx = 0;

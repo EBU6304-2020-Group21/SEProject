@@ -13,7 +13,7 @@ public class ModifyPanel extends JPanel{
     public JButton back = new JButton("Back");
     public JButton confirm = new JButton("Confirm");
     public JRadioButton ModifyPrice = new JRadioButton("Modify the price");
-    public JRadioButton AvaUnava = new JRadioButton("avaliable/unavaliable");
+    public JRadioButton AvaUnava = new JRadioButton("Modify the availability");
     public ModifyPanel() {init();}
     public void init() {
 
@@ -22,13 +22,12 @@ public class ModifyPanel extends JPanel{
         botPanel = new JPanel();
         //set the top Panel
         JLabel lab1 = new JLabel("Modify the menu");
-        Font font1 = new Font("Times new Roman",Font.BOLD,30);
-        Font font2 = new Font("Times new Roman",Font.PLAIN,25);
+        Font font1 = new Font("Arial",Font.BOLD,30);
         ButtonGroup bg = new ButtonGroup();
         bg.add(ModifyPrice);
         bg.add(AvaUnava);
-        ModifyPrice.setFont(font2);
-        AvaUnava.setFont(font2);
+        ModifyPrice.setFont(font1);
+        AvaUnava.setFont(font1);
         lab1.setFont(font1);
 
         topPanel.setLayout(new GridBagLayout());
@@ -48,6 +47,7 @@ public class ModifyPanel extends JPanel{
 
         top.gridy = 2;
         top.weighty = 0.3;
+        top.anchor = GridBagConstraints.NORTH;
         topPanel.add(AvaUnava,top);
         topPanel.setBorder(BorderFactory.createTitledBorder(""));
         //set the bottom Panel

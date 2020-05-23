@@ -35,10 +35,10 @@ public class CongratulationPanel extends JPanel{
         Font font3 = new Font("Times New Roman",Font.PLAIN,18);
         lab1.setFont(font1);
         lab2.setFont(font2);
-        lab3.setFont(font3);
-        lab4.setFont(font3);
-        lab5.setFont(font3);
-        lab6.setFont(font3);
+        lab3.setFont(font2);
+        lab4.setFont(font2);
+        lab5.setFont(font2);
+        lab6.setFont(font2);
         //set the top panel
         topPanel.setLayout(new GridBagLayout());
         topPanel.setBorder(BorderFactory.createTitledBorder(""));

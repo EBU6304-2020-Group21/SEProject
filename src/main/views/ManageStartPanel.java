@@ -20,13 +20,12 @@ public class ManageStartPanel extends JPanel{
         botPanel = new JPanel();
         //set the top Panel
         JLabel lab1 = new JLabel("Manager System");
-        Font font1 = new Font("Times new Roman",Font.BOLD,30);
-        Font font2 = new Font("Times new Roman",Font.PLAIN,25);
+        Font font1 = new Font("Arial",Font.BOLD,30);
         ButtonGroup bg = new ButtonGroup();
         bg.add(ModifyMenu);
         bg.add(SeeSales);
-        ModifyMenu.setFont(font2);
-        SeeSales.setFont(font2);
+        ModifyMenu.setFont(font1);
+        SeeSales.setFont(font1);
         lab1.setFont(font1);
 
         topPanel.setLayout(new GridBagLayout());
@@ -46,6 +45,7 @@ public class ManageStartPanel extends JPanel{
 
         top.gridy = 2;
         top.weighty = 0.3;
+        top.anchor = GridBagConstraints.NORTH;
         topPanel.add(SeeSales,top);
         topPanel.setBorder(BorderFactory.createTitledBorder(""));
         //set the bottom Panel

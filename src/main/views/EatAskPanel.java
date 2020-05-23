@@ -9,8 +9,8 @@ public class EatAskPanel extends JPanel{
 
     public JButton back = new JButton("Back");
     public JButton confirm = new JButton("Confirm");
-    public JRadioButton but1 = new JRadioButton("Eat in");
-    public JRadioButton but2 = new JRadioButton("Take away");
+    public JRadioButton but1 = new JRadioButton("EAT IN");
+    public JRadioButton but2 = new JRadioButton("TAKE AWAY");
     public EatAskPanel(){
         init();
     }
@@ -18,9 +18,9 @@ public class EatAskPanel extends JPanel{
         topPanel = new JPanel();
         botPanel = new JPanel();
         //set the top panel
-        JLabel lab1 = new JLabel("Eat in OR Take away", JLabel.CENTER);
-        Font font1 = new Font("Times new Roman",Font.BOLD,30);
-        Font font2 = new Font("Times new Roman",Font.PLAIN,25);
+        JLabel lab1 = new JLabel("Eat in or Take away?", JLabel.CENTER);
+        Font font1 = new Font("Arial",Font.BOLD,30);
+        Font font2 = new Font("Arial",Font.BOLD,30);
         ButtonGroup bg = new ButtonGroup();
         bg.add(but1);
         bg.add(but2);
@@ -31,6 +31,7 @@ public class EatAskPanel extends JPanel{
         topPanel.setLayout(new GridBagLayout());
         GridBagConstraints top = new GridBagConstraints();
         top.fill = GridBagConstraints.BOTH;
+        top.anchor = GridBagConstraints.SOUTH;
         top.gridx = 0;
         top.gridy = 0;
         top.gridheight = 1;
@@ -41,9 +42,11 @@ public class EatAskPanel extends JPanel{
         top.fill = GridBagConstraints.CENTER;
         top.gridy = 1;
         top.weighty = 0.3;
+        top.anchor = GridBagConstraints.CENTER;
         topPanel.add(but1,top);
         top.gridy = 2;
         top.weighty = 0.3;
+        top.anchor = GridBagConstraints.NORTH;
         topPanel.add(but2,top);
         topPanel.setBorder(BorderFactory.createTitledBorder(""));
         //set the bottom Panel

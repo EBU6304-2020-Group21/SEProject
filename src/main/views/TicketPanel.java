@@ -55,10 +55,10 @@ public class TicketPanel extends JPanel {
         midPanel = new JPanel();
         botPanel = new JPanel();
 
-        Font font0 = new Font("Times new Roman",Font.BOLD,32);
-        Font font1 = new Font("Times new Roman",Font.BOLD,25);
-        Font font2 = new Font("Times new Roman",Font.BOLD,20);
-        Font font3 = new Font("Times new Roman",Font.BOLD,18);
+        Font font0 = new Font("Arial",Font.BOLD,32);
+        Font font1 = new Font("Arial",Font.BOLD,25);
+        Font font2 = new Font("Arial",Font.BOLD,20);
+        Font font3 = new Font("Arial",Font.BOLD,18);
 
         orderNum = "1";
         DateTime = "1";
@@ -214,7 +214,7 @@ public class TicketPanel extends JPanel {
         JLabel show21b = new JLabel();
         JLabel show22 = new JLabel();
         JLabel show23 = new JLabel();
-        show7.setText(currentOrder.getSoupType());
+        show7.setText(""+currentOrder.getSoupType());
         show8.setText(""+ currentOrder.getNoodleType());
         show9.setText(""+ currentOrder.getSprOnionType());
         show10.setText(""+ currentOrder.getNori());
@@ -239,7 +239,20 @@ public class TicketPanel extends JPanel {
 
 
 
+        show14.setFont(font1);
+        show22.setFont(font1);
+        show23.setFont(font1);
+        show14.setForeground(Color.BLUE);
+        show22.setForeground(Color.BLUE);
+        show23.setForeground(Color.BLUE);
 
+        show7.setFont(font3);
+        show8.setFont(font3);
+        show9.setFont(font3);
+        show10.setFont(font3);
+        show11.setFont(font3);
+        show12.setFont(font3);
+        show13.setFont(font3);
         lab6.setFont(font1);
         lab7.setFont(font3);
         lab8.setFont(font3);

@@ -94,8 +94,8 @@ public class StatPanel extends JPanel {
         topPanel = new JPanel();
         midPanel = new JPanel();
         botPanel = new JPanel();
-        Font titleFont = new Font("Times New Roman", Font.BOLD, 25);
-        Font foodTypeFont = new Font("Times New Roman", Font.BOLD, 18);
+        Font titleFont = new Font("Arial", Font.BOLD, 25);
+        Font foodTypeFont = new Font("Arial", Font.BOLD, 18);
         //set the top panel
         JLabel reportLabel = new JLabel("Report");
         reportLabel.setFont(titleFont);
@@ -110,7 +110,7 @@ public class StatPanel extends JPanel {
         JLabel nori = new JLabel("Nori");
         JLabel chashu = new JLabel("Chashu");
         JLabel egg = new JLabel("<html><body>Boiled<br>egg<body></html>");
-        JLabel spi = new JLabel("The most popular level of spiciness is :");
+        JLabel spi = new JLabel("<html><body>Most popular<br>spiciness<body></html>");
         soup.setFont(foodTypeFont);
         noodles.setFont(foodTypeFont);
         spring.setFont(foodTypeFont);
@@ -146,12 +146,28 @@ public class StatPanel extends JPanel {
         extraEggLabel = new JLabel("Extra boiled egg: " + extraEggNum);
         extraBambooLabel = new JLabel("Bamboo shoots: " + extraBambooNum);
         extraChashuLabel = new JLabel("Extra Chashu: " + extraChashuNum);
+        tonkotsuLabel.setFont(foodTypeFont);
+        shoyuLabel.setFont(foodTypeFont);
+        shioLabel.setFont(foodTypeFont);
+        softLabel.setFont(foodTypeFont);
+        mediumLabel.setFont(foodTypeFont);
+        firmLabel.setFont(foodTypeFont);
+        noLabel.setFont(foodTypeFont);
+        justLabel.setFont(foodTypeFont);
+        lotLabel.setFont(foodTypeFont);
+        noriyesLabel.setFont(foodTypeFont);
+        norinoLabel.setFont(foodTypeFont);
+        chashuyesLabel.setFont(foodTypeFont);
+        chashunoLabel.setFont(foodTypeFont);
+        eggyesLabel.setFont(foodTypeFont);
+        eggnoLabel.setFont(foodTypeFont);
+        mostSpiLabel.setFont(foodTypeFont);
         extraNoriLabel.setFont(foodTypeFont);
         extraEggLabel.setFont(foodTypeFont);
         extraBambooLabel.setFont(foodTypeFont);
         extraChashuLabel.setFont(foodTypeFont);
 
-        mid.fill = GridBagConstraints.BOTH;
+
         mid.anchor = GridBagConstraints.WEST;
         mid.gridx = 0;
         mid.gridy = 0;
@@ -162,12 +178,15 @@ public class StatPanel extends JPanel {
         defaultP.add(soup, mid);
 
         mid.gridx = 1;
+        mid.anchor = GridBagConstraints.WEST;
         defaultP.add(tonkotsuLabel, mid);
 
         mid.gridx = 2;
+        mid.anchor = GridBagConstraints.WEST;
         defaultP.add(shoyuLabel, mid);
 
         mid.gridx = 3;
+        mid.anchor = GridBagConstraints.WEST;
         defaultP.add(shioLabel, mid);
 
         mid.gridx = 0;
@@ -270,13 +289,13 @@ public class StatPanel extends JPanel {
 
 
         mid.fill = GridBagConstraints.BOTH;
-        mid.anchor = GridBagConstraints.CENTER;
+        mid.anchor = GridBagConstraints.WEST;
         mid.gridx = 0;
         mid.gridy = 0;
-        mid.weightx = 0.65;
+        mid.weightx = 0.5;
         mid.weighty = 1;
         midPanel.add(defaultP, mid);
-        mid.weightx = 0.35;
+        mid.weightx = 0.5;
         mid.gridx = 1;
         midPanel.add(addonP, mid);
         //set the bottom Panel

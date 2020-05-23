@@ -56,7 +56,7 @@ public class GUIModel extends JFrame implements ActionListener {
 
         this.setSize(800, 600);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        this.setTitle("GUITemplate");
+        this.setTitle("Ramen System");
         this.setVisible(true);
     }
 
@@ -66,6 +66,15 @@ public class GUIModel extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
+        try
+        {
+            UIManager.put("RootPane.setupButtonVisible",false);
+            org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper.launchBeautyEyeLNF();
+        }
+        catch(Exception e)
+        {
+            //TODO exception
+        }
         GUIModel guiModel = new GUIModel();
     }
 
@@ -303,6 +312,12 @@ public class GUIModel extends JFrame implements ActionListener {
             if (!eatAskPanel.but1.isSelected() && !eatAskPanel.but2.isSelected()) {
                 JOptionPane.showMessageDialog(null, "Please select one of the button!", "Warning", JOptionPane.WARNING_MESSAGE);
             } else {
+                if(eatAskPanel.but1.isSelected()){
+                    currentOrder.setDiningOption("Eat in");
+                }
+                else if(eatAskPanel.but2.isSelected()){
+                    currentOrder.setDiningOption("Take away");
+                }
                 loyaltyAskPanel = new LoyaltyAskPanel();
                 loyaltyAskPanel.confirm.addActionListener(new LoyaltyAskConfirmListener());
                 loyaltyAskPanel.back.addActionListener(new LoyaltyAskBackListener());
@@ -358,7 +373,7 @@ public class GUIModel extends JFrame implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             String nameReg = "^[A-Za-z]+$";
-            String emailReg = "[a-zA-Z_]{1,}[0-9]{0,}@(([a-zA-z0-9]-*){1,}\\.){1,3}[a-zA-z\\-]{1,}";
+            String emailReg = "^([a-z0-9A-Z]+[-|_|\\\\.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\\\.)+[a-zA-Z]{2,}$";
             String phoneReg = "^[0-9]*$";
             Pattern pattern1 = Pattern.compile(nameReg);
             Pattern pattern2 = Pattern.compile(emailReg);
@@ -519,11 +534,6 @@ public class GUIModel extends JFrame implements ActionListener {
             if (payPanel.but1.isSelected() == false && payPanel.but2.isSelected() == false) {
                 JOptionPane.showMessageDialog(null, "Please select the way of payment!", "Warning", JOptionPane.WARNING_MESSAGE);
             } else {
-                if (payPanel.but1.isSelected() == true) {
-                    currentOrder.setDiningOption("Cash");
-                } else {
-                    currentOrder.setDiningOption("Cards");
-                }
                 //Stamps add 1
                 CustomerController.addStamps(inputPanel.membershipNumField.getText(),
                         CustomerController.json2List(CustomerController.readCustomerTotalInfos()));
@@ -544,11 +554,6 @@ public class GUIModel extends JFrame implements ActionListener {
             if (payPanel.but1.isSelected() == false && payPanel.but2.isSelected() == false) {
                 JOptionPane.showMessageDialog(null, "Please select the way of payment!", "Warning", JOptionPane.WARNING_MESSAGE);
             } else {
-                if (payPanel.but1.isSelected() == true) {
-                    currentOrder.setDiningOption("Cash");
-                } else {
-                    currentOrder.setDiningOption("Cards");
-                }
                 //Stamps add 1
 //                CustomerController.addStamps(inputPanel.membershipNumField.getText(),
 //                        CustomerInfosController.json2List(CustomerInfosController.readCustomerTotalInfos()));
@@ -614,6 +619,8 @@ public class GUIModel extends JFrame implements ActionListener {
     public class FinishConfirmListener1 implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            currentCustomer = new Customer();
+            currentOrder = new Order();
             layout.show(mainPanel, "welcome");
         }
     }
@@ -657,7 +664,7 @@ public class GUIModel extends JFrame implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             String nameReg = "^[A-Za-z]+$";
-            String emailReg = "[a-zA-Z_]{1,}[0-9]{0,}@(([a-zA-z0-9]-*){1,}\\.){1,3}[a-zA-z\\-]{1,}";
+            String emailReg = "^([a-z0-9A-Z]+[-|_|\\.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-zA-Z]{2,}$";
             String phoneReg = "^[0-9]*$";
             Pattern pattern1 = Pattern.compile(nameReg);
             Pattern pattern2 = Pattern.compile(emailReg);
@@ -702,6 +709,8 @@ public class GUIModel extends JFrame implements ActionListener {
     public class CongratulationConfirmListener2 implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            currentOrder = new Order();
+            currentCustomer = new Customer();
             layout.show(mainPanel,"welcome");
         }
     }
@@ -760,6 +769,8 @@ public class GUIModel extends JFrame implements ActionListener {
     public class FreeConfirmListener2 implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            currentOrder = new Order();
+            currentCustomer = new Customer();
             layout.show(mainPanel,"welcome");
         }
     }
@@ -774,6 +785,8 @@ public class GUIModel extends JFrame implements ActionListener {
     public class NofreeConfirmListener2 implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            currentOrder = new Order();
+            currentCustomer = new Customer();
             layout.show(mainPanel,"welcome");
         }
     }

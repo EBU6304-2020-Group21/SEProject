@@ -5,25 +5,27 @@ import java.awt.*;
 
 import javax.swing.JRadioButton.*;
 
-public class WelcomePanel extends JPanel{
+public class WelcomePanel extends JPanel {
     private JPanel topPanel;
     private JPanel botPanel;
     public JButton back = new JButton("Back");
     public JButton confirm = new JButton("Confirm");
-    public JRadioButton but1 = new JRadioButton("Dining");
-    public JRadioButton but2 = new JRadioButton("Loyalty Service");
-    public WelcomePanel(){
+    public JRadioButton but1 = new JRadioButton("DINING");
+    public JRadioButton but2 = new JRadioButton("LOYALTY SERVICE");
+
+    public WelcomePanel() {
         init();
     }
-    public void init(){
+
+    public void init() {
         topPanel = new JPanel();
         botPanel = new JPanel();
         //set the top Panel
         JLabel lab1 = new JLabel("Toroto Ramen designed by Mr.Miyazaki", JLabel.CENTER);
         JLabel lab2 = new JLabel("Hello, Dear Customer", JLabel.CENTER);
         JLabel lab3 = new JLabel("Welcome to Toronto Ramen!", JLabel.CENTER);
-        Font font1 = new Font("Times new Roman",Font.BOLD,30);
-        Font font2 = new Font("Times new Roman",Font.PLAIN,25);
+        Font font1 = new Font("Arial", Font.BOLD, 30);
+        Font font2 = new Font("Arial", Font.BOLD, 25);
         ButtonGroup bg = new ButtonGroup();
         bg.add(but1);
         bg.add(but2);
@@ -42,25 +44,22 @@ public class WelcomePanel extends JPanel{
         top.gridwidth = 1;
         top.weightx = 1;
         top.weighty = 0.1;
-        topPanel.add(lab1,top);
+//        topPanel.add(lab1, top);
         top.gridy = 1;
         top.weighty = 0.1;
-        topPanel.add(lab2,top);
+        topPanel.add(lab2, top);
         top.gridy = 2;
         top.weighty = 0.1;
-        topPanel.add(lab3,top);
+        topPanel.add(lab3, top);
         top.fill = GridBagConstraints.CENTER;
         top.gridy = 3;
         top.weighty = 0.35;
-        topPanel.add(but1,top);
+        top.anchor = GridBagConstraints.CENTER;
+        topPanel.add(but1, top);
+        top.anchor = GridBagConstraints.NORTH;
         top.gridy = 4;
         top.weighty = 0.35;
-        topPanel.add(but2,top);
-
-
-
-
-
+        topPanel.add(but2, top);
 
 
         topPanel.setBorder(BorderFactory.createTitledBorder(""));

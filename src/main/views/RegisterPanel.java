@@ -42,6 +42,10 @@ public class RegisterPanel extends JPanel{
         lab3.setFont(font2);
         lab4.setFont(font2);
         lab5.setFont(font2);
+        firstNameField.setFont(font2);
+        surnameField.setFont(font2);
+        emailField.setFont(font2);
+        phoneNumberField.setFont(font2);
 
         GridBagConstraints top = new GridBagConstraints();
         top.fill = GridBagConstraints.BOTH;

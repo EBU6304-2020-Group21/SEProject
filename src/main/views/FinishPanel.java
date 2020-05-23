@@ -21,11 +21,15 @@ public class FinishPanel extends JPanel{
         //set the top panel
         topPanel.setBorder(BorderFactory.createTitledBorder(""));
         topPanel.setLayout(new GridBagLayout());
-        JLabel lab1 = new JLabel("We thank you for your patronage",JLabel.CENTER);
-        JLabel lab2 = new JLabel("The virtual stamps you have now are:"+stamps,JLabel.CENTER);
-        Font font1 = new Font("Times new Roman",Font.BOLD,25);
+        JLabel lab1 = new JLabel("We thank you for your patronage!",JLabel.CENTER);
+        JLabel lab2 = new JLabel("The virtual stamps you have now are:",JLabel.CENTER);
+        JLabel lab3 = new JLabel(""+stamps);
+        Font font1 = new Font("Arial",Font.BOLD,25);
+        Font font2 = new Font("Arial",Font.BOLD,35);
         lab1.setFont(font1);
         lab2.setFont(font1);
+        lab3.setFont(font2);
+        lab3.setForeground(Color.BLUE);
 
 
         GridBagConstraints top = new GridBagConstraints();
@@ -34,15 +38,21 @@ public class FinishPanel extends JPanel{
         top.weightx = 1;
         top.weighty = 0.25;
         top.fill = GridBagConstraints.CENTER;
+        top.anchor = GridBagConstraints.SOUTH;
         topPanel.add(lab1,top);
 
 
         top.fill = GridBagConstraints.CENTER;
         top.gridx = 0;
         top.gridy = 1;
-        top.weightx = 0.3;
-        top.anchor = GridBagConstraints.NORTH;
+        top.weighty = 0.3;
+        top.anchor = GridBagConstraints.CENTER;
         topPanel.add(lab2,top);
+
+        top.gridy = 2;
+        top.weighty = 0.45;
+        top.anchor = GridBagConstraints.NORTH;
+        topPanel.add(lab3,top);
 
 
         //set the bottom Panel
