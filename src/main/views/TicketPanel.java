@@ -1,5 +1,11 @@
 package main.views;
-
+/**
+ * This Class is to show the ticket of a meal for customer
+ * @ClassName TicketPanel
+ * @author Kai Yan
+ * @version 3.0
+ * @date 2020/04/01
+ */
 import main.controller.MenuController;
 import main.entity.MenuPrice;
 

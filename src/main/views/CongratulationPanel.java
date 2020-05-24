@@ -1,5 +1,11 @@
 package main.views;
-
+/**
+ * This Class is congratulation panel to congratulate the success of a register.
+ * @ClassName CongratulationPanel
+ * @author Kai Yan
+ * @version 3.0
+ * @date 2020/04/01
+ */
 import javax.swing.*;
 import java.awt.*;
 
@@ -30,9 +36,9 @@ public class CongratulationPanel extends JPanel{
         JLabel lab4 = new JLabel("Name: " + currentCustomer.getFirstName()+" "+currentCustomer.getSurname(),JLabel.CENTER);
         JLabel lab5 = new JLabel("Email: "+ currentCustomer.getEmail(),JLabel.CENTER);
         JLabel lab6 = new JLabel("Phone number: "+ currentCustomer.getMobileNum(),JLabel.CENTER);
-        Font font1 = new Font("Times New Roman",Font.BOLD,30);
-        Font font2 = new Font("Times New Roman",Font.BOLD,25);
-        Font font3 = new Font("Times New Roman",Font.PLAIN,18);
+        Font font1 = new Font("Arial",Font.BOLD,30);
+        Font font2 = new Font("Arial",Font.BOLD,25);
+        Font font3 = new Font("Arial",Font.PLAIN,18);
         lab1.setFont(font1);
         lab2.setFont(font2);
         lab3.setFont(font2);

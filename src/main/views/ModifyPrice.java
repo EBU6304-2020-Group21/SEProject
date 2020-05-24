@@ -1,5 +1,11 @@
 package main.views;
-
+/**
+ * This Class is modify price panel to make manager modify price of food.
+ * @ClassName ModifyPrice
+ * @author Chenyang Xie
+ * @version 3.0
+ * @date 2020/04/01
+ */
 import main.controller.MenuController;
 import main.entity.MenuPrice;
 import javax.swing.*;

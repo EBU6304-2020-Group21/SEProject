@@ -1,5 +1,11 @@
 package main.views;
-
+/**
+ * This Class is the menu panel to make customer to order food.
+ * @ClassName MenuPanel
+ * @author Kai Yan
+ * @version 3.0
+ * @date 2020/04/01
+ */
 import main.controller.MenuController;
 import main.entity.MenuAvailablity;
 import main.entity.MenuPrice;

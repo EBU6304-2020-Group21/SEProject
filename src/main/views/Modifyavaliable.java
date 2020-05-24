@@ -1,5 +1,11 @@
 package main.views;
-
+/**
+ * This Class is modify availability panel to make manager modify availability of food.
+ * @ClassName ModifyavaliablePanel
+ * @author Chenyang Xie
+ * @version 3.0
+ * @date 2020/04/01
+ */
 import main.controller.MenuController;
 import main.entity.MenuAvailablity;
 

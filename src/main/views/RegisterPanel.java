@@ -1,5 +1,11 @@
 package main.views;
-
+/**
+ * This Class is for the customer to register the membership.
+ * @ClassName RegisterPanel
+ * @author Kai Yan
+ * @version 3.0
+ * @date 2020/04/01
+ */
 import javax.swing.*;
 import java.awt.*;
 

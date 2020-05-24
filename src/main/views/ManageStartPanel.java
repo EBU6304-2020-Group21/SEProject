@@ -1,9 +1,14 @@
 package main.views;
-
+/**
+ * This Class is ManagerStartPanel to ask you to choose the function of manager syster.
+ * @ClassName ManagerStartPanel
+ * @author Kai Yan
+ * @version 3.0
+ * @date 2020/04/01
+ */
 import javax.swing.*;
 import java.awt.*;
 
-import javax.swing.JRadioButton.*;
 
 
 public class ManageStartPanel extends JPanel{
@@ -29,6 +34,7 @@ public class ManageStartPanel extends JPanel{
         ModifyMenu.setFont(font1);
         SeeSales.setFont(font1);
         lab1.setFont(font1);
+        lab1.setForeground(Color.BLUE);
 
         topPanel.setLayout(new GridBagLayout());
         GridBagConstraints top = new GridBagConstraints();

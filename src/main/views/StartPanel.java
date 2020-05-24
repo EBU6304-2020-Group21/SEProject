@@ -1,5 +1,11 @@
 package main.views;
-
+/**
+ * This Class is for the start panel to choose the function of the system.
+ * @ClassName StartPanel
+ * @author Kai Yan
+ * @version 3.0
+ * @date 2020/04/01
+ */
 import javax.swing.*;
 import java.awt.*;
 

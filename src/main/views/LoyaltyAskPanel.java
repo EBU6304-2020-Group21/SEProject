@@ -1,5 +1,11 @@
 package main.views;
-
+/**
+ * This Class is loyalty ask panel to ask the customer to sign in or sign up or just skip.
+ * @ClassName LoyaltyAskPanel
+ * @author Chenyang Xie
+ * @version 3.0
+ * @date 2020/04/01
+ */
 import javax.swing.*;
 import java.awt.*;
 

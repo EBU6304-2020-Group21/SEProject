@@ -1,5 +1,11 @@
 package main.views;
-
+/**
+ * This Class is free panel to notice the meal is free.
+ * @ClassName FreePanel
+ * @author Kai Yan
+ * @version 3.0
+ * @date 2020/04/01
+ */
 import javax.swing.*;
 import java.awt.*;
 

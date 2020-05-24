@@ -1,9 +1,14 @@
 package main.views;
-
+/**
+ * This Class is the integration model of the ramen system and initialize it.
+ * @ClassName GUIModel
+ * @author Kai Yan
+ * @version 3.0
+ * @date 2020/03/20
+ */
 import main.controller.*;
 import main.entity.*;
 import javax.swing.UIManager.*;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

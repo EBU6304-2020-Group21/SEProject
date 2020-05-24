@@ -1,5 +1,11 @@
 package main.views;
-
+/**
+ * This Class is for the manager to send the statistic report to the email.
+ * @ClassName SendPanel
+ * @author Kai Yan
+ * @version 3.0
+ * @date 2020/04/01
+ */
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

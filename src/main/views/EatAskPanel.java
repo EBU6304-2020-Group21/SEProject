@@ -1,5 +1,11 @@
 package main.views;
-
+/**
+ * This Class is eat ask panel to ask you to eat in or take away.
+ * @ClassName Eataskpanel
+ * @author Kai Yan
+ * @version 3.0
+ * @date 2020/04/01
+ */
 import javax.swing.*;
 import java.awt.*;
 

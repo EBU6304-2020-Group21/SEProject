@@ -1,5 +1,11 @@
 package main.views;
-
+/**
+ * This Class is the loyalty panel to ask you choose the function of loyalty service.
+ * @ClassName LoyaltyPanel
+ * @author Kai Yan
+ * @version 3.0
+ * @date 2020/04/01
+ */
 import javax.swing.*;
 import java.awt.*;
 

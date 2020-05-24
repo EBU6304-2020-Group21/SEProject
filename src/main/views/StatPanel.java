@@ -1,5 +1,11 @@
 package main.views;
-
+/**
+ * This Class is for manager to check the statistic report the last week.
+ * @ClassName StatPanel
+ * @author Kai Yan
+ * @version 3.0
+ * @date 2020/04/01
+ */
 import main.controller.ReportController;
 import main.entity.Report;
 
@@ -111,6 +117,14 @@ public class StatPanel extends JPanel {
         JLabel chashu = new JLabel("Chashu");
         JLabel egg = new JLabel("<html><body>Boiled<br>egg<body></html>");
         JLabel spi = new JLabel("<html><body>Most popular<br>spiciness<body></html>");
+        reportLabel.setForeground(Color.BLUE);
+        soup.setForeground(Color.BLUE);
+        noodles.setForeground(Color.BLUE);
+        spring.setForeground(Color.BLUE);
+        nori.setForeground(Color.BLUE);
+        chashu.setForeground(Color.BLUE);
+        egg.setForeground(Color.BLUE);
+        spi.setForeground(Color.BLUE);
         soup.setFont(foodTypeFont);
         noodles.setFont(foodTypeFont);
         spring.setFont(foodTypeFont);

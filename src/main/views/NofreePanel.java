@@ -1,5 +1,11 @@
 package main.views;
-
+/**
+ * This Class is for not free panel to notice the customer this meal is not free.
+ * @ClassName NofreePanel
+ * @author Kai Yan
+ * @version 3.0
+ * @date 2020/04/01
+ */
 import javax.swing.*;
 import java.awt.*;
 

@@ -1,5 +1,11 @@
 package main.views;
-
+/**
+ * This Class is modify panel to make manager choose to modify the price or availability.
+ * @ClassName ModifyPanel
+ * @author Chenyang Xie
+ * @version 3.0
+ * @date 2020/04/01
+ */
 
 
 import javax.swing.*;
@@ -29,6 +35,7 @@ public class ModifyPanel extends JPanel{
         ModifyPrice.setFont(font1);
         AvaUnava.setFont(font1);
         lab1.setFont(font1);
+        lab1.setForeground(Color.BLUE);
 
         topPanel.setLayout(new GridBagLayout());
         GridBagConstraints top = new GridBagConstraints();

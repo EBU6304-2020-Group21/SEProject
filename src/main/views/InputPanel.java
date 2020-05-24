@@ -1,5 +1,11 @@
 package main.views;
-
+/**
+ * This Class is the input panel to input the membership number to sign in.
+ * @ClassName InputPanel
+ * @author Kai Yan
+ * @version 3.0
+ * @date 2020/04/01
+ */
 import javax.swing.*;
 import java.awt.*;
 

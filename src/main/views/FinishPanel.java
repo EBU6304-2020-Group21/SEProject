@@ -1,5 +1,11 @@
 package main.views;
-
+/**
+ * This Class is finish panel to notice the virtual stamps now the customer have.
+ * @ClassName FinishPanel
+ * @author Kai Yan
+ * @version 3.0
+ * @date 2020/04/01
+ */
 import javax.swing.*;
 import java.awt.*;
 
