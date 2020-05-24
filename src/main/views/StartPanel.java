@@ -21,7 +21,7 @@ public class StartPanel extends JPanel {
         Font font1 = new Font("Arial", Font.BOLD, 30);
         Font font2 = new Font("Arial", Font.PLAIN, 25);
         //set the top Panel
-        JLabel label = new JLabel("Please Select Your System:");
+        JLabel label = new JLabel("Please Select Your System");
         enterWelcome = new JRadioButton("Self-Service Kiosk");
         JLabel icon = new JLabel();
         enterWelcome = new JRadioButton("Self-service Kiosk");
@@ -30,6 +30,7 @@ public class StartPanel extends JPanel {
         ButtonGroup btp = new ButtonGroup();
         btp.add(enterManager);
         btp.add(enterWelcome);
+        label.setForeground(Color.BLUE);
         label.setFont(font1);
         enterManager.setFont(font1);
         enterWelcome.setFont(font1);

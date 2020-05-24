@@ -1,5 +1,6 @@
 package main.views;
 
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -31,6 +32,8 @@ public class WelcomePanel extends JPanel {
         ButtonGroup bg = new ButtonGroup();
         bg.add(but1);
         bg.add(but2);
+        lab2.setForeground(Color.BLUE);
+        lab3.setForeground(Color.BLUE);
         lab1.setFont(font1);
         lab2.setFont(font1);
         lab3.setFont(font1);
