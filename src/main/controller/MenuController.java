@@ -6,20 +6,22 @@ import main.entity.MenuPrice;
 import main.views.ModifyPrice;
 import main.views.Modifyavaliable;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import java.io.*;
 
 /**
- * <h3>SEProject</h3>
- * <p>The controller for the menu</p>
- *
- * @author : Yuxuan Wu
- * @date : 2020-05-07 20:19
- **/
+ * This class is used for the menu. It contains alla the function of the menu.
+ * Including set availability and price of the menu
+ * @ClassName MenuController
+ * @author Yuxuan Wu and Kai Yan
+ * @version 3.0
+ * @date 2020/05/20
+ */
 public class MenuController {
+
     /**
-     * @description 用于进行第一次菜单价格文件生成的初始化操作，不用运行
+     * Initialize the Menu Price info to the file. (Only use for the first time)
+     * @author Yuxuan Wu
+     * @date 2020/04/05
      */
     public static void genMenuPriceInfo() {
         MenuPrice menuPrice = new MenuPrice();
@@ -39,8 +41,10 @@ public class MenuController {
     }
 
     /**
+     * Invoked by the views to get the price
      * @param newMenuPrice
-     * @description 用于前端调用，更新菜单价格信息
+     * @author Yuxuan Wu
+     * @date 2020/05/01
      */
     public static void updateMenuPriceInfo(MenuPrice newMenuPrice) {
         FileWriter fileWriter;
@@ -59,8 +63,10 @@ public class MenuController {
     }
 
     /**
-     * @return
-     * @description 用于从文件中得到实体的信息，需要传到前端
+     * Get the Menu Price infos from the files.
+     * @return menuPrice
+     * @author Yuxuan Wu
+     * @date 2020/05/01
      */
     public static MenuPrice getMenuPriceInfo() {
         FileReader fileReader;
@@ -97,7 +103,10 @@ public class MenuController {
     }
 
     /**
-     * @description 用于第一次生成菜单可选项的初始化操作，现在不用运行
+     * Generate the menu availability infos to the file.
+     * @exception IOException
+     * @author Yuxuan Wu
+     * @date 2020/05/01
      */
     public static void genMenuAvailabilityInfo() {
         MenuAvailablity menuAvailablity = new MenuAvailablity();
@@ -117,8 +126,11 @@ public class MenuController {
     }
 
     /**
+     * Write the new menu availablity infos to the file
      * @param newMenuAvailablity
-     * @description 用于将前端修改后的信息写进文件中，传入相应实体类
+     * @exception IOException
+     * @author Yuxuan Wu
+     * @date 2020/05/01
      */
     public static void updateMenuAvailabilityInfo(MenuAvailablity newMenuAvailablity) {
         FileWriter fileWriter;
@@ -137,8 +149,10 @@ public class MenuController {
     }
 
     /**
-     * @return MenuAvailability()
-     * @description 用于从文件中读取菜单可选项信息
+     * Read the menu availability info from the file
+     * @return MenuAvailability
+     * @author Yuxuan Wu
+     * @date 2020/05/01
      */
     public static MenuAvailablity getMenuAvailabilityInfo() {
         FileReader fileReader;
@@ -176,7 +190,13 @@ public class MenuController {
     }
 
 
-
+    /**
+     * Get the Menu Price from View
+     * @param modifyPrice
+     * @return MenuPrice
+     * @author Yuxuan Wu
+     * @
+     */
     public static MenuPrice getMenuPriceFromView(ModifyPrice modifyPrice) {
         MenuPrice newMenu = new MenuPrice();
         newMenu.setFixedPrice(Double.parseDouble(modifyPrice.RamenNowPrice.getText()));
@@ -187,6 +207,13 @@ public class MenuController {
         return newMenu;
     }
 
+    /**
+     * Get the Menu Ability from View
+     * @param modifyavaliable
+     * @return MenuAvailability
+     * @author Kai Yan
+     * @date 2020/05/01
+     */
     public static MenuAvailablity getMenuAvailablityFromView(Modifyavaliable modifyavaliable) {
         MenuAvailablity newAvailablity = new MenuAvailablity();
         newAvailablity.setRamenAvailable(modifyavaliable.RamenAvaliable.isSelected());
@@ -200,11 +227,21 @@ public class MenuController {
         return newAvailablity;
     }
 
-    //输入确认完成后，将其写入后端，GUIModel直接调用下面这两个方法
+    /**
+     * Combination of the methods, update the menu Price
+     * @param modifyPrice
+     * @author Yuxuan Wu
+     * @date 2020/05/07
+     */
     public static void updateMenuPriceFiles(ModifyPrice modifyPrice) {
         updateMenuPriceInfo(getMenuPriceFromView(modifyPrice));
     }
-
+    /**
+     * Combination of the methods, update the menu Availability
+     * @param modifyavaliable
+     * @author Yuxuan Wu
+     * @date 2020/05/07
+     */
     public static void updateMenuAvailabilityFiles(Modifyavaliable modifyavaliable) {
         updateMenuAvailabilityInfo(getMenuAvailablityFromView(modifyavaliable));
     }

@@ -12,16 +12,16 @@ public class ManageStartPanel extends JPanel{
     public JButton back = new JButton("Back");
     public JButton confirm = new JButton("Confirm");
     public JRadioButton ModifyMenu = new JRadioButton("Modify the menu");
-    public JRadioButton SeeSales = new JRadioButton("See the sales");
+    public JRadioButton SeeSales = new JRadioButton("See the Sales");
     public ManageStartPanel() {init();}
     public void init() {
 
         topPanel = new JPanel();
         botPanel = new JPanel();
         //set the top Panel
+        JLabel lab1 = new JLabel("Management System");
         JLabel icon = new JLabel();
         icon.setIcon(new ImageIcon("Files/Logo/RamenRestaurant.png"));
-        JLabel lab1 = new JLabel("Manager System");
         Font font1 = new Font("Arial",Font.BOLD,30);
         ButtonGroup bg = new ButtonGroup();
         bg.add(ModifyMenu);

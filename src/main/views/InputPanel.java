@@ -22,7 +22,7 @@ public class InputPanel extends JPanel{
         //set the top panel
         topPanel.setBorder(BorderFactory.createTitledBorder(""));
         topPanel.setLayout(new GridBagLayout());
-        JLabel lab1 = new JLabel("Please input your membership number",JLabel.CENTER);
+        JLabel lab1 = new JLabel("Please Input Your Membership Number",JLabel.CENTER);
         membershipNumField = new JTextField();
         membershipNumField.setPreferredSize(new Dimension(300,40));
         Font font1 = new Font("Arial",Font.BOLD,25);

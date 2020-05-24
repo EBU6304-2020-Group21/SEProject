@@ -11,10 +11,22 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-import static main.views.GUIModel.currentOrder;
-
+/**
+ * This class is used for the order. It includes all the functions of the order.
+ * Including read the order info from the view and write it into the file.
+ * @ClassName OrderController
+ * @author Yuxuan Wu and Kai Yan
+ * @version 3.0
+ * @date 2020/05/18
+ */
 public class OrderController {
-    
+
+    /**
+     * Generate the Order total infos and add it into the files
+     * @param order
+     * @author Yuxuan Wu
+     * @date 2020/04/01
+     */
     public static void genOrderTotalInfos(Order order){
         FileWriter fileWriter;
         File file = new File("Files/Order/GeneralOrderInfo.json");
@@ -39,7 +51,14 @@ public class OrderController {
             e.printStackTrace();
         }
     }
-    
+
+    /**
+     * Read the Order infos from the order files
+     * @return string
+     * @author Yuxuan Wu
+     * @date 2020/04/01
+     * @exception IOException
+     */
     public static String readOrderTotalInfos(){
         FileReader fileReader;
         File file = new File("Files/Order/GeneralOrderInfo.json");
@@ -70,18 +89,37 @@ public class OrderController {
         return readString;
     }
 
+    /**
+     * Make Jsonstr to List
+     * @param str
+     * @return
+     * @author Yuxuan Wu
+     * @date 2020/04/01
+     */
     public static List<Order> json2List(String str){
         JSONArray orderArray = JSONArray.parseArray(str);
         List<Order> orderList = JSONObject.parseArray(orderArray.toJSONString(), Order.class);
         return orderList;
     }
-
+    /**
+     * Make List to Json str
+     * @param orderList
+     * @return
+     * @author Yuxuan Wu
+     * @date 2020/04/01
+     */
     public static String list2Json(List<Order> orderList){
         JSONArray orderArray = JSONArray.parseArray(JSON.toJSONString(orderList));
         return orderArray.toString();
     }
 
-
+    /**
+     * Get the infos from view
+     * @param menuPanel
+     * @return order
+     * @author Kai Yan
+     * @date 2020/04/01
+     */
     public static Order orderFromView(MenuPanel menuPanel){
         Order newOrder = new Order();
         if(menuPanel.tonkotsu.isSelected()){
@@ -164,6 +202,12 @@ public class OrderController {
         return newOrder;
     }
 
+    /**
+     * Add order to files
+     * @param order
+     * @author Yuxuan Wu
+     * @date 2020/05/10
+     */
     public static void addOrder2Files(Order order){
         genOrderTotalInfos(order);
         TicketController.genTicket(order);

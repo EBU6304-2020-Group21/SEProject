@@ -307,8 +307,8 @@ public class MenuPanel extends JPanel {
         JCheckBox ramen = new JCheckBox("Ramen \u00A3" + fixedPrice, currentAvailablity.isRamenAvailable());
         ramen.setFont(ramenFont);
         ramen.setEnabled(false);
-        JLabel title = new JLabel("Totoro Ramen");
-        JLabel title2 = new JLabel("Please design your ramen on the menu!");
+        JLabel title = new JLabel("Welcome to Totoro Ramen Restaurant");
+        JLabel title2 = new JLabel("Free to Design YOUR Ramen!");
         title.setFont(titleFont);
         title2.setFont(titleFont);
 //        c1.anchor = GridBagConstraints.WEST;

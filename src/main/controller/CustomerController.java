@@ -11,13 +11,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * This Class is for the Customers. It includes all of the Customers' functions here.
+ * This Class links Border and Entity Layer, It helps to get the infos from views and
+ * parsing them into the files.
+ * @ClassName CustomerController
  * @author Yuxuan Wu
+ * @version 3.0
+ * @date 2020/05/24
  */
 public class CustomerController {
 
     /**
-     * 将新的customer写入GeneralCustomerInfo.json文件
+     * Generate the customers info and send it to views
      * @param customer
+     * @exception IOException
+     * @author Yuxuan Wu
+     * @date 2020/04/05
      */
     public static void genCustomerTotalInfos(Customer customer){
         FileWriter fileWriter;
@@ -45,6 +54,13 @@ public class CustomerController {
 
     }
 
+    /**
+     * If the Customer's info updated, it will be updated to the files.
+     * @exception IOException
+     * @param fileStr
+     * @author Yuxuan Wu
+     * @date 2020/04/05
+     */
     public static void updateCustomerTotalInfos(String fileStr){
         FileWriter fileWriter;
         File file = new File("Files/Customer/GeneralCustomerInfo.json");
@@ -70,8 +86,10 @@ public class CustomerController {
     }
 
     /**
-     * 从文件里读出来字符串
-     * @return
+     * Read the customer total infos from GeneralCustomerInfo.json
+     * @return readString
+     * @author Yuxuan Wu
+     * @date 2020/04/05
      */
     public static String readCustomerTotalInfos(){
         FileReader fileReader;
@@ -104,9 +122,11 @@ public class CustomerController {
         }
 
     /**
-     * 字符串变为ArrayList
-      * @param str
-     * @return
+     * Make the String from the customer file to ArrayList
+     * @param str
+     * @return customerList
+     * @author Yuxuan Wu
+     * @date 2020/04/06
      */
     public static List<Customer> json2List(String str){
         JSONArray customerArray = JSONArray.parseArray(str);
@@ -115,9 +135,11 @@ public class CustomerController {
     }
 
     /**
-     * List变为JSONstr
+     * Make the Arraylist to String
      * @param customerList
-     * @return
+     * @return string
+     * @author Yuxuan Wu
+     * @date 2020/04/06
      */
     public static String list2Json(List<Customer> customerList){
         JSONArray customerArray = JSONArray.parseArray(JSON.toJSONString(customerList));
@@ -125,10 +147,12 @@ public class CustomerController {
     }
 
     /**
-     *
+     * Find the customer when the user input the membership number
      * @param membershipNum
      * @param customerList
-     * @return
+     * @return Customer
+     * @author Yuxuan Wu
+     * @date 2020/04/06
      */
     public static Customer findByMemberShipNum(String membershipNum, List<Customer> customerList){
         Customer resultCustomer = new Customer();
@@ -151,9 +175,11 @@ public class CustomerController {
     }
 
     /**
-     *
+     * Add the stamps of customer and update
      * @param membershipNum
      * @param customerList
+     * @author Yuxuan Wu
+     * @date 2020/04/06
      */
     public static void addStamps(String membershipNum, List<Customer> customerList){
         Customer resultCustomer = new Customer();
@@ -173,7 +199,13 @@ public class CustomerController {
         CustomerController.updateCustomerTotalInfos(CustomerController.list2Json(customerList));
     }
 
-
+    /**
+     * Read the customer info from the panel
+     * @param registerPanel
+     * @return
+     * @author Yuxuan Wu
+     * @date 2020/04/06
+     */
     public static Customer customerFromView(RegisterPanel registerPanel){
         Customer newCustomer = new Customer();
         newCustomer.setFirstName(registerPanel.firstNameField.getText());
@@ -185,11 +217,22 @@ public class CustomerController {
         return newCustomer;
     }
 
-
+    /**
+     * Add the Customer infos to file
+     * @param registerPanel
+     * @author Yuxuan Wu
+     * @date 2020/04/10
+     */
     public static void addCustomer2Files(RegisterPanel registerPanel){
         genCustomerTotalInfos(customerFromView(registerPanel));
     }
 
+    /**
+     * used for test
+     * @param args\
+     * @author Yuxuan Wu
+     * @date 2020/04/15
+     */
     public static void main(String[] args) {
         Customer customer = new Customer();
         CustomerController customerController = new CustomerController();

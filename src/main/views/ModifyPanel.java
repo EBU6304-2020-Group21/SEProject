@@ -12,8 +12,8 @@ public class ModifyPanel extends JPanel{
     private JPanel botPanel;
     public JButton back = new JButton("Back");
     public JButton confirm = new JButton("Confirm");
-    public JRadioButton ModifyPrice = new JRadioButton("Modify the price");
-    public JRadioButton AvaUnava = new JRadioButton("Modify the availability");
+    public JRadioButton ModifyPrice = new JRadioButton("Modify Menu Price");
+    public JRadioButton AvaUnava = new JRadioButton("Modify Dishes Availability");
     public ModifyPanel() {init();}
     public void init() {
 
@@ -21,7 +21,7 @@ public class ModifyPanel extends JPanel{
         topPanel = new JPanel();
         botPanel = new JPanel();
         //set the top Panel
-        JLabel lab1 = new JLabel("Modify the menu");
+        JLabel lab1 = new JLabel("Modify the Menu");
         Font font1 = new Font("Arial",Font.BOLD,30);
         ButtonGroup bg = new ButtonGroup();
         bg.add(ModifyPrice);

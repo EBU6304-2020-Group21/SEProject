@@ -21,8 +21,9 @@ public class StartPanel extends JPanel {
         Font font1 = new Font("Arial", Font.BOLD, 30);
         Font font2 = new Font("Arial", Font.PLAIN, 25);
         //set the top Panel
+        JLabel label = new JLabel("Please Select Your System:");
+        enterWelcome = new JRadioButton("Self-Service Kiosk");
         JLabel icon = new JLabel();
-        JLabel label = new JLabel("Please select the system you want to enter:");
         enterWelcome = new JRadioButton("Self-service Kiosk");
         enterManager = new JRadioButton("Management System");
         icon.setIcon(new ImageIcon("Files/Logo/RamenRestaurant.png"));

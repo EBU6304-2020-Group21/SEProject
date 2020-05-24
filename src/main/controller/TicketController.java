@@ -7,11 +7,18 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
+ * This class is for generating the tickets
+ * @ClassName TicketController
  * @author Yuxuan Wu
- *
+ * @version 3.0
+ * @date 2020/05/09
  */
 public class TicketController {
 
+    /**
+     * Generate the ticket from the user order
+     * @param order
+     */
     public static void genTicket(Order order){
         FileWriter fileWriter;
         File file = new File("Files/Tickets/"+order.getDateTime()+".txt");
