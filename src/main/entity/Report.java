@@ -1,8 +1,12 @@
 package main.entity;
 /**
+ * This Class is for the Report. It includes all of the attributes of the Report entity.
+ * it is used for make the report of the sales weekly.
+ * @ClassName Report
  * @author Yinan Zhang
- *
-**/
+ * @version 3.0
+ * @date 2020/05/24
+ */
 public class Report {
     private int tonkotsuNum;
     private int shoyuNum;

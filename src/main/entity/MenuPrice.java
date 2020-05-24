@@ -1,8 +1,13 @@
 package main.entity;
 
 /**
- * @author Yuxuan Wu
- */
+ * This Class is for the Menu' Price. It includes all of the attributes of the Menu Price entity.
+ * It is used for management system to change the Menu price.
+ * @ClassName MenuPrice
+ * @author Yuxuan Wu and Yinan Zhang
+ * @version 3.0
+ * @date : 2020-05-07 20:29
+ **/
 public class MenuPrice {
     private double fixedPrice = 9.99;      //the price of fixed dishes, default 9.99 pounds
     private double extraNoriPrice = 1;     //the price of extra Nori, default 1 pounds

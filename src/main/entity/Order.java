@@ -1,9 +1,13 @@
 package main.entity;
 
 /**
+ * This Class is for the Order. It includes all of the attributes of the Order entity.
+ * It is used for save the data of the orders.
+ * @ClassName Order
  * @author Yinan Zhang
+ * @version 3.0
+ * @date 2020/05/24
  */
-
 
 public class Order {
     private String soupType;

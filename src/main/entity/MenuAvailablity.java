@@ -1,10 +1,11 @@
 package main.entity;
 
 /**
- * <h3>SEProject</h3>
- * <p>Entity class for menu availability</p>
- *
- * @author : Yuxuan Wu
+ * This Class is for the Menu' availability. It includes all of the attributes of the Menu availability entity.
+ * It is used for management system to set Menu availability.
+ * @ClassName MenuAvailability
+ * @author Yuxuan Wu
+ * @version 3.0
  * @date : 2020-05-07 20:29
  **/
 public class MenuAvailablity {

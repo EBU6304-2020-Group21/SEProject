@@ -1,4 +1,11 @@
 package main.entity;
+/**
+ * This Class is for the Customers. It includes all of the attributes of the Customer entity.
+ * @ClassName Customer
+ * @author Yinan Zhang
+ * @version 3.0
+ * @date 2020/05/24
+ */
 
 public class Customer {
     private String membershipNum;
