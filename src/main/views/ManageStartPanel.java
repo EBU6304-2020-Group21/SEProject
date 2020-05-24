@@ -19,6 +19,8 @@ public class ManageStartPanel extends JPanel{
         topPanel = new JPanel();
         botPanel = new JPanel();
         //set the top Panel
+        JLabel icon = new JLabel();
+        icon.setIcon(new ImageIcon("Files/Logo/RamenRestaurant.png"));
         JLabel lab1 = new JLabel("Manager System");
         Font font1 = new Font("Arial",Font.BOLD,30);
         ButtonGroup bg = new ButtonGroup();
@@ -36,14 +38,16 @@ public class ManageStartPanel extends JPanel{
         top.gridheight = 1;
         top.gridwidth = 1;
         top.weightx = 1;
-        top.weighty = 0.4;
+        top.weighty = 0.2;
+        topPanel.add(icon);
+        top.gridy = 1;
         topPanel.add(lab1,top);
 
-        top.gridy = 1;
+        top.gridy = 2;
         top.weighty = 0.3;
         topPanel.add(ModifyMenu,top);
 
-        top.gridy = 2;
+        top.gridy = 3;
         top.weighty = 0.3;
         top.anchor = GridBagConstraints.NORTH;
         topPanel.add(SeeSales,top);

@@ -94,7 +94,7 @@ public class StatPanel extends JPanel {
         topPanel = new JPanel();
         midPanel = new JPanel();
         botPanel = new JPanel();
-        Font titleFont = new Font("Arial", Font.BOLD, 25);
+        Font titleFont = new Font("Arial", Font.BOLD, 35);
         Font foodTypeFont = new Font("Arial", Font.BOLD, 18);
         //set the top panel
         JLabel reportLabel = new JLabel("Report");

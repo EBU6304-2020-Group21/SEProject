@@ -66,15 +66,15 @@ public class GUIModel extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        try
-        {
-            UIManager.put("RootPane.setupButtonVisible",false);
-            org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper.launchBeautyEyeLNF();
-        }
-        catch(Exception e)
-        {
-            //TODO exception
-        }
+//        try
+//        {
+//            UIManager.put("RootPane.setupButtonVisible",false);
+//            org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper.launchBeautyEyeLNF();
+//        }
+//        catch(Exception e)
+//        {
+//            //TODO exception
+//        }
         GUIModel guiModel = new GUIModel();
     }
 

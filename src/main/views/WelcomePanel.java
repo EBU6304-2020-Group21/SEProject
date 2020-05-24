@@ -21,9 +21,11 @@ public class WelcomePanel extends JPanel {
         topPanel = new JPanel();
         botPanel = new JPanel();
         //set the top Panel
+        JLabel icon = new JLabel();
         JLabel lab1 = new JLabel("Toroto Ramen designed by Mr.Miyazaki", JLabel.CENTER);
         JLabel lab2 = new JLabel("Hello, Dear Customer", JLabel.CENTER);
         JLabel lab3 = new JLabel("Welcome to Toronto Ramen!", JLabel.CENTER);
+        icon.setIcon(new ImageIcon("Files/Logo/RamenRestaurant.png"));
         Font font1 = new Font("Arial", Font.BOLD, 30);
         Font font2 = new Font("Arial", Font.BOLD, 25);
         ButtonGroup bg = new ButtonGroup();
@@ -37,14 +39,12 @@ public class WelcomePanel extends JPanel {
 
         topPanel.setLayout(new GridBagLayout());
         GridBagConstraints top = new GridBagConstraints();
-        top.fill = GridBagConstraints.BOTH;
+        top.anchor = GridBagConstraints.CENTER;
         top.gridx = 0;
         top.gridy = 0;
-        top.gridheight = 1;
-        top.gridwidth = 1;
         top.weightx = 1;
         top.weighty = 0.1;
-//        topPanel.add(lab1, top);
+        topPanel.add(icon, top);
         top.gridy = 1;
         top.weighty = 0.1;
         topPanel.add(lab2, top);

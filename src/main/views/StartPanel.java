@@ -21,9 +21,11 @@ public class StartPanel extends JPanel {
         Font font1 = new Font("Arial", Font.BOLD, 30);
         Font font2 = new Font("Arial", Font.PLAIN, 25);
         //set the top Panel
+        JLabel icon = new JLabel();
         JLabel label = new JLabel("Please select the system you want to enter:");
         enterWelcome = new JRadioButton("Self-service Kiosk");
         enterManager = new JRadioButton("Management System");
+        icon.setIcon(new ImageIcon("Files/Logo/RamenRestaurant.png"));
         ButtonGroup btp = new ButtonGroup();
         btp.add(enterManager);
         btp.add(enterWelcome);
@@ -32,17 +34,20 @@ public class StartPanel extends JPanel {
         enterWelcome.setFont(font1);
         topPanel.setLayout(new GridBagLayout());
         GridBagConstraints top = new GridBagConstraints();
-        top.anchor = GridBagConstraints.SOUTH;
+        top.anchor = GridBagConstraints.CENTER;
         top.weightx = 1;
-        top.weighty = 0.4;
+        top.weighty = 0.2;
         top.gridy = 0;
-        topPanel.add(label, top);
+        topPanel.add(icon, top);
+        top.anchor=GridBagConstraints.NORTH;
+        top.gridy = 1;
+        topPanel.add(label,top);
         top.anchor = GridBagConstraints.CENTER;
         top.weighty = 0.3;
-        top.gridy = 1;
+        top.gridy = 2;
         topPanel.add(enterWelcome, top);
         top.anchor = GridBagConstraints.NORTH;
-        top.gridy = 2;
+        top.gridy = 3;
         topPanel.add(enterManager, top);
         //set the bottom Panel
         botPanel.setBorder(BorderFactory.createTitledBorder(""));
