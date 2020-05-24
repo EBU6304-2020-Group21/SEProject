@@ -1,7 +1,5 @@
 package main.views;
 
-import mdlaf.*;
-import mdlaf.animation.*;
 import main.controller.*;
 import main.entity.*;
 import javax.swing.UIManager.*;

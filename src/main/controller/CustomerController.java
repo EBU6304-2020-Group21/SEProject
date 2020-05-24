@@ -229,7 +229,7 @@ public class CustomerController {
 
     /**
      * used for test
-     * @param args\
+     * @param args
      * @author Yuxuan Wu
      * @date 2020/04/15
      */
