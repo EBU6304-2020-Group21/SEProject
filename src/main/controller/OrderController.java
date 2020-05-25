@@ -29,7 +29,7 @@ public class OrderController {
      */
     public static void genOrderTotalInfos(Order order){
         FileWriter fileWriter;
-        File file = new File("Files/Order/GeneralOrderInfo.json");
+        File file = new File(UtilsController.GENERAL_ORDER_ADDR);
         List<Order> orderList;
         if(readOrderTotalInfos()!=""){
             orderList = json2List(readOrderTotalInfos());
@@ -61,7 +61,7 @@ public class OrderController {
      */
     public static String readOrderTotalInfos(){
         FileReader fileReader;
-        File file = new File("Files/Order/GeneralOrderInfo.json");
+        File file = new File(UtilsController.GENERAL_ORDER_ADDR);
         BufferedReader reader = null;
         String readString = "";
         try{

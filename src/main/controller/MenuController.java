@@ -26,7 +26,7 @@ public class MenuController {
     public static void genMenuPriceInfo() {
         MenuPrice menuPrice = new MenuPrice();
         FileWriter fileWriter;
-        File file = new File("Files/Menu/MenuPrice.json");
+        File file = new File(UtilsController.MENU_PRICE_ADDR);
         try {
             if (!file.exists()) {
                 file.createNewFile();
@@ -48,7 +48,7 @@ public class MenuController {
      */
     public static void updateMenuPriceInfo(MenuPrice newMenuPrice) {
         FileWriter fileWriter;
-        File file = new File("Files/Menu/MenuPrice.json");
+        File file = new File(UtilsController.MENU_PRICE_ADDR);
         try {
             if (!file.exists()) {
                 file.createNewFile();
@@ -70,7 +70,7 @@ public class MenuController {
      */
     public static MenuPrice getMenuPriceInfo() {
         FileReader fileReader;
-        File file = new File("Files/Menu/MenuPrice.json");
+        File file = new File(UtilsController.MENU_PRICE_ADDR);
         BufferedReader reader = null;
         String readString = "";
         MenuPrice menuPrice = new MenuPrice();
@@ -111,7 +111,7 @@ public class MenuController {
     public static void genMenuAvailabilityInfo() {
         MenuAvailablity menuAvailablity = new MenuAvailablity();
         FileWriter fileWriter;
-        File file = new File("Files/Menu/MenuAvailability.json");
+        File file = new File(UtilsController.MENU_AVAILABALITY_ADDR);
         try {
             if (!file.exists()) {
                 file.createNewFile();
@@ -134,7 +134,7 @@ public class MenuController {
      */
     public static void updateMenuAvailabilityInfo(MenuAvailablity newMenuAvailablity) {
         FileWriter fileWriter;
-        File file = new File("Files/Menu/MenuAvailability.json");
+        File file = new File(UtilsController.MENU_AVAILABALITY_ADDR);
         try {
             if (!file.exists()) {
                 file.createNewFile();
@@ -156,7 +156,7 @@ public class MenuController {
      */
     public static MenuAvailablity getMenuAvailabilityInfo() {
         FileReader fileReader;
-        File file = new File("Files/Menu/MenuAvailability.json");
+        File file = new File(UtilsController.MENU_AVAILABALITY_ADDR);
         BufferedReader reader = null;
         String readString = "";
         MenuAvailablity menuAvailablity = new MenuAvailablity();

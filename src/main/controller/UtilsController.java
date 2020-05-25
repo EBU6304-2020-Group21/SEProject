@@ -14,6 +14,13 @@ import java.util.Date;
  * @date 2020/04/09
  */
 public class UtilsController {
+    public static final String TICKET_ADDR = "Files/Tickets/";
+    public static final String GENERAL_CUSTOMER_ADDR = "Files/Customer/GeneralCustomerInfo.json";
+    public static final String GENERAL_ORDER_ADDR = "Files/Order/GeneralOrderInfo.json";
+    public static final String MENU_AVAILABALITY_ADDR = "Files/Menu/MenuAvailability.json";
+    public static final String MENU_PRICE_ADDR = "Files/Menu/MenuPrice.json";
+
+
     /**
      * Generate the Member Number
      * The last 8 bits of UNIX stamps

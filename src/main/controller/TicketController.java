@@ -21,7 +21,7 @@ public class TicketController {
      */
     public static void genTicket(Order order){
         FileWriter fileWriter;
-        File file = new File("Files/Tickets/"+order.getDateTime()+".txt");
+        File file = new File(UtilsController.TICKET_ADDR+order.getDateTime()+".txt");
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         try{
             if(!file.exists()){

@@ -30,7 +30,7 @@ public class CustomerController {
      */
     public static void genCustomerTotalInfos(Customer customer){
         FileWriter fileWriter;
-        File file = new File("Files/Customer/GeneralCustomerInfo.json");
+        File file = new File(UtilsController.GENERAL_CUSTOMER_ADDR);
         List<Customer> customerList;
         if(readCustomerTotalInfos()!=""){
             customerList = json2List(readCustomerTotalInfos());
@@ -63,7 +63,7 @@ public class CustomerController {
      */
     public static void updateCustomerTotalInfos(String fileStr){
         FileWriter fileWriter;
-        File file = new File("Files/Customer/GeneralCustomerInfo.json");
+        File file = new File(UtilsController.GENERAL_CUSTOMER_ADDR);
 //        List<Customer> customerList;
 //        if(readCustomerTotalInfos()!=""){
 //            customerList = json2List(readCustomerTotalInfos());
@@ -93,7 +93,7 @@ public class CustomerController {
      */
     public static String readCustomerTotalInfos(){
         FileReader fileReader;
-        File file = new File("Files/Customer/GeneralCustomerInfo.json");
+        File file = new File(UtilsController.GENERAL_CUSTOMER_ADDR);
         BufferedReader reader = null;
         String readString = "";
         try{
