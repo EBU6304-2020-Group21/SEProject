@@ -288,15 +288,15 @@ public class MenuPanel extends JPanel {
         shoyu.setEnabled(currentAvailablity.isShoyuAvailable());
         shio.setEnabled(currentAvailablity.isShioAvailable());
         yes1.setEnabled(currentAvailablity.isNoriAvailable());
-        no1.setEnabled(currentAvailablity.isNoriAvailable());
+//        no1.setEnabled(currentAvailablity.isNoriAvailable());
         add1.setEnabled(currentAvailablity.isNoriAvailable());
         subtract1.setEnabled(currentAvailablity.isNoriAvailable());
         yes2.setEnabled(currentAvailablity.isChashuAvailable());
-        no2.setEnabled(currentAvailablity.isChashuAvailable());
+//        no2.setEnabled(currentAvailablity.isChashuAvailable());
         add4.setEnabled(currentAvailablity.isChashuAvailable());
         subtract4.setEnabled(currentAvailablity.isChashuAvailable());
         yes3.setEnabled(currentAvailablity.isBoilEggAvailable());
-        no3.setEnabled(currentAvailablity.isBoilEggAvailable());
+//        no3.setEnabled(currentAvailablity.isBoilEggAvailable());
         add2.setEnabled(currentAvailablity.isBoilEggAvailable());
         subtract2.setEnabled(currentAvailablity.isBoilEggAvailable());
         add3.setEnabled(currentAvailablity.isBamShootAvailable());

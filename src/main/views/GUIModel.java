@@ -251,9 +251,13 @@ public class GUIModel extends JFrame implements ActionListener {
     public class WelcomeConfirmListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            MenuAvailablity menuAvailablity = MenuController.getMenuAvailabilityInfo();
             if (!welcomePanel.but1.isSelected() && !welcomePanel.but2.isSelected()) {
                 JOptionPane.showMessageDialog(null, "Please select the function!", "Warning", JOptionPane.WARNING_MESSAGE);
-            } else if (welcomePanel.but1.isSelected()) {
+            } else if (!menuAvailablity.isRamenAvailable()){
+                JOptionPane.showMessageDialog(null, "The ramen is unavailable now! Please contact our manager.", "Warning", JOptionPane.WARNING_MESSAGE);
+            }
+            else if(welcomePanel.but1.isSelected()) {
                 menuPanel = new MenuPanel();
                 menuPanel.confirm.addActionListener(new MenuConfirmListener());
                 menuPanel.back.addActionListener(new MenuBackListener());
