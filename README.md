@@ -1,4 +1,5 @@
 # _Ramen_ -- An Self-Service Software for Restaurant
+![](/Files/Logo/RamenRestaurant.png)  
 EBU6304-Software Engineering Project of Group 21
 ##Environment
 - Running Environment: JDK-11.0.2
