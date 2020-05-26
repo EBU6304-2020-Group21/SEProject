@@ -1,7 +1,7 @@
 package main.views;
 /**
  * This Class is the integration model of the ramen system and initialize it.
- *
+ * It has many sub classes and it contains all the actionlisteners in this class.
  * @ClassName GUIModel
  * @author Kai Yan
  * @version 3.0
