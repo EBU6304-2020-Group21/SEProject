@@ -1,14 +1,16 @@
 package main.views;
 /**
  * This Class is the integration model of the ramen system and initialize it.
- * It has many sub classes and it contains all the actionlisteners in this class.
+ *
  * @ClassName GUIModel
  * @author Kai Yan
  * @version 3.0
  * @date 2020/03/20
  */
+
 import main.controller.*;
 import main.entity.*;
+
 import javax.swing.UIManager.*;
 import javax.swing.*;
 import java.awt.*;
@@ -87,107 +89,108 @@ public class GUIModel extends JFrame implements ActionListener {
     }
 
 
-    public class StartConfirmListener implements ActionListener{
+    public class StartConfirmListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            if(!startPanel.enterManager.isSelected()&&!startPanel.enterWelcome.isSelected()){
+            if (!startPanel.enterManager.isSelected() && !startPanel.enterWelcome.isSelected()) {
                 JOptionPane.showMessageDialog(null, "Please select the function!", "Warning", JOptionPane.WARNING_MESSAGE);
             }
-            if(startPanel.enterWelcome.isSelected()){
+            if (startPanel.enterWelcome.isSelected()) {
                 welcomePanel = new WelcomePanel();
                 welcomePanel.back.addActionListener(new WelcomeBackListener());
                 welcomePanel.confirm.addActionListener(new WelcomeConfirmListener());
-                mainPanel.add(welcomePanel,"welcome");
-                layout.show(mainPanel,"welcome");
-            }
-            else if(startPanel.enterManager.isSelected()){
+                mainPanel.add(welcomePanel, "welcome");
+                layout.show(mainPanel, "welcome");
+            } else if (startPanel.enterManager.isSelected()) {
                 manageStartPanel = new ManageStartPanel();
                 manageStartPanel.back.addActionListener(new ManagerStartBackListener());
                 manageStartPanel.confirm.addActionListener(new ManagerStartConfirmListener());
-                mainPanel.add(manageStartPanel,"managestart");
-                layout.show(mainPanel,"managestart");
+                mainPanel.add(manageStartPanel, "managestart");
+                layout.show(mainPanel, "managestart");
             }
-        }
-    }
-    public class ManagerStartBackListener implements  ActionListener{
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            layout.show(mainPanel,"start");
         }
     }
 
-    public class ManagerStartConfirmListener implements  ActionListener{
+    public class ManagerStartBackListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            if(!manageStartPanel.ModifyMenu.isSelected()&&!manageStartPanel.SeeSales.isSelected()){
+            layout.show(mainPanel, "start");
+        }
+    }
+
+    public class ManagerStartConfirmListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (!manageStartPanel.ModifyMenu.isSelected() && !manageStartPanel.SeeSales.isSelected()) {
                 JOptionPane.showMessageDialog(null, "Please select the function!", "Warning", JOptionPane.WARNING_MESSAGE);
-            }
-            else if(manageStartPanel.ModifyMenu.isSelected()){
+            } else if (manageStartPanel.ModifyMenu.isSelected()) {
                 modifyPanel = new ModifyPanel();
                 modifyPanel.back.addActionListener(new ModifyBackListener());
                 modifyPanel.confirm.addActionListener(new ModifyConfirmListener());
-                mainPanel.add(modifyPanel,"modify");
-                layout.show(mainPanel,"modify");
-            }
-            else if(manageStartPanel.SeeSales.isSelected()){
+                mainPanel.add(modifyPanel, "modify");
+                layout.show(mainPanel, "modify");
+            } else if (manageStartPanel.SeeSales.isSelected()) {
                 statPanel = new StatPanel();
                 statPanel.back.addActionListener(new StatBackListener());
                 statPanel.confirm.addActionListener(new StatConfirmListener());
-                mainPanel.add(statPanel,"stat");
-                layout.show(mainPanel,"stat");
+                mainPanel.add(statPanel, "stat");
+                layout.show(mainPanel, "stat");
             }
-        }
-    }
-    public class ModifyBackListener implements ActionListener{
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            layout.show(mainPanel,"managestart");
         }
     }
 
-    public class ModifyConfirmListener implements ActionListener{
+    public class ModifyBackListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            if(!modifyPanel.ModifyPrice.isSelected()&&!modifyPanel.AvaUnava.isSelected()){
+            layout.show(mainPanel, "managestart");
+        }
+    }
+
+    public class ModifyConfirmListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (!modifyPanel.ModifyPrice.isSelected() && !modifyPanel.AvaUnava.isSelected()) {
                 JOptionPane.showMessageDialog(null, "Please select the function!", "Warning", JOptionPane.WARNING_MESSAGE);
-            }
-            else if(modifyPanel.ModifyPrice.isSelected()){
+            } else if (modifyPanel.ModifyPrice.isSelected()) {
                 modifyPrice = new ModifyPrice();
                 modifyPrice.back.addActionListener(new ModifyPriceBackListener());
                 modifyPrice.confirm.addActionListener(new ModifyPriceConfirmListener());
-                mainPanel.add(modifyPrice,"modifyprice");
-                layout.show(mainPanel,"modifyprice");
-            }
-            else if(modifyPanel.AvaUnava.isSelected()){
+                mainPanel.add(modifyPrice, "modifyprice");
+                layout.show(mainPanel, "modifyprice");
+            } else if (modifyPanel.AvaUnava.isSelected()) {
                 modifyavaliable = new Modifyavaliable();
                 modifyavaliable.back.addActionListener(new ModifyAvailableBackListener());
                 modifyavaliable.confirm.addActionListener(new ModifyAvailableConfirmListener());
-                mainPanel.add(modifyavaliable,"modifyavailable");
-                layout.show(mainPanel,"modifyavailable");
+                mainPanel.add(modifyavaliable, "modifyavailable");
+                layout.show(mainPanel, "modifyavailable");
             }
         }
     }
-    public class ModifyAvailableBackListener implements ActionListener{
+
+    public class ModifyAvailableBackListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            layout.show(mainPanel,"modify");
+            layout.show(mainPanel, "modify");
         }
     }
-    public class ModifyAvailableConfirmListener implements ActionListener{
+
+    public class ModifyAvailableConfirmListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             MenuController.updateMenuAvailabilityFiles(modifyavaliable);
             JOptionPane.showMessageDialog(null, "Success!", "Congratulations!", JOptionPane.INFORMATION_MESSAGE);
-            layout.show(mainPanel,"managestart");
+            layout.show(mainPanel, "managestart");
         }
     }
-    public class ModifyPriceBackListener implements ActionListener{
+
+    public class ModifyPriceBackListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            layout.show(mainPanel,"modify");
+            layout.show(mainPanel, "modify");
         }
     }
-    public class ModifyPriceConfirmListener implements ActionListener{
+
+    public class ModifyPriceConfirmListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (!isDouble(modifyPrice.RamenNowPrice.getText())) {
@@ -207,45 +210,50 @@ public class GUIModel extends JFrame implements ActionListener {
 
 
     }
+
     public boolean isDouble(String s) {
         Pattern pattern = Pattern.compile("^(([1-9]{1}\\d*)|([0]{1}))(\\.(\\d){0,2})?$"); // 判断小数点后2位的数字的正则表达式
         Matcher match = pattern.matcher(s);
         return match.matches();
     }
 
-    public class StatBackListener implements ActionListener{
+    public class StatBackListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            layout.show(mainPanel,"managestart");
+            layout.show(mainPanel, "managestart");
         }
     }
-    public class StatConfirmListener implements ActionListener{
+
+    public class StatConfirmListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             sendPanel = new SendPanel();
             sendPanel.back.addActionListener(new SendBackListener());
             sendPanel.confirm.addActionListener(new SendConfirmListener());
-            mainPanel.add(sendPanel,"send");
-            layout.show(mainPanel,"send");
+            mainPanel.add(sendPanel, "send");
+            layout.show(mainPanel, "send");
         }
     }
-    public class SendBackListener implements ActionListener{
+
+    public class SendBackListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            layout.show(mainPanel,"stat");
+            layout.show(mainPanel, "stat");
         }
     }
-    public class SendConfirmListener implements ActionListener{
+
+    public class SendConfirmListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             JOptionPane.showMessageDialog(null, "Success!", "Congratulations!", JOptionPane.INFORMATION_MESSAGE);
-            layout.show(mainPanel,"managestart");
+            layout.show(mainPanel, "managestart");
         }
     }
-    public class WelcomeBackListener implements ActionListener{
+
+    public class WelcomeBackListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            layout.show(mainPanel,"start");
+            layout.show(mainPanel, "start");
         }
     }
 
@@ -255,21 +263,20 @@ public class GUIModel extends JFrame implements ActionListener {
             MenuAvailablity menuAvailablity = MenuController.getMenuAvailabilityInfo();
             if (!welcomePanel.but1.isSelected() && !welcomePanel.but2.isSelected()) {
                 JOptionPane.showMessageDialog(null, "Please select the function!", "Warning", JOptionPane.WARNING_MESSAGE);
-            } else if (!menuAvailablity.isRamenAvailable()){
+            } else if (welcomePanel.but2.isSelected()) {
+                loyaltyPanel = new LoyaltyPanel();
+                loyaltyPanel.back.addActionListener(new LoyaltyBackListener());
+                loyaltyPanel.confirm.addActionListener(new LoyaltyConfirmListener());
+                mainPanel.add(loyaltyPanel, "loyalty");
+                layout.show(mainPanel, "loyalty");
+            } else if (!menuAvailablity.isRamenAvailable()) {
                 JOptionPane.showMessageDialog(null, "The ramen is unavailable now! Please contact our manager.", "Warning", JOptionPane.WARNING_MESSAGE);
-            }
-            else if(welcomePanel.but1.isSelected()) {
+            } else if (welcomePanel.but1.isSelected()) {
                 menuPanel = new MenuPanel();
                 menuPanel.confirm.addActionListener(new MenuConfirmListener());
                 menuPanel.back.addActionListener(new MenuBackListener());
                 mainPanel.add(menuPanel, "menu");
                 layout.show(mainPanel, "menu");
-            } else if (welcomePanel.but2.isSelected()) {
-                loyaltyPanel = new LoyaltyPanel();
-                loyaltyPanel.back.addActionListener(new LoyaltyBackListener());
-                loyaltyPanel.confirm.addActionListener(new LoyaltyConfirmListener());
-                mainPanel.add(loyaltyPanel,"loyalty");
-                layout.show(mainPanel,"loyalty");
             }
         }
     }
@@ -324,10 +331,9 @@ public class GUIModel extends JFrame implements ActionListener {
             if (!eatAskPanel.but1.isSelected() && !eatAskPanel.but2.isSelected()) {
                 JOptionPane.showMessageDialog(null, "Please select one of the button!", "Warning", JOptionPane.WARNING_MESSAGE);
             } else {
-                if(eatAskPanel.but1.isSelected()){
+                if (eatAskPanel.but1.isSelected()) {
                     currentOrder.setDiningOption("Eat in");
-                }
-                else if(eatAskPanel.but2.isSelected()){
+                } else if (eatAskPanel.but2.isSelected()) {
                     currentOrder.setDiningOption("Take away");
                 }
                 loyaltyAskPanel = new LoyaltyAskPanel();
@@ -385,7 +391,7 @@ public class GUIModel extends JFrame implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             String nameReg = "^[A-Za-z]+$";
-            String emailReg = "^([a-z0-9A-Z]+[-|_|\\\\.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\\\.)+[a-zA-Z]{2,}$";
+            String emailReg = "^([a-z0-9A-Z]+[-|_|\\.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-zA-Z]{2,}$";
             String phoneReg = "^[0-9]*$";
             Pattern pattern1 = Pattern.compile(nameReg);
             Pattern pattern2 = Pattern.compile(emailReg);
@@ -461,9 +467,9 @@ public class GUIModel extends JFrame implements ActionListener {
             if (inputPanel.membershipNumField.getText().equals("")) {
                 JOptionPane.showMessageDialog(null, "Please fill in your membership number!", "Warning", JOptionPane.WARNING_MESSAGE);
             }
-            if(CustomerController.findByMemberShipNum(inputPanel.membershipNumField.getText(), CustomerController.json2List(CustomerController.readCustomerTotalInfos())) == null){
+            if (CustomerController.findByMemberShipNum(inputPanel.membershipNumField.getText(), CustomerController.json2List(CustomerController.readCustomerTotalInfos())) == null) {
                 JOptionPane.showMessageDialog(null, "Please check your membership number!", "Warning", JOptionPane.WARNING_MESSAGE);
-            }else {
+            } else {
                 //后端验证，这个判断条件需要后端同学修改
                 //virtual stamps个数为10
                 virtualStamps = CustomerController.findByMemberShipNum(inputPanel.membershipNumField.getText(),
@@ -723,7 +729,7 @@ public class GUIModel extends JFrame implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             currentOrder = new Order();
             currentCustomer = new Customer();
-            layout.show(mainPanel,"welcome");
+            layout.show(mainPanel, "welcome");
         }
     }
 
@@ -731,50 +737,51 @@ public class GUIModel extends JFrame implements ActionListener {
     public class InputBackListener3 implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            layout.show(mainPanel,"loyalty");
+            layout.show(mainPanel, "loyalty");
         }
     }
 
     public class InputConfirmListener2 implements ActionListener {
-            private int virtualStamps;
+        private int virtualStamps;
 
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        @Override
+        public void actionPerformed(ActionEvent e) {
 
-                if (inputPanel.membershipNumField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Please fill in your membership number!", "Warning", JOptionPane.WARNING_MESSAGE);
+            if (inputPanel.membershipNumField.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Please fill in your membership number!", "Warning", JOptionPane.WARNING_MESSAGE);
+            } else {
+                //后端验证，这个判断条件需要后端同学修改
+                //virtual stamps个数为10
+                if (CustomerController.findByMemberShipNum(inputPanel.membershipNumField.getText(),
+                        CustomerController.json2List(CustomerController.readCustomerTotalInfos())) == null) {
+                    JOptionPane.showMessageDialog(null, "There is no such customer!", "Warning", JOptionPane.WARNING_MESSAGE);
                 } else {
-                    //后端验证，这个判断条件需要后端同学修改
-                    //virtual stamps个数为10
-                    if(CustomerController.findByMemberShipNum(inputPanel.membershipNumField.getText(),
-                            CustomerController.json2List(CustomerController.readCustomerTotalInfos())) == null){
-                        JOptionPane.showMessageDialog(null, "There is no such customer!", "Warning", JOptionPane.WARNING_MESSAGE);
-                    }else{
-                        virtualStamps = CustomerController.findByMemberShipNum(inputPanel.membershipNumField.getText(),
-                                CustomerController.json2List(CustomerController.readCustomerTotalInfos())).getStamps();
-                        if (virtualStamps == 9) {
-                            freePanel = new FreePanel(virtualStamps);
-                            freePanel.back.addActionListener(new FreeBackListener2());
-                            freePanel.confirm.addActionListener(new FreeConfirmListener2());
-                            mainPanel.add(freePanel, "free");
-                            layout.show(mainPanel, "free");
-                        } else {
-                            nofreePanel = new NofreePanel(virtualStamps);
-                            nofreePanel.back.addActionListener(new NofreeBackListener2());
-                            nofreePanel.confirm.addActionListener(new NofreeConfirmListener2());
-                            mainPanel.add(nofreePanel, "nofree");
-                            layout.show(mainPanel, "nofree");
-                        }
+                    virtualStamps = CustomerController.findByMemberShipNum(inputPanel.membershipNumField.getText(),
+                            CustomerController.json2List(CustomerController.readCustomerTotalInfos())).getStamps();
+                    if (virtualStamps == 9) {
+                        freePanel = new FreePanel(virtualStamps);
+                        freePanel.back.addActionListener(new FreeBackListener2());
+                        freePanel.confirm.addActionListener(new FreeConfirmListener2());
+                        mainPanel.add(freePanel, "free");
+                        layout.show(mainPanel, "free");
+                    } else {
+                        nofreePanel = new NofreePanel(virtualStamps);
+                        nofreePanel.back.addActionListener(new NofreeBackListener2());
+                        nofreePanel.confirm.addActionListener(new NofreeConfirmListener2());
+                        mainPanel.add(nofreePanel, "nofree");
+                        layout.show(mainPanel, "nofree");
                     }
+                }
 
-                }}}
-
+            }
+        }
+    }
 
 
     public class FreeBackListener2 implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            layout.show(mainPanel,"input");
+            layout.show(mainPanel, "input");
         }
     }
 
@@ -783,14 +790,14 @@ public class GUIModel extends JFrame implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             currentOrder = new Order();
             currentCustomer = new Customer();
-            layout.show(mainPanel,"welcome");
+            layout.show(mainPanel, "welcome");
         }
     }
 
     public class NofreeBackListener2 implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            layout.show(mainPanel,"input");
+            layout.show(mainPanel, "input");
         }
     }
 
@@ -799,7 +806,7 @@ public class GUIModel extends JFrame implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             currentOrder = new Order();
             currentCustomer = new Customer();
-            layout.show(mainPanel,"welcome");
+            layout.show(mainPanel, "welcome");
         }
     }
 }
