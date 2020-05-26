@@ -28,7 +28,7 @@ public class SendPanel extends JPanel {
         GridBagConstraints top = new GridBagConstraints();
         top.weighty=0.5;
         top.anchor=GridBagConstraints.SOUTH;
-        JLabel label = new JLabel("Please enter the email you want to send the report to: ");
+        JLabel label = new JLabel("(Optional)Enter the email you want to send the report to: ");
         label.setFont(font);
         JTextField jTextField = new JTextField("",20);
         jTextField.setPreferredSize(new Dimension(300,40));
