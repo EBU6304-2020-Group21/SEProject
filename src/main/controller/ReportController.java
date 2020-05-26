@@ -80,7 +80,7 @@ public class ReportController {
                 }
             }
         }
-        if(readString == null){
+        if(readString == ""){
             return null;
         }else{
             JSONArray totalOrder = JSONArray.parseArray(readString);
