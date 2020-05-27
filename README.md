@@ -10,7 +10,7 @@ EBU6304-Software Engineering Project of Group 21
 - Clone the repository to your PC, and make sure running environment is JDK-11.0.2
 - Open the terminal (for Mac) or cmd (for windows) and move to the project dictionary
 - Run Ramen.jar `$ java -jar Ramen.jar` or double click it.
-- Make sure that `Ramen.jar` and `/File` dictionary are in the same root dictionary (e.g. `/Ramen`)!
+- Make sure that `Ramen.jar` and `/File` dictionary are in the same root dictionary (e.g. both under the dictionary `/Ramen`)!
 ### Method B - Run by Command Line
 - Clone the repository to your PC, and make sure running environment is JDK-11.0.2
 #### For Mac or Linux
