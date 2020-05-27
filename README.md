@@ -6,17 +6,25 @@ EBU6304-Software Engineering Project of Group 21
 - Developing Environment: IntelliJ IDEA + Git
 - Dependencies: fastjson-1.2.68.jar
 ## Installation - How to Run the Software
-### Method A - Run JAR Package
+### Method A - Run JAR Package (RECOMMENDED!)
 - Clone the repository to your PC, and make sure running environment is JDK-11.0.2
 - Open the terminal (for Mac) or cmd (for windows) and move to the project dictionary
 - Run Ramen.jar `$ java -jar Ramen.jar` or double click it.
-- Make sure that `Ramen.jar` and `/File` are in the same dictionary!
+- Make sure that `Ramen.jar` and `/File` dictionary are in the same root dictionary (e.g. `/Ramen`)!
 ### Method B - Run by Command Line
 - Clone the repository to your PC, and make sure running environment is JDK-11.0.2
-- Open the terminal (for Mac) or cmd (for windows) and move to the project dictionary
-- Compile the programme
+#### For Mac or Linux
+- Open the terminal (for Mac) and move to the project dictionary
+- Compile the programme  
 `javac -d bin/ src/main/controller/*.java src/main/views/*.java src/main/entity/*.java -cp lib/*.jar`
-- Run the programme `java -cp bin/:lib/fastjson-1.2.68.jar main.views.GUIModel`
+- Run the programme  
+`java -cp bin/:lib/fastjson-1.2.68.jar main.views.GUIModel`
+#### For Windows
+- Open the cmd and move to the project dictionary
+- Compile the programme  
+`javac -d bin/ -encoding UTF-8 src/main/controller/*.java src/main/views/*.java src/main/entity/*.java -cp lib/*.jar`
+- Run the programme  
+` java -cp bin/;lib/fastjson-1.2.68.jar main.views.GUIModel`
 ## Main Functions
 ### For Customer (Self-Service Kiosk)
 - Dining by themselves
