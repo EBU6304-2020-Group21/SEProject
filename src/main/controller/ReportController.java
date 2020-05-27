@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
+import java.util.Date;
 
 /**
  * This class is for generating the weekly reports
@@ -28,9 +29,12 @@ public class ReportController {
      */
     public static Date getLastMonday(){
         Locale.setDefault(Locale.CHINA);
-        Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.DAY_OF_MONTH, -(Calendar.DAY_OF_WEEK+6));
-        return calendar.getTime();
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, -1);
+        //cal.setTime(a);
+        cal.add(Calendar.WEEK_OF_YEAR, -1);// 一周
+        cal.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY);
+        return cal.getTime();
     }
 
     /**
@@ -41,9 +45,12 @@ public class ReportController {
      */
     public static Date getLastSunday(){
         Locale.setDefault(Locale.CHINA);
-        Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.DAY_OF_MONTH, -(Calendar.DAY_OF_WEEK));
-        return calendar.getTime();
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, -1);
+        //cal.setTime(a);
+        cal.add(Calendar.WEEK_OF_YEAR, 0);// 一周
+        cal.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
+        return cal.getTime();
     }
 
     /**
@@ -139,7 +146,7 @@ public class ReportController {
                 if (o.getSprOnionType().equals("No please")) {
                     weeklyReport.setNoNum(weeklyReport.getNoNum() + 1);
                 } else if (o.getSprOnionType().equals("Just a little")) {
-                    weeklyReport.setJustNum(weeklyReport.getJustNum());
+                    weeklyReport.setJustNum(weeklyReport.getJustNum() + 1);
                 } else if (o.getSprOnionType().equals("A lot!")) {
                     weeklyReport.setLotNum(weeklyReport.getLotNum() + 1);
                 }
