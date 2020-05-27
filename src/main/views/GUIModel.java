@@ -2,6 +2,7 @@ package main.views;
 /**
  * This Class is the integration model of the ramen system and initialize it.
  * It has many sub classes and it contains all the actionlisteners in this class.
+ *
  * @ClassName GUIModel
  * @author Kai Yan
  * @version 3.0
@@ -245,8 +246,16 @@ public class GUIModel extends JFrame implements ActionListener {
     public class SendConfirmListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(null, "Success!", "Congratulations!", JOptionPane.INFORMATION_MESSAGE);
-            layout.show(mainPanel, "managestart");
+            String emailReg = "^([a-z0-9A-Z]+[-|_|\\.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-zA-Z]{2,}$";
+            Pattern pattern2 = Pattern.compile(emailReg);
+            Matcher emailMatcher = pattern2.matcher(sendPanel.jTextField.getText());
+            if (sendPanel.jTextField.getText().equals("") || emailMatcher.find()) {
+                JOptionPane.showMessageDialog(null, "Success!", "Congratulations!", JOptionPane.INFORMATION_MESSAGE);
+                layout.show(mainPanel, "managestart");
+            }
+            else if(!emailMatcher.find()){
+                JOptionPane.showMessageDialog(null,"Please input the right email format!", "Wrong!", JOptionPane.WARNING_MESSAGE);
+            }
         }
     }
 
